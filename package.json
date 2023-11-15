@@ -12,10 +12,16 @@
   "devDependencies": {
     "@element-plus/nuxt": "^1.0.6",
     "@nuxt/devtools": "latest",
+    "@nuxtjs/google-fonts": "^3.0.2",
+    "@nuxtjs/style-resources": "^2.0.0",
     "element-plus": "^2.4.2",
     "nuxt": "^3.8.1",
     "nuxt-icon": "^0.6.5",
+    "sass": "^1.69.5",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "nuxt-icons": "^3.2.1"
   }
 }

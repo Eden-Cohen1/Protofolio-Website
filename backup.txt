@@ -1,0 +1,118 @@
+<template>
+  <main ref="screenWidth">
+    <el-affix :offset="isMobile ? 100 : 0">
+      <el-menu
+        class="main-color"
+        :mode="isMobile ? 'vertical' : 'horizontal'"
+        active-text-color="#303133"
+        ref="myMenu"
+      >
+        <el-menu-item index="home" id="home">
+          <a href="#home">Home</a>
+        </el-menu-item>
+        <el-menu-item index="about">
+          <a href="#about">About</a>
+        </el-menu-item>
+        <el-menu-item index="projects">
+          <a href="#projects">Projects</a>
+        </el-menu-item>
+        <el-menu-item index="skills">
+          <a href="#skills">Skills</a>
+        </el-menu-item>
+        <el-menu-item index="contact">
+          <a href="#contact">Contact</a>
+        </el-menu-item>
+        <el-button class="themeBtn" @click="toggleDarkMode"
+          >Dark Mode</el-button
+        >
+      </el-menu>
+    </el-affix>
+    <slot />
+  </main>
+</template>
+
+<script setup>
+const myMenu = ref();
+const screenWidth = ref();
+// const handleNavbar = () => {
+//   screenWidth.value = window.innerWidth;
+//   myMenu.value.$el.classList.toggle("sidebar", isMobile.value);
+// };
+// onMounted(() => {
+//   // screenWidth.value = window.innerWidth;
+//   // window.addEventListener("resize", handleNavbar);
+//   // handleNavbar();
+//   console.log(screenWidth.value.offsetWidth);
+// });
+const isMobile = computed(() => {
+  console.log(screenWidth.value?.offsetWidth);
+  return screenWidth.value?.offsetWidth <= 680;
+});
+// watch(
+//   screenWidth.value?.offsetWidth,
+//   (newValue) => {
+//     console.log(newValue.offsetWidth);
+//     console.log(newValue);
+//   },
+//   { imidiate: true, deep: true }
+// );
+const darkMode = ref(false);
+const toggleDarkMode = () => {
+  darkMode.value = !darkMode.value;
+  document.documentElement.classList.toggle("dark", darkMode.value);
+};
+</script>
+
+<style>
+a {
+  text-decoration: none;
+  color: black;
+}
+.is-active {
+  background-color: transparent !important;
+  border-bottom: none !important;
+}
+.sidebar {
+  position: sticky;
+  top: 40px;
+  border-radius: 1rem;
+  width: 100px !important;
+}
+.sidebar el-menu-item {
+  border-radius: 1rem;
+  background-color: black !important;
+}
+.themeBtn {
+  margin-top: 12px;
+  width: 100px;
+}
+</style>
+
+
+watch(
+  Swidth.value,
+  (newValue) => {
+    if (newValue <= 680) {
+      console.log(newValue);
+    }
+  },
+  { deep: true, immediate: true }
+);
+
+
+
+
+const screenSize = ref();
+const Swidth = ref();
+// const screenWidth = ref();
+
+// onMounted(() => {
+//   screenWidth?.value = window.innerWidth;
+// });
+// // const isMobile = computed(() => {
+// //   return screenWidth?.value <= 680;
+// // });
+onMounted(() => {
+  Swidth.value = window.innerHeight;
+  console.log(Swidth.value);
+});

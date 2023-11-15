@@ -1,0 +1,40 @@
+:root {
+  --el-color-primary: green;
+}
+* {
+  font-family: "Montserrat", sans-serif;
+}
+body,
+html {
+  padding: 0rem;
+  margin: 0;
+  scroll-behavior: smooth;
+  background-color: #f0f0f0;
+}
+
+.section {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.secondary-color {
+  /* background-color: #a5a86f !important; */
+  background-color: #a5a86f85 !important;
+}
+.dark .secondary-color {
+  background-color: #33350fba !important;
+}
+.main-color {
+  background-color: #f0f0f0 !important;
+}
+
+.dark .main-color {
+  background-color: #111111 !important;
+}
+
+.dark a {
+  color: white !important;
+}

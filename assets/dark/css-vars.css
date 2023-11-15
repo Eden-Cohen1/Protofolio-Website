@@ -1,0 +1,9 @@
+html.dark {
+  /* custom dark bg color */
+  --el-bg-color: green !important;
+  background-color: black;
+}
+
+html.light {
+  --el-bg-color: green !important;
+}
