@@ -116,3 +116,79 @@ onMounted(() => {
   Swidth.value = window.innerHeight;
   console.log(Swidth.value);
 });
+
+
+-------------------------------------------------------------------------------------------
+
+<template>
+  <main class="main-color section my-hero wave">
+    <div class="avatar">
+      <NuxtImg src="me.jpg" alt="" />
+    </div>
+    <h1>{{ heroText.selfTypedText }}</h1>
+    <h2>{{ heroText.selfTypedText2 }}</h2>
+  </main>
+</template>
+
+<script setup>
+const heroText = reactive({
+  headline:
+    "Hello, my name is Eden Cohen\n A Compuer-Science student and a Full-stack developer.",
+  selfTypedText: "",
+  selfTypedText2: "",
+});
+
+const typeText = () => {
+  for (let i = 0; i < heroText.headline.length; i++) {
+    setTimeout(
+      () => {
+        if (i <= heroText.headline.indexOf("\n")) {
+          heroText.selfTypedText += heroText.headline[i];
+        } else {
+          heroText.selfTypedText2 += heroText.headline[i];
+        }
+      },
+      45 * i,
+      i
+    );
+  }
+};
+
+onMounted(() => {
+  typeText();
+});
+</script>
+
+<style scoped>
+.my-hero {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  box-sizing: border-box;
+  border: 5px white solid;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  transform: translatey(0px);
+  animation: float 4.5s ease-in-out infinite, dropImage 3s;
+  animation-delay: 3s, 0s;
+  margin-bottom: 1rem;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.dark .avatar {
+  box-shadow: 0 5px 15px 0px rgba(255, 255, 255, 0.322) !important;
+}
+h2 {
+  text-align: center;
+  line-height: 2;
+  margin: 0;
+}
+</style>

@@ -21,7 +21,7 @@
 
 <script setup></script>
 
-<style>
+<style scoped>
 main {
   width: 100%;
 }

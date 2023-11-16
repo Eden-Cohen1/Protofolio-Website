@@ -1,9 +1,15 @@
-:root{
-  --dark-bg-main: rgba(16, 21, 21, 0.749);
-  --dark-bg-sec: rgba(41, 68, 85, 0.366);
+:root {
+  /* --dark-bg-main: rgba(16, 21, 21, 0.749); */
+  /* --dark-bg-sec: rgba(41, 68, 85, 0.366); */
+  /* --light-bg-main: #ecececb6; */
+  /* --light-bg-sec: #dbe6e6c7; */
+  --dark-bg-main: rgb(26 34 34);
+  --dark-bg-sec: rgb(44, 50, 54);
   --dark-hover-color: rgba(41, 68, 85, 0.219);
-  --light-bg-main: #f0f0f0b6;
-  --light-bg-sec: #dbe6e6c7;
+  --light-bg-main: #dcdcf0a6;
+  --light-bg-sec: #dcdcf0ec;
+  --btn-color: #00a2ed;
+  --btn-hover-color: #028ac9;
 }
 * {
   font-family: "Montserrat", sans-serif;
@@ -15,6 +21,21 @@ html {
   scroll-behavior: smooth;
   background-color: #f0f0f0;
   transition: all 0.2s;
+  overflow-x: hidden;
+}
+
+button {
+  padding: 0.8rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: 570;
+  background-color: var(--btn-color);
+  border: none;
+  color: white;
+}
+
+button.primary:hover {
+  background-color: var(--btn-hover-color);
 }
 
 .section {
@@ -39,17 +60,112 @@ html {
 .dark .main-color {
   background-color: var(--dark-bg-main) !important;
 }
-.dark .navbar{
-  background-color: var(--dark-bg-main) !important;
-}
 
 .dark a {
   color: white !important;
 }
-a:hover{
-  background-color: var(--light-bg-sec) !important;
+a:hover {
+  background-color: #cdd9ffbd !important;
 }
 
-.dark a:hover{
-  background-color: var(--dark-hover-color) !important;
+.dark a:hover {
+  background-color: #61687c4f !important;
 }
+
+.navigation svg {
+  width: 1.3rem !important;
+  height: 1.3rem !important;
+}
+
+/* ================= WAVE BORDER ================== */
+
+.wave {
+  position: relative;
+  border: none !important;
+}
+.wave::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: repeat;
+  height: 10px;
+  background-size: 20px 20px;
+  background-image: radial-gradient(
+    circle at 10px -5px,
+    transparent 12px,
+    var(--light-bg-sec) 13px
+  );
+}
+.wave::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: repeat;
+  height: 15px;
+  background-size: 40px 20px;
+  background-image: radial-gradient(
+    circle at 10px 15px,
+    var(--light-bg-sec) 12px,
+    transparent 13px
+  );
+}
+
+.dark .wave::before {
+  background-image: radial-gradient(
+    circle at 10px -5px,
+    transparent 12px,
+    var(--dark-bg-sec) 13px
+  );
+}
+.dark .wave::after {
+  background-image: radial-gradient(
+    circle at 10px 15px,
+    var(--dark-bg-sec) 12px,
+    transparent 13px
+  );
+}
+
+/* ================= ANIMATIONS ================== */
+
+@keyframes dropImage {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+/* -------------------------------------------------------- */
+
+/* ================= MEDIA-QUERIES ================== */
+@media screen and (max-width: 680px) {
+  h1,
+  h2 {
+    font-size: 1.2rem;
+    padding: 0rem 2rem;
+  }
+  p {
+    padding: 0rem 1.5rem !important;
+    line-height: 2.5rem !important;
+    font-size: 1rem !important;
+  }
+}
+/* -------------------------------------------------------- */
