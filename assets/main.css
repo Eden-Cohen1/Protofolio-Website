@@ -1,5 +1,9 @@
-:root {
-  --el-color-primary: green;
+:root{
+  --dark-bg-main: rgba(16, 21, 21, 0.749);
+  --dark-bg-sec: rgba(41, 68, 85, 0.366);
+  --dark-hover-color: rgba(41, 68, 85, 0.219);
+  --light-bg-main: #f0f0f0b6;
+  --light-bg-sec: #dbe6e6c7;
 }
 * {
   font-family: "Montserrat", sans-serif;
@@ -10,6 +14,7 @@ html {
   margin: 0;
   scroll-behavior: smooth;
   background-color: #f0f0f0;
+  transition: all 0.2s;
 }
 
 .section {
@@ -21,20 +26,30 @@ html {
 }
 
 .secondary-color {
-  /* background-color: #a5a86f !important; */
-  background-color: #a5a86f85 !important;
+  /* background-color: #a5a86f85 !important; */ /* light olive green */
+  background-color: var(--light-bg-sec) !important;
 }
 .dark .secondary-color {
-  background-color: #33350fba !important;
+  background-color: var(--dark-bg-sec) !important;
 }
 .main-color {
-  background-color: #f0f0f0 !important;
+  background-color: var(--light-bg-main) !important;
 }
 
 .dark .main-color {
-  background-color: #111111 !important;
+  background-color: var(--dark-bg-main) !important;
+}
+.dark .navbar{
+  background-color: var(--dark-bg-main) !important;
 }
 
 .dark a {
   color: white !important;
+}
+a:hover{
+  background-color: var(--light-bg-sec) !important;
+}
+
+.dark a:hover{
+  background-color: var(--dark-hover-color) !important;
 }

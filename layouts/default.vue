@@ -1,37 +1,14 @@
 <template>
-  <main ref="screenSize" v-show="width">
+  <main class="main-color" ref="screenSize" v-show="width">
+    <button class="themeBtn" @click="toggleDarkMode">
+        <Icon v-if="darkMode" name="uil:moon" />
+        <Icon v-else="" name="uil:sun" />
+    </button>
     <div v-if="!isMobile" class="navbar">
-      <ul class="main-color horizontal ws-black">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <button class="themeBtn" @click="toggleDarkMode">
-            <nuxt-icon name="toggle-off"></nuxt-icon>
-          </button>
-        </li>
-      </ul>
+      <Navbar />
     </div>
     <div v-else="isMobile" class="sidebar">
-      <ul class="main-color vertical ws-black">
-        <li>
-          <a href="#home"><nuxt-icon name="home"></nuxt-icon></a>
-        </li>
-        <li>
-          <a href="#about"><nuxt-icon name="about"></nuxt-icon></a>
-        </li>
-        <li>
-          <a href="#projects"><nuxt-icon name="projects"></nuxt-icon></a>
-        </li>
-        <li>
-          <a href="#skills"><nuxt-icon name="skills"></nuxt-icon></a>
-        </li>
-        <li>
-          <a href="#contact"><nuxt-icon name="contact"></nuxt-icon></a>
-        </li>
-      </ul>
+      <Sidebar/>
     </div>
     <slot />
   </main>
@@ -50,5 +27,27 @@ const toggleDarkMode = () => {
 </script>
 
 <style>
-@import url("../assets/navbar.css");
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+}
+
+.sidebar {
+  position: fixed;
+  width: 60px;
+  z-index: 10;
+  top: 150px;
+  right: 0px
+}
+
+button{
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  background-color: transparent;
+  border: none;
+  z-index: 11;
+}
 </style>
