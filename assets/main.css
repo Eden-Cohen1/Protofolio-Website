@@ -66,6 +66,7 @@ button.primary:hover {
 }
 a:hover {
   background-color: #cdd9ffbd !important;
+  color: var(--btn-color) !important;
 }
 
 .dark a:hover {
@@ -162,10 +163,23 @@ a:hover {
     font-size: 1.2rem;
     padding: 0rem 2rem;
   }
-  p {
+  .about p {
     padding: 0rem 1.5rem !important;
     line-height: 2.5rem !important;
     font-size: 1rem !important;
+  }
+  .card-desc {
+    line-height: 1.5rem !important;
+    font-size: 1rem;
+    overflow-y: scroll !important;
+  }
+  .card-desc b {
+    position: relative;
+    top: 1rem;
+  }
+  .card:hover .card-desc {
+    opacity: 1;
+    height: 110% !important;
   }
 }
 /* -------------------------------------------------------- */
