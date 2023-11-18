@@ -1,34 +1,42 @@
 <template>
-  <main class="main-color section my-hero wave">
-    <div class="overlay"></div>
+  <main class="main-color my-hero">
     <div class="avatar">
-      <NuxtImg src="me.jpg" alt="" />
+      <NuxtImg src="me-big.png" alt="" />
     </div>
     <div class="headline-container">
-      <h1>{{ heroText.line1 }}</h1>
-      <h2>{{ heroText.line2 }}</h2>
+      <h1 v-if="isMobile">Hi, I'm <span>Eden</span></h1>
+      <h1 v-else="">Hello, I'm <span>Eden</span></h1>
+      <h2>{{ heroText.line1 }}</h2>
+      <h3>
+        B.S.c Computer Science Student. <br />
+        Currently seeking a dynamic role as a Full-Stack Developer.
+      </h3>
+      <div class="social-links">
+        <a href="https://github.com/Eden-Cohen1" target="_blank"
+          ><Icon name="uiw:github"
+        /></a>
+        <a href="https://www.linkedin.com/in/eden-co/" target="_blank"
+          ><Icon name="bi:linkedin"
+        /></a>
+      </div>
     </div>
   </main>
 </template>
 
 <script setup>
+const isMobile = inject("isMobile");
 const heroText = reactive({
-  headline: "Hello, i'm Eden\n A CS student and a Full-stack developer.",
+  headline: "Full-Stack Web Developer. \n",
   line1: "",
-  line2: "",
 });
 
 const typeText = () => {
   for (let i = 0; i < heroText.headline.length; i++) {
     setTimeout(
       () => {
-        if (i <= heroText.headline.indexOf("\n")) {
-          heroText.line1 += heroText.headline[i];
-        } else {
-          heroText.line2 += heroText.headline[i];
-        }
+        heroText.line1 += heroText.headline[i];
       },
-      40 * i,
+      65 * i,
       i
     );
   }
@@ -42,51 +50,144 @@ onMounted(() => {
 <style scoped>
 .my-hero {
   display: flex;
-  flex-direction: column;
-  height: 75vh;
+  justify-content: space-around;
+  height: 80vh;
+  width: 100%;
+  padding-left: 5rem;
+  align-items: center;
+  -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 93%, 0% 100%);
+  clip-path: polygon(0 0%, 100% 0%, 100% 93%, 0% 100%);
 }
 
 .avatar {
-  width: 150px;
-  height: 150px;
-  box-sizing: border-box;
-  border: 5px white solid;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-  transform: translatey(0px);
-  animation: float 4.5s ease-in-out infinite, dropImage 3s;
-  animation-delay: 3s, 0s;
-  margin-bottom: 1rem;
+  position: relative;
+  order: 1;
+  bottom: -5.6rem;
 }
-img {
-  width: 100%;
+
+.avatar img {
+  width: 35rem;
   height: auto;
 }
-.dark .avatar {
-  box-shadow: 0 5px 15px 0px rgba(255, 255, 255, 0.322) !important;
-}
 .headline-container {
+  position: relative;
   height: 132px;
+  margin-bottom: 5rem;
   z-index: 10;
 }
+
 h1,
-h2 {
-  text-align: center;
-  line-height: 2;
+h2,
+h3 {
+  text-align: left;
+  font-family: "Playpen Sans", cursive;
   margin: 0;
 }
-.overlay {
-  position: absolute;
-  top: 19rem;
-  left: 5rem;
-  width: 100%;
-  height: 100%;
-  background-size: 20rem;
-  opacity: 30%;
-  background-repeat: no-repeat;
-  background-image: url(programmer.png);
-  z-index: 0; /* Ensure it's above the image */
-  overflow: hidden;
+h1 {
+  position: relative;
+  font-size: 5.5rem;
+  word-spacing: -1rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.616);
+  margin-bottom: 0.5rem;
+}
+h1 span {
+  color: var(--btn-color);
+  font-family: "Playpen Sans", cursive;
+}
+.dark h1 {
+  text-shadow: 1px 1px 2px rgba(175, 175, 175, 0.267);
+}
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+h3 {
+  margin-top: 0.5rem;
+  line-height: 1.5rem;
+  font-weight: 100;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+.social-links {
+  display: flex;
+  justify-content: left;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  gap: 1.5rem;
+}
+svg {
+  color: black;
+  width: 1.6rem !important;
+  height: auto !important;
+}
+a:hover {
+  background-color: transparent !important;
+}
+.dark a:hover {
+  background-color: transparent !important;
+}
+.dark svg {
+  color: white;
+}
+svg:hover {
+  color: var(--btn-color);
+}
+@media screen and (max-width: 1350px) {
+  h1 {
+    font-size: 4.8rem !important;
+  }
+  h2 {
+    font-size: 1.4rem !important;
+  }
+  h3 {
+    font-size: 0.9rem !important;
+  }
+}
+@media screen and (max-width: 990px) {
+  .my-hero {
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    top: -2rem;
+    gap: 2rem;
+    padding: 0rem;
+    padding-bottom: 7rem !important;
+  }
+  h1 {
+    font-size: 3rem !important;
+    text-align: center;
+    word-spacing: -0.2rem;
+  }
+  h2 {
+    font-size: 1.4rem !important;
+    text-align: center;
+  }
+  h3 {
+    font-size: 0.9rem !important;
+    text-align: center;
+  }
+  .headline-container {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+    margin-bottom: 0;
+  }
+  .avatar {
+    order: 1;
+  }
+  .avatar img {
+    position: relative;
+    border-radius: 50%;
+    top: -4rem;
+    width: 17rem;
+    animation: 2s dropImage;
+  }
+  .social-links {
+    position: relative;
+    justify-content: center;
+    top: -1rem;
+  }
 }
 </style>

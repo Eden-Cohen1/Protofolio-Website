@@ -10,7 +10,7 @@
     <div v-else="isMobile" :class="{ sidebar: true, hidden: isScrolling }">
       <Sidebar />
     </div>
-    <slot />
+    <slot :isMobile="isMobile" />
   </main>
 </template>
 
@@ -20,7 +20,7 @@ const { width } = screenWidth();
 const isMobile = computed(() => {
   return width.value <= 680;
 });
-
+provide("isMobile", isMobile);
 // hide sidebar
 const { scroll } = scrolling();
 const isScrolling = computed(() => scroll.value);
@@ -54,8 +54,8 @@ const toggleDarkMode = () => {
 }
 button {
   position: fixed;
-  right: 10px;
-  top: 5px;
+  left: 10px;
+  top: 3px;
   background-color: transparent;
   border: none;
   z-index: 11;

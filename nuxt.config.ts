@@ -15,6 +15,10 @@ export default defineNuxtConfig({
       "Open+Sans": true,
       Roboto: true,
       Lato: true,
+      "Space+Mono": true,
+      Poppins: true,
+      Playpen: true,
+      "Playpen+Sans": true,
     },
   },
 });

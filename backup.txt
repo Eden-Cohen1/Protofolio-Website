@@ -192,3 +192,72 @@ h2 {
   margin: 0;
 }
 </style>
+
+---------------------------------------ANIMATIONS-------------------------------
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+/* ================= WAVE BORDER ================== */
+
+.wave {
+  position: relative;
+  border: none !important;
+}
+.wave::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: repeat;
+  height: 10px;
+  background-size: 20px 20px;
+  background-image: radial-gradient(
+    circle at 10px -5px,
+    transparent 12px,
+    var(--light-bg-sec) 13px
+  );
+}
+.wave::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-repeat: repeat;
+  height: 15px;
+  background-size: 40px 20px;
+  background-image: radial-gradient(
+    circle at 10px 15px,
+    var(--light-bg-sec) 12px,
+    transparent 13px
+  );
+}
+
+.dark .wave::before {
+  background-image: radial-gradient(
+    circle at 10px -5px,
+    transparent 12px,
+    var(--dark-bg-sec) 13px
+  );
+}
+.dark .wave::after {
+  background-image: radial-gradient(
+    circle at 10px 15px,
+    var(--dark-bg-sec) 12px,
+    transparent 13px
+  );
+}
