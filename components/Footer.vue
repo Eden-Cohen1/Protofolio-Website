@@ -1,5 +1,5 @@
 <template>
-  <main class="main-color section footer">
+  <main class="secondary-color section footer">
     <h2>Social Links</h2>
     <ul>
       <li class="whatsapp">

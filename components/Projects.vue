@@ -110,7 +110,7 @@ const projects = {
   max-width: 1050px;
   max-height: 350px;
   min-height: 350px;
-  box-shadow: 0 40px 60px -6px black;
+  box-shadow: 0 20px 60px -20px black;
   overflow: hidden;
   border-radius: 1rem;
   gap: 1.5rem;

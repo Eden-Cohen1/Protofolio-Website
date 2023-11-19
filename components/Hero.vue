@@ -57,6 +57,7 @@ onMounted(() => {
   align-items: center;
   -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 93%, 0% 100%);
   clip-path: polygon(0 0%, 100% 0%, 100% 93%, 0% 100%);
+  overflow: hidden;
 }
 
 .avatar {
@@ -153,7 +154,7 @@ svg:hover {
     top: -2rem;
     gap: 2rem;
     padding: 0rem;
-    padding-bottom: 7rem !important;
+    padding-bottom: 8rem !important;
   }
   h1 {
     font-size: 3rem !important;
