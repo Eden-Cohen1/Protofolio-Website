@@ -62,11 +62,11 @@ onMounted(() => {
 .avatar {
   position: relative;
   order: 1;
-  bottom: -5.6rem;
+  bottom: -5.7rem;
 }
 
 .avatar img {
-  width: 35rem;
+  width: 39rem;
   height: auto;
 }
 .headline-container {
