@@ -11,6 +11,7 @@
       <Sidebar />
     </div>
     <slot :isMobile="isMobile" />
+    <Footer />
   </main>
 </template>
 

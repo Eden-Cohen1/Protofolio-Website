@@ -1,12 +1,13 @@
 :root {
   /* --light-bg-sec: #dbe6e6c7; */
   /* --light-bg-sec: #dcdcf0ec; */
+  /* --light-bg-sec: #b0b0c7ec; */
   --dark-bg-main: #1a2222;
   --dark-bg-sec: rgb(44, 50, 54);
   --dark-hover-color: rgba(41, 68, 85, 0.219);
   --light-bg-main: #dcdcf0a6;
   --light-bg-main-solid: #dcdcf0;
-  --light-bg-sec: #b0b0c7ec;
+  --light-bg-sec: #c3c3e0ec;
   --btn-color: #0098df;
   --btn-hover-color: #0372a5;
 }
@@ -31,6 +32,10 @@ html h3 {
 .dark body,
 .dark html {
   background-color: var(--dark-bg-sec);
+}
+
+a {
+  text-decoration: none !important;
 }
 
 button {
@@ -72,15 +77,20 @@ button.primary:hover {
 .dark a {
   color: white !important;
 }
-a:hover {
-  background-color: #cdd9ffbd !important;
+a,
+.projcard-tag {
+  animation: hover-shrink 0.2s forwards !important;
+}
+a:hover,
+.projcard-tag:hover {
+  animation: hover-grow 0.2s forwards !important;
   color: var(--btn-color) !important;
 }
 svg:hover {
   animation: hover-grow 0.2s forwards !important;
 }
-.dark a:hover {
-  background-color: #61687c4f !important;
+svg {
+  animation: hover-shrink 0.2s forwards !important;
 }
 
 .navigation svg {
@@ -121,6 +131,16 @@ p {
     transform: scale(1.1);
   }
 }
+@keyframes hover-shrink {
+  0% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
 /* -------------------------------------------------------- */
 
 /* ================= MEDIA-QUERIES ================== */
@@ -145,22 +165,6 @@ p {
   }
   .about {
     padding: 1rem 0rem !important;
-  }
-  .card-desc {
-    line-height: 1.5rem !important;
-    font-size: 1rem;
-    overflow-y: scroll !important;
-  }
-  .card-desc b {
-    position: relative;
-    top: 1rem;
-  }
-  .card:hover .card-desc {
-    opacity: 1;
-    height: 110% !important;
-  }
-  .card-desc .icons {
-    bottom: 5rem !important;
   }
   .my-hero {
     height: 60vh !important;

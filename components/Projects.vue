@@ -2,64 +2,88 @@
   <main class="main-color section projects">
     <h1>PROTOFOLIO</h1>
     <div class="cards">
-      <div class="card">
-        <h2 class="card-title">Wave-Cave</h2>
-        <img src="waveCave.png" alt="" />
-        <div class="card-desc secondary-color">
-          <p>
-            <b>JS, Express, Mongoose, Html, Css.</b><br /><br />
-            Social media website for surfers and waves-forecast service<br /><br />
-            This project was made with the purpuse of learning JS, HTML, CSS,
-            Mongoose and Nodejs, before advancing to a frontend framework like
-            Vue.js.
-          </p>
+      <div class="card" v-for="project in projects">
+        <div class="card-right">
+          <h2 class="card-title">{{ project.headline }}</h2>
+          <div class="card-desc">
+            <b>{{ project.subHeadline }}</b>
+            <p>{{ project.description }}</p>
+            <div class="projcard-tagbox">
+              <span class="projcard-tag" v-for="tech in project.tech">{{
+                tech
+              }}</span>
+            </div>
+          </div>
           <div class="icons">
-            <Icon name="mdi:github" />
-            <Icon name="teenyicons:youtube-outline" />
-            <button class="primary">View Website</button>
+            <a :href="project.links.git" target="_blank">
+              <Icon name="mdi:github" />
+            </a>
+            <a
+              :href="project.links.youtube"
+              target="_blank"
+              v-show="project.links.youtube"
+              ><Icon name="teenyicons:youtube-outline" />
+            </a>
+            <a
+              :href="project.links.website"
+              v-show="project.links.website"
+              target="_blank"
+            >
+              <button class="primary">View Website</button>
+            </a>
           </div>
         </div>
-      </div>
-      <div class="card">
-        <h2 class="card-title">Shape-Shift</h2>
-        <img
-          src="https://images.unsplash.com/photo-1591485423007-765bde4139ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
-          alt=""
-        />
-        <div class="card-desc secondary-color">
-          <p>
-            <b>C#, .NET Windows Froms.</b><br /><br />
-            Workout menegment and tracking windows application <br /><br />
-            This project was made with the purpuse of learning OOP, C#, and data
-            manegment.
-          </p>
-          <div class="icons">
-            <Icon name="mdi:github" />
-            <Icon name="teenyicons:youtube-outline" />
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <h2 class="card-title">Protofolio Website</h2>
-        <img src="protofolio.png" alt="" />
-        <div class="card-desc secondary-color">
-          <p>
-            <b>JS, Vue.js, Nuxt3, Html, Css</b><br /><br />
-            The website you are looking at 😉 <br /><br />
-            This project was made with the purpuse of learning Vue.js, Nuxt3.<br />
-            i've learned how to properly build and orginze a project with a
-            frontend framework.
-          </p>
-          <div class="icons">
-            <Icon name="mdi:github" />
-            <Icon name="teenyicons:youtube-outline" />
-            <button class="primary">View Website</button>
-          </div>
+        <div class="card-left">
+          <img :src="project.img" alt="" />
         </div>
       </div>
     </div>
   </main>
 </template>
+
+<script setup>
+const projects = {
+  waveCave: {
+    headline: "Wave Cave",
+    subHeadline: "Social media website for surfers and waves-forecast service.",
+    description:
+      "This project was made with the purpuse of learning JS, HTML, CSS, Mongoose and Nodejs, before advancing to a frontend framework like Vue.js.",
+    tech: ["Javascript", "HTML", "CSS", "Express", "MongoDB"],
+    img: "waveCave.png",
+    links: {
+      git: "https://github.com/Eden-Cohen1/Wave-Cave",
+      youtube: false,
+      website: "https://wave-cave.onrender.com/",
+    },
+  },
+  shapeShift: {
+    headline: "Shape Shift",
+    subHeadline: "Workout menegment and tracking windows application.",
+    description:
+      "This project was made with the purpuse of learning OOP, C#, and data manegment.",
+    tech: ["C#", ".NET Win-Forms"],
+    img: "shapeShift.jpg",
+    links: {
+      git: "https://github.com/Eden-Cohen1/Workout-Manager",
+      youtube: false,
+      website: false,
+    },
+  },
+  protoWebsite: {
+    headline: "Protofolio Website",
+    subHeadline: "The website you are looking at 😉",
+    description:
+      "This project was made with the purpuse of learning Vue.js, Nuxt3. i've learned how to properly build and orginze a project with a frontend framework.",
+    tech: ["Javascript", "Vue.js", "Nuxt3", "HTML", "CSS"],
+    img: "protofolio.png",
+    links: {
+      git: "https://github.com/Eden-Cohen1/Protofolio-Website",
+      youtube: false,
+      website: false,
+    },
+  },
+};
+</script>
 
 <style scoped>
 .projects {
@@ -74,74 +98,183 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   margin-top: 0.5rem;
 }
-b {
-  color: var(--btn-color);
-}
 .card {
-  margin: 40px;
+  display: flex;
+  justify-content: space-around;
+  margin: 3.5rem auto;
   position: relative;
-  max-width: 350px;
+  max-width: 1050px;
   max-height: 350px;
   min-height: 350px;
   box-shadow: 0 40px 60px -6px black;
   overflow: hidden;
   border-radius: 1rem;
+  gap: 1.5rem;
 }
 
-.card-title {
-  display: block;
-  text-align: center;
-  color: #fff;
-  font-size: 1.2rem;
-  background-color: var(--btn-color);
-  padding: 2%;
-  margin: 0;
+h2 {
+  color: var(--btn-color);
 }
-
-.card img {
-  width: 100%;
-  height: 98%;
-  object-fit: cover;
-  display: block;
+.card-left {
   position: relative;
+  order: 1;
+  flex-shrink: 0;
+  width: 50%;
+  -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 93%, 0% 100%);
+  clip-path: polygon(0 0%, 100% 0%, 100% 0%, 0% 550%);
+}
+.card-right {
+  position: relative;
+  width: 50%;
+  min-height: 350px;
+  order: 2;
+  padding-right: 5rem;
+}
+.card p {
+  word-wrap: break-word;
+  line-height: 1.4rem;
 }
 
-.card-desc {
-  display: block;
-  font-size: 0.9rem;
+img {
+  width: 100%;
+  min-height: 350px;
+  overflow: hidden;
+}
+
+.projcard-tagbox {
+  position: relative;
+  bottom: 30%;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: default;
+  user-select: none;
+}
+.projcard-tag {
+  display: inline-block;
+  background: var(--light-bg-sec);
+  color: var(--btn-color);
+  border-radius: 3px 0 0 3px;
+  line-height: 26px;
+  padding: 0 10px 0 23px;
+  position: relative;
+  margin-right: 1rem;
+  margin-bottom: 0.8rem;
+  cursor: default;
+  user-select: none;
+  transition: color 0.2s;
+}
+.dark .projcard-tag {
+  background: var(--dark-bg-sec);
+}
+.dark .projcard-tag::after {
+  border-left-color: var(--dark-bg-sec);
+}
+.projcard-tag::before {
+  content: "";
   position: absolute;
-  height: 0;
-  top: 0;
-  margin: 0;
-  opacity: 0;
-  padding: 18px 8%;
-  color: black;
-  overflow-y: hidden;
-  transition: 0.8s ease;
+  background: var(--btn-color);
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  height: 6px;
+  left: 10px;
+  width: 6px;
+  top: 10px;
 }
-.dark .card-desc {
-  color: white;
+.projcard-tag::after {
+  content: "";
+  position: absolute;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid var(--light-bg-sec);
+  border-top: 13px solid transparent;
+  right: -10px;
+  top: 0;
 }
 
-.card:hover .card-desc {
-  opacity: 1;
-  height: 100%;
-}
 .icons {
   position: absolute;
   display: flex;
+  align-items: center;
+  justify-content: right;
+  min-width: 10rem;
   gap: 1rem;
-  bottom: 3rem;
+  bottom: 0.8rem;
+  right: 1rem;
 }
 svg {
-  width: 2.5rem !important;
+  width: 2rem !important;
   height: auto !important;
+  color: var(--dark-bg-main);
 }
 svg:hover {
   cursor: pointer;
   color: var(--btn-color);
+}
+
+@media screen and (max-width: 1100px) {
+  .card {
+    max-width: 90% !important;
+  }
+  .card-right {
+    padding-right: 1rem;
+  }
+  .card-desc,
+  p {
+    font-size: 0.85rem;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .card-desc {
+    font-size: 1rem !important;
+    width: 90% !important;
+  }
+  p {
+    width: 100%;
+    font-size: 1rem !important;
+  }
+  h2 {
+    position: relative;
+    padding-left: 0;
+  }
+  .card {
+    width: 100%;
+    min-height: 400px;
+    margin: 5rem auto;
+  }
+  .card-left {
+    position: absolute;
+    -webkit-clip-path: none;
+    clip-path: none;
+    width: 100%;
+    height: 100%;
+    transition: 0.8s ease;
+  }
+  .card-right {
+    position: absolute;
+    width: 90%;
+    padding: 0;
+    opacity: 0;
+    transition: 0.8s ease;
+    z-index: 10;
+  }
+  img {
+    object-fit: cover !important;
+    min-height: 400px;
+  }
+  .card:hover .card-left {
+    opacity: 0;
+  }
+  .card:hover .card-right {
+    opacity: 1;
+  }
+  .icons {
+    gap: 0.5rem;
+    right: -0.7rem;
+    bottom: -2.5rem;
+  }
 }
 </style>

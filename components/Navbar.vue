@@ -32,6 +32,9 @@ li {
   text-decoration: none;
   color: #111111;
 }
+.horizontal {
+  background-color: #dcdcf09f !important;
+}
 .dark .horizontal {
   background-color: rgba(26, 34, 34, 0.699) !important;
 }
