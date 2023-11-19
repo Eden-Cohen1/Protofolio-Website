@@ -169,6 +169,7 @@ p {
   .my-hero {
     height: 60vh !important;
     padding-bottom: 8rem !important;
+    padding-top: 3rem !important;
     -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 96%, 0% 100%) !important;
     clip-path: polygon(0 0%, 100% 0%, 100% 96%, 0% 100%) !important;
   }
