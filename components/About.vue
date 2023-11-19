@@ -3,11 +3,11 @@
     <div class="text">
       <h1>ABOUT ME</h1>
       <p>
-        Highly motivated and dedicated computer science student pursuing a
-        <b>full-stack developer position</b>.<br />
-        Committed to continuous learning and adept at embracing challenges.<br />
-        Eager to contribute to team success by leveraging my skills and adapting
-        to evolving technologies.
+        Highly motivated computer science student actively pursuing a
+        <b>full-stack developer role.</b> Fueled by a passion for programming
+        and web development, I am dedicated to continuous learning and enjoy
+        taking on challenges. Eager to be an integral part of a team, I look
+        forward to working on exciting and innovative projects.
       </p>
       <button class="primary">Download CV</button>
     </div>

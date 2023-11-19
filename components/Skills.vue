@@ -17,6 +17,7 @@
       <Icon name="skill-icons:bootstrap" />
       <Icon name="logos:element" />
       <Icon name="skill-icons:mysql-light" />
+      <Icon name="skill-icons:git" />
     </div>
   </main>
 </template>
@@ -27,7 +28,8 @@
   min-height: 40vh;
   display: flex;
   flex-direction: column;
-  padding-top: 2rem;
+  margin: auto;
+  padding: 2rem 0 3rem 0;
 }
 h1 {
   position: relative;
@@ -35,31 +37,32 @@ h1 {
   top: 0rem !important;
 }
 .tech-icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0 3rem 0 3rem;
-  max-width: 700px !important;
-  margin: auto;
-  gap: 4.5rem !important;
-  padding-bottom: 4rem;
+  display: grid;
+  width: 30rem;
+  grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+  grid-gap: 50px;
+  justify-content: center;
 }
 svg {
+  justify-self: center;
   width: 4rem !important;
   height: auto !important;
 }
 
 @media screen and (max-width: 720px) {
+  .skills {
+    padding: 1rem 0 3rem 0;
+  }
   svg {
-    width: 2.2rem !important;
+    width: 2.5rem !important;
+    height: auto !important;
   }
   .tech-icons {
-    gap: 2rem !important;
-    padding: 0 2rem 0 2rem;
-    margin-top: 2.5rem !important;
+    width: 22rem;
+    grid-gap: 30px;
   }
   h1 {
-    padding-bottom: 0.5rem !important;
+    padding-bottom: 1.5rem !important;
   }
 }
 </style>

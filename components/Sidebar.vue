@@ -4,16 +4,18 @@
       <a href="#home"><Icon name="uil:home-alt" /></a>
     </li>
     <li>
-      <a href="#about"><Icon name="uil:map-marker-question" /></a>
+      <a href="#about"><Icon name="fluent:person-info-24-filled" /></a>
     </li>
     <li>
-      <a href="#projects"><Icon name="uil:github-alt" /></a>
+      <a href="#projects"
+        ><Icon name="material-symbols:lab-profile-outline-sharp"
+      /></a>
     </li>
     <li>
-      <a href="#skills"><Icon name="uil:java-script" /></a>
+      <a href="#skills"><Icon name="material-symbols:code-rounded" /></a>
     </li>
     <li>
-      <a href="#contact"><Icon name="uil:message" /></a>
+      <a href="#contact"><Icon name="mdi:email-arrow-right-outline" /></a>
     </li>
   </ul>
 </template>

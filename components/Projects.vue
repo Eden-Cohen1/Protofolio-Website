@@ -45,9 +45,9 @@
 const projects = {
   waveCave: {
     headline: "Wave Cave",
-    subHeadline: "Social media website for surfers and waves-forecast service.",
+    subHeadline: "Social media website for surfers and waves-forecast.",
     description:
-      "This project was made with the purpuse of learning JS, HTML, CSS, Mongoose and Nodejs, before advancing to a frontend framework like Vue.js.",
+      "Strengthening my web development foundation, I applied JS, HTML, and CSS to shape the project's frontend. Utilizing Node.js and Express in the backend, i gained practical skills in adapting REST API and digging into the HTTP protocol. Data is stored in MongoDB, using the Mongoose library.",
     tech: ["Javascript", "HTML", "CSS", "Express", "MongoDB"],
     img: "waveCave.png",
     links: {
@@ -58,9 +58,9 @@ const projects = {
   },
   shapeShift: {
     headline: "Shape Shift",
-    subHeadline: "Workout menegment and tracking windows application.",
+    subHeadline: "Workout menegment windows application.",
     description:
-      "This project was made with the purpuse of learning OOP, C#, and data manegment.",
+      "As a school project to enhance my understanding of OOP and data management, I developed a .NET Windows Forms app. The UI was constructed using the UserControl Windows Forms logic. Data was stored in a binary file, as objects, incorporating OOP and Polymorphism principles. Serialization occurred on logout, and deserialization on login.",
     tech: ["C#", ".NET Win-Forms"],
     img: "shapeShift.jpg",
     links: {
@@ -73,7 +73,7 @@ const projects = {
     headline: "Protofolio Website",
     subHeadline: "The website you are looking at 😉",
     description:
-      "This project was made with the purpuse of learning Vue.js, Nuxt3. i've learned how to properly build and orginze a project with a frontend framework.",
+      "As a means of learning and refining my skills, I constructed a portfolio landing page using Vue.js and Nuxt 3. This project served as a valuable opportunity to deepen my understanding and proficiency in front-end web development.",
     tech: ["Javascript", "Vue.js", "Nuxt3", "HTML", "CSS"],
     img: "protofolio.png",
     links: {
@@ -100,16 +100,15 @@ const projects = {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  margin-top: 0.5rem;
 }
 .card {
   display: flex;
   justify-content: space-around;
-  margin: 3.5rem auto;
+  margin: 2rem auto 5rem;
   position: relative;
   max-width: 1050px;
-  max-height: 350px;
-  min-height: 350px;
+  max-height: 390px;
+  min-height: 390px;
   box-shadow: 0 20px 60px -20px black;
   overflow: hidden;
   border-radius: 1rem;
@@ -141,7 +140,7 @@ h2 {
 
 img {
   width: 100%;
-  min-height: 350px;
+  min-height: 415px;
   overflow: hidden;
 }
 
@@ -204,6 +203,9 @@ img {
   bottom: 0.8rem;
   right: 1rem;
 }
+.dark svg {
+  color: var(--light-bg-main);
+}
 svg {
   width: 2rem !important;
   height: auto !important;
@@ -217,6 +219,7 @@ svg:hover {
 @media screen and (max-width: 1100px) {
   .card {
     max-width: 90% !important;
+    min-height: 400px;
   }
   .card-right {
     padding-right: 1rem;
@@ -227,10 +230,10 @@ svg:hover {
     width: 100%;
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 860px) {
   .card-desc {
     font-size: 1rem !important;
-    width: 90% !important;
+    width: 95% !important;
   }
   p {
     width: 100%;
@@ -242,8 +245,8 @@ svg:hover {
   }
   .card {
     width: 100%;
-    min-height: 400px;
-    margin: 5rem auto;
+    min-height: 430px;
+    margin: 2rem auto 4rem;
   }
   .card-left {
     position: absolute;
@@ -252,29 +255,31 @@ svg:hover {
     width: 100%;
     height: 100%;
     transition: 0.8s ease;
+    z-index: 6;
   }
   .card-right {
     position: absolute;
     width: 90%;
     padding: 0;
     opacity: 0;
-    transition: 0.8s ease;
-    z-index: 10;
+    transition: 0.6s ease;
+    z-index: 6;
   }
   img {
     object-fit: cover !important;
-    min-height: 400px;
+    min-height: 430px;
   }
   .card:hover .card-left {
     opacity: 0;
+    z-index: 4 !important;
   }
   .card:hover .card-right {
     opacity: 1;
   }
   .icons {
     gap: 0.5rem;
-    right: -0.7rem;
-    bottom: -2.5rem;
+    right: -0.4rem;
+    bottom: -4.2rem;
   }
 }
 </style>

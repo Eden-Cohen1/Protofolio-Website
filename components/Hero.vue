@@ -151,10 +151,10 @@ svg:hover {
     flex-direction: column;
     justify-content: center;
     position: relative;
-    top: -2rem;
+    top: 0rem;
     gap: 2rem;
     padding: 0rem;
-    padding-bottom: 8rem !important;
+    padding-bottom: 9rem !important;
   }
   h1 {
     font-size: 3rem !important;

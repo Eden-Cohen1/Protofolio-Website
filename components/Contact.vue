@@ -39,7 +39,7 @@
   padding: 5rem 2rem 5rem 0rem;
 }
 .contact-form {
-  max-width: 60vw;
+  max-width: 70vw;
 }
 a {
   border: none;
