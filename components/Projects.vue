@@ -245,7 +245,7 @@ svg:hover {
   }
   .card {
     width: 100%;
-    min-height: 430px;
+    min-height: 450px;
     margin: 2rem auto 4rem;
   }
   .card-left {
@@ -267,7 +267,7 @@ svg:hover {
   }
   img {
     object-fit: cover !important;
-    min-height: 430px;
+    min-height: 450px;
   }
   .card:hover .card-left {
     opacity: 0;
