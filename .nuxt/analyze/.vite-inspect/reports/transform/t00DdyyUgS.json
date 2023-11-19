@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/lodash-es/_unicodeWords.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/** Used to compose unicode character classes. */\nvar rsAstralRange = '\\\\ud800-\\\\udfff',\n    rsComboMarksRange = '\\\\u0300-\\\\u036f',\n    reComboHalfMarksRange = '\\\\ufe20-\\\\ufe2f',\n    rsComboSymbolsRange = '\\\\u20d0-\\\\u20ff',\n    rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange,\n    rsDingbatRange = '\\\\u2700-\\\\u27bf',\n    rsLowerRange = 'a-z\\\\xdf-\\\\xf6\\\\xf8-\\\\xff',\n    rsMathOpRange = '\\\\xac\\\\xb1\\\\xd7\\\\xf7',\n    rsNonCharRange = '\\\\x00-\\\\x2f\\\\x3a-\\\\x40\\\\x5b-\\\\x60\\\\x7b-\\\\xbf',\n    rsPunctuationRange = '\\\\u2000-\\\\u206f',\n    rsSpaceRange = ' \\\\t\\\\x0b\\\\f\\\\xa0\\\\ufeff\\\\n\\\\r\\\\u2028\\\\u2029\\\\u1680\\\\u180e\\\\u2000\\\\u2001\\\\u2002\\\\u2003\\\\u2004\\\\u2005\\\\u2006\\\\u2007\\\\u2008\\\\u2009\\\\u200a\\\\u202f\\\\u205f\\\\u3000',\n    rsUpperRange = 'A-Z\\\\xc0-\\\\xd6\\\\xd8-\\\\xde',\n    rsVarRange = '\\\\ufe0e\\\\ufe0f',\n    rsBreakRange = rsMathOpRange + rsNonCharRange + rsPunctuationRange + rsSpaceRange;\n\n/** Used to compose unicode capture groups. */\nvar rsApos = \"['\\u2019]\",\n    rsBreak = '[' + rsBreakRange + ']',\n    rsCombo = '[' + rsComboRange + ']',\n    rsDigits = '\\\\d+',\n    rsDingbat = '[' + rsDingbatRange + ']',\n    rsLower = '[' + rsLowerRange + ']',\n    rsMisc = '[^' + rsAstralRange + rsBreakRange + rsDigits + rsDingbatRange + rsLowerRange + rsUpperRange + ']',\n    rsFitz = '\\\\ud83c[\\\\udffb-\\\\udfff]',\n    rsModifier = '(?:' + rsCombo + '|' + rsFitz + ')',\n    rsNonAstral = '[^' + rsAstralRange + ']',\n    rsRegional = '(?:\\\\ud83c[\\\\udde6-\\\\uddff]){2}',\n    rsSurrPair = '[\\\\ud800-\\\\udbff][\\\\udc00-\\\\udfff]',\n    rsUpper = '[' + rsUpperRange + ']',\n    rsZWJ = '\\\\u200d';\n\n/** Used to compose unicode regexes. */\nvar rsMiscLower = '(?:' + rsLower + '|' + rsMisc + ')',\n    rsMiscUpper = '(?:' + rsUpper + '|' + rsMisc + ')',\n    rsOptContrLower = '(?:' + rsApos + '(?:d|ll|m|re|s|t|ve))?',\n    rsOptContrUpper = '(?:' + rsApos + '(?:D|LL|M|RE|S|T|VE))?',\n    reOptMod = rsModifier + '?',\n    rsOptVar = '[' + rsVarRange + ']?',\n    rsOptJoin = '(?:' + rsZWJ + '(?:' + [rsNonAstral, rsRegional, rsSurrPair].join('|') + ')' + rsOptVar + reOptMod + ')*',\n    rsOrdLower = '\\\\d*(?:1st|2nd|3rd|(?![123])\\\\dth)(?=\\\\b|[A-Z_])',\n    rsOrdUpper = '\\\\d*(?:1ST|2ND|3RD|(?![123])\\\\dTH)(?=\\\\b|[a-z_])',\n    rsSeq = rsOptVar + reOptMod + rsOptJoin,\n    rsEmoji = '(?:' + [rsDingbat, rsRegional, rsSurrPair].join('|') + ')' + rsSeq;\n\n/** Used to match complex or compound words. */\nvar reUnicodeWord = RegExp([\n  rsUpper + '?' + rsLower + '+' + rsOptContrLower + '(?=' + [rsBreak, rsUpper, '$'].join('|') + ')',\n  rsMiscUpper + '+' + rsOptContrUpper + '(?=' + [rsBreak, rsUpper + rsMiscLower, '$'].join('|') + ')',\n  rsUpper + '?' + rsMiscLower + '+' + rsOptContrLower,\n  rsUpper + '+' + rsOptContrUpper,\n  rsOrdUpper,\n  rsOrdLower,\n  rsDigits,\n  rsEmoji\n].join('|'), 'g');\n\n/**\n * Splits a Unicode `string` into an array of its words.\n *\n * @private\n * @param {string} The string to inspect.\n * @returns {Array} Returns the words of `string`.\n */\nfunction unicodeWords(string) {\n  return string.match(reUnicodeWord) || [];\n}\n\nexport default unicodeWords;\n",
+      "start": 1700406275989,
+      "end": 1700406276032,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406276032,
+      "end": 1700406276032,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406276032,
+      "end": 1700406276033,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406276033,
+      "end": 1700406276033,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406276033,
+      "end": 1700406276033,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406276033,
+      "end": 1700406276033,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406276033,
+      "end": 1700406276033,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406276033,
+      "end": 1700406276033,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406276033,
+      "end": 1700406276033,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406276033,
+      "end": 1700406276033,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406276033,
+      "end": 1700406276033,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406276033,
+      "end": 1700406276033,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406276033,
+      "end": 1700406276033,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406276033,
+      "end": 1700406276033,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406276033,
+      "end": 1700406276033,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406276033,
+      "end": 1700406276033,
+      "order": "normal"
+    }
+  ]
+}

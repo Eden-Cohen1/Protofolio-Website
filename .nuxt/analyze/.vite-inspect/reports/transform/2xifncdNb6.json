@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/components/focus-trap/src/utils.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { ref, onMounted, onBeforeUnmount } from 'vue';\nimport { FOCUSOUT_PREVENTED, FOCUSOUT_PREVENTED_OPTS } from './tokens.mjs';\n\nconst focusReason = ref();\nconst lastUserFocusTimestamp = ref(0);\nconst lastAutomatedFocusTimestamp = ref(0);\nlet focusReasonUserCount = 0;\nconst obtainAllFocusableElements = (element) => {\n  const nodes = [];\n  const walker = document.createTreeWalker(element, NodeFilter.SHOW_ELEMENT, {\n    acceptNode: (node) => {\n      const isHiddenInput = node.tagName === \"INPUT\" && node.type === \"hidden\";\n      if (node.disabled || node.hidden || isHiddenInput)\n        return NodeFilter.FILTER_SKIP;\n      return node.tabIndex >= 0 || node === document.activeElement ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;\n    }\n  });\n  while (walker.nextNode())\n    nodes.push(walker.currentNode);\n  return nodes;\n};\nconst getVisibleElement = (elements, container) => {\n  for (const element of elements) {\n    if (!isHidden(element, container))\n      return element;\n  }\n};\nconst isHidden = (element, container) => {\n  if (process.env.NODE_ENV === \"test\")\n    return false;\n  if (getComputedStyle(element).visibility === \"hidden\")\n    return true;\n  while (element) {\n    if (container && element === container)\n      return false;\n    if (getComputedStyle(element).display === \"none\")\n      return true;\n    element = element.parentElement;\n  }\n  return false;\n};\nconst getEdges = (container) => {\n  const focusable = obtainAllFocusableElements(container);\n  const first = getVisibleElement(focusable, container);\n  const last = getVisibleElement(focusable.reverse(), container);\n  return [first, last];\n};\nconst isSelectable = (element) => {\n  return element instanceof HTMLInputElement && \"select\" in element;\n};\nconst tryFocus = (element, shouldSelect) => {\n  if (element && element.focus) {\n    const prevFocusedElement = document.activeElement;\n    element.focus({ preventScroll: true });\n    lastAutomatedFocusTimestamp.value = window.performance.now();\n    if (element !== prevFocusedElement && isSelectable(element) && shouldSelect) {\n      element.select();\n    }\n  }\n};\nfunction removeFromStack(list, item) {\n  const copy = [...list];\n  const idx = list.indexOf(item);\n  if (idx !== -1) {\n    copy.splice(idx, 1);\n  }\n  return copy;\n}\nconst createFocusableStack = () => {\n  let stack = [];\n  const push = (layer) => {\n    const currentLayer = stack[0];\n    if (currentLayer && layer !== currentLayer) {\n      currentLayer.pause();\n    }\n    stack = removeFromStack(stack, layer);\n    stack.unshift(layer);\n  };\n  const remove = (layer) => {\n    var _a, _b;\n    stack = removeFromStack(stack, layer);\n    (_b = (_a = stack[0]) == null ? void 0 : _a.resume) == null ? void 0 : _b.call(_a);\n  };\n  return {\n    push,\n    remove\n  };\n};\nconst focusFirstDescendant = (elements, shouldSelect = false) => {\n  const prevFocusedElement = document.activeElement;\n  for (const element of elements) {\n    tryFocus(element, shouldSelect);\n    if (document.activeElement !== prevFocusedElement)\n      return;\n  }\n};\nconst focusableStack = createFocusableStack();\nconst isFocusCausedByUserEvent = () => {\n  return lastUserFocusTimestamp.value > lastAutomatedFocusTimestamp.value;\n};\nconst notifyFocusReasonPointer = () => {\n  focusReason.value = \"pointer\";\n  lastUserFocusTimestamp.value = window.performance.now();\n};\nconst notifyFocusReasonKeydown = () => {\n  focusReason.value = \"keyboard\";\n  lastUserFocusTimestamp.value = window.performance.now();\n};\nconst useFocusReason = () => {\n  onMounted(() => {\n    if (focusReasonUserCount === 0) {\n      document.addEventListener(\"mousedown\", notifyFocusReasonPointer);\n      document.addEventListener(\"touchstart\", notifyFocusReasonPointer);\n      document.addEventListener(\"keydown\", notifyFocusReasonKeydown);\n    }\n    focusReasonUserCount++;\n  });\n  onBeforeUnmount(() => {\n    focusReasonUserCount--;\n    if (focusReasonUserCount <= 0) {\n      document.removeEventListener(\"mousedown\", notifyFocusReasonPointer);\n      document.removeEventListener(\"touchstart\", notifyFocusReasonPointer);\n      document.removeEventListener(\"keydown\", notifyFocusReasonKeydown);\n    }\n  });\n  return {\n    focusReason,\n    lastUserFocusTimestamp,\n    lastAutomatedFocusTimestamp\n  };\n};\nconst createFocusOutPreventedEvent = (detail) => {\n  return new CustomEvent(FOCUSOUT_PREVENTED, {\n    ...FOCUSOUT_PREVENTED_OPTS,\n    detail\n  });\n};\n\nexport { createFocusOutPreventedEvent, focusFirstDescendant, focusableStack, getEdges, getVisibleElement, isFocusCausedByUserEvent, isHidden, obtainAllFocusableElements, tryFocus, useFocusReason };\n//# sourceMappingURL=utils.mjs.map\n",
+      "start": 1700406273612,
+      "end": 1700406273715,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406273715,
+      "end": 1700406273716,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406273716,
+      "end": 1700406273716,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406273716,
+      "end": 1700406273716,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406273716,
+      "end": 1700406273716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406273716,
+      "end": 1700406273716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406273716,
+      "end": 1700406273716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406273716,
+      "end": 1700406273716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406273716,
+      "end": 1700406273716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406273716,
+      "end": 1700406273716,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406273716,
+      "end": 1700406273716,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406273716,
+      "end": 1700406273716,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406273716,
+      "end": 1700406273716,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406273716,
+      "end": 1700406273716,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406273716,
+      "end": 1700406273716,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406273716,
+      "end": 1700406273716,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { ref, onMounted, onBeforeUnmount } from 'vue';\nimport { FOCUSOUT_PREVENTED, FOCUSOUT_PREVENTED_OPTS } from './tokens.mjs';\n\nconst focusReason = ref();\nconst lastUserFocusTimestamp = ref(0);\nconst lastAutomatedFocusTimestamp = ref(0);\nlet focusReasonUserCount = 0;\nconst obtainAllFocusableElements = (element) => {\n  const nodes = [];\n  const walker = document.createTreeWalker(element, NodeFilter.SHOW_ELEMENT, {\n    acceptNode: (node) => {\n      const isHiddenInput = node.tagName === \"INPUT\" && node.type === \"hidden\";\n      if (node.disabled || node.hidden || isHiddenInput)\n        return NodeFilter.FILTER_SKIP;\n      return node.tabIndex >= 0 || node === document.activeElement ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;\n    }\n  });\n  while (walker.nextNode())\n    nodes.push(walker.currentNode);\n  return nodes;\n};\nconst getVisibleElement = (elements, container) => {\n  for (const element of elements) {\n    if (!isHidden(element, container))\n      return element;\n  }\n};\nconst isHidden = (element, container) => {\n  if (\"production\" === \"test\")\n    return false;\n  if (getComputedStyle(element).visibility === \"hidden\")\n    return true;\n  while (element) {\n    if (container && element === container)\n      return false;\n    if (getComputedStyle(element).display === \"none\")\n      return true;\n    element = element.parentElement;\n  }\n  return false;\n};\nconst getEdges = (container) => {\n  const focusable = obtainAllFocusableElements(container);\n  const first = getVisibleElement(focusable, container);\n  const last = getVisibleElement(focusable.reverse(), container);\n  return [first, last];\n};\nconst isSelectable = (element) => {\n  return element instanceof HTMLInputElement && \"select\" in element;\n};\nconst tryFocus = (element, shouldSelect) => {\n  if (element && element.focus) {\n    const prevFocusedElement = document.activeElement;\n    element.focus({ preventScroll: true });\n    lastAutomatedFocusTimestamp.value = window.performance.now();\n    if (element !== prevFocusedElement && isSelectable(element) && shouldSelect) {\n      element.select();\n    }\n  }\n};\nfunction removeFromStack(list, item) {\n  const copy = [...list];\n  const idx = list.indexOf(item);\n  if (idx !== -1) {\n    copy.splice(idx, 1);\n  }\n  return copy;\n}\nconst createFocusableStack = () => {\n  let stack = [];\n  const push = (layer) => {\n    const currentLayer = stack[0];\n    if (currentLayer && layer !== currentLayer) {\n      currentLayer.pause();\n    }\n    stack = removeFromStack(stack, layer);\n    stack.unshift(layer);\n  };\n  const remove = (layer) => {\n    var _a, _b;\n    stack = removeFromStack(stack, layer);\n    (_b = (_a = stack[0]) == null ? void 0 : _a.resume) == null ? void 0 : _b.call(_a);\n  };\n  return {\n    push,\n    remove\n  };\n};\nconst focusFirstDescendant = (elements, shouldSelect = false) => {\n  const prevFocusedElement = document.activeElement;\n  for (const element of elements) {\n    tryFocus(element, shouldSelect);\n    if (document.activeElement !== prevFocusedElement)\n      return;\n  }\n};\nconst focusableStack = createFocusableStack();\nconst isFocusCausedByUserEvent = () => {\n  return lastUserFocusTimestamp.value > lastAutomatedFocusTimestamp.value;\n};\nconst notifyFocusReasonPointer = () => {\n  focusReason.value = \"pointer\";\n  lastUserFocusTimestamp.value = window.performance.now();\n};\nconst notifyFocusReasonKeydown = () => {\n  focusReason.value = \"keyboard\";\n  lastUserFocusTimestamp.value = window.performance.now();\n};\nconst useFocusReason = () => {\n  onMounted(() => {\n    if (focusReasonUserCount === 0) {\n      document.addEventListener(\"mousedown\", notifyFocusReasonPointer);\n      document.addEventListener(\"touchstart\", notifyFocusReasonPointer);\n      document.addEventListener(\"keydown\", notifyFocusReasonKeydown);\n    }\n    focusReasonUserCount++;\n  });\n  onBeforeUnmount(() => {\n    focusReasonUserCount--;\n    if (focusReasonUserCount <= 0) {\n      document.removeEventListener(\"mousedown\", notifyFocusReasonPointer);\n      document.removeEventListener(\"touchstart\", notifyFocusReasonPointer);\n      document.removeEventListener(\"keydown\", notifyFocusReasonKeydown);\n    }\n  });\n  return {\n    focusReason,\n    lastUserFocusTimestamp,\n    lastAutomatedFocusTimestamp\n  };\n};\nconst createFocusOutPreventedEvent = (detail) => {\n  return new CustomEvent(FOCUSOUT_PREVENTED, {\n    ...FOCUSOUT_PREVENTED_OPTS,\n    detail\n  });\n};\n\nexport { createFocusOutPreventedEvent, focusFirstDescendant, focusableStack, getEdges, getVisibleElement, isFocusCausedByUserEvent, isHidden, obtainAllFocusableElements, tryFocus, useFocusReason };\n//# sourceMappingURL=utils.mjs.map\n",
+      "start": 1700406273716,
+      "end": 1700406273716,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406273716,
+      "end": 1700406273720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406273720,
+      "end": 1700406273720,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/lodash-es/_baseIsNative.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import isFunction from './isFunction.js';\nimport isMasked from './_isMasked.js';\nimport isObject from './isObject.js';\nimport toSource from './_toSource.js';\n\n/**\n * Used to match `RegExp`\n * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).\n */\nvar reRegExpChar = /[\\\\^$.*+?()[\\]{}|]/g;\n\n/** Used to detect host constructors (Safari). */\nvar reIsHostCtor = /^\\[object .+?Constructor\\]$/;\n\n/** Used for built-in method references. */\nvar funcProto = Function.prototype,\n    objectProto = Object.prototype;\n\n/** Used to resolve the decompiled source of functions. */\nvar funcToString = funcProto.toString;\n\n/** Used to check objects for own properties. */\nvar hasOwnProperty = objectProto.hasOwnProperty;\n\n/** Used to detect if a method is native. */\nvar reIsNative = RegExp('^' +\n  funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\\\$&')\n  .replace(/hasOwnProperty|(function).*?(?=\\\\\\()| for .+?(?=\\\\\\])/g, '$1.*?') + '$'\n);\n\n/**\n * The base implementation of `_.isNative` without bad shim checks.\n *\n * @private\n * @param {*} value The value to check.\n * @returns {boolean} Returns `true` if `value` is a native function,\n *  else `false`.\n */\nfunction baseIsNative(value) {\n  if (!isObject(value) || isMasked(value)) {\n    return false;\n  }\n  var pattern = isFunction(value) ? reIsNative : reIsHostCtor;\n  return pattern.test(toSource(value));\n}\n\nexport default baseIsNative;\n",
+      "start": 1700406275780,
+      "end": 1700406275828,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406275828,
+      "end": 1700406275828,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406275828,
+      "end": 1700406275829,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406275829,
+      "end": 1700406275829,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406275829,
+      "end": 1700406275829,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406275829,
+      "end": 1700406275829,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406275829,
+      "end": 1700406275829,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406275829,
+      "end": 1700406275829,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406275829,
+      "end": 1700406275829,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406275829,
+      "end": 1700406275829,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406275829,
+      "end": 1700406275829,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406275829,
+      "end": 1700406275829,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406275829,
+      "end": 1700406275829,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406275829,
+      "end": 1700406275829,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406275829,
+      "end": 1700406275829,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406275829,
+      "end": 1700406275829,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406275829,
+      "end": 1700406275829,
+      "order": "normal"
+    }
+  ]
+}

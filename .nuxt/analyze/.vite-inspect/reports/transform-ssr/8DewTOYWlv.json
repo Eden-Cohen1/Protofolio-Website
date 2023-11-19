@@ -1,0 +1,252 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/components/table/src/store/expand.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { getCurrentInstance, ref } from 'vue';\nimport { getKeysMap, getRowIdentity, toggleRowStatus } from '../util.mjs';\n\nfunction useExpand(watcherData) {\n  const instance = getCurrentInstance();\n  const defaultExpandAll = ref(false);\n  const expandRows = ref([]);\n  const updateExpandRows = () => {\n    const data = watcherData.data.value || [];\n    const rowKey = watcherData.rowKey.value;\n    if (defaultExpandAll.value) {\n      expandRows.value = data.slice();\n    } else if (rowKey) {\n      const expandRowsMap = getKeysMap(expandRows.value, rowKey);\n      expandRows.value = data.reduce((prev, row) => {\n        const rowId = getRowIdentity(row, rowKey);\n        const rowInfo = expandRowsMap[rowId];\n        if (rowInfo) {\n          prev.push(row);\n        }\n        return prev;\n      }, []);\n    } else {\n      expandRows.value = [];\n    }\n  };\n  const toggleRowExpansion = (row, expanded) => {\n    const changed = toggleRowStatus(expandRows.value, row, expanded);\n    if (changed) {\n      instance.emit(\"expand-change\", row, expandRows.value.slice());\n    }\n  };\n  const setExpandRowKeys = (rowKeys) => {\n    instance.store.assertRowKey();\n    const data = watcherData.data.value || [];\n    const rowKey = watcherData.rowKey.value;\n    const keysMap = getKeysMap(data, rowKey);\n    expandRows.value = rowKeys.reduce((prev, cur) => {\n      const info = keysMap[cur];\n      if (info) {\n        prev.push(info.row);\n      }\n      return prev;\n    }, []);\n  };\n  const isRowExpanded = (row) => {\n    const rowKey = watcherData.rowKey.value;\n    if (rowKey) {\n      const expandMap = getKeysMap(expandRows.value, rowKey);\n      return !!expandMap[getRowIdentity(row, rowKey)];\n    }\n    return expandRows.value.includes(row);\n  };\n  return {\n    updateExpandRows,\n    toggleRowExpansion,\n    setExpandRowKeys,\n    isRowExpanded,\n    states: {\n      expandRows,\n      defaultExpandAll\n    }\n  };\n}\n\nexport { useExpand as default };\n//# sourceMappingURL=expand.mjs.map\n",
+      "start": 1700406284529,
+      "end": 1700406284591,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406284591,
+      "end": 1700406284591,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406284592,
+      "end": 1700406284592,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406284592,
+      "end": 1700406284592,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406284592,
+      "end": 1700406284592,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406284592,
+      "end": 1700406284592,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406284592,
+      "end": 1700406284592,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406284592,
+      "end": 1700406284592,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406284592,
+      "end": 1700406284592,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406284592,
+      "end": 1700406284592,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406284592,
+      "end": 1700406284592,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406284592,
+      "end": 1700406284592,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406284592,
+      "end": 1700406284592,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1700406284592,
+      "end": 1700406284592,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406284592,
+      "end": 1700406284592,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406284592,
+      "end": 1700406284592,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406284592,
+      "end": 1700406284592,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406284592,
+      "end": 1700406284592,
+      "order": "normal"
+    }
+  ]
+}

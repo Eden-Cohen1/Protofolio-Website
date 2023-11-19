@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/components/color-picker/src/components/alpha-slider.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, openBlock, createElementBlock, normalizeClass, unref, createElementVNode, normalizeStyle } from 'vue';\nimport { alphaSliderProps } from '../props/alpha-slider.mjs';\nimport { useAlphaSlider, useAlphaSliderDOM } from '../composables/use-alpha-slider.mjs';\nimport _export_sfc from '../../../../_virtual/plugin-vue_export-helper.mjs';\n\nconst COMPONENT_NAME = \"ElColorAlphaSlider\";\nconst __default__ = defineComponent({\n  name: COMPONENT_NAME\n});\nconst _sfc_main = /* @__PURE__ */ defineComponent({\n  ...__default__,\n  props: alphaSliderProps,\n  setup(__props, { expose }) {\n    const props = __props;\n    const { bar, thumb, handleDrag, handleClick } = useAlphaSlider(props);\n    const { rootKls, barKls, barStyle, thumbKls, thumbStyle, update } = useAlphaSliderDOM(props, {\n      bar,\n      thumb,\n      handleDrag\n    });\n    expose({\n      update,\n      bar,\n      thumb\n    });\n    return (_ctx, _cache) => {\n      return openBlock(), createElementBlock(\"div\", {\n        class: normalizeClass(unref(rootKls))\n      }, [\n        createElementVNode(\"div\", {\n          ref_key: \"bar\",\n          ref: bar,\n          class: normalizeClass(unref(barKls)),\n          style: normalizeStyle(unref(barStyle)),\n          onClick: _cache[0] || (_cache[0] = (...args) => unref(handleClick) && unref(handleClick)(...args))\n        }, null, 6),\n        createElementVNode(\"div\", {\n          ref_key: \"thumb\",\n          ref: thumb,\n          class: normalizeClass(unref(thumbKls)),\n          style: normalizeStyle(unref(thumbStyle))\n        }, null, 6)\n      ], 2);\n    };\n  }\n});\nvar AlphaSlider = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"__file\", \"/home/runner/work/element-plus/element-plus/packages/components/color-picker/src/components/alpha-slider.vue\"]]);\n\nexport { AlphaSlider as default };\n//# sourceMappingURL=alpha-slider.mjs.map\n",
+      "start": 1700406273208,
+      "end": 1700406273432,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406273432,
+      "end": 1700406273432,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406273432,
+      "end": 1700406273432,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406273432,
+      "end": 1700406273432,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406273432,
+      "end": 1700406273432,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406273432,
+      "end": 1700406273432,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406273432,
+      "end": 1700406273432,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406273432,
+      "end": 1700406273432,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406273432,
+      "end": 1700406273432,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406273432,
+      "end": 1700406273432,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406273432,
+      "end": 1700406273432,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406273432,
+      "end": 1700406273432,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406273432,
+      "end": 1700406273432,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406273432,
+      "end": 1700406273433,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406273433,
+      "end": 1700406273433,
+      "order": "normal"
+    }
+  ]
+}

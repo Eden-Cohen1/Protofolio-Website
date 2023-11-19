@@ -1,0 +1,221 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Skills.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <main class=\"secondary-color section skills\">\r\n    <h1>TECH SKILLS</h1>\r\n    <div class=\"tech-icons\">\r\n      <Icon name=\"logos:vue\" />\r\n      <Icon name=\"logos:nuxt-icon\" />\r\n      <Icon name=\"vscode-icons:file-type-js-official\" />\r\n      <Icon name=\"devicon:nodejs\" />\r\n      <Icon name=\"skill-icons:mongodb\" />\r\n      <Icon name=\"skill-icons:html\" />\r\n      <Icon name=\"devicon:css3\" />\r\n      <Icon name=\"logos:python\" />\r\n      <Icon name=\"skill-icons:flask-light\" />\r\n      <Icon name=\"skill-icons:cpp\" />\r\n      <Icon name=\"skill-icons:c\" />\r\n      <Icon name=\"skill-icons:cs\" />\r\n      <Icon name=\"skill-icons:bootstrap\" />\r\n      <Icon name=\"logos:element\" />\r\n      <Icon name=\"skill-icons:mysql-light\" />\r\n    </div>\r\n  </main>\r\n</template>\r\n\r\n<style scoped>\r\n.skills {\r\n  height: fit-content !important;\r\n  min-height: 40vh;\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding-top: 2rem;\r\n}\r\nh1 {\r\n  position: relative;\r\n  padding-bottom: 1rem;\r\n  top: 0rem !important;\r\n}\r\n.tech-icons {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  justify-content: space-between;\r\n  padding: 0 3rem 0 3rem;\r\n  max-width: 700px !important;\r\n  margin: auto;\r\n  gap: 4.5rem !important;\r\n  padding-bottom: 4rem;\r\n}\r\nsvg {\r\n  width: 4rem !important;\r\n  height: auto !important;\r\n}\r\n\r\n@media screen and (max-width: 720px) {\r\n  svg {\r\n    width: 2.2rem !important;\r\n  }\r\n  .tech-icons {\r\n    gap: 2rem !important;\r\n    padding: 0 2rem 0 2rem;\r\n    margin-top: 2.5rem !important;\r\n  }\r\n  h1 {\r\n    padding-bottom: 0.5rem !important;\r\n  }\r\n}\r\n</style>\r\n",
+      "start": 1700406270492,
+      "end": 1700406270687,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406270687,
+      "end": 1700406270687,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406270687,
+      "end": 1700406270687,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406270687,
+      "end": 1700406270687,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406270687,
+      "end": 1700406270687,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406270687,
+      "end": 1700406270687,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406270687,
+      "end": 1700406270687,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406270687,
+      "end": 1700406270687,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-11825577\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"secondary-color section skills\" }\nconst _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"h1\", null, \"TECH SKILLS\", -1))\nconst _hoisted_3 = { class: \"tech-icons\" }\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"main\", _hoisted_1, [\n    _hoisted_2,\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createVNode(_component_Icon, { name: \"logos:vue\" }),\n      _createVNode(_component_Icon, { name: \"logos:nuxt-icon\" }),\n      _createVNode(_component_Icon, { name: \"vscode-icons:file-type-js-official\" }),\n      _createVNode(_component_Icon, { name: \"devicon:nodejs\" }),\n      _createVNode(_component_Icon, { name: \"skill-icons:mongodb\" }),\n      _createVNode(_component_Icon, { name: \"skill-icons:html\" }),\n      _createVNode(_component_Icon, { name: \"devicon:css3\" }),\n      _createVNode(_component_Icon, { name: \"logos:python\" }),\n      _createVNode(_component_Icon, { name: \"skill-icons:flask-light\" }),\n      _createVNode(_component_Icon, { name: \"skill-icons:cpp\" }),\n      _createVNode(_component_Icon, { name: \"skill-icons:c\" }),\n      _createVNode(_component_Icon, { name: \"skill-icons:cs\" }),\n      _createVNode(_component_Icon, { name: \"skill-icons:bootstrap\" }),\n      _createVNode(_component_Icon, { name: \"logos:element\" }),\n      _createVNode(_component_Icon, { name: \"skill-icons:mysql-light\" })\n    ])\n  ]))\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Skills.vue?vue&type=style&index=0&scoped=11825577&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-11825577\"]])",
+      "start": 1700406270687,
+      "end": 1700406270688,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406270688,
+      "end": 1700406270688,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406270688,
+      "end": 1700406270688,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406270689,
+      "end": 1700406270689,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406270689,
+      "end": 1700406270689,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406270689,
+      "end": 1700406270689,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406270689,
+      "end": 1700406270689,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406270689,
+      "end": 1700406270689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406270689,
+      "end": 1700406270689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406270689,
+      "end": 1700406270689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406270689,
+      "end": 1700406270689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406270689,
+      "end": 1700406270689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406270689,
+      "end": 1700406270689,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406270689,
+      "end": 1700406270689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406270689,
+      "end": 1700406270689,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406270689,
+      "end": 1700406270689,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406270689,
+      "end": 1700406270689,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406270689,
+      "end": 1700406270690,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406270690,
+      "end": 1700406270690,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406270690,
+      "end": 1700406270690,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406270690,
+      "end": 1700406270690,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406270690,
+      "end": 1700406270690,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406270690,
+      "end": 1700406270690,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nconst _sfc_main = {}\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-11825577\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"secondary-color section skills\" }\nconst _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"h1\", null, \"TECH SKILLS\", -1))\nconst _hoisted_3 = { class: \"tech-icons\" }\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Icon = __nuxt_component_0\n\n  return (_openBlock(), _createElementBlock(\"main\", _hoisted_1, [\n    _hoisted_2,\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createVNode(_component_Icon, { name: \"logos:vue\" }),\n      _createVNode(_component_Icon, { name: \"logos:nuxt-icon\" }),\n      _createVNode(_component_Icon, { name: \"vscode-icons:file-type-js-official\" }),\n      _createVNode(_component_Icon, { name: \"devicon:nodejs\" }),\n      _createVNode(_component_Icon, { name: \"skill-icons:mongodb\" }),\n      _createVNode(_component_Icon, { name: \"skill-icons:html\" }),\n      _createVNode(_component_Icon, { name: \"devicon:css3\" }),\n      _createVNode(_component_Icon, { name: \"logos:python\" }),\n      _createVNode(_component_Icon, { name: \"skill-icons:flask-light\" }),\n      _createVNode(_component_Icon, { name: \"skill-icons:cpp\" }),\n      _createVNode(_component_Icon, { name: \"skill-icons:c\" }),\n      _createVNode(_component_Icon, { name: \"skill-icons:cs\" }),\n      _createVNode(_component_Icon, { name: \"skill-icons:bootstrap\" }),\n      _createVNode(_component_Icon, { name: \"logos:element\" }),\n      _createVNode(_component_Icon, { name: \"skill-icons:mysql-light\" })\n    ])\n  ]))\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Skills.vue?vue&type=style&index=0&scoped=11825577&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-11825577\"]])",
+      "start": 1700406270690,
+      "end": 1700406270691,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406270691,
+      "end": 1700406270691,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406270691,
+      "end": 1700406270691,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406270691,
+      "end": 1700406270691,
+      "order": "normal"
+    }
+  ]
+}

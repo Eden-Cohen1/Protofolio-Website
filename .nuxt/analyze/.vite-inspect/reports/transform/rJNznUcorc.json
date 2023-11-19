@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/lodash-es/trimStart.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import baseToString from './_baseToString.js';\nimport castSlice from './_castSlice.js';\nimport charsStartIndex from './_charsStartIndex.js';\nimport stringToArray from './_stringToArray.js';\nimport toString from './toString.js';\n\n/** Used to match leading whitespace. */\nvar reTrimStart = /^\\s+/;\n\n/**\n * Removes leading whitespace or specified characters from `string`.\n *\n * @static\n * @memberOf _\n * @since 4.0.0\n * @category String\n * @param {string} [string=''] The string to trim.\n * @param {string} [chars=whitespace] The characters to trim.\n * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.\n * @returns {string} Returns the trimmed string.\n * @example\n *\n * _.trimStart('  abc  ');\n * // => 'abc  '\n *\n * _.trimStart('-_-abc-_-', '_-');\n * // => 'abc-_-'\n */\nfunction trimStart(string, chars, guard) {\n  string = toString(string);\n  if (string && (guard || chars === undefined)) {\n    return string.replace(reTrimStart, '');\n  }\n  if (!string || !(chars = baseToString(chars))) {\n    return string;\n  }\n  var strSymbols = stringToArray(string),\n      start = charsStartIndex(strSymbols, stringToArray(chars));\n\n  return castSlice(strSymbols, start).join('');\n}\n\nexport default trimStart;\n",
+      "start": 1700406275145,
+      "end": 1700406275192,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406275192,
+      "end": 1700406275192,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406275192,
+      "end": 1700406275192,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406275193,
+      "end": 1700406275193,
+      "order": "normal"
+    }
+  ]
+}

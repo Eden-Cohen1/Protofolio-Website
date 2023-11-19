@@ -1,0 +1,252 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/components/select-v2/src/defaults.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { placements } from '@popperjs/core';\nimport '../../../hooks/index.mjs';\nimport '../../../utils/index.mjs';\nimport '../../tooltip/index.mjs';\nimport { CircleClose } from '@element-plus/icons-vue';\nimport { defaultProps } from './useProps.mjs';\nimport { buildProps, definePropType } from '../../../utils/vue/props/runtime.mjs';\nimport { iconPropType } from '../../../utils/vue/icon.mjs';\nimport { useTooltipContentProps } from '../../tooltip/src/content.mjs';\nimport { useSizeProp } from '../../../hooks/use-size/index.mjs';\n\nconst SelectProps = buildProps({\n  allowCreate: Boolean,\n  autocomplete: {\n    type: definePropType(String),\n    default: \"none\"\n  },\n  automaticDropdown: Boolean,\n  clearable: Boolean,\n  clearIcon: {\n    type: iconPropType,\n    default: CircleClose\n  },\n  effect: {\n    type: definePropType(String),\n    default: \"light\"\n  },\n  collapseTags: Boolean,\n  collapseTagsTooltip: {\n    type: Boolean,\n    default: false\n  },\n  maxCollapseTags: {\n    type: Number,\n    default: 1\n  },\n  defaultFirstOption: Boolean,\n  disabled: Boolean,\n  estimatedOptionHeight: {\n    type: Number,\n    default: void 0\n  },\n  filterable: Boolean,\n  filterMethod: Function,\n  height: {\n    type: Number,\n    default: 170\n  },\n  itemHeight: {\n    type: Number,\n    default: 34\n  },\n  id: String,\n  loading: Boolean,\n  loadingText: String,\n  label: String,\n  modelValue: {\n    type: definePropType([Array, String, Number, Boolean, Object])\n  },\n  multiple: Boolean,\n  multipleLimit: {\n    type: Number,\n    default: 0\n  },\n  name: String,\n  noDataText: String,\n  noMatchText: String,\n  remoteMethod: Function,\n  reserveKeyword: {\n    type: Boolean,\n    default: true\n  },\n  options: {\n    type: definePropType(Array),\n    required: true\n  },\n  placeholder: {\n    type: String\n  },\n  teleported: useTooltipContentProps.teleported,\n  persistent: {\n    type: Boolean,\n    default: true\n  },\n  popperClass: {\n    type: String,\n    default: \"\"\n  },\n  popperOptions: {\n    type: definePropType(Object),\n    default: () => ({})\n  },\n  remote: Boolean,\n  size: useSizeProp,\n  props: {\n    type: definePropType(Object),\n    default: () => defaultProps\n  },\n  valueKey: {\n    type: String,\n    default: \"value\"\n  },\n  scrollbarAlwaysOn: {\n    type: Boolean,\n    default: false\n  },\n  validateEvent: {\n    type: Boolean,\n    default: true\n  },\n  placement: {\n    type: definePropType(String),\n    values: placements,\n    default: \"bottom-start\"\n  }\n});\nconst OptionProps = buildProps({\n  data: Array,\n  disabled: Boolean,\n  hovering: Boolean,\n  item: {\n    type: definePropType(Object),\n    required: true\n  },\n  index: Number,\n  style: Object,\n  selected: Boolean,\n  created: Boolean\n});\n\nexport { OptionProps, SelectProps };\n//# sourceMappingURL=defaults.mjs.map\n",
+      "start": 1700406283402,
+      "end": 1700406283542,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406283542,
+      "end": 1700406283542,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406283542,
+      "end": 1700406283543,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406283542,
+      "end": 1700406283543,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406283543,
+      "end": 1700406283543,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406283543,
+      "end": 1700406283543,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406283543,
+      "end": 1700406283543,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1700406283543,
+      "end": 1700406283543,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406283543,
+      "end": 1700406283543,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406283543,
+      "end": 1700406283543,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406283543,
+      "end": 1700406283543,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406283543,
+      "end": 1700406283543,
+      "order": "normal"
+    }
+  ]
+}

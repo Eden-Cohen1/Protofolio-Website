@@ -1,0 +1,294 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Navbar.vue?vue&type=style&index=0&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\r\nul {\r\n  border-bottom: 1px solid #b0b19c13;\r\n  display: flex;\r\n  justify-content: right;\r\n  list-style-type: none;\r\n  margin: 0;\r\n  padding: 0;\r\n  overflow: hidden;\r\n}\r\n\r\nli {\r\n  float: left;\r\n}\r\n\r\n.horizontal li a {\r\n  display: block;\r\n  font-size: 0.9rem;\r\n  text-align: center;\r\n  padding: 17px 26px;\r\n  text-decoration: none;\r\n  color: #111111;\r\n}\r\n.horizontal {\r\n  background-color: #dcdcf09f !important;\r\n}\r\n.dark .horizontal {\r\n  background-color: rgba(26, 34, 34, 0.699) !important;\r\n}\r\nh4 {\r\n  position: fixed;\r\n  z-index: 11;\r\n  left: 60px;\r\n  top: -2px;\r\n  font-size: 0.9rem;\r\n}\r\n",
+      "start": 1700406284405,
+      "end": 1700406284406,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Navbar.vue"
+        ],
+        "names": [],
+        "mappings": "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",
+        "file": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Navbar.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\r\n  <ul class=\"main-color horizontal ws-black\">\r\n    <li><a href=\"#home\">Home</a></li>\r\n    <li><a href=\"#about\">About</a></li>\r\n    <li><a href=\"#projects\">Projects</a></li>\r\n    <li><a href=\"#skills\">Skills</a></li>\r\n    <li><a href=\"#contact\">Contact</a></li>\r\n  </ul>\r\n  <h4>Eden Cohen</h4>\r\n</template>\r\n\r\n<style>\r\nul {\r\n  border-bottom: 1px solid #b0b19c13;\r\n  display: flex;\r\n  justify-content: right;\r\n  list-style-type: none;\r\n  margin: 0;\r\n  padding: 0;\r\n  overflow: hidden;\r\n}\r\n\r\nli {\r\n  float: left;\r\n}\r\n\r\n.horizontal li a {\r\n  display: block;\r\n  font-size: 0.9rem;\r\n  text-align: center;\r\n  padding: 17px 26px;\r\n  text-decoration: none;\r\n  color: #111111;\r\n}\r\n.horizontal {\r\n  background-color: #dcdcf09f !important;\r\n}\r\n.dark .horizontal {\r\n  background-color: rgba(26, 34, 34, 0.699) !important;\r\n}\r\nh4 {\r\n  position: fixed;\r\n  z-index: 11;\r\n  left: 60px;\r\n  top: -2px;\r\n  font-size: 0.9rem;\r\n}\r\n</style>\r\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406284406,
+      "end": 1700406284407,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406284406,
+      "end": 1700406284407,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406284407,
+      "end": 1700406284408,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406284407,
+      "end": 1700406284408,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406284408,
+      "end": 1700406284408,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": "ul{border-bottom:1px solid #b0b19c13;display:flex;justify-content:right;list-style-type:none;margin:0;overflow:hidden;padding:0}li{float:left}.horizontal li a{color:#111;display:block;font-size:.9rem;padding:17px 26px;text-align:center;text-decoration:none}.horizontal{background-color:#dcdcf09f!important}.dark .horizontal{background-color:rgba(26,34,34,.699)!important}h4{font-size:.9rem;left:60px;position:fixed;top:-2px;z-index:11}",
+      "start": 1700406284409,
+      "end": 1700406284417,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Navbar.vue",
+        "mappings": "AACA,GACE,iCAAkC,CAClC,YAAa,CACb,qBAAsB,CACtB,oBAAqB,CACrB,QAAS,CAET,eAAgB,CADhB,SAEF,CAEA,GACE,UACF,CAEA,iBAME,UAAc,CALd,aAAc,CACd,eAAiB,CAEjB,iBAAkB,CADlB,iBAAkB,CAElB,oBAEF,CACA,YACE,oCACF,CACA,kBACE,8CACF,CACA,GAKE,eAAiB,CAFjB,SAAU,CAFV,cAAe,CAGf,QAAS,CAFT,UAIF",
+        "names": [],
+        "sources": [
+          "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Navbar.vue"
+        ],
+        "sourcesContent": [
+          "\r\nul {\r\n  border-bottom: 1px solid #b0b19c13;\r\n  display: flex;\r\n  justify-content: right;\r\n  list-style-type: none;\r\n  margin: 0;\r\n  padding: 0;\r\n  overflow: hidden;\r\n}\r\n\r\nli {\r\n  float: left;\r\n}\r\n\r\n.horizontal li a {\r\n  display: block;\r\n  font-size: 0.9rem;\r\n  text-align: center;\r\n  padding: 17px 26px;\r\n  text-decoration: none;\r\n  color: #111111;\r\n}\r\n.horizontal {\r\n  background-color: #dcdcf09f !important;\r\n}\r\n.dark .horizontal {\r\n  background-color: rgba(26, 34, 34, 0.699) !important;\r\n}\r\nh4 {\r\n  position: fixed;\r\n  z-index: 11;\r\n  left: 60px;\r\n  top: -2px;\r\n  font-size: 0.9rem;\r\n}\r\n"
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406284417,
+      "end": 1700406284417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406284420,
+      "end": 1700406284421,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406284422,
+      "end": 1700406284422,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "ul{border-bottom:1px solid #b0b19c13;display:flex;justify-content:right;list-style-type:none;margin:0;overflow:hidden;padding:0}li{float:left}.horizontal li a{color:#111;display:block;font-size:.9rem;padding:17px 26px;text-align:center;text-decoration:none}.horizontal{background-color:#dcdcf09f!important}.dark .horizontal{background-color:rgba(26,34,34,.699)!important}h4{font-size:.9rem;left:60px;position:fixed;top:-2px;z-index:11}",
+      "start": 1700406284422,
+      "end": 1700406284423,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Navbar.vue",
+        "mappings": "AAAA,GAAG,iCAAiC,CAAC,YAAY,CAAC,qBAAqB,CAAC,oBAAoB,CAAC,QAAQ,CAAC,eAAe,CAAC,SAAS,CAAC,GAAG,UAAU,CAAC,iBAAiB,UAAU,CAAC,aAAa,CAAC,eAAe,CAAC,iBAAiB,CAAC,iBAAiB,CAAC,oBAAoB,CAAC,YAAY,oCAAoC,CAAC,kBAAkB,8CAA8C,CAAC,GAAG,eAAe,CAAC,SAAS,CAAC,cAAc,CAAC,QAAQ,CAAC,UAAU",
+        "names": [],
+        "sources": [
+          "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Navbar.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406284426,
+      "end": 1700406284426,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406284426,
+      "end": 1700406284426,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406284426,
+      "end": 1700406284426,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406284426,
+      "end": 1700406284426,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406284426,
+      "end": 1700406284426,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406284426,
+      "end": 1700406284426,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406284427,
+      "end": 1700406284427,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406284428,
+      "end": 1700406284428,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406284432,
+      "end": 1700406284432,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default ''",
+      "start": 1700406284432,
+      "end": 1700406284432,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406284432,
+      "end": 1700406284432,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406284432,
+      "end": 1700406284432,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406284433,
+      "end": 1700406284433,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406284433,
+      "end": 1700406284433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406284433,
+      "end": 1700406284433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406284434,
+      "end": 1700406284435,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406284435,
+      "end": 1700406284435,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406284435,
+      "end": 1700406284435,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406284435,
+      "end": 1700406284435,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406284435,
+      "end": 1700406284435,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406284435,
+      "end": 1700406284435,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406284435,
+      "end": 1700406284435,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406284435,
+      "end": 1700406284435,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406284435,
+      "end": 1700406284435,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406284435,
+      "end": 1700406284436,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "normal"
+    }
+  ]
+}

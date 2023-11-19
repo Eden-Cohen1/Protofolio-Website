@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/components/transfer/src/composables/use-check.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { computed, watch } from 'vue';\nimport '../../../../utils/index.mjs';\nimport { CHECKED_CHANGE_EVENT } from '../transfer-panel.mjs';\nimport { usePropsAlias } from './use-props-alias.mjs';\nimport { isFunction } from '@vue/shared';\n\nconst useCheck = (props, panelState, emit) => {\n  const propsAlias = usePropsAlias(props);\n  const filteredData = computed(() => {\n    return props.data.filter((item) => {\n      if (isFunction(props.filterMethod)) {\n        return props.filterMethod(panelState.query, item);\n      } else {\n        const label = String(item[propsAlias.value.label] || item[propsAlias.value.key]);\n        return label.toLowerCase().includes(panelState.query.toLowerCase());\n      }\n    });\n  });\n  const checkableData = computed(() => filteredData.value.filter((item) => !item[propsAlias.value.disabled]));\n  const checkedSummary = computed(() => {\n    const checkedLength = panelState.checked.length;\n    const dataLength = props.data.length;\n    const { noChecked, hasChecked } = props.format;\n    if (noChecked && hasChecked) {\n      return checkedLength > 0 ? hasChecked.replace(/\\${checked}/g, checkedLength.toString()).replace(/\\${total}/g, dataLength.toString()) : noChecked.replace(/\\${total}/g, dataLength.toString());\n    } else {\n      return `${checkedLength}/${dataLength}`;\n    }\n  });\n  const isIndeterminate = computed(() => {\n    const checkedLength = panelState.checked.length;\n    return checkedLength > 0 && checkedLength < checkableData.value.length;\n  });\n  const updateAllChecked = () => {\n    const checkableDataKeys = checkableData.value.map((item) => item[propsAlias.value.key]);\n    panelState.allChecked = checkableDataKeys.length > 0 && checkableDataKeys.every((item) => panelState.checked.includes(item));\n  };\n  const handleAllCheckedChange = (value) => {\n    panelState.checked = value ? checkableData.value.map((item) => item[propsAlias.value.key]) : [];\n  };\n  watch(() => panelState.checked, (val, oldVal) => {\n    updateAllChecked();\n    if (panelState.checkChangeByUser) {\n      const movedKeys = val.concat(oldVal).filter((v) => !val.includes(v) || !oldVal.includes(v));\n      emit(CHECKED_CHANGE_EVENT, val, movedKeys);\n    } else {\n      emit(CHECKED_CHANGE_EVENT, val);\n      panelState.checkChangeByUser = true;\n    }\n  });\n  watch(checkableData, () => {\n    updateAllChecked();\n  });\n  watch(() => props.data, () => {\n    const checked = [];\n    const filteredDataKeys = filteredData.value.map((item) => item[propsAlias.value.key]);\n    panelState.checked.forEach((item) => {\n      if (filteredDataKeys.includes(item)) {\n        checked.push(item);\n      }\n    });\n    panelState.checkChangeByUser = false;\n    panelState.checked = checked;\n  });\n  watch(() => props.defaultChecked, (val, oldVal) => {\n    if (oldVal && val.length === oldVal.length && val.every((item) => oldVal.includes(item)))\n      return;\n    const checked = [];\n    const checkableDataKeys = checkableData.value.map((item) => item[propsAlias.value.key]);\n    val.forEach((item) => {\n      if (checkableDataKeys.includes(item)) {\n        checked.push(item);\n      }\n    });\n    panelState.checkChangeByUser = false;\n    panelState.checked = checked;\n  }, {\n    immediate: true\n  });\n  return {\n    filteredData,\n    checkableData,\n    checkedSummary,\n    isIndeterminate,\n    updateAllChecked,\n    handleAllCheckedChange\n  };\n};\n\nexport { useCheck };\n//# sourceMappingURL=use-check.mjs.map\n",
+      "start": 1700406275411,
+      "end": 1700406275501,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406275501,
+      "end": 1700406275501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406275502,
+      "end": 1700406275502,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406275502,
+      "end": 1700406275502,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406275502,
+      "end": 1700406275502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406275502,
+      "end": 1700406275502,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406275502,
+      "end": 1700406275502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406275502,
+      "end": 1700406275502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406275502,
+      "end": 1700406275502,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406275502,
+      "end": 1700406275502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406275502,
+      "end": 1700406275502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406275502,
+      "end": 1700406275502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406275502,
+      "end": 1700406275502,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406275502,
+      "end": 1700406275502,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406275502,
+      "end": 1700406275502,
+      "order": "normal"
+    }
+  ]
+}

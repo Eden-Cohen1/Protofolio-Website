@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/lodash-es/_createRecurry.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import isLaziable from './_isLaziable.js';\nimport setData from './_setData.js';\nimport setWrapToString from './_setWrapToString.js';\n\n/** Used to compose bitmasks for function metadata. */\nvar WRAP_BIND_FLAG = 1,\n    WRAP_BIND_KEY_FLAG = 2,\n    WRAP_CURRY_BOUND_FLAG = 4,\n    WRAP_CURRY_FLAG = 8,\n    WRAP_PARTIAL_FLAG = 32,\n    WRAP_PARTIAL_RIGHT_FLAG = 64;\n\n/**\n * Creates a function that wraps `func` to continue currying.\n *\n * @private\n * @param {Function} func The function to wrap.\n * @param {number} bitmask The bitmask flags. See `createWrap` for more details.\n * @param {Function} wrapFunc The function to create the `func` wrapper.\n * @param {*} placeholder The placeholder value.\n * @param {*} [thisArg] The `this` binding of `func`.\n * @param {Array} [partials] The arguments to prepend to those provided to\n *  the new function.\n * @param {Array} [holders] The `partials` placeholder indexes.\n * @param {Array} [argPos] The argument positions of the new function.\n * @param {number} [ary] The arity cap of `func`.\n * @param {number} [arity] The arity of `func`.\n * @returns {Function} Returns the new wrapped function.\n */\nfunction createRecurry(func, bitmask, wrapFunc, placeholder, thisArg, partials, holders, argPos, ary, arity) {\n  var isCurry = bitmask & WRAP_CURRY_FLAG,\n      newHolders = isCurry ? holders : undefined,\n      newHoldersRight = isCurry ? undefined : holders,\n      newPartials = isCurry ? partials : undefined,\n      newPartialsRight = isCurry ? undefined : partials;\n\n  bitmask |= (isCurry ? WRAP_PARTIAL_FLAG : WRAP_PARTIAL_RIGHT_FLAG);\n  bitmask &= ~(isCurry ? WRAP_PARTIAL_RIGHT_FLAG : WRAP_PARTIAL_FLAG);\n\n  if (!(bitmask & WRAP_CURRY_BOUND_FLAG)) {\n    bitmask &= ~(WRAP_BIND_FLAG | WRAP_BIND_KEY_FLAG);\n  }\n  var newData = [\n    func, bitmask, thisArg, newPartials, newHolders, newPartialsRight,\n    newHoldersRight, argPos, ary, arity\n  ];\n\n  var result = wrapFunc.apply(undefined, newData);\n  if (isLaziable(func)) {\n    setData(result, newData);\n  }\n  result.placeholder = placeholder;\n  return setWrapToString(result, func, bitmask);\n}\n\nexport default createRecurry;\n",
+      "start": 1700406276407,
+      "end": 1700406276527,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406276527,
+      "end": 1700406276527,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406276527,
+      "end": 1700406276527,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406276527,
+      "end": 1700406276527,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406276527,
+      "end": 1700406276527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406276527,
+      "end": 1700406276527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406276527,
+      "end": 1700406276527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406276527,
+      "end": 1700406276527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406276527,
+      "end": 1700406276527,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406276527,
+      "end": 1700406276527,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406276527,
+      "end": 1700406276527,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406276527,
+      "end": 1700406276527,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406276527,
+      "end": 1700406276527,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406276527,
+      "end": 1700406276527,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406276528,
+      "end": 1700406276528,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/hooks/use-floating/index.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { isRef, ref, unref, onMounted, watchEffect } from 'vue';\nimport { isClient, unrefElement } from '@vueuse/core';\nimport { isNil } from 'lodash-unified';\nimport { computePosition, arrow } from '@floating-ui/dom';\nimport '../../utils/index.mjs';\nimport { buildProps } from '../../utils/vue/props/runtime.mjs';\nimport { keysOf } from '../../utils/objects.mjs';\n\nconst useFloatingProps = buildProps({});\nconst unrefReference = (elRef) => {\n  if (!isClient)\n    return;\n  if (!elRef)\n    return elRef;\n  const unrefEl = unrefElement(elRef);\n  if (unrefEl)\n    return unrefEl;\n  return isRef(elRef) ? unrefEl : elRef;\n};\nconst getPositionDataWithUnit = (record, key) => {\n  const value = record == null ? void 0 : record[key];\n  return isNil(value) ? \"\" : `${value}px`;\n};\nconst useFloating = ({\n  middleware,\n  placement,\n  strategy\n}) => {\n  const referenceRef = ref();\n  const contentRef = ref();\n  const x = ref();\n  const y = ref();\n  const middlewareData = ref({});\n  const states = {\n    x,\n    y,\n    placement,\n    strategy,\n    middlewareData\n  };\n  const update = async () => {\n    if (!isClient)\n      return;\n    const referenceEl = unrefReference(referenceRef);\n    const contentEl = unrefElement(contentRef);\n    if (!referenceEl || !contentEl)\n      return;\n    const data = await computePosition(referenceEl, contentEl, {\n      placement: unref(placement),\n      strategy: unref(strategy),\n      middleware: unref(middleware)\n    });\n    keysOf(states).forEach((key) => {\n      states[key].value = data[key];\n    });\n  };\n  onMounted(() => {\n    watchEffect(() => {\n      update();\n    });\n  });\n  return {\n    ...states,\n    update,\n    referenceRef,\n    contentRef\n  };\n};\nconst arrowMiddleware = ({\n  arrowRef,\n  padding\n}) => {\n  return {\n    name: \"arrow\",\n    options: {\n      element: arrowRef,\n      padding\n    },\n    fn(args) {\n      const arrowEl = unref(arrowRef);\n      if (!arrowEl)\n        return {};\n      return arrow({\n        element: arrowEl,\n        padding\n      }).fn(args);\n    }\n  };\n};\n\nexport { arrowMiddleware, getPositionDataWithUnit, useFloating, useFloatingProps };\n//# sourceMappingURL=index.mjs.map\n",
+      "start": 1700406270420,
+      "end": 1700406270485,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406270485,
+      "end": 1700406270485,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406270485,
+      "end": 1700406270485,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406270485,
+      "end": 1700406270485,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406270485,
+      "end": 1700406270485,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406270485,
+      "end": 1700406270485,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406270485,
+      "end": 1700406270485,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406270485,
+      "end": 1700406270485,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406270485,
+      "end": 1700406270485,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406270485,
+      "end": 1700406270485,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406270485,
+      "end": 1700406270485,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406270485,
+      "end": 1700406270485,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406270485,
+      "end": 1700406270485,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406270485,
+      "end": 1700406270486,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406270486,
+      "end": 1700406270486,
+      "order": "normal"
+    }
+  ]
+}

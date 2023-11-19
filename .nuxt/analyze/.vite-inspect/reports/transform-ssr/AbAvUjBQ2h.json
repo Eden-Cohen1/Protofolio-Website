@@ -1,0 +1,294 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Footer.vue?vue&type=style&index=0&scoped=a41735ec&lang.css",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "\r\n.footer {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: fit-content;\r\n  min-height: 30vh;\r\n  border-top: 1px solid var(--light-bg-sec);\r\n}\r\n.dark .footer {\r\n  border-top: 1px solid var(--dark-bg-sec);\r\n}\r\n\r\nul {\r\n  display: flex;\r\n  gap: 2.5rem;\r\n  min-height: 6rem;\r\n  width: 100%;\r\n  justify-content: center;\r\n  align-items: center;\r\n  border: none;\r\n}\r\nsvg {\r\n  width: 3rem !important;\r\n  height: auto !important;\r\n  color: var(--dark-bg-main);\r\n}\r\n.dark svg {\r\n  color: var(--light-bg-main);\r\n}\r\n.whatsapp svg {\r\n  width: 3.4rem !important;\r\n  height: auto !important;\r\n}\r\n.whatsapp :hover {\r\n  color: #2ec452;\r\n}\r\n.github :hover {\r\n  color: rgb(211, 6, 47);\r\n}\r\n.linkdin :hover {\r\n  color: var(--btn-hover-color);\r\n}\r\na:hover {\r\n  background-color: transparent !important;\r\n}\r\n",
+      "start": 1700406284411,
+      "end": 1700406284411,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Footer.vue"
+        ],
+        "names": [],
+        "mappings": "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",
+        "file": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Footer.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\r\n  <main class=\"main-color section footer\">\r\n    <h2>Social Links</h2>\r\n    <ul>\r\n      <li class=\"whatsapp\">\r\n        <a href=\"https://wa.me/+972536241757\" target=\"_blank\"\r\n          ><Icon name=\"formkit:whatsapp\"\r\n        /></a>\r\n      </li>\r\n      <li class=\"github\">\r\n        <a href=\"https://github.com/Eden-Cohen1\" target=\"_blank\"\r\n          ><Icon name=\"uiw:github\"\r\n        /></a>\r\n      </li>\r\n      <li class=\"linkdin\">\r\n        <a href=\"https://www.linkedin.com/in/eden-co/\" target=\"_blank\"\r\n          ><Icon name=\"bi:linkedin\"\r\n        /></a>\r\n      </li>\r\n    </ul>\r\n  </main>\r\n</template>\r\n\r\n<style scoped>\r\n.footer {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: fit-content;\r\n  min-height: 30vh;\r\n  border-top: 1px solid var(--light-bg-sec);\r\n}\r\n.dark .footer {\r\n  border-top: 1px solid var(--dark-bg-sec);\r\n}\r\n\r\nul {\r\n  display: flex;\r\n  gap: 2.5rem;\r\n  min-height: 6rem;\r\n  width: 100%;\r\n  justify-content: center;\r\n  align-items: center;\r\n  border: none;\r\n}\r\nsvg {\r\n  width: 3rem !important;\r\n  height: auto !important;\r\n  color: var(--dark-bg-main);\r\n}\r\n.dark svg {\r\n  color: var(--light-bg-main);\r\n}\r\n.whatsapp svg {\r\n  width: 3.4rem !important;\r\n  height: auto !important;\r\n}\r\n.whatsapp :hover {\r\n  color: #2ec452;\r\n}\r\n.github :hover {\r\n  color: rgb(211, 6, 47);\r\n}\r\n.linkdin :hover {\r\n  color: var(--btn-hover-color);\r\n}\r\na:hover {\r\n  background-color: transparent !important;\r\n}\r\n</style>\r\n"
+        ]
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406284416,
+      "end": 1700406284417,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406284416,
+      "end": 1700406284417,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406284417,
+      "end": 1700406284417,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406284417,
+      "end": 1700406284417,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406284417,
+      "end": 1700406284417,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": ".footer{border-top:1px solid var(--light-bg-sec);display:flex;flex-direction:column;height:-moz-fit-content;height:fit-content;min-height:30vh}.dark .footer{border-top:1px solid var(--dark-bg-sec)}ul{align-items:center;border:none;display:flex;gap:2.5rem;justify-content:center;min-height:6rem;width:100%}svg{color:var(--dark-bg-main);height:auto!important;width:3rem!important}.dark svg{color:var(--light-bg-main)}.whatsapp svg{height:auto!important;width:3.4rem!important}.whatsapp :hover{color:#2ec452}.github :hover{color:#d3062f}.linkdin :hover{color:var(--btn-hover-color)}a:hover{background-color:transparent!important}",
+      "start": 1700406284417,
+      "end": 1700406284426,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Footer.vue",
+        "mappings": "AACA,QAKE,wCAAyC,CAJzC,YAAa,CACb,qBAAsB,CACtB,uBAAmB,CAAnB,kBAAmB,CACnB,eAEF,CACA,cACE,uCACF,CAEA,GAME,kBAAmB,CACnB,WAAY,CANZ,YAAa,CACb,UAAW,CAGX,sBAAuB,CAFvB,eAAgB,CAChB,UAIF,CACA,IAGE,yBAA0B,CAD1B,qBAAuB,CADvB,oBAGF,CACA,UACE,0BACF,CACA,cAEE,qBAAuB,CADvB,sBAEF,CACA,iBACE,aACF,CACA,eACE,aACF,CACA,gBACE,4BACF,CACA,QACE,sCACF",
+        "names": [],
+        "sources": [
+          "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Footer.vue"
+        ],
+        "sourcesContent": [
+          "\r\n.footer {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: fit-content;\r\n  min-height: 30vh;\r\n  border-top: 1px solid var(--light-bg-sec);\r\n}\r\n.dark .footer {\r\n  border-top: 1px solid var(--dark-bg-sec);\r\n}\r\n\r\nul {\r\n  display: flex;\r\n  gap: 2.5rem;\r\n  min-height: 6rem;\r\n  width: 100%;\r\n  justify-content: center;\r\n  align-items: center;\r\n  border: none;\r\n}\r\nsvg {\r\n  width: 3rem !important;\r\n  height: auto !important;\r\n  color: var(--dark-bg-main);\r\n}\r\n.dark svg {\r\n  color: var(--light-bg-main);\r\n}\r\n.whatsapp svg {\r\n  width: 3.4rem !important;\r\n  height: auto !important;\r\n}\r\n.whatsapp :hover {\r\n  color: #2ec452;\r\n}\r\n.github :hover {\r\n  color: rgb(211, 6, 47);\r\n}\r\n.linkdin :hover {\r\n  color: var(--btn-hover-color);\r\n}\r\na:hover {\r\n  background-color: transparent !important;\r\n}\r\n"
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406284426,
+      "end": 1700406284426,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406284426,
+      "end": 1700406284426,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406284427,
+      "end": 1700406284427,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": ".footer[data-v-a41735ec]{border-top:1px solid var(--light-bg-sec);display:flex;flex-direction:column;height:-moz-fit-content;height:fit-content;min-height:30vh}.dark .footer[data-v-a41735ec]{border-top:1px solid var(--dark-bg-sec)}ul[data-v-a41735ec]{align-items:center;border:none;display:flex;gap:2.5rem;justify-content:center;min-height:6rem;width:100%}svg[data-v-a41735ec]{color:var(--dark-bg-main);height:auto!important;width:3rem!important}.dark svg[data-v-a41735ec]{color:var(--light-bg-main)}.whatsapp svg[data-v-a41735ec]{height:auto!important;width:3.4rem!important}.whatsapp[data-v-a41735ec] :hover{color:#2ec452}.github[data-v-a41735ec] :hover{color:#d3062f}.linkdin[data-v-a41735ec] :hover{color:var(--btn-hover-color)}a[data-v-a41735ec]:hover{background-color:transparent!important}",
+      "start": 1700406284427,
+      "end": 1700406284428,
+      "order": "normal",
+      "sourcemaps": {
+        "file": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Footer.vue",
+        "mappings": "AAAA,yBAAQ,wCAAwC,CAAC,YAAY,CAAC,qBAAqB,CAAC,uBAAuB,CAAC,kBAAkB,CAAC,eAAe,CAAC,+BAAc,uCAAuC,CAAC,oBAAG,kBAAkB,CAAC,WAAW,CAAC,YAAY,CAAC,UAAU,CAAC,sBAAsB,CAAC,eAAe,CAAC,UAAU,CAAC,qBAAI,yBAAyB,CAAC,qBAAqB,CAAC,oBAAoB,CAAC,2BAAU,0BAA0B,CAAC,+BAAc,qBAAqB,CAAC,sBAAsB,CAAC,kCAAiB,aAAa,CAAC,gCAAe,aAAa,CAAC,iCAAgB,4BAA4B,CAAC,yBAAQ,sCAAsC",
+        "names": [],
+        "sources": [
+          "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Footer.vue"
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "version": 3
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406284432,
+      "end": 1700406284432,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406284432,
+      "end": 1700406284432,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406284432,
+      "end": 1700406284432,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406284432,
+      "end": 1700406284432,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406284432,
+      "end": 1700406284432,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406284432,
+      "end": 1700406284432,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406284433,
+      "end": 1700406284433,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406284433,
+      "end": 1700406284433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406284433,
+      "end": 1700406284434,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "export default ''",
+      "start": 1700406284435,
+      "end": 1700406284435,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406284435,
+      "end": 1700406284435,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406284435,
+      "end": 1700406284435,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406284435,
+      "end": 1700406284435,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406284435,
+      "end": 1700406284435,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406284436,
+      "end": 1700406284436,
+      "order": "normal"
+    }
+  ]
+}

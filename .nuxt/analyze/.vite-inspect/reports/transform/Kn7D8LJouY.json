@@ -1,0 +1,229 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/escape-html/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*!\n * escape-html\n * Copyright(c) 2012-2013 TJ Holowaychuk\n * Copyright(c) 2015 Andreas Lubbe\n * Copyright(c) 2015 Tiancheng \"Timothy\" Gu\n * MIT Licensed\n */\n\n'use strict';\n\n/**\n * Module variables.\n * @private\n */\n\nvar matchHtmlRegExp = /[\"'&<>]/;\n\n/**\n * Module exports.\n * @public\n */\n\nmodule.exports = escapeHtml;\n\n/**\n * Escape special characters in the given string of html.\n *\n * @param  {string} string The string to escape for inserting into HTML\n * @return {string}\n * @public\n */\n\nfunction escapeHtml(string) {\n  var str = '' + string;\n  var match = matchHtmlRegExp.exec(str);\n\n  if (!match) {\n    return str;\n  }\n\n  var escape;\n  var html = '';\n  var index = 0;\n  var lastIndex = 0;\n\n  for (index = match.index; index < str.length; index++) {\n    switch (str.charCodeAt(index)) {\n      case 34: // \"\n        escape = '&quot;';\n        break;\n      case 38: // &\n        escape = '&amp;';\n        break;\n      case 39: // '\n        escape = '&#39;';\n        break;\n      case 60: // <\n        escape = '&lt;';\n        break;\n      case 62: // >\n        escape = '&gt;';\n        break;\n      default:\n        continue;\n    }\n\n    if (lastIndex !== index) {\n      html += str.substring(lastIndex, index);\n    }\n\n    lastIndex = index + 1;\n    html += escape;\n  }\n\n  return lastIndex !== index\n    ? html + str.substring(lastIndex, index)\n    : html;\n}\n",
+      "start": 1700406275392,
+      "end": 1700406275482,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406275482,
+      "end": 1700406275482,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406275482,
+      "end": 1700406275482,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406275482,
+      "end": 1700406275482,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406275482,
+      "end": 1700406275482,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406275482,
+      "end": 1700406275482,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406275482,
+      "end": 1700406275482,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406275482,
+      "end": 1700406275482,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406275483,
+      "end": 1700406275483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406275483,
+      "end": 1700406275483,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406275483,
+      "end": 1700406275483,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406275483,
+      "end": 1700406275483,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406275483,
+      "end": 1700406275483,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406275483,
+      "end": 1700406275483,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406275483,
+      "end": 1700406275483,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406275483,
+      "end": 1700406275483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406275483,
+      "end": 1700406275483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406275483,
+      "end": 1700406275483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406275483,
+      "end": 1700406275483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406275483,
+      "end": 1700406275483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406275483,
+      "end": 1700406275483,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*!\n * escape-html\n * Copyright(c) 2012-2013 TJ Holowaychuk\n * Copyright(c) 2015 Andreas Lubbe\n * Copyright(c) 2015 Tiancheng \"Timothy\" Gu\n * MIT Licensed\n */\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\n'use strict';\n\n/**\n * Module variables.\n * @private\n */\n\nvar matchHtmlRegExp = /[\"'&<>]/;\n\n/**\n * Module exports.\n * @public\n */\n\nvar escapeHtml_1 = escapeHtml;\n\n/**\n * Escape special characters in the given string of html.\n *\n * @param  {string} string The string to escape for inserting into HTML\n * @return {string}\n * @public\n */\n\nfunction escapeHtml(string) {\n  var str = '' + string;\n  var match = matchHtmlRegExp.exec(str);\n\n  if (!match) {\n    return str;\n  }\n\n  var escape;\n  var html = '';\n  var index = 0;\n  var lastIndex = 0;\n\n  for (index = match.index; index < str.length; index++) {\n    switch (str.charCodeAt(index)) {\n      case 34: // \"\n        escape = '&quot;';\n        break;\n      case 38: // &\n        escape = '&amp;';\n        break;\n      case 39: // '\n        escape = '&#39;';\n        break;\n      case 60: // <\n        escape = '&lt;';\n        break;\n      case 62: // >\n        escape = '&gt;';\n        break;\n      default:\n        continue;\n    }\n\n    if (lastIndex !== index) {\n      html += str.substring(lastIndex, index);\n    }\n\n    lastIndex = index + 1;\n    html += escape;\n  }\n\n  return lastIndex !== index\n    ? html + str.substring(lastIndex, index)\n    : html;\n}\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(escapeHtml_1);\nexport { escapeHtml_1 as __moduleExports };",
+      "start": 1700406275483,
+      "end": 1700406275485,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": null,
+        "sources": [
+          null
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;AAQA,YAAY,CAAC;AACb;AACA;AACA;AACA;AACA;AACA;AACA,IAAI,eAAe,GAAG,SAAS,CAAC;AAChC;AACA;AACA;AACA;AACA;AACA;IACA,YAAc,GAAG,UAAU,CAAC;AAC5B;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA,SAAS,UAAU,CAAC,MAAM,EAAE;AAC5B,EAAE,IAAI,GAAG,GAAG,EAAE,GAAG,MAAM,CAAC;AACxB,EAAE,IAAI,KAAK,GAAG,eAAe,CAAC,IAAI,CAAC,GAAG,CAAC,CAAC;AACxC;AACA,EAAE,IAAI,CAAC,KAAK,EAAE;AACd,IAAI,OAAO,GAAG,CAAC;AACf,GAAG;AACH;AACA,EAAE,IAAI,MAAM,CAAC;AACb,EAAE,IAAI,IAAI,GAAG,EAAE,CAAC;AAChB,EAAE,IAAI,KAAK,GAAG,CAAC,CAAC;AAChB,EAAE,IAAI,SAAS,GAAG,CAAC,CAAC;AACpB;AACA,EAAE,KAAK,KAAK,GAAG,KAAK,CAAC,KAAK,EAAE,KAAK,GAAG,GAAG,CAAC,MAAM,EAAE,KAAK,EAAE,EAAE;AACzD,IAAI,QAAQ,GAAG,CAAC,UAAU,CAAC,KAAK,CAAC;AACjC,MAAM,KAAK,EAAE;AACb,QAAQ,MAAM,GAAG,QAAQ,CAAC;AAC1B,QAAQ,MAAM;AACd,MAAM,KAAK,EAAE;AACb,QAAQ,MAAM,GAAG,OAAO,CAAC;AACzB,QAAQ,MAAM;AACd,MAAM,KAAK,EAAE;AACb,QAAQ,MAAM,GAAG,OAAO,CAAC;AACzB,QAAQ,MAAM;AACd,MAAM,KAAK,EAAE;AACb,QAAQ,MAAM,GAAG,MAAM,CAAC;AACxB,QAAQ,MAAM;AACd,MAAM,KAAK,EAAE;AACb,QAAQ,MAAM,GAAG,MAAM,CAAC;AACxB,QAAQ,MAAM;AACd,MAAM;AACN,QAAQ,SAAS;AACjB,KAAK;AACL;AACA,IAAI,IAAI,SAAS,KAAK,KAAK,EAAE;AAC7B,MAAM,IAAI,IAAI,GAAG,CAAC,SAAS,CAAC,SAAS,EAAE,KAAK,CAAC,CAAC;AAC9C,KAAK;AACL;AACA,IAAI,SAAS,GAAG,KAAK,GAAG,CAAC,CAAC;AAC1B,IAAI,IAAI,IAAI,MAAM,CAAC;AACnB,GAAG;AACH;AACA,EAAE,OAAO,SAAS,KAAK,KAAK;AAC5B,MAAM,IAAI,GAAG,GAAG,CAAC,SAAS,CAAC,SAAS,EAAE,KAAK,CAAC;AAC5C,MAAM,IAAI,CAAC;AACX"
+      }
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406275485,
+      "end": 1700406275485,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406275485,
+      "end": 1700406275485,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406275485,
+      "end": 1700406275486,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406275486,
+      "end": 1700406275486,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406275486,
+      "end": 1700406275486,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406275486,
+      "end": 1700406275486,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406275486,
+      "end": 1700406275486,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406275486,
+      "end": 1700406275486,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406275486,
+      "end": 1700406275486,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406275486,
+      "end": 1700406275486,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406275486,
+      "end": 1700406275486,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406275486,
+      "end": 1700406275486,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406275486,
+      "end": 1700406275486,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/components/virtual-list/src/props.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import '../../../utils/index.mjs';\nimport { VERTICAL } from './defaults.mjs';\nimport { buildProp, definePropType, buildProps } from '../../../utils/vue/props/runtime.mjs';\nimport { mutable } from '../../../utils/typescript.mjs';\n\nconst itemSize = buildProp({\n  type: definePropType([Number, Function]),\n  required: true\n});\nconst estimatedItemSize = buildProp({\n  type: Number\n});\nconst cache = buildProp({\n  type: Number,\n  default: 2\n});\nconst direction = buildProp({\n  type: String,\n  values: [\"ltr\", \"rtl\"],\n  default: \"ltr\"\n});\nconst initScrollOffset = buildProp({\n  type: Number,\n  default: 0\n});\nconst total = buildProp({\n  type: Number,\n  required: true\n});\nconst layout = buildProp({\n  type: String,\n  values: [\"horizontal\", \"vertical\"],\n  default: VERTICAL\n});\nconst virtualizedProps = buildProps({\n  className: {\n    type: String,\n    default: \"\"\n  },\n  containerElement: {\n    type: definePropType([String, Object]),\n    default: \"div\"\n  },\n  data: {\n    type: definePropType(Array),\n    default: () => mutable([])\n  },\n  direction,\n  height: {\n    type: [String, Number],\n    required: true\n  },\n  innerElement: {\n    type: [String, Object],\n    default: \"div\"\n  },\n  style: {\n    type: definePropType([Object, String, Array])\n  },\n  useIsScrolling: {\n    type: Boolean,\n    default: false\n  },\n  width: {\n    type: [Number, String],\n    required: false\n  },\n  perfMode: {\n    type: Boolean,\n    default: true\n  },\n  scrollbarAlwaysOn: {\n    type: Boolean,\n    default: false\n  }\n});\nconst virtualizedListProps = buildProps({\n  cache,\n  estimatedItemSize,\n  layout,\n  initScrollOffset,\n  total,\n  itemSize,\n  ...virtualizedProps\n});\nconst scrollbarSize = {\n  type: Number,\n  default: 6\n};\nconst startGap = { type: Number, default: 0 };\nconst endGap = { type: Number, default: 2 };\nconst virtualizedGridProps = buildProps({\n  columnCache: cache,\n  columnWidth: itemSize,\n  estimatedColumnWidth: estimatedItemSize,\n  estimatedRowHeight: estimatedItemSize,\n  initScrollLeft: initScrollOffset,\n  initScrollTop: initScrollOffset,\n  itemKey: {\n    type: definePropType(Function),\n    default: ({\n      columnIndex,\n      rowIndex\n    }) => `${rowIndex}:${columnIndex}`\n  },\n  rowCache: cache,\n  rowHeight: itemSize,\n  totalColumn: total,\n  totalRow: total,\n  hScrollbarSize: scrollbarSize,\n  vScrollbarSize: scrollbarSize,\n  scrollbarStartGap: startGap,\n  scrollbarEndGap: endGap,\n  role: String,\n  ...virtualizedProps\n});\nconst virtualizedScrollbarProps = buildProps({\n  alwaysOn: Boolean,\n  class: String,\n  layout,\n  total,\n  ratio: {\n    type: Number,\n    required: true\n  },\n  clientSize: {\n    type: Number,\n    required: true\n  },\n  scrollFrom: {\n    type: Number,\n    required: true\n  },\n  scrollbarSize,\n  startGap,\n  endGap,\n  visible: Boolean\n});\n\nexport { virtualizedGridProps, virtualizedListProps, virtualizedProps, virtualizedScrollbarProps };\n//# sourceMappingURL=props.mjs.map\n",
+      "start": 1700406280914,
+      "end": 1700406281006,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406281006,
+      "end": 1700406281006,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406281006,
+      "end": 1700406281007,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406281006,
+      "end": 1700406281007,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406281007,
+      "end": 1700406281007,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406281007,
+      "end": 1700406281007,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406281007,
+      "end": 1700406281007,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406281007,
+      "end": 1700406281007,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406281007,
+      "end": 1700406281007,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406281007,
+      "end": 1700406281007,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406281007,
+      "end": 1700406281007,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1700406281007,
+      "end": 1700406281007,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406281007,
+      "end": 1700406281007,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406281007,
+      "end": 1700406281007,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406281007,
+      "end": 1700406281007,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406281007,
+      "end": 1700406281007,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/@nuxt/image/dist/runtime/utils/index.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export default function imageFetch(url) {\n  return fetch(cleanDoubleSlashes(url));\n}\nexport function getInt(x) {\n  if (typeof x === \"number\") {\n    return x;\n  }\n  if (typeof x === \"string\") {\n    return parseInt(x, 10);\n  }\n  return void 0;\n}\nexport function getFileExtension(url = \"\") {\n  const extension = url.split(/[?#]/).shift().split(\"/\").pop().split(\".\").pop();\n  return extension;\n}\nexport function cleanDoubleSlashes(path = \"\") {\n  return path.replace(/(https?:\\/\\/)|(\\/)+/g, \"$1$2\");\n}\nexport function createMapper(map) {\n  return (key) => {\n    return key ? map[key] || key : map.missingValue;\n  };\n}\nexport function createOperationsGenerator({ formatter, keyMap, joinWith = \"/\", valueMap } = {}) {\n  if (!formatter) {\n    formatter = (key, value) => `${key}=${value}`;\n  }\n  if (keyMap && typeof keyMap !== \"function\") {\n    keyMap = createMapper(keyMap);\n  }\n  const map = valueMap || {};\n  Object.keys(map).forEach((valueKey) => {\n    if (typeof map[valueKey] !== \"function\") {\n      map[valueKey] = createMapper(map[valueKey]);\n    }\n  });\n  return (modifiers = {}) => {\n    const operations = Object.entries(modifiers).filter(([_, value]) => typeof value !== \"undefined\").map(([key, value]) => {\n      const mapper = map[key];\n      if (typeof mapper === \"function\") {\n        value = mapper(modifiers[key]);\n      }\n      key = typeof keyMap === \"function\" ? keyMap(key) : key;\n      return formatter(key, value);\n    });\n    return operations.join(joinWith);\n  };\n}\nexport function renderAttributesToString(attributes = {}) {\n  return Object.entries(attributes).map(([key, value]) => value ? `${key}=\"${value}\"` : \"\").filter(Boolean).join(\" \");\n}\nexport function renderTag(tag, attrs, contents) {\n  const html = `<${tag} ${renderAttributesToString(attrs)}>`;\n  if (!contents) {\n    return html;\n  }\n  return html + contents + `</${tag}>`;\n}\nexport function generateAlt(src = \"\") {\n  return src.split(/[?#]/).shift().split(\"/\").pop().split(\".\").shift();\n}\nexport function parseSize(input = \"\") {\n  if (typeof input === \"number\") {\n    return input;\n  }\n  if (typeof input === \"string\") {\n    if (input.replace(\"px\", \"\").match(/^\\d+$/g)) {\n      return parseInt(input, 10);\n    }\n  }\n}\nexport function parseDensities(input = \"\") {\n  if (input === void 0 || !input.length) {\n    return [];\n  }\n  const densities = /* @__PURE__ */ new Set();\n  for (const density of input.split(\" \")) {\n    const d = parseInt(density.replace(\"x\", \"\"));\n    if (d) {\n      densities.add(d);\n    }\n  }\n  return Array.from(densities);\n}\nexport function checkDensities(densities) {\n  if (densities.length === 0) {\n    throw new Error(\"`densities` must not be empty, configure to `1` to render regular size only (DPR 1.0)\");\n  }\n  if (process.dev && Array.from(densities).some((d) => d > 2)) {\n    console.warn(\"[nuxt] [image] Density values above `2` are not recommended. See https://observablehq.com/@eeeps/visual-acuity-and-device-pixel-ratio.\");\n  }\n}\nexport function parseSizes(input) {\n  const sizes = {};\n  if (typeof input === \"string\") {\n    for (const entry of input.split(/[\\s,]+/).filter((e) => e)) {\n      const s = entry.split(\":\");\n      if (s.length !== 2) {\n        sizes[\"1px\"] = s[0].trim();\n      } else {\n        sizes[s[0].trim()] = s[1].trim();\n      }\n    }\n  } else {\n    Object.assign(sizes, input);\n  }\n  return sizes;\n}\n",
+      "start": 1700406274288,
+      "end": 1700406274397,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "export default function imageFetch(url) {\n  return fetch(cleanDoubleSlashes(url));\n}\nexport function getInt(x) {\n  if (typeof x === \"number\") {\n    return x;\n  }\n  if (typeof x === \"string\") {\n    return parseInt(x, 10);\n  }\n  return void 0;\n}\nexport function getFileExtension(url = \"\") {\n  const extension = url.split(/[?#]/).shift().split(\"/\").pop().split(\".\").pop();\n  return extension;\n}\nexport function cleanDoubleSlashes(path = \"\") {\n  return path.replace(/(https?:\\/\\/)|(\\/)+/g, \"$1$2\");\n}\nexport function createMapper(map) {\n  return (key) => {\n    return key ? map[key] || key : map.missingValue;\n  };\n}\nexport function createOperationsGenerator({ formatter, keyMap, joinWith = \"/\", valueMap } = {}) {\n  if (!formatter) {\n    formatter = (key, value) => `${key}=${value}`;\n  }\n  if (keyMap && typeof keyMap !== \"function\") {\n    keyMap = createMapper(keyMap);\n  }\n  const map = valueMap || {};\n  Object.keys(map).forEach((valueKey) => {\n    if (typeof map[valueKey] !== \"function\") {\n      map[valueKey] = createMapper(map[valueKey]);\n    }\n  });\n  return (modifiers = {}) => {\n    const operations = Object.entries(modifiers).filter(([_, value]) => typeof value !== \"undefined\").map(([key, value]) => {\n      const mapper = map[key];\n      if (typeof mapper === \"function\") {\n        value = mapper(modifiers[key]);\n      }\n      key = typeof keyMap === \"function\" ? keyMap(key) : key;\n      return formatter(key, value);\n    });\n    return operations.join(joinWith);\n  };\n}\nexport function renderAttributesToString(attributes = {}) {\n  return Object.entries(attributes).map(([key, value]) => value ? `${key}=\"${value}\"` : \"\").filter(Boolean).join(\" \");\n}\nexport function renderTag(tag, attrs, contents) {\n  const html = `<${tag} ${renderAttributesToString(attrs)}>`;\n  if (!contents) {\n    return html;\n  }\n  return html + contents + `</${tag}>`;\n}\nexport function generateAlt(src = \"\") {\n  return src.split(/[?#]/).shift().split(\"/\").pop().split(\".\").shift();\n}\nexport function parseSize(input = \"\") {\n  if (typeof input === \"number\") {\n    return input;\n  }\n  if (typeof input === \"string\") {\n    if (input.replace(\"px\", \"\").match(/^\\d+$/g)) {\n      return parseInt(input, 10);\n    }\n  }\n}\nexport function parseDensities(input = \"\") {\n  if (input === void 0 || !input.length) {\n    return [];\n  }\n  const densities = /* @__PURE__ */ new Set();\n  for (const density of input.split(\" \")) {\n    const d = parseInt(density.replace(\"x\", \"\"));\n    if (d) {\n      densities.add(d);\n    }\n  }\n  return Array.from(densities);\n}\nexport function checkDensities(densities) {\n  if (densities.length === 0) {\n    throw new Error(\"`densities` must not be empty, configure to `1` to render regular size only (DPR 1.0)\");\n  }\n  if (false && Array.from(densities).some((d) => d > 2)) {\n    console.warn(\"[nuxt] [image] Density values above `2` are not recommended. See https://observablehq.com/@eeeps/visual-acuity-and-device-pixel-ratio.\");\n  }\n}\nexport function parseSizes(input) {\n  const sizes = {};\n  if (typeof input === \"string\") {\n    for (const entry of input.split(/[\\s,]+/).filter((e) => e)) {\n      const s = entry.split(\":\");\n      if (s.length !== 2) {\n        sizes[\"1px\"] = s[0].trim();\n      } else {\n        sizes[s[0].trim()] = s[1].trim();\n      }\n    }\n  } else {\n    Object.assign(sizes, input);\n  }\n  return sizes;\n}\n",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406274398,
+      "end": 1700406274398,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/lodash-es/function.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export { default as after } from './after.js';\nexport { default as ary } from './ary.js';\nexport { default as before } from './before.js';\nexport { default as bind } from './bind.js';\nexport { default as bindKey } from './bindKey.js';\nexport { default as curry } from './curry.js';\nexport { default as curryRight } from './curryRight.js';\nexport { default as debounce } from './debounce.js';\nexport { default as defer } from './defer.js';\nexport { default as delay } from './delay.js';\nexport { default as flip } from './flip.js';\nexport { default as memoize } from './memoize.js';\nexport { default as negate } from './negate.js';\nexport { default as once } from './once.js';\nexport { default as overArgs } from './overArgs.js';\nexport { default as partial } from './partial.js';\nexport { default as partialRight } from './partialRight.js';\nexport { default as rearg } from './rearg.js';\nexport { default as rest } from './rest.js';\nexport { default as spread } from './spread.js';\nexport { default as throttle } from './throttle.js';\nexport { default as unary } from './unary.js';\nexport { default as wrap } from './wrap.js';\nexport { default } from './function.default.js';\n",
+      "start": 1700406276000,
+      "end": 1700406276076,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406276076,
+      "end": 1700406276076,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406276076,
+      "end": 1700406276076,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406276076,
+      "end": 1700406276076,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406276076,
+      "end": 1700406276076,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406276076,
+      "end": 1700406276076,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406276076,
+      "end": 1700406276076,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406276076,
+      "end": 1700406276076,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406276076,
+      "end": 1700406276076,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406276076,
+      "end": 1700406276076,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406276076,
+      "end": 1700406276077,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406276077,
+      "end": 1700406276077,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406276078,
+      "end": 1700406276078,
+      "order": "normal"
+    }
+  ]
+}

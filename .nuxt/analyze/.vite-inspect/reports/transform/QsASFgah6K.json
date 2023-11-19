@@ -1,0 +1,232 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/dayjs/plugin/weekOfYear.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "!function(e,t){\"object\"==typeof exports&&\"undefined\"!=typeof module?module.exports=t():\"function\"==typeof define&&define.amd?define(t):(e=\"undefined\"!=typeof globalThis?globalThis:e||self).dayjs_plugin_weekOfYear=t()}(this,(function(){\"use strict\";var e=\"week\",t=\"year\";return function(i,n,r){var f=n.prototype;f.week=function(i){if(void 0===i&&(i=null),null!==i)return this.add(7*(i-this.week()),\"day\");var n=this.$locale().yearStart||1;if(11===this.month()&&this.date()>25){var f=r(this).startOf(t).add(1,t).date(n),s=r(this).endOf(e);if(f.isBefore(s))return 1}var a=r(this).startOf(t).date(n).startOf(e).subtract(1,\"millisecond\"),o=this.diff(a,e,!0);return o<0?r(this).startOf(\"week\").week():Math.ceil(o)},f.weeks=function(e){return void 0===e&&(e=null),this.week(e)}}}));",
+      "start": 1700406273259,
+      "end": 1700406273505,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406273505,
+      "end": 1700406273505,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406273505,
+      "end": 1700406273505,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406273505,
+      "end": 1700406273505,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406273505,
+      "end": 1700406273505,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406273505,
+      "end": 1700406273505,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406273505,
+      "end": 1700406273505,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406273505,
+      "end": 1700406273505,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406273505,
+      "end": 1700406273505,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406273505,
+      "end": 1700406273505,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406273505,
+      "end": 1700406273505,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406273505,
+      "end": 1700406273505,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406273505,
+      "end": 1700406273505,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406273505,
+      "end": 1700406273505,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406273506,
+      "end": 1700406273506,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406273506,
+      "end": 1700406273506,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406273506,
+      "end": 1700406273506,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406273506,
+      "end": 1700406273506,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406273507,
+      "end": 1700406273507,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406273507,
+      "end": 1700406273507,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406273507,
+      "end": 1700406273507,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "import * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __module as weekOfYearModule } from \"\\u0000C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/dayjs/plugin/weekOfYear.js?commonjs-module\";\nvar weekOfYear = weekOfYearModule.exports;\n\n(function (module, exports) {\n\t!function(e,t){\"object\"=='object'&&\"undefined\"!='object'?module.exports=t():\"function\"==typeof undefined&&undefined.amd?undefined(t):(e=\"undefined\"!=typeof globalThis?globalThis:e||self).dayjs_plugin_weekOfYear=t()}(commonjsHelpers.commonjsGlobal,(function(){\"use strict\";var e=\"week\",t=\"year\";return function(i,n,r){var f=n.prototype;f.week=function(i){if(void 0===i&&(i=null),null!==i)return this.add(7*(i-this.week()),\"day\");var n=this.$locale().yearStart||1;if(11===this.month()&&this.date()>25){var f=r(this).startOf(t).add(1,t).date(n),s=r(this).endOf(e);if(f.isBefore(s))return 1}var a=r(this).startOf(t).date(n).startOf(e).subtract(1,\"millisecond\"),o=this.diff(a,e,!0);return o<0?r(this).startOf(\"week\").week():Math.ceil(o)},f.weeks=function(e){return void 0===e&&(e=null),this.week(e)}}})); \n} (weekOfYearModule, weekOfYearModule.exports));\n\nvar weekOfYearExports = weekOfYearModule.exports;\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(weekOfYearExports);\nexport { weekOfYearExports as __moduleExports };",
+      "start": 1700406273507,
+      "end": 1700406273508,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": null,
+        "sources": [
+          null
+        ],
+        "sourcesContent": [
+          null
+        ],
+        "names": [
+          "define",
+          "this"
+        ],
+        "mappings": ";;;;;CAAA,CAAC,SAAS,CAAC,CAAC,CAAC,CAAC,CAAC,QAAQ,EAAE,QAAc,EAAE,WAAW,EAAE,QAAa,CAAC,eAAe,CAAC,EAAE,CAAC,UAAU,EAAE,OAAOA,SAAM,EAAEA,SAAM,CAAC,GAAG,CAACA,SAAM,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,WAAW,EAAE,OAAO,UAAU,CAAC,UAAU,CAAC,CAAC,EAAE,IAAI,EAAE,uBAAuB,CAAC,CAAC,EAAE,CAAC,CAACC,8BAAI,EAAE,UAAU,CAAC,YAAY,CAAC,IAAI,CAAC,CAAC,MAAM,CAAC,CAAC,CAAC,MAAM,CAAC,OAAO,SAAS,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,SAAS,CAAC,CAAC,CAAC,IAAI,CAAC,SAAS,CAAC,CAAC,CAAC,GAAG,KAAK,CAAC,GAAG,CAAC,GAAG,CAAC,CAAC,IAAI,CAAC,CAAC,IAAI,GAAG,CAAC,CAAC,OAAO,IAAI,CAAC,GAAG,CAAC,CAAC,EAAE,CAAC,CAAC,IAAI,CAAC,IAAI,EAAE,CAAC,CAAC,KAAK,CAAC,CAAC,IAAI,CAAC,CAAC,IAAI,CAAC,OAAO,EAAE,CAAC,SAAS,EAAE,CAAC,CAAC,GAAG,EAAE,GAAG,IAAI,CAAC,KAAK,EAAE,EAAE,IAAI,CAAC,IAAI,EAAE,CAAC,EAAE,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,OAAO,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,QAAQ,CAAC,CAAC,CAAC,CAAC,OAAO,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,OAAO,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,OAAO,CAAC,CAAC,CAAC,CAAC,QAAQ,CAAC,CAAC,CAAC,aAAa,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,OAAO,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,OAAO,CAAC,MAAM,CAAC,CAAC,IAAI,EAAE,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,KAAK,CAAC,SAAS,CAAC,CAAC,CAAC,OAAO,KAAK,CAAC,GAAG,CAAC,GAAG,CAAC,CAAC,IAAI,CAAC,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE"
+      }
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406273508,
+      "end": 1700406273508,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406273508,
+      "end": 1700406273508,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406273508,
+      "end": 1700406273508,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406273508,
+      "end": 1700406273508,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406273508,
+      "end": 1700406273508,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406273508,
+      "end": 1700406273508,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406273508,
+      "end": 1700406273508,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406273508,
+      "end": 1700406273508,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406273508,
+      "end": 1700406273508,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406273508,
+      "end": 1700406273508,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406273508,
+      "end": 1700406273508,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406273508,
+      "end": 1700406273508,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406273508,
+      "end": 1700406273508,
+      "order": "normal"
+    }
+  ]
+}

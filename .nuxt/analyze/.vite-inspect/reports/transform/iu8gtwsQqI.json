@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/components/select-v2/src/useAllowCreate.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { ref, computed } from 'vue';\nimport { useProps } from './useProps.mjs';\n\nfunction useAllowCreate(props, states) {\n  const { aliasProps, getLabel, getValue } = useProps(props);\n  const createOptionCount = ref(0);\n  const cachedSelectedOption = ref(null);\n  const enableAllowCreateMode = computed(() => {\n    return props.allowCreate && props.filterable;\n  });\n  function hasExistingOption(query) {\n    const hasValue = (option) => getValue(option) === query;\n    return props.options && props.options.some(hasValue) || states.createdOptions.some(hasValue);\n  }\n  function selectNewOption(option) {\n    if (!enableAllowCreateMode.value) {\n      return;\n    }\n    if (props.multiple && option.created) {\n      createOptionCount.value++;\n    } else {\n      cachedSelectedOption.value = option;\n    }\n  }\n  function createNewOption(query) {\n    if (enableAllowCreateMode.value) {\n      if (query && query.length > 0 && !hasExistingOption(query)) {\n        const newOption = {\n          [aliasProps.value.value]: query,\n          [aliasProps.value.label]: query,\n          created: true,\n          [aliasProps.value.disabled]: false\n        };\n        if (states.createdOptions.length >= createOptionCount.value) {\n          states.createdOptions[createOptionCount.value] = newOption;\n        } else {\n          states.createdOptions.push(newOption);\n        }\n      } else {\n        if (props.multiple) {\n          states.createdOptions.length = createOptionCount.value;\n        } else {\n          const selectedOption = cachedSelectedOption.value;\n          states.createdOptions.length = 0;\n          if (selectedOption && selectedOption.created) {\n            states.createdOptions.push(selectedOption);\n          }\n        }\n      }\n    }\n  }\n  function removeNewOption(option) {\n    if (!enableAllowCreateMode.value || !option || !option.created || option.created && props.reserveKeyword && states.inputValue === getLabel(option)) {\n      return;\n    }\n    const idx = states.createdOptions.findIndex((it) => getValue(it) === getValue(option));\n    if (~idx) {\n      states.createdOptions.splice(idx, 1);\n      createOptionCount.value--;\n    }\n  }\n  function clearAllNewOption() {\n    if (enableAllowCreateMode.value) {\n      states.createdOptions.length = 0;\n      createOptionCount.value = 0;\n    }\n  }\n  return {\n    createNewOption,\n    removeNewOption,\n    selectNewOption,\n    clearAllNewOption\n  };\n}\n\nexport { useAllowCreate };\n//# sourceMappingURL=useAllowCreate.mjs.map\n",
+      "start": 1700406275285,
+      "end": 1700406275419,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406275419,
+      "end": 1700406275419,
+      "order": "normal"
+    }
+  ]
+}

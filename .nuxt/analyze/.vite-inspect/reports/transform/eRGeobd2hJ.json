@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/components/table/src/table-body/index.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, getCurrentInstance, inject, watch, onUnmounted, h } from 'vue';\nimport '../../../../utils/index.mjs';\nimport '../../../../hooks/index.mjs';\nimport useLayoutObserver from '../layout-observer.mjs';\nimport { removePopper } from '../util.mjs';\nimport { TABLE_INJECTION_KEY } from '../tokens.mjs';\nimport useRender from './render-helper.mjs';\nimport defaultProps from './defaults.mjs';\nimport { useNamespace } from '../../../../hooks/use-namespace/index.mjs';\nimport { isClient } from '@vueuse/core';\nimport { rAF } from '../../../../utils/raf.mjs';\nimport { removeClass, addClass } from '../../../../utils/dom/style.mjs';\n\nvar TableBody = defineComponent({\n  name: \"ElTableBody\",\n  props: defaultProps,\n  setup(props) {\n    const instance = getCurrentInstance();\n    const parent = inject(TABLE_INJECTION_KEY);\n    const ns = useNamespace(\"table\");\n    const { wrappedRowRender, tooltipContent, tooltipTrigger } = useRender(props);\n    const { onColumnsChange, onScrollableChange } = useLayoutObserver(parent);\n    watch(props.store.states.hoverRow, (newVal, oldVal) => {\n      if (!props.store.states.isComplex.value || !isClient)\n        return;\n      rAF(() => {\n        const el = instance == null ? void 0 : instance.vnode.el;\n        const rows = Array.from((el == null ? void 0 : el.children) || []).filter((e) => e == null ? void 0 : e.classList.contains(`${ns.e(\"row\")}`));\n        const oldRow = rows[oldVal];\n        const newRow = rows[newVal];\n        if (oldRow) {\n          removeClass(oldRow, \"hover-row\");\n        }\n        if (newRow) {\n          addClass(newRow, \"hover-row\");\n        }\n      });\n    });\n    onUnmounted(() => {\n      var _a;\n      (_a = removePopper) == null ? void 0 : _a();\n    });\n    return {\n      ns,\n      onColumnsChange,\n      onScrollableChange,\n      wrappedRowRender,\n      tooltipContent,\n      tooltipTrigger\n    };\n  },\n  render() {\n    const { wrappedRowRender, store } = this;\n    const data = store.states.data.value || [];\n    return h(\"tbody\", { tabIndex: -1 }, [\n      data.reduce((acc, row) => {\n        return acc.concat(wrappedRowRender(row, acc.length));\n      }, [])\n    ]);\n  }\n});\n\nexport { TableBody as default };\n//# sourceMappingURL=index.mjs.map\n",
+      "start": 1700406273726,
+      "end": 1700406273872,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406273872,
+      "end": 1700406273872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406273873,
+      "end": 1700406273873,
+      "order": "normal"
+    }
+  ]
+}

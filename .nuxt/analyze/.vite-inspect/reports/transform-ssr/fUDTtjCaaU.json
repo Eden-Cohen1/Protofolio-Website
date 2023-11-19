@@ -1,0 +1,261 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/@nuxt/image/dist/runtime/utils/meta.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export async function imageMeta(_ctx, url) {\n  const meta = await _imageMeta(url).catch((err) => {\n    console.error(\"Failed to get image meta for \" + url, err + \"\");\n    return {\n      width: 0,\n      height: 0,\n      ratio: 0\n    };\n  });\n  return meta;\n}\nasync function _imageMeta(url) {\n  if (process.server) {\n    const imageMeta2 = await import(\"image-meta\").then((r) => r.imageMeta);\n    const data = await fetch(url).then((res) => res.buffer());\n    const metadata = imageMeta2(data);\n    if (!metadata) {\n      throw new Error(`No metadata could be extracted from the image \\`${url}\\`.`);\n    }\n    const { width, height } = metadata;\n    const meta = {\n      width,\n      height,\n      ratio: width && height ? width / height : void 0\n    };\n    return meta;\n  }\n  if (typeof Image === \"undefined\") {\n    throw new TypeError(\"Image not supported\");\n  }\n  return new Promise((resolve, reject) => {\n    const img = new Image();\n    img.onload = () => {\n      const meta = {\n        width: img.width,\n        height: img.height,\n        ratio: img.width / img.height\n      };\n      resolve(meta);\n    };\n    img.onerror = (err) => reject(err);\n    img.src = url;\n  });\n}\n",
+      "start": 1700406284436,
+      "end": 1700406284545,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "export async function imageMeta(_ctx, url) {\n  const meta = await _imageMeta(url).catch((err) => {\n    console.error(\"Failed to get image meta for \" + url, err + \"\");\n    return {\n      width: 0,\n      height: 0,\n      ratio: 0\n    };\n  });\n  return meta;\n}\nasync function _imageMeta(url) {\n  if (true) {\n    const imageMeta2 = await import(\"image-meta\").then((r) => r.imageMeta);\n    const data = await fetch(url).then((res) => res.buffer());\n    const metadata = imageMeta2(data);\n    if (!metadata) {\n      throw new Error(`No metadata could be extracted from the image \\`${url}\\`.`);\n    }\n    const { width, height } = metadata;\n    const meta = {\n      width,\n      height,\n      ratio: width && height ? width / height : void 0\n    };\n    return meta;\n  }\n  if (typeof Image === \"undefined\") {\n    throw new TypeError(\"Image not supported\");\n  }\n  return new Promise((resolve, reject) => {\n    const img = new Image();\n    img.onload = () => {\n      const meta = {\n        width: img.width,\n        height: img.height,\n        ratio: img.width / img.height\n      };\n      resolve(meta);\n    };\n    img.onerror = (err) => reject(err);\n    img.src = url;\n  });\n}\n",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/@nuxt/image/dist/runtime/utils/meta.mjs"
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406284545,
+      "end": 1700406284545,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406284545,
+      "end": 1700406284546,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406284546,
+      "end": 1700406284546,
+      "order": "normal"
+    }
+  ]
+}

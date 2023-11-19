@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/components/button/src/use-button.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { computed, inject, ref, useSlots, Text } from 'vue';\nimport '../../form/index.mjs';\nimport '../../config-provider/index.mjs';\nimport '../../../hooks/index.mjs';\nimport { buttonGroupContextKey } from './constants.mjs';\nimport { useDeprecated } from '../../../hooks/use-deprecated/index.mjs';\nimport { useGlobalConfig } from '../../config-provider/src/hooks/use-global-config.mjs';\nimport { useFormItem } from '../../form/src/hooks/use-form-item.mjs';\nimport { useFormSize, useFormDisabled } from '../../form/src/hooks/use-form-common-props.mjs';\n\nconst useButton = (props, emit) => {\n  useDeprecated({\n    from: \"type.text\",\n    replacement: \"link\",\n    version: \"3.0.0\",\n    scope: \"props\",\n    ref: \"https://element-plus.org/en-US/component/button.html#button-attributes\"\n  }, computed(() => props.type === \"text\"));\n  const buttonGroupContext = inject(buttonGroupContextKey, void 0);\n  const globalConfig = useGlobalConfig(\"button\");\n  const { form } = useFormItem();\n  const _size = useFormSize(computed(() => buttonGroupContext == null ? void 0 : buttonGroupContext.size));\n  const _disabled = useFormDisabled();\n  const _ref = ref();\n  const slots = useSlots();\n  const _type = computed(() => props.type || (buttonGroupContext == null ? void 0 : buttonGroupContext.type) || \"\");\n  const autoInsertSpace = computed(() => {\n    var _a, _b, _c;\n    return (_c = (_b = props.autoInsertSpace) != null ? _b : (_a = globalConfig.value) == null ? void 0 : _a.autoInsertSpace) != null ? _c : false;\n  });\n  const _props = computed(() => {\n    if (props.tag === \"button\") {\n      return {\n        ariaDisabled: _disabled.value || props.loading,\n        disabled: _disabled.value || props.loading,\n        autofocus: props.autofocus,\n        type: props.nativeType\n      };\n    }\n    return {};\n  });\n  const shouldAddSpace = computed(() => {\n    var _a;\n    const defaultSlot = (_a = slots.default) == null ? void 0 : _a.call(slots);\n    if (autoInsertSpace.value && (defaultSlot == null ? void 0 : defaultSlot.length) === 1) {\n      const slot = defaultSlot[0];\n      if ((slot == null ? void 0 : slot.type) === Text) {\n        const text = slot.children;\n        return /^\\p{Unified_Ideograph}{2}$/u.test(text.trim());\n      }\n    }\n    return false;\n  });\n  const handleClick = (evt) => {\n    if (props.nativeType === \"reset\") {\n      form == null ? void 0 : form.resetFields();\n    }\n    emit(\"click\", evt);\n  };\n  return {\n    _disabled,\n    _size,\n    _type,\n    _ref,\n    _props,\n    shouldAddSpace,\n    handleClick\n  };\n};\n\nexport { useButton };\n//# sourceMappingURL=use-button.mjs.map\n",
+      "start": 1700406273136,
+      "end": 1700406273223,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406273223,
+      "end": 1700406273223,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406273223,
+      "end": 1700406273223,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406273223,
+      "end": 1700406273223,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406273223,
+      "end": 1700406273223,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406273223,
+      "end": 1700406273223,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406273223,
+      "end": 1700406273223,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406273223,
+      "end": 1700406273223,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406273223,
+      "end": 1700406273223,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406273223,
+      "end": 1700406273223,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406273223,
+      "end": 1700406273223,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406273223,
+      "end": 1700406273223,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406273223,
+      "end": 1700406273223,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406273223,
+      "end": 1700406273223,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406273223,
+      "end": 1700406273223,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406273223,
+      "end": 1700406273223,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406273223,
+      "end": 1700406273224,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406273224,
+      "end": 1700406273224,
+      "order": "normal"
+    }
+  ]
+}

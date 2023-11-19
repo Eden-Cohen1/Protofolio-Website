@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/hooks/use-draggable/index.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { onMounted, watchEffect, onBeforeUnmount } from 'vue';\nimport '../../utils/index.mjs';\nimport { addUnit } from '../../utils/dom/style.mjs';\n\nconst useDraggable = (targetRef, dragRef, draggable) => {\n  let transform = {\n    offsetX: 0,\n    offsetY: 0\n  };\n  const onMousedown = (e) => {\n    const downX = e.clientX;\n    const downY = e.clientY;\n    const { offsetX, offsetY } = transform;\n    const targetRect = targetRef.value.getBoundingClientRect();\n    const targetLeft = targetRect.left;\n    const targetTop = targetRect.top;\n    const targetWidth = targetRect.width;\n    const targetHeight = targetRect.height;\n    const clientWidth = document.documentElement.clientWidth;\n    const clientHeight = document.documentElement.clientHeight;\n    const minLeft = -targetLeft + offsetX;\n    const minTop = -targetTop + offsetY;\n    const maxLeft = clientWidth - targetLeft - targetWidth + offsetX;\n    const maxTop = clientHeight - targetTop - targetHeight + offsetY;\n    const onMousemove = (e2) => {\n      const moveX = Math.min(Math.max(offsetX + e2.clientX - downX, minLeft), maxLeft);\n      const moveY = Math.min(Math.max(offsetY + e2.clientY - downY, minTop), maxTop);\n      transform = {\n        offsetX: moveX,\n        offsetY: moveY\n      };\n      if (targetRef.value) {\n        targetRef.value.style.transform = `translate(${addUnit(moveX)}, ${addUnit(moveY)})`;\n      }\n    };\n    const onMouseup = () => {\n      document.removeEventListener(\"mousemove\", onMousemove);\n      document.removeEventListener(\"mouseup\", onMouseup);\n    };\n    document.addEventListener(\"mousemove\", onMousemove);\n    document.addEventListener(\"mouseup\", onMouseup);\n  };\n  const onDraggable = () => {\n    if (dragRef.value && targetRef.value) {\n      dragRef.value.addEventListener(\"mousedown\", onMousedown);\n    }\n  };\n  const offDraggable = () => {\n    if (dragRef.value && targetRef.value) {\n      dragRef.value.removeEventListener(\"mousedown\", onMousedown);\n    }\n  };\n  onMounted(() => {\n    watchEffect(() => {\n      if (draggable.value) {\n        onDraggable();\n      } else {\n        offDraggable();\n      }\n    });\n  });\n  onBeforeUnmount(() => {\n    offDraggable();\n  });\n};\n\nexport { useDraggable };\n//# sourceMappingURL=index.mjs.map\n",
+      "start": 1700406270353,
+      "end": 1700406270417,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406270417,
+      "end": 1700406270417,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406270417,
+      "end": 1700406270418,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406270418,
+      "end": 1700406270418,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406270418,
+      "end": 1700406270418,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406270418,
+      "end": 1700406270418,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406270418,
+      "end": 1700406270418,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406270418,
+      "end": 1700406270418,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406270418,
+      "end": 1700406270418,
+      "order": "normal"
+    }
+  ]
+}

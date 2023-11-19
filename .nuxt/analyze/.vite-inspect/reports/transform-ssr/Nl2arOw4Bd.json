@@ -1,0 +1,261 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/components/upload/src/ajax.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { isNil } from 'lodash-unified';\nimport '../../../utils/index.mjs';\nimport { throwError } from '../../../utils/error.mjs';\nimport { isArray } from '@vue/shared';\n\nconst SCOPE = \"ElUpload\";\nclass UploadAjaxError extends Error {\n  constructor(message, status, method, url) {\n    super(message);\n    this.name = \"UploadAjaxError\";\n    this.status = status;\n    this.method = method;\n    this.url = url;\n  }\n}\nfunction getError(action, option, xhr) {\n  let msg;\n  if (xhr.response) {\n    msg = `${xhr.response.error || xhr.response}`;\n  } else if (xhr.responseText) {\n    msg = `${xhr.responseText}`;\n  } else {\n    msg = `fail to ${option.method} ${action} ${xhr.status}`;\n  }\n  return new UploadAjaxError(msg, xhr.status, option.method, action);\n}\nfunction getBody(xhr) {\n  const text = xhr.responseText || xhr.response;\n  if (!text) {\n    return text;\n  }\n  try {\n    return JSON.parse(text);\n  } catch (e) {\n    return text;\n  }\n}\nconst ajaxUpload = (option) => {\n  if (typeof XMLHttpRequest === \"undefined\")\n    throwError(SCOPE, \"XMLHttpRequest is undefined\");\n  const xhr = new XMLHttpRequest();\n  const action = option.action;\n  if (xhr.upload) {\n    xhr.upload.addEventListener(\"progress\", (evt) => {\n      const progressEvt = evt;\n      progressEvt.percent = evt.total > 0 ? evt.loaded / evt.total * 100 : 0;\n      option.onProgress(progressEvt);\n    });\n  }\n  const formData = new FormData();\n  if (option.data) {\n    for (const [key, value] of Object.entries(option.data)) {\n      if (isArray(value) && value.length)\n        formData.append(key, ...value);\n      else\n        formData.append(key, value);\n    }\n  }\n  formData.append(option.filename, option.file, option.file.name);\n  xhr.addEventListener(\"error\", () => {\n    option.onError(getError(action, option, xhr));\n  });\n  xhr.addEventListener(\"load\", () => {\n    if (xhr.status < 200 || xhr.status >= 300) {\n      return option.onError(getError(action, option, xhr));\n    }\n    option.onSuccess(getBody(xhr));\n  });\n  xhr.open(option.method, action, true);\n  if (option.withCredentials && \"withCredentials\" in xhr) {\n    xhr.withCredentials = true;\n  }\n  const headers = option.headers || {};\n  if (headers instanceof Headers) {\n    headers.forEach((value, key) => xhr.setRequestHeader(key, value));\n  } else {\n    for (const [key, value] of Object.entries(headers)) {\n      if (isNil(value))\n        continue;\n      xhr.setRequestHeader(key, String(value));\n    }\n  }\n  xhr.send(formData);\n  return xhr;\n};\n\nexport { UploadAjaxError, ajaxUpload };\n//# sourceMappingURL=ajax.mjs.map\n",
+      "start": 1700406282570,
+      "end": 1700406282711,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { isNil } from 'lodash-unified';\nimport '../../../utils/index.mjs';\nimport { throwError } from '../../../utils/error.mjs';\nimport { isArray } from '@vue/shared';\n\nconst SCOPE = \"ElUpload\";\nclass UploadAjaxError extends Error {\n  constructor(message, status, method, url) {\n    super(message);\n    this.name = \"UploadAjaxError\";\n    this.status = status;\n    this.method = method;\n    this.url = url;\n  }\n}\nfunction getError(action, option, xhr) {\n  let msg;\n  if (xhr.response) {\n    msg = `${xhr.response.error || xhr.response}`;\n  } else if (xhr.responseText) {\n    msg = `${xhr.responseText}`;\n  } else {\n    msg = `fail to ${option.method} ${action} ${xhr.status}`;\n  }\n  return new UploadAjaxError(msg, xhr.status, option.method, action);\n}\nfunction getBody(xhr) {\n  const text = xhr.responseText || xhr.response;\n  if (!text) {\n    return text;\n  }\n  try {\n    return JSON.parse(text);\n  } catch (e) {\n    return text;\n  }\n}\nconst ajaxUpload = (option) => {\n  if (\"undefined\" === \"undefined\")\n    throwError(SCOPE, \"XMLHttpRequest is undefined\");\n  const xhr = new XMLHttpRequest();\n  const action = option.action;\n  if (xhr.upload) {\n    xhr.upload.addEventListener(\"progress\", (evt) => {\n      const progressEvt = evt;\n      progressEvt.percent = evt.total > 0 ? evt.loaded / evt.total * 100 : 0;\n      option.onProgress(progressEvt);\n    });\n  }\n  const formData = new FormData();\n  if (option.data) {\n    for (const [key, value] of Object.entries(option.data)) {\n      if (isArray(value) && value.length)\n        formData.append(key, ...value);\n      else\n        formData.append(key, value);\n    }\n  }\n  formData.append(option.filename, option.file, option.file.name);\n  xhr.addEventListener(\"error\", () => {\n    option.onError(getError(action, option, xhr));\n  });\n  xhr.addEventListener(\"load\", () => {\n    if (xhr.status < 200 || xhr.status >= 300) {\n      return option.onError(getError(action, option, xhr));\n    }\n    option.onSuccess(getBody(xhr));\n  });\n  xhr.open(option.method, action, true);\n  if (option.withCredentials && \"withCredentials\" in xhr) {\n    xhr.withCredentials = true;\n  }\n  const headers = option.headers || {};\n  if (headers instanceof Headers) {\n    headers.forEach((value, key) => xhr.setRequestHeader(key, value));\n  } else {\n    for (const [key, value] of Object.entries(headers)) {\n      if (isNil(value))\n        continue;\n      xhr.setRequestHeader(key, String(value));\n    }\n  }\n  xhr.send(formData);\n  return xhr;\n};\n\nexport { UploadAjaxError, ajaxUpload };\n//# sourceMappingURL=ajax.mjs.map\n",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/components/upload/src/ajax.mjs"
+        ],
+        "names": [],
+        "mappings": "AAAA,MAAM,CAAC,CAAC,CAAC,KAAK,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,MAAM,CAAC,OAAO,CAAC,CAAC;AACvC,MAAM,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,KAAK,CAAC,KAAK,CAAC,GAAG,CAAC,CAAC;AAClC,MAAM,CAAC,CAAC,CAAC,UAAU,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,KAAK,CAAC,KAAK,CAAC,GAAG,CAAC,CAAC;AACtD,MAAM,CAAC,CAAC,CAAC,OAAO,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,GAAG,CAAC,MAAM,CAAC,CAAC;AACtC;AACA,KAAK,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,QAAQ,CAAC,CAAC;AACzB,KAAK,CAAC,eAAe,CAAC,OAAO,CAAC,KAAK,CAAC,CAAC;AACrC,CAAC,CAAC,WAAW,CAAC,OAAO,CAAC,CAAC,MAAM,CAAC,CAAC,MAAM,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC;AAC7C,CAAC,CAAC,CAAC,CAAC,KAAK,CAAC,OAAO,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,eAAe,CAAC,CAAC;AAClC,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,MAAM,CAAC,CAAC,CAAC,MAAM,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,MAAM,CAAC,CAAC,CAAC,MAAM,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,GAAG,CAAC,CAAC,CAAC,GAAG,CAAC;AACnB,CAAC,CAAC,CAAC;AACH,CAAC;AACD,QAAQ,CAAC,QAAQ,CAAC,MAAM,CAAC,CAAC,MAAM,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,GAAG,CAAC,GAAG,CAAC;AACV,CAAC,CAAC,EAAE,CAAC,CAAC,GAAG,CAAC,QAAQ,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,QAAQ,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,QAAQ,CAAC,CAAC,CAAC;AAClD,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,EAAE,CAAC,CAAC,GAAG,CAAC,YAAY,CAAC,CAAC,CAAC;AAChC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,YAAY,CAAC,CAAC,CAAC;AAChC,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,EAAE,CAAC,CAAC,CAAC,MAAM,CAAC,MAAM,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,MAAM,CAAC,CAAC,CAAC;AAC7D,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,MAAM,CAAC,GAAG,CAAC,eAAe,CAAC,GAAG,CAAC,CAAC,GAAG,CAAC,MAAM,CAAC,CAAC,MAAM,CAAC,MAAM,CAAC,CAAC,MAAM,CAAC,CAAC;AACrE,CAAC;AACD,QAAQ,CAAC,OAAO,CAAC,GAAG,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,KAAK,CAAC,IAAI,CAAC,CAAC,CAAC,GAAG,CAAC,YAAY,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,QAAQ,CAAC;AAChD,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,IAAI,CAAC;AAChB,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,GAAG,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,IAAI,CAAC,KAAK,CAAC,IAAI,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,IAAI,CAAC;AAChB,CAAC,CAAC,CAAC;AACH,CAAC;AACD,KAAK,CAAC,UAAU,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC,CAAC,EAAE,CAAC,CAAC,WAAqB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,SAAS,CAAC,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC,UAAU,CAAC,KAAK,CAAC,CAAC,CAAC,cAAc,CAAC,EAAE,CAAC,SAAS,CAAC,CAAC,CAAC;AACrD,CAAC,CAAC,KAAK,CAAC,GAAG,CAAC,CAAC,CAAC,GAAG,CAAC,cAAc,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,KAAK,CAAC,MAAM,CAAC,CAAC,CAAC,MAAM,CAAC,MAAM,CAAC;AAC/B,CAAC,CAAC,EAAE,CAAC,CAAC,GAAG,CAAC,MAAM,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,MAAM,CAAC,gBAAgB,CAAC,CAAC,QAAQ,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,KAAK,CAAC,WAAW,CAAC,CAAC,CAAC,GAAG,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,WAAW,CAAC,OAAO,CAAC,CAAC,CAAC,GAAG,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,MAAM,CAAC,CAAC,CAAC,GAAG,CAAC,KAAK,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,UAAU,CAAC,WAAW,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,KAAK,CAAC,QAAQ,CAAC,CAAC,CAAC,GAAG,CAAC,QAAQ,CAAC,CAAC,CAAC;AAClC,CAAC,CAAC,EAAE,CAAC,CAAC,MAAM,CAAC,IAAI,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,KAAK,CAAC,CAAC,GAAG,CAAC,CAAC,KAAK,CAAC,CAAC,EAAE,CAAC,MAAM,CAAC,OAAO,CAAC,MAAM,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC;AAC7D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,OAAO,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,KAAK,CAAC,MAAM,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,QAAQ,CAAC,MAAM,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,KAAK,CAAC,CAAC;AACvC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,IAAI;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,QAAQ,CAAC,MAAM,CAAC,GAAG,CAAC,CAAC,KAAK,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,QAAQ,CAAC,MAAM,CAAC,MAAM,CAAC,QAAQ,CAAC,CAAC,MAAM,CAAC,IAAI,CAAC,CAAC,MAAM,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC;AAClE,CAAC,CAAC,GAAG,CAAC,gBAAgB,CAAC,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvC,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,OAAO,CAAC,QAAQ,CAAC,MAAM,CAAC,CAAC,MAAM,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC;AAClD,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,GAAG,CAAC,gBAAgB,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,GAAG,CAAC,MAAM,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,MAAM,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC;AAChD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,MAAM,CAAC,OAAO,CAAC,QAAQ,CAAC,MAAM,CAAC,CAAC,MAAM,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC;AAC3D,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,SAAS,CAAC,OAAO,CAAC,GAAG,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,GAAG,CAAC,IAAI,CAAC,MAAM,CAAC,MAAM,CAAC,CAAC,MAAM,CAAC,CAAC,IAAI,CAAC,CAAC;AACxC,CAAC,CAAC,EAAE,CAAC,CAAC,MAAM,CAAC,eAAe,CAAC,CAAC,CAAC,CAAC,CAAC,eAAe,CAAC,CAAC,EAAE,CAAC,GAAG,CAAC,CAAC,CAAC;AAC3D,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,eAAe,CAAC,CAAC,CAAC,IAAI,CAAC;AAC/B,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,KAAK,CAAC,OAAO,CAAC,CAAC,CAAC,MAAM,CAAC,OAAO,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvC,CAAC,CAAC,EAAE,CAAC,CAAC,OAAO,CAAC,UAAU,CAAC,OAAO,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,CAAC,CAAC,OAAO,CAAC,OAAO,CAAC,CAAC,KAAK,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,gBAAgB,CAAC,GAAG,CAAC,CAAC,KAAK,CAAC,CAAC,CAAC;AACtE,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,KAAK,CAAC,CAAC,GAAG,CAAC,CAAC,KAAK,CAAC,CAAC,EAAE,CAAC,MAAM,CAAC,OAAO,CAAC,OAAO,CAAC,CAAC,CAAC,CAAC;AACzD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,KAAK,CAAC,KAAK,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,QAAQ,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,gBAAgB,CAAC,GAAG,CAAC,CAAC,MAAM,CAAC,KAAK,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,GAAG,CAAC,IAAI,CAAC,QAAQ,CAAC,CAAC;AACrB,CAAC,CAAC,MAAM,CAAC,GAAG,CAAC;AACb,CAAC,CAAC;AACF;AACA,MAAM,CAAC,CAAC,CAAC,eAAe,CAAC,CAAC,UAAU,CAAC,CAAC,CAAC;AACvC,CAAC,CAAC,CAAC,CAAC,gBAAgB,CAAC,IAAI,CAAC,GAAG,CAAC,GAAG;"
+      }
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406282711,
+      "end": 1700406282711,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406282712,
+      "end": 1700406282712,
+      "order": "normal"
+    }
+  ]
+}

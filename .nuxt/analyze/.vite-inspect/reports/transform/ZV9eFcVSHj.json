@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/image-meta/dist/index.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "const decoder = new TextDecoder();\nconst toUTF8String = (input, start = 0, end = input.length) => decoder.decode(input.slice(start, end));\nconst toHexString = (input, start = 0, end = input.length) => input.slice(start, end).reduce((memo, i) => memo + (\"0\" + i.toString(16)).slice(-2), \"\");\nconst readInt16LE = (input, offset = 0) => {\n  const val = input[offset] + input[offset + 1] * 2 ** 8;\n  return val | (val & 2 ** 15) * 131070;\n};\nconst readUInt16BE = (input, offset = 0) => input[offset] * 2 ** 8 + input[offset + 1];\nconst readUInt16LE = (input, offset = 0) => input[offset] + input[offset + 1] * 2 ** 8;\nconst readUInt24LE = (input, offset = 0) => input[offset] + input[offset + 1] * 2 ** 8 + input[offset + 2] * 2 ** 16;\nconst readInt32LE = (input, offset = 0) => input[offset] + input[offset + 1] * 2 ** 8 + input[offset + 2] * 2 ** 16 + (input[offset + 3] << 24);\nconst readUInt32BE = (input, offset = 0) => input[offset] * 2 ** 24 + input[offset + 1] * 2 ** 16 + input[offset + 2] * 2 ** 8 + input[offset + 3];\nconst readUInt32LE = (input, offset = 0) => input[offset] + input[offset + 1] * 2 ** 8 + input[offset + 2] * 2 ** 16 + input[offset + 3] * 2 ** 24;\nconst methods = {\n  readUInt16BE,\n  readUInt16LE,\n  readUInt32BE,\n  readUInt32LE\n};\nfunction readUInt(input, bits, offset, isBigEndian) {\n  offset = offset || 0;\n  const endian = isBigEndian ? \"BE\" : \"LE\";\n  const methodName = \"readUInt\" + bits + endian;\n  return methods[methodName](input, offset);\n}\n\nconst BMP = {\n  validate: (input) => toUTF8String(input, 0, 2) === \"BM\",\n  calculate: (input) => ({\n    height: Math.abs(readInt32LE(input, 22)),\n    width: readUInt32LE(input, 18)\n  })\n};\n\nconst TYPE_ICON = 1;\nconst SIZE_HEADER$1 = 2 + 2 + 2;\nconst SIZE_IMAGE_ENTRY = 1 + 1 + 1 + 1 + 2 + 2 + 4 + 4;\nfunction getSizeFromOffset(input, offset) {\n  const value = input[offset];\n  return value === 0 ? 256 : value;\n}\nfunction getImageSize$1(input, imageIndex) {\n  const offset = SIZE_HEADER$1 + imageIndex * SIZE_IMAGE_ENTRY;\n  return {\n    height: getSizeFromOffset(input, offset + 1),\n    width: getSizeFromOffset(input, offset)\n  };\n}\nconst ICO = {\n  validate(input) {\n    const reserved = readUInt16LE(input, 0);\n    const imageCount = readUInt16LE(input, 4);\n    if (reserved !== 0 || imageCount === 0) {\n      return false;\n    }\n    const imageType = readUInt16LE(input, 2);\n    return imageType === TYPE_ICON;\n  },\n  calculate(input) {\n    const nbImages = readUInt16LE(input, 4);\n    const imageSize = getImageSize$1(input, 0);\n    if (nbImages === 1) {\n      return imageSize;\n    }\n    const imgs = [imageSize];\n    for (let imageIndex = 1; imageIndex < nbImages; imageIndex += 1) {\n      imgs.push(getImageSize$1(input, imageIndex));\n    }\n    return {\n      height: imageSize.height,\n      images: imgs,\n      width: imageSize.width\n    };\n  }\n};\n\nconst TYPE_CURSOR = 2;\nconst CUR = {\n  validate(input) {\n    const reserved = readUInt16LE(input, 0);\n    const imageCount = readUInt16LE(input, 4);\n    if (reserved !== 0 || imageCount === 0) {\n      return false;\n    }\n    const imageType = readUInt16LE(input, 2);\n    return imageType === TYPE_CURSOR;\n  },\n  calculate: (input) => ICO.calculate(input)\n};\n\nconst DDS = {\n  validate: (input) => readUInt32LE(input, 0) === 542327876,\n  calculate: (input) => ({\n    height: readUInt32LE(input, 12),\n    width: readUInt32LE(input, 16)\n  })\n};\n\nconst gifRegexp = /^GIF8[79]a/;\nconst GIF = {\n  validate: (input) => gifRegexp.test(toUTF8String(input, 0, 6)),\n  calculate: (input) => ({\n    height: readUInt16LE(input, 8),\n    width: readUInt16LE(input, 6)\n  })\n};\n\nconst SIZE_HEADER = 4 + 4;\nconst FILE_LENGTH_OFFSET = 4;\nconst ENTRY_LENGTH_OFFSET = 4;\nconst ICON_TYPE_SIZE = {\n  ICON: 32,\n  \"ICN#\": 32,\n  // m => 16 x 16\n  \"icm#\": 16,\n  icm4: 16,\n  icm8: 16,\n  // s => 16 x 16\n  \"ics#\": 16,\n  ics4: 16,\n  ics8: 16,\n  is32: 16,\n  s8mk: 16,\n  icp4: 16,\n  // l => 32 x 32\n  icl4: 32,\n  icl8: 32,\n  il32: 32,\n  l8mk: 32,\n  icp5: 32,\n  ic11: 32,\n  // h => 48 x 48\n  ich4: 48,\n  ich8: 48,\n  ih32: 48,\n  h8mk: 48,\n  // . => 64 x 64\n  icp6: 64,\n  ic12: 32,\n  // t => 128 x 128\n  it32: 128,\n  t8mk: 128,\n  ic07: 128,\n  // . => 256 x 256\n  ic08: 256,\n  ic13: 256,\n  // . => 512 x 512\n  ic09: 512,\n  ic14: 512,\n  // . => 1024 x 1024\n  ic10: 1024\n};\nfunction readImageHeader(input, imageOffset) {\n  const imageLengthOffset = imageOffset + ENTRY_LENGTH_OFFSET;\n  return [\n    toUTF8String(input, imageOffset, imageLengthOffset),\n    readUInt32BE(input, imageLengthOffset)\n  ];\n}\nfunction getImageSize(type) {\n  const size = ICON_TYPE_SIZE[type];\n  return { width: size, height: size, type };\n}\nconst ICNS = {\n  validate: (input) => toUTF8String(input, 0, 4) === \"icns\",\n  calculate(input) {\n    const inputLength = input.length;\n    const fileLength = readUInt32BE(input, FILE_LENGTH_OFFSET);\n    let imageOffset = SIZE_HEADER;\n    let imageHeader = readImageHeader(input, imageOffset);\n    let imageSize = getImageSize(imageHeader[0]);\n    imageOffset += imageHeader[1];\n    if (imageOffset === fileLength) {\n      return imageSize;\n    }\n    const result = {\n      height: imageSize.height,\n      images: [imageSize],\n      width: imageSize.width\n    };\n    while (imageOffset < fileLength && imageOffset < inputLength) {\n      imageHeader = readImageHeader(input, imageOffset);\n      imageSize = getImageSize(imageHeader[0]);\n      imageOffset += imageHeader[1];\n      result.images.push(imageSize);\n    }\n    return result;\n  }\n};\n\nconst J2C = {\n  // TODO: this doesn't seem right. SIZ marker doesn't have to be right after the SOC\n  validate: (input) => toHexString(input, 0, 4) === \"ff4fff51\",\n  calculate: (input) => ({\n    height: readUInt32BE(input, 12),\n    width: readUInt32BE(input, 8)\n  })\n};\n\nconst BoxTypes = {\n  ftyp: \"66747970\",\n  ihdr: \"69686472\",\n  jp2h: \"6a703268\",\n  jp__: \"6a502020\",\n  rreq: \"72726571\",\n  xml_: \"786d6c20\"\n};\nconst calculateRREQLength = (box) => {\n  const unit = box[0];\n  let offset = 1 + 2 * unit;\n  const numStdFlags = readUInt16BE(box, offset);\n  const flagsLength = numStdFlags * (2 + unit);\n  offset = offset + 2 + flagsLength;\n  const numVendorFeatures = readUInt16BE(box, offset);\n  const featuresLength = numVendorFeatures * (16 + unit);\n  return offset + 2 + featuresLength;\n};\nconst parseIHDR = (box) => {\n  return {\n    height: readUInt32BE(box, 4),\n    width: readUInt32BE(box, 8)\n  };\n};\nconst JP2 = {\n  validate(input) {\n    const signature = toHexString(input, 4, 8);\n    const signatureLength = readUInt32BE(input, 0);\n    if (signature !== BoxTypes.jp__ || signatureLength < 1) {\n      return false;\n    }\n    const ftypeBoxStart = signatureLength + 4;\n    const ftypBoxLength = readUInt32BE(input, signatureLength);\n    const ftypBox = input.slice(ftypeBoxStart, ftypeBoxStart + ftypBoxLength);\n    return toHexString(ftypBox, 0, 4) === BoxTypes.ftyp;\n  },\n  calculate(input) {\n    const signatureLength = readUInt32BE(input, 0);\n    const ftypBoxLength = readUInt16BE(input, signatureLength + 2);\n    let offset = signatureLength + 4 + ftypBoxLength;\n    const nextBoxType = toHexString(input, offset, offset + 4);\n    switch (nextBoxType) {\n      case BoxTypes.rreq: {\n        const MAGIC = 4;\n        offset = offset + 4 + MAGIC + calculateRREQLength(input.slice(offset + 4));\n        return parseIHDR(input.slice(offset + 8, offset + 24));\n      }\n      case BoxTypes.jp2h: {\n        return parseIHDR(input.slice(offset + 8, offset + 24));\n      }\n      default: {\n        throw new TypeError(\n          \"Unsupported header found: \" + toUTF8String(input, offset, offset + 4)\n        );\n      }\n    }\n  }\n};\n\nconst EXIF_MARKER = \"45786966\";\nconst APP1_DATA_SIZE_BYTES = 2;\nconst EXIF_HEADER_BYTES = 6;\nconst TIFF_BYTE_ALIGN_BYTES = 2;\nconst BIG_ENDIAN_BYTE_ALIGN = \"4d4d\";\nconst LITTLE_ENDIAN_BYTE_ALIGN = \"4949\";\nconst IDF_ENTRY_BYTES = 12;\nconst NUM_DIRECTORY_ENTRIES_BYTES = 2;\nfunction isEXIF(input) {\n  return toHexString(input, 2, 6) === EXIF_MARKER;\n}\nfunction extractSize(input, index) {\n  return {\n    height: readUInt16BE(input, index),\n    width: readUInt16BE(input, index + 2)\n  };\n}\nfunction extractOrientation(exifBlock, isBigEndian) {\n  const idfOffset = 8;\n  const offset = EXIF_HEADER_BYTES + idfOffset;\n  const idfDirectoryEntries = readUInt(exifBlock, 16, offset, isBigEndian);\n  for (let directoryEntryNumber = 0; directoryEntryNumber < idfDirectoryEntries; directoryEntryNumber++) {\n    const start = offset + NUM_DIRECTORY_ENTRIES_BYTES + directoryEntryNumber * IDF_ENTRY_BYTES;\n    const end = start + IDF_ENTRY_BYTES;\n    if (start > exifBlock.length) {\n      return;\n    }\n    const block = exifBlock.slice(start, end);\n    const tagNumber = readUInt(block, 16, 0, isBigEndian);\n    if (tagNumber === 274) {\n      const dataFormat = readUInt(block, 16, 2, isBigEndian);\n      if (dataFormat !== 3) {\n        return;\n      }\n      const numberOfComponents = readUInt(block, 32, 4, isBigEndian);\n      if (numberOfComponents !== 1) {\n        return;\n      }\n      return readUInt(block, 16, 8, isBigEndian);\n    }\n  }\n}\nfunction validateExifBlock(input, index) {\n  const exifBlock = input.slice(APP1_DATA_SIZE_BYTES, index);\n  const byteAlign = toHexString(\n    exifBlock,\n    EXIF_HEADER_BYTES,\n    EXIF_HEADER_BYTES + TIFF_BYTE_ALIGN_BYTES\n  );\n  const isBigEndian = byteAlign === BIG_ENDIAN_BYTE_ALIGN;\n  const isLittleEndian = byteAlign === LITTLE_ENDIAN_BYTE_ALIGN;\n  if (isBigEndian || isLittleEndian) {\n    return extractOrientation(exifBlock, isBigEndian);\n  }\n}\nfunction validateInput(input, index) {\n  if (index > input.length) {\n    throw new TypeError(\"Corrupt JPG, exceeded buffer limits\");\n  }\n  if (input[index] !== 255) {\n    throw new TypeError(\"Invalid JPG, marker table corrupted\");\n  }\n}\nconst JPG = {\n  validate: (input) => toHexString(input, 0, 2) === \"ffd8\",\n  calculate(input) {\n    input = input.slice(4);\n    let orientation;\n    let next;\n    while (input.length > 0) {\n      const i = readUInt16BE(input, 0);\n      if (isEXIF(input)) {\n        orientation = validateExifBlock(input, i);\n      }\n      validateInput(input, i);\n      next = input[i + 1];\n      if (next === 192 || next === 193 || next === 194) {\n        const size = extractSize(input, i + 5);\n        if (!orientation) {\n          return size;\n        }\n        return {\n          height: size.height,\n          orientation,\n          width: size.width\n        };\n      }\n      input = input.slice(i + 2);\n    }\n    throw new TypeError(\"Invalid JPG, no size found\");\n  }\n};\n\nconst KTX = {\n  validate: (input) => toUTF8String(input, 1, 7) === \"KTX 11\",\n  calculate: (input) => ({\n    height: readUInt32LE(input, 40),\n    width: readUInt32LE(input, 36)\n  })\n};\n\nconst pngSignature = \"PNG\\r\\n\u001a\\n\";\nconst pngImageHeaderChunkName = \"IHDR\";\nconst pngFriedChunkName = \"CgBI\";\nconst PNG = {\n  validate(input) {\n    if (pngSignature === toUTF8String(input, 1, 8)) {\n      let chunkName = toUTF8String(input, 12, 16);\n      if (chunkName === pngFriedChunkName) {\n        chunkName = toUTF8String(input, 28, 32);\n      }\n      if (chunkName !== pngImageHeaderChunkName) {\n        throw new TypeError(\"Invalid PNG\");\n      }\n      return true;\n    }\n    return false;\n  },\n  calculate(input) {\n    if (toUTF8String(input, 12, 16) === pngFriedChunkName) {\n      return {\n        height: readUInt32BE(input, 36),\n        width: readUInt32BE(input, 32)\n      };\n    }\n    return {\n      height: readUInt32BE(input, 20),\n      width: readUInt32BE(input, 16)\n    };\n  }\n};\n\nconst PNMTypes = {\n  P1: \"pbm/ascii\",\n  P2: \"pgm/ascii\",\n  P3: \"ppm/ascii\",\n  P4: \"pbm\",\n  P5: \"pgm\",\n  P6: \"ppm\",\n  P7: \"pam\",\n  PF: \"pfm\"\n};\nconst handlers = {\n  default: (lines) => {\n    let dimensions = [];\n    while (lines.length > 0) {\n      const line = lines.shift();\n      if (line[0] === \"#\") {\n        continue;\n      }\n      dimensions = line.split(\" \");\n      break;\n    }\n    if (dimensions.length === 2) {\n      return {\n        height: Number.parseInt(dimensions[1], 10),\n        width: Number.parseInt(dimensions[0], 10)\n      };\n    } else {\n      throw new TypeError(\"Invalid PNM\");\n    }\n  },\n  pam: (lines) => {\n    const size = {};\n    while (lines.length > 0) {\n      const line = lines.shift();\n      if (line.length > 16 || (line.codePointAt(0) || 0) > 128) {\n        continue;\n      }\n      const [key, value] = line.split(\" \");\n      if (key && value) {\n        size[key.toLowerCase()] = Number.parseInt(value, 10);\n      }\n      if (size.height && size.width) {\n        break;\n      }\n    }\n    if (size.height && size.width) {\n      return {\n        height: size.height,\n        width: size.width\n      };\n    } else {\n      throw new TypeError(\"Invalid PAM\");\n    }\n  }\n};\nconst PNM = {\n  validate: (input) => toUTF8String(input, 0, 2) in PNMTypes,\n  calculate(input) {\n    const signature = toUTF8String(input, 0, 2);\n    const type = PNMTypes[signature];\n    const lines = toUTF8String(input, 3).split(/[\\n\\r]+/);\n    const handler = handlers[type] || handlers.default;\n    return handler(lines);\n  }\n};\n\nconst PSD = {\n  validate: (input) => toUTF8String(input, 0, 4) === \"8BPS\",\n  calculate: (input) => ({\n    height: readUInt32BE(input, 14),\n    width: readUInt32BE(input, 18)\n  })\n};\n\nconst svgReg = /<svg\\s([^\"'>]|\"[^\"]*\"|'[^']*')*>/;\nconst extractorRegExps = {\n  height: /\\sheight=([\"'])([^%]+?)\\1/,\n  root: svgReg,\n  viewbox: /\\sviewbox=([\"'])(.+?)\\1/i,\n  width: /\\swidth=([\"'])([^%]+?)\\1/\n};\nconst INCH_CM = 2.54;\nconst units = {\n  in: 96,\n  cm: 96 / INCH_CM,\n  em: 16,\n  ex: 8,\n  m: 96 / INCH_CM * 100,\n  mm: 96 / INCH_CM / 10,\n  pc: 96 / 72 / 12,\n  pt: 96 / 72,\n  px: 1\n};\nconst unitsReg = new RegExp(\n  `^([0-9.]+(?:e\\\\d+)?)(${Object.keys(units).join(\"|\")})?$`\n);\nfunction parseLength(len) {\n  const m = unitsReg.exec(len);\n  if (!m) {\n    return void 0;\n  }\n  return Math.round(Number(m[1]) * (units[m[2]] || 1));\n}\nfunction parseViewbox(viewbox) {\n  const bounds = viewbox.split(\" \");\n  return {\n    height: parseLength(bounds[3]),\n    width: parseLength(bounds[2])\n  };\n}\nfunction parseAttributes(root) {\n  const width = root.match(extractorRegExps.width);\n  const height = root.match(extractorRegExps.height);\n  const viewbox = root.match(extractorRegExps.viewbox);\n  return {\n    height: height && parseLength(height[2]),\n    viewbox: viewbox && parseViewbox(viewbox[2]),\n    width: width && parseLength(width[2])\n  };\n}\nfunction calculateByDimensions(attrs) {\n  return {\n    height: attrs.height,\n    width: attrs.width\n  };\n}\nfunction calculateByViewbox(attrs, viewbox) {\n  const ratio = viewbox.width / viewbox.height;\n  if (attrs.width) {\n    return {\n      height: Math.floor(attrs.width / ratio),\n      width: attrs.width\n    };\n  }\n  if (attrs.height) {\n    return {\n      height: attrs.height,\n      width: Math.floor(attrs.height * ratio)\n    };\n  }\n  return {\n    height: viewbox.height,\n    width: viewbox.width\n  };\n}\nconst SVG = {\n  // Scan only the first kilo-byte to speed up the check on larger files\n  validate: (input) => svgReg.test(toUTF8String(input, 0, 1e3)),\n  calculate(input) {\n    const root = toUTF8String(input).match(extractorRegExps.root);\n    if (root) {\n      const attrs = parseAttributes(root[0]);\n      if (attrs.width && attrs.height) {\n        return calculateByDimensions(attrs);\n      }\n      if (attrs.viewbox) {\n        return calculateByViewbox(attrs, attrs.viewbox);\n      }\n    }\n    throw new TypeError(\"Invalid SVG\");\n  }\n};\n\nconst TGA = {\n  validate(input) {\n    return readUInt16LE(input, 0) === 0 && readUInt16LE(input, 4) === 0;\n  },\n  calculate(input) {\n    return {\n      height: readUInt16LE(input, 14),\n      width: readUInt16LE(input, 12)\n    };\n  }\n};\n\nconst signatures = /* @__PURE__ */ new Set([\n  \"492049\",\n  // ?\n  \"49492a00\",\n  // Little endian\n  \"4d4d002a\",\n  // Big Endian\n  \"4d4d002a\"\n  // BigTIFF > 4GB. currently not supported\n]);\nconst TIFF = {\n  validate: (input) => signatures.has(toHexString(input, 0, 4)),\n  calculate: () => ({ width: void 0, height: void 0 })\n};\n\nfunction calculateExtended(input) {\n  return {\n    height: 1 + readUInt24LE(input, 7),\n    width: 1 + readUInt24LE(input, 4)\n  };\n}\nfunction calculateLossless(input) {\n  return {\n    height: 1 + ((input[4] & 15) << 10 | input[3] << 2 | (input[2] & 192) >> 6),\n    width: 1 + ((input[2] & 63) << 8 | input[1])\n  };\n}\nfunction calculateLossy(input) {\n  return {\n    height: readInt16LE(input, 8) & 16383,\n    width: readInt16LE(input, 6) & 16383\n  };\n}\nconst WEBP = {\n  validate(input) {\n    const riffHeader = toUTF8String(input, 0, 4) === \"RIFF\";\n    const webpHeader = toUTF8String(input, 8, 12) === \"WEBP\";\n    const vp8Header = toUTF8String(input, 12, 15) === \"VP8\";\n    return riffHeader && webpHeader && vp8Header;\n  },\n  calculate(input) {\n    const chunkHeader = toUTF8String(input, 12, 16);\n    input = input.slice(20, 30);\n    if (chunkHeader === \"VP8X\") {\n      const extendedHeader = input[0];\n      const validStart = (extendedHeader & 192) === 0;\n      const validEnd = (extendedHeader & 1) === 0;\n      if (validStart && validEnd) {\n        return calculateExtended(input);\n      } else {\n        throw new TypeError(\"Invalid WebP\");\n      }\n    }\n    if (chunkHeader === \"VP8 \" && input[0] !== 47) {\n      return calculateLossy(input);\n    }\n    const signature = toHexString(input, 3, 6);\n    if (chunkHeader === \"VP8L\" && signature !== \"9d012a\") {\n      return calculateLossless(input);\n    }\n    throw new TypeError(\"Invalid WebP\");\n  }\n};\n\nconst typeHandlers = {\n  bmp: BMP,\n  cur: CUR,\n  dds: DDS,\n  gif: GIF,\n  icns: ICNS,\n  ico: ICO,\n  j2c: J2C,\n  jp2: JP2,\n  jpg: JPG,\n  ktx: KTX,\n  png: PNG,\n  pnm: PNM,\n  psd: PSD,\n  svg: SVG,\n  tga: TGA,\n  tiff: TIFF,\n  webp: WEBP\n};\n\nconst keys = Object.keys(typeHandlers);\nconst firstBytes = {\n  56: \"psd\",\n  66: \"bmp\",\n  68: \"dds\",\n  71: \"gif\",\n  73: \"tiff\",\n  77: \"tiff\",\n  82: \"webp\",\n  105: \"icns\",\n  137: \"png\",\n  255: \"jpg\"\n};\nfunction detector(input) {\n  const byte = input[0];\n  if (byte in firstBytes) {\n    const type = firstBytes[byte];\n    if (type && typeHandlers[type].validate(input)) {\n      return type;\n    }\n  }\n  return keys.find((key) => typeHandlers[key].validate(input));\n}\n\nfunction imageMeta(input) {\n  if (!(input instanceof Uint8Array)) {\n    throw new TypeError(\"Input should be a Uint8Array\");\n  }\n  const type = detector(input);\n  if (type !== void 0 && type in typeHandlers) {\n    const size = typeHandlers[type].calculate(input);\n    if (size !== void 0) {\n      size.type = type;\n      return size;\n    }\n  }\n  throw new TypeError(`Unsupported file type: ${type}`);\n}\n\nexport { imageMeta };\n",
+      "start": 1700406276522,
+      "end": 1700406276578,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406276578,
+      "end": 1700406276578,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406276578,
+      "end": 1700406276578,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406276578,
+      "end": 1700406276578,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406276578,
+      "end": 1700406276578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406276578,
+      "end": 1700406276578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406276578,
+      "end": 1700406276578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406276578,
+      "end": 1700406276578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406276578,
+      "end": 1700406276578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406276578,
+      "end": 1700406276578,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406276578,
+      "end": 1700406276578,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406276578,
+      "end": 1700406276578,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406276578,
+      "end": 1700406276578,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406276578,
+      "end": 1700406276578,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406276578,
+      "end": 1700406276578,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406276578,
+      "end": 1700406276578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406276578,
+      "end": 1700406276579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406276579,
+      "end": 1700406276579,
+      "order": "normal"
+    }
+  ]
+}

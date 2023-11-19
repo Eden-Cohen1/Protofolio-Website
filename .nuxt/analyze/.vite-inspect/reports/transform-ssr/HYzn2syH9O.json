@@ -1,0 +1,261 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/@unhead/vue/dist/shared/vue.cf295fb1.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { version, unref, nextTick, inject } from 'vue';\nimport { createServerHead as createServerHead$1, createHead as createHead$1, getActiveHead } from 'unhead';\nimport { defineHeadPlugin } from '@unhead/shared';\n\nconst Vue3 = version.startsWith(\"3\");\n\nfunction resolveUnref(r) {\n  return typeof r === \"function\" ? r() : unref(r);\n}\nfunction resolveUnrefHeadInput(ref, lastKey = \"\") {\n  if (ref instanceof Promise)\n    return ref;\n  const root = resolveUnref(ref);\n  if (!ref || !root)\n    return root;\n  if (Array.isArray(root))\n    return root.map((r) => resolveUnrefHeadInput(r, lastKey));\n  if (typeof root === \"object\") {\n    return Object.fromEntries(\n      Object.entries(root).map(([k, v]) => {\n        if (k === \"titleTemplate\" || k.startsWith(\"on\"))\n          return [k, unref(v)];\n        return [k, resolveUnrefHeadInput(v, k)];\n      })\n    );\n  }\n  return root;\n}\n\nconst VueReactivityPlugin = defineHeadPlugin({\n  hooks: {\n    \"entries:resolve\": function(ctx) {\n      for (const entry of ctx.entries)\n        entry.resolvedInput = resolveUnrefHeadInput(entry.input);\n    }\n  }\n});\n\nconst headSymbol = \"usehead\";\nfunction vueInstall(head) {\n  const plugin = {\n    install(app) {\n      if (Vue3) {\n        app.config.globalProperties.$unhead = head;\n        app.config.globalProperties.$head = head;\n        app.provide(headSymbol, head);\n      }\n    }\n  };\n  return plugin.install;\n}\nfunction createServerHead(options = {}) {\n  const head = createServerHead$1(options);\n  head.use(VueReactivityPlugin);\n  head.install = vueInstall(head);\n  return head;\n}\nfunction createHead(options = {}) {\n  options.domDelayFn = options.domDelayFn || ((fn) => nextTick(() => setTimeout(() => fn(), 0)));\n  const head = createHead$1(options);\n  head.use(VueReactivityPlugin);\n  head.install = vueInstall(head);\n  return head;\n}\n\nconst _global = typeof globalThis !== \"undefined\" ? globalThis : typeof window !== \"undefined\" ? window : typeof global !== \"undefined\" ? global : typeof self !== \"undefined\" ? self : {};\nconst globalKey = \"__unhead_injection_handler__\";\nfunction setHeadInjectionHandler(handler) {\n  _global[globalKey] = handler;\n}\nfunction injectHead() {\n  if (globalKey in _global) {\n    return _global[globalKey]();\n  }\n  const head = inject(headSymbol);\n  if (!head && process.env.NODE_ENV !== \"production\")\n    console.warn(\"Unhead is missing Vue context, falling back to shared context. This may have unexpected results.\");\n  return head || getActiveHead();\n}\n\nexport { Vue3 as V, createServerHead as a, createHead as c, headSymbol as h, injectHead as i, resolveUnrefHeadInput as r, setHeadInjectionHandler as s };\n",
+      "start": 1700406281140,
+      "end": 1700406281292,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406281292,
+      "end": 1700406281292,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "import { version, unref, nextTick, inject } from 'vue';\nimport { createServerHead as createServerHead$1, createHead as createHead$1, getActiveHead } from 'unhead';\nimport { defineHeadPlugin } from '@unhead/shared';\n\nconst Vue3 = version.startsWith(\"3\");\n\nfunction resolveUnref(r) {\n  return typeof r === \"function\" ? r() : unref(r);\n}\nfunction resolveUnrefHeadInput(ref, lastKey = \"\") {\n  if (ref instanceof Promise)\n    return ref;\n  const root = resolveUnref(ref);\n  if (!ref || !root)\n    return root;\n  if (Array.isArray(root))\n    return root.map((r) => resolveUnrefHeadInput(r, lastKey));\n  if (typeof root === \"object\") {\n    return Object.fromEntries(\n      Object.entries(root).map(([k, v]) => {\n        if (k === \"titleTemplate\" || k.startsWith(\"on\"))\n          return [k, unref(v)];\n        return [k, resolveUnrefHeadInput(v, k)];\n      })\n    );\n  }\n  return root;\n}\n\nconst VueReactivityPlugin = defineHeadPlugin({\n  hooks: {\n    \"entries:resolve\": function(ctx) {\n      for (const entry of ctx.entries)\n        entry.resolvedInput = resolveUnrefHeadInput(entry.input);\n    }\n  }\n});\n\nconst headSymbol = \"usehead\";\nfunction vueInstall(head) {\n  const plugin = {\n    install(app) {\n      if (Vue3) {\n        app.config.globalProperties.$unhead = head;\n        app.config.globalProperties.$head = head;\n        app.provide(headSymbol, head);\n      }\n    }\n  };\n  return plugin.install;\n}\nfunction createServerHead(options = {}) {\n  const head = createServerHead$1(options);\n  head.use(VueReactivityPlugin);\n  head.install = vueInstall(head);\n  return head;\n}\nfunction createHead(options = {}) {\n  options.domDelayFn = options.domDelayFn || ((fn) => nextTick(() => setTimeout(() => fn(), 0)));\n  const head = createHead$1(options);\n  head.use(VueReactivityPlugin);\n  head.install = vueInstall(head);\n  return head;\n}\n\nconst _global = typeof globalThis !== \"undefined\" ? globalThis : \"undefined\" !== \"undefined\" ? window : typeof global !== \"undefined\" ? global : typeof self !== \"undefined\" ? self : {};\nconst globalKey = \"__unhead_injection_handler__\";\nfunction setHeadInjectionHandler(handler) {\n  _global[globalKey] = handler;\n}\nfunction injectHead() {\n  if (globalKey in _global) {\n    return _global[globalKey]();\n  }\n  const head = inject(headSymbol);\n  if (!head && process.env.NODE_ENV !== \"production\")\n    console.warn(\"Unhead is missing Vue context, falling back to shared context. This may have unexpected results.\");\n  return head || getActiveHead();\n}\n\nexport { Vue3 as V, createServerHead as a, createHead as c, headSymbol as h, injectHead as i, resolveUnrefHeadInput as r, setHeadInjectionHandler as s };\n",
+      "start": 1700406281292,
+      "end": 1700406281293,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/@unhead/vue/dist/shared/vue.cf295fb1.mjs"
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406281293,
+      "end": 1700406281293,
+      "order": "normal"
+    }
+  ]
+}

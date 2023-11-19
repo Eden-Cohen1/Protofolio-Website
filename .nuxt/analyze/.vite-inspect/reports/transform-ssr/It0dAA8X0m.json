@@ -1,0 +1,252 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/components/popover/src/popover.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import '../../../utils/index.mjs';\nimport '../../tooltip/index.mjs';\nimport '../../dropdown/index.mjs';\nimport { buildProps } from '../../../utils/vue/props/runtime.mjs';\nimport { useTooltipTriggerProps } from '../../tooltip/src/trigger.mjs';\nimport { dropdownProps } from '../../dropdown/src/dropdown.mjs';\nimport { useTooltipContentProps } from '../../tooltip/src/content.mjs';\nimport { isBoolean } from '../../../utils/types.mjs';\n\nconst popoverProps = buildProps({\n  trigger: useTooltipTriggerProps.trigger,\n  placement: dropdownProps.placement,\n  disabled: useTooltipTriggerProps.disabled,\n  visible: useTooltipContentProps.visible,\n  transition: useTooltipContentProps.transition,\n  popperOptions: dropdownProps.popperOptions,\n  tabindex: dropdownProps.tabindex,\n  content: useTooltipContentProps.content,\n  popperStyle: useTooltipContentProps.popperStyle,\n  popperClass: useTooltipContentProps.popperClass,\n  enterable: {\n    ...useTooltipContentProps.enterable,\n    default: true\n  },\n  effect: {\n    ...useTooltipContentProps.effect,\n    default: \"light\"\n  },\n  teleported: useTooltipContentProps.teleported,\n  title: String,\n  width: {\n    type: [String, Number],\n    default: 150\n  },\n  offset: {\n    type: Number,\n    default: void 0\n  },\n  showAfter: {\n    type: Number,\n    default: 0\n  },\n  hideAfter: {\n    type: Number,\n    default: 200\n  },\n  autoClose: {\n    type: Number,\n    default: 0\n  },\n  showArrow: {\n    type: Boolean,\n    default: true\n  },\n  persistent: {\n    type: Boolean,\n    default: true\n  },\n  \"onUpdate:visible\": {\n    type: Function\n  }\n});\nconst popoverEmits = {\n  \"update:visible\": (value) => isBoolean(value),\n  \"before-enter\": () => true,\n  \"before-leave\": () => true,\n  \"after-enter\": () => true,\n  \"after-leave\": () => true\n};\n\nexport { popoverEmits, popoverProps };\n//# sourceMappingURL=popover.mjs.map\n",
+      "start": 1700406280961,
+      "end": 1700406281051,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406281051,
+      "end": 1700406281051,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406281051,
+      "end": 1700406281051,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406281051,
+      "end": 1700406281051,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406281051,
+      "end": 1700406281051,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406281051,
+      "end": 1700406281051,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406281051,
+      "end": 1700406281051,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406281051,
+      "end": 1700406281051,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406281051,
+      "end": 1700406281051,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406281051,
+      "end": 1700406281051,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406281051,
+      "end": 1700406281051,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406281051,
+      "end": 1700406281051,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406281051,
+      "end": 1700406281051,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406281051,
+      "end": 1700406281051,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406281052,
+      "end": 1700406281052,
+      "order": "normal"
+    }
+  ]
+}

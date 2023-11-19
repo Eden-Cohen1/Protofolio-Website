@@ -1,0 +1,252 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/components/dropdown/src/dropdown.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import '../../../utils/index.mjs';\nimport '../../../constants/index.mjs';\nimport '../../collection/index.mjs';\nimport '../../tooltip/index.mjs';\nimport { buildProps, definePropType } from '../../../utils/vue/props/runtime.mjs';\nimport { useTooltipTriggerProps } from '../../tooltip/src/trigger.mjs';\nimport { useTooltipContentProps } from '../../tooltip/src/content.mjs';\nimport { iconPropType } from '../../../utils/vue/icon.mjs';\nimport { EVENT_CODE } from '../../../constants/aria.mjs';\nimport { createCollectionWithScope } from '../../collection/src/collection.mjs';\n\nconst dropdownProps = buildProps({\n  trigger: useTooltipTriggerProps.trigger,\n  effect: {\n    ...useTooltipContentProps.effect,\n    default: \"light\"\n  },\n  type: {\n    type: definePropType(String)\n  },\n  placement: {\n    type: definePropType(String),\n    default: \"bottom\"\n  },\n  popperOptions: {\n    type: definePropType(Object),\n    default: () => ({})\n  },\n  id: String,\n  size: {\n    type: String,\n    default: \"\"\n  },\n  splitButton: Boolean,\n  hideOnClick: {\n    type: Boolean,\n    default: true\n  },\n  loop: {\n    type: Boolean,\n    default: true\n  },\n  showTimeout: {\n    type: Number,\n    default: 150\n  },\n  hideTimeout: {\n    type: Number,\n    default: 150\n  },\n  tabindex: {\n    type: definePropType([Number, String]),\n    default: 0\n  },\n  maxHeight: {\n    type: definePropType([Number, String]),\n    default: \"\"\n  },\n  popperClass: {\n    type: String,\n    default: \"\"\n  },\n  disabled: {\n    type: Boolean,\n    default: false\n  },\n  role: {\n    type: String,\n    default: \"menu\"\n  },\n  buttonProps: {\n    type: definePropType(Object)\n  },\n  teleported: useTooltipContentProps.teleported\n});\nconst dropdownItemProps = buildProps({\n  command: {\n    type: [Object, String, Number],\n    default: () => ({})\n  },\n  disabled: Boolean,\n  divided: Boolean,\n  textValue: String,\n  icon: {\n    type: iconPropType\n  }\n});\nconst dropdownMenuProps = buildProps({\n  onKeydown: { type: definePropType(Function) }\n});\nconst FIRST_KEYS = [\n  EVENT_CODE.down,\n  EVENT_CODE.pageDown,\n  EVENT_CODE.home\n];\nconst LAST_KEYS = [EVENT_CODE.up, EVENT_CODE.pageUp, EVENT_CODE.end];\nconst FIRST_LAST_KEYS = [...FIRST_KEYS, ...LAST_KEYS];\nconst {\n  ElCollection,\n  ElCollectionItem,\n  COLLECTION_INJECTION_KEY,\n  COLLECTION_ITEM_INJECTION_KEY\n} = createCollectionWithScope(\"Dropdown\");\n\nexport { COLLECTION_INJECTION_KEY as DROPDOWN_COLLECTION_INJECTION_KEY, COLLECTION_ITEM_INJECTION_KEY as DROPDOWN_COLLECTION_ITEM_INJECTION_KEY, ElCollection, ElCollectionItem, FIRST_KEYS, FIRST_LAST_KEYS, LAST_KEYS, dropdownItemProps, dropdownMenuProps, dropdownProps };\n//# sourceMappingURL=dropdown.mjs.map\n",
+      "start": 1700406279875,
+      "end": 1700406280091,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406280091,
+      "end": 1700406280091,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406280091,
+      "end": 1700406280091,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406280091,
+      "end": 1700406280091,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406280091,
+      "end": 1700406280091,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406280091,
+      "end": 1700406280092,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406280092,
+      "end": 1700406280092,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1700406280093,
+      "end": 1700406280093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406280093,
+      "end": 1700406280093,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406280093,
+      "end": 1700406280093,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406280093,
+      "end": 1700406280093,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406280093,
+      "end": 1700406280093,
+      "order": "normal"
+    }
+  ]
+}

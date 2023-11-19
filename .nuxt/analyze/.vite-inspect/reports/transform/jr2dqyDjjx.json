@@ -1,0 +1,216 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/components/virtual-list/src/components/scrollbar.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { defineComponent, computed, ref, reactive, unref, watch, onBeforeUnmount, h, withModifiers } from 'vue';\nimport '../../../scrollbar/index.mjs';\nimport '../../../../utils/index.mjs';\nimport '../../../../hooks/index.mjs';\nimport { HORIZONTAL, ScrollbarDirKey, SCROLLBAR_MIN_SIZE } from '../defaults.mjs';\nimport { virtualizedScrollbarProps } from '../props.mjs';\nimport { renderThumbStyle } from '../utils.mjs';\nimport { useNamespace } from '../../../../hooks/use-namespace/index.mjs';\nimport { BAR_MAP } from '../../../scrollbar/src/util.mjs';\nimport { cAF, rAF } from '../../../../utils/raf.mjs';\n\nconst ScrollBar = defineComponent({\n  name: \"ElVirtualScrollBar\",\n  props: virtualizedScrollbarProps,\n  emits: [\"scroll\", \"start-move\", \"stop-move\"],\n  setup(props, { emit }) {\n    const GAP = computed(() => props.startGap + props.endGap);\n    const nsVirtualScrollbar = useNamespace(\"virtual-scrollbar\");\n    const nsScrollbar = useNamespace(\"scrollbar\");\n    const trackRef = ref();\n    const thumbRef = ref();\n    let frameHandle = null;\n    let onselectstartStore = null;\n    const state = reactive({\n      isDragging: false,\n      traveled: 0\n    });\n    const bar = computed(() => BAR_MAP[props.layout]);\n    const trackSize = computed(() => props.clientSize - unref(GAP));\n    const trackStyle = computed(() => ({\n      position: \"absolute\",\n      width: `${HORIZONTAL === props.layout ? trackSize.value : props.scrollbarSize}px`,\n      height: `${HORIZONTAL === props.layout ? props.scrollbarSize : trackSize.value}px`,\n      [ScrollbarDirKey[props.layout]]: \"2px\",\n      right: \"2px\",\n      bottom: \"2px\",\n      borderRadius: \"4px\"\n    }));\n    const thumbSize = computed(() => {\n      const ratio = props.ratio;\n      const clientSize = props.clientSize;\n      if (ratio >= 100) {\n        return Number.POSITIVE_INFINITY;\n      }\n      if (ratio >= 50) {\n        return ratio * clientSize / 100;\n      }\n      const SCROLLBAR_MAX_SIZE = clientSize / 3;\n      return Math.floor(Math.min(Math.max(ratio * clientSize, SCROLLBAR_MIN_SIZE), SCROLLBAR_MAX_SIZE));\n    });\n    const thumbStyle = computed(() => {\n      if (!Number.isFinite(thumbSize.value)) {\n        return {\n          display: \"none\"\n        };\n      }\n      const thumb = `${thumbSize.value}px`;\n      const style = renderThumbStyle({\n        bar: bar.value,\n        size: thumb,\n        move: state.traveled\n      }, props.layout);\n      return style;\n    });\n    const totalSteps = computed(() => Math.floor(props.clientSize - thumbSize.value - unref(GAP)));\n    const attachEvents = () => {\n      window.addEventListener(\"mousemove\", onMouseMove);\n      window.addEventListener(\"mouseup\", onMouseUp);\n      const thumbEl = unref(thumbRef);\n      if (!thumbEl)\n        return;\n      onselectstartStore = document.onselectstart;\n      document.onselectstart = () => false;\n      thumbEl.addEventListener(\"touchmove\", onMouseMove);\n      thumbEl.addEventListener(\"touchend\", onMouseUp);\n    };\n    const detachEvents = () => {\n      window.removeEventListener(\"mousemove\", onMouseMove);\n      window.removeEventListener(\"mouseup\", onMouseUp);\n      document.onselectstart = onselectstartStore;\n      onselectstartStore = null;\n      const thumbEl = unref(thumbRef);\n      if (!thumbEl)\n        return;\n      thumbEl.removeEventListener(\"touchmove\", onMouseMove);\n      thumbEl.removeEventListener(\"touchend\", onMouseUp);\n    };\n    const onThumbMouseDown = (e) => {\n      e.stopImmediatePropagation();\n      if (e.ctrlKey || [1, 2].includes(e.button)) {\n        return;\n      }\n      state.isDragging = true;\n      state[bar.value.axis] = e.currentTarget[bar.value.offset] - (e[bar.value.client] - e.currentTarget.getBoundingClientRect()[bar.value.direction]);\n      emit(\"start-move\");\n      attachEvents();\n    };\n    const onMouseUp = () => {\n      state.isDragging = false;\n      state[bar.value.axis] = 0;\n      emit(\"stop-move\");\n      detachEvents();\n    };\n    const onMouseMove = (e) => {\n      const { isDragging } = state;\n      if (!isDragging)\n        return;\n      if (!thumbRef.value || !trackRef.value)\n        return;\n      const prevPage = state[bar.value.axis];\n      if (!prevPage)\n        return;\n      cAF(frameHandle);\n      const offset = (trackRef.value.getBoundingClientRect()[bar.value.direction] - e[bar.value.client]) * -1;\n      const thumbClickPosition = thumbRef.value[bar.value.offset] - prevPage;\n      const distance = offset - thumbClickPosition;\n      frameHandle = rAF(() => {\n        state.traveled = Math.max(props.startGap, Math.min(distance, totalSteps.value));\n        emit(\"scroll\", distance, totalSteps.value);\n      });\n    };\n    const clickTrackHandler = (e) => {\n      const offset = Math.abs(e.target.getBoundingClientRect()[bar.value.direction] - e[bar.value.client]);\n      const thumbHalf = thumbRef.value[bar.value.offset] / 2;\n      const distance = offset - thumbHalf;\n      state.traveled = Math.max(0, Math.min(distance, totalSteps.value));\n      emit(\"scroll\", distance, totalSteps.value);\n    };\n    watch(() => props.scrollFrom, (v) => {\n      if (state.isDragging)\n        return;\n      state.traveled = Math.ceil(v * totalSteps.value);\n    });\n    onBeforeUnmount(() => {\n      detachEvents();\n    });\n    return () => {\n      return h(\"div\", {\n        role: \"presentation\",\n        ref: trackRef,\n        class: [\n          nsVirtualScrollbar.b(),\n          props.class,\n          (props.alwaysOn || state.isDragging) && \"always-on\"\n        ],\n        style: trackStyle.value,\n        onMousedown: withModifiers(clickTrackHandler, [\"stop\", \"prevent\"]),\n        onTouchstartPrevent: onThumbMouseDown\n      }, h(\"div\", {\n        ref: thumbRef,\n        class: nsScrollbar.e(\"thumb\"),\n        style: thumbStyle.value,\n        onMousedown: onThumbMouseDown\n      }, []));\n    };\n  }\n});\n\nexport { ScrollBar as default };\n//# sourceMappingURL=scrollbar.mjs.map\n",
+      "start": 1700406274092,
+      "end": 1700406274219,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406274219,
+      "end": 1700406274219,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406274219,
+      "end": 1700406274219,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406274219,
+      "end": 1700406274219,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406274219,
+      "end": 1700406274219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406274219,
+      "end": 1700406274219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406274219,
+      "end": 1700406274219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406274219,
+      "end": 1700406274219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406274219,
+      "end": 1700406274219,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406274219,
+      "end": 1700406274219,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406274219,
+      "end": 1700406274219,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406274219,
+      "end": 1700406274220,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406274220,
+      "end": 1700406274220,
+      "order": "normal"
+    }
+  ]
+}

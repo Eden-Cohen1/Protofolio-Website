@@ -1,0 +1,252 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/element-plus/es/components/upload/src/upload.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { NOOP } from '@vue/shared';\nimport '../../../utils/index.mjs';\nimport { ajaxUpload } from './ajax.mjs';\nimport { buildProps, definePropType } from '../../../utils/vue/props/runtime.mjs';\nimport { mutable } from '../../../utils/typescript.mjs';\n\nconst uploadListTypes = [\"text\", \"picture\", \"picture-card\"];\nlet fileId = 1;\nconst genFileId = () => Date.now() + fileId++;\nconst uploadBaseProps = buildProps({\n  action: {\n    type: String,\n    default: \"#\"\n  },\n  headers: {\n    type: definePropType(Object)\n  },\n  method: {\n    type: String,\n    default: \"post\"\n  },\n  data: {\n    type: definePropType([Object, Function, Promise]),\n    default: () => mutable({})\n  },\n  multiple: {\n    type: Boolean,\n    default: false\n  },\n  name: {\n    type: String,\n    default: \"file\"\n  },\n  drag: {\n    type: Boolean,\n    default: false\n  },\n  withCredentials: Boolean,\n  showFileList: {\n    type: Boolean,\n    default: true\n  },\n  accept: {\n    type: String,\n    default: \"\"\n  },\n  fileList: {\n    type: definePropType(Array),\n    default: () => mutable([])\n  },\n  autoUpload: {\n    type: Boolean,\n    default: true\n  },\n  listType: {\n    type: String,\n    values: uploadListTypes,\n    default: \"text\"\n  },\n  httpRequest: {\n    type: definePropType(Function),\n    default: ajaxUpload\n  },\n  disabled: Boolean,\n  limit: Number\n});\nconst uploadProps = buildProps({\n  ...uploadBaseProps,\n  beforeUpload: {\n    type: definePropType(Function),\n    default: NOOP\n  },\n  beforeRemove: {\n    type: definePropType(Function)\n  },\n  onRemove: {\n    type: definePropType(Function),\n    default: NOOP\n  },\n  onChange: {\n    type: definePropType(Function),\n    default: NOOP\n  },\n  onPreview: {\n    type: definePropType(Function),\n    default: NOOP\n  },\n  onSuccess: {\n    type: definePropType(Function),\n    default: NOOP\n  },\n  onProgress: {\n    type: definePropType(Function),\n    default: NOOP\n  },\n  onError: {\n    type: definePropType(Function),\n    default: NOOP\n  },\n  onExceed: {\n    type: definePropType(Function),\n    default: NOOP\n  }\n});\n\nexport { genFileId, uploadBaseProps, uploadListTypes, uploadProps };\n//# sourceMappingURL=upload.mjs.map\n",
+      "start": 1700406280840,
+      "end": 1700406280954,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406280954,
+      "end": 1700406280954,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406280954,
+      "end": 1700406280954,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406280954,
+      "end": 1700406280954,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406280954,
+      "end": 1700406280954,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406280954,
+      "end": 1700406280954,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406280954,
+      "end": 1700406280954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406280954,
+      "end": 1700406280954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406280954,
+      "end": 1700406280954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406280954,
+      "end": 1700406280954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1700406280954,
+      "end": 1700406280954,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406280955,
+      "end": 1700406280955,
+      "order": "normal"
+    }
+  ]
+}

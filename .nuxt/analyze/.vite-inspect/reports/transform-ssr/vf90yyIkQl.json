@@ -1,0 +1,266 @@
+{
+  "resolvedId": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Navbar.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <ul class=\"main-color horizontal ws-black\">\r\n    <li><a href=\"#home\">Home</a></li>\r\n    <li><a href=\"#about\">About</a></li>\r\n    <li><a href=\"#projects\">Projects</a></li>\r\n    <li><a href=\"#skills\">Skills</a></li>\r\n    <li><a href=\"#contact\">Contact</a></li>\r\n  </ul>\r\n  <h4>Eden Cohen</h4>\r\n</template>\r\n\r\n<style>\r\nul {\r\n  border-bottom: 1px solid #b0b19c13;\r\n  display: flex;\r\n  justify-content: right;\r\n  list-style-type: none;\r\n  margin: 0;\r\n  padding: 0;\r\n  overflow: hidden;\r\n}\r\n\r\nli {\r\n  float: left;\r\n}\r\n\r\n.horizontal li a {\r\n  display: block;\r\n  font-size: 0.9rem;\r\n  text-align: center;\r\n  padding: 17px 26px;\r\n  text-decoration: none;\r\n  color: #111111;\r\n}\r\n.horizontal {\r\n  background-color: #dcdcf09f !important;\r\n}\r\n.dark .horizontal {\r\n  background-color: rgba(26, 34, 34, 0.699) !important;\r\n}\r\nh4 {\r\n  position: fixed;\r\n  z-index: 11;\r\n  left: 60px;\r\n  top: -2px;\r\n  font-size: 0.9rem;\r\n}\r\n</style>\r\n",
+      "start": 1700406284280,
+      "end": 1700406284375,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406284375,
+      "end": 1700406284375,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1700406284375,
+      "end": 1700406284375,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406284375,
+      "end": 1700406284375,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1700406284375,
+      "end": 1700406284375,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1700406284375,
+      "end": 1700406284375,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1700406284375,
+      "end": 1700406284375,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1700406284375,
+      "end": 1700406284375,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1700406284375,
+      "end": 1700406284375,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1700406284375,
+      "end": 1700406284375,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs) {\n  _push(`<!--[--><ul class=\"main-color horizontal ws-black\"><li><a href=\"#home\">Home</a></li><li><a href=\"#about\">About</a></li><li><a href=\"#projects\">Projects</a></li><li><a href=\"#skills\">Skills</a></li><li><a href=\"#contact\">Contact</a></li></ul><h4>Eden Cohen</h4><!--]-->`)\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Navbar.vue?vue&type=style&index=0&lang.css\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/Navbar.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
+      "start": 1700406284375,
+      "end": 1700406284376,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Navbar.vue"
+        ],
+        "names": [],
+        "mappings": "",
+        "file": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Navbar.vue",
+        "sourceRoot": "",
+        "sourcesContent": [
+          "<template>\r\n  <ul class=\"main-color horizontal ws-black\">\r\n    <li><a href=\"#home\">Home</a></li>\r\n    <li><a href=\"#about\">About</a></li>\r\n    <li><a href=\"#projects\">Projects</a></li>\r\n    <li><a href=\"#skills\">Skills</a></li>\r\n    <li><a href=\"#contact\">Contact</a></li>\r\n  </ul>\r\n  <h4>Eden Cohen</h4>\r\n</template>\r\n\r\n<style>\r\nul {\r\n  border-bottom: 1px solid #b0b19c13;\r\n  display: flex;\r\n  justify-content: right;\r\n  list-style-type: none;\r\n  margin: 0;\r\n  padding: 0;\r\n  overflow: hidden;\r\n}\r\n\r\nli {\r\n  float: left;\r\n}\r\n\r\n.horizontal li a {\r\n  display: block;\r\n  font-size: 0.9rem;\r\n  text-align: center;\r\n  padding: 17px 26px;\r\n  text-decoration: none;\r\n  color: #111111;\r\n}\r\n.horizontal {\r\n  background-color: #dcdcf09f !important;\r\n}\r\n.dark .horizontal {\r\n  background-color: rgba(26, 34, 34, 0.699) !important;\r\n}\r\nh4 {\r\n  position: fixed;\r\n  z-index: 11;\r\n  left: 60px;\r\n  top: -2px;\r\n  font-size: 0.9rem;\r\n}\r\n</style>\r\n"
+        ]
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1700406284376,
+      "end": 1700406284376,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406284376,
+      "end": 1700406284376,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406284376,
+      "end": 1700406284376,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406284376,
+      "end": 1700406284376,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1700406284376,
+      "end": 1700406284376,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1700406284376,
+      "end": 1700406284376,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1700406284376,
+      "end": 1700406284377,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "post"
+    },
+    {
+      "name": "element-plus:transform",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1700406284377,
+      "end": 1700406284377,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1700406284378,
+      "end": 1700406284378,
+      "order": "normal"
+    }
+  ]
+}
