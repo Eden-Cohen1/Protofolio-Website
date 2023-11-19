@@ -1,6 +1,5 @@
 <template>
   <main>
-    <default />
     <section id="home" ref="home">
       <Hero />
     </section>

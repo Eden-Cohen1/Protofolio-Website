@@ -21,10 +21,12 @@ const { width } = screenWidth();
 const isMobile = computed(() => {
   return width.value <= 680;
 });
-provide("isMobile", isMobile);
 // hide sidebar
 const { scroll } = scrolling();
-const isScrolling = computed(() => scroll.value);
+const isScrolling = computed(() => {
+  return scroll.value;
+});
+provide("isMobile", isMobile);
 
 // dark mode
 const darkMode = ref(false);

@@ -23,6 +23,8 @@ html {
   background-color: inherit;
   overflow-x: hidden;
   background-color: var(--light-bg-sec);
+}
+html {
   height: 100vh !important;
 }
 html p,

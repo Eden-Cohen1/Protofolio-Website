@@ -12,6 +12,7 @@ export function scrolling() {
   onMounted(() => {
     document.addEventListener("scroll", update);
     update();
+    console.log(scroll.value);
   });
   onUnmounted(() => {
     document.addEventListener("scroll", update);

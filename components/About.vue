@@ -12,7 +12,7 @@
       <button class="primary">Download CV</button>
     </div>
     <div v-show="!isMobile" class="picture">
-      <Img src="full-stack.png" />
+      <img src="full-stack.png" />
     </div>
   </main>
 </template>

@@ -12,7 +12,7 @@
       /></a>
     </li>
     <li>
-      <a href="#skills"><Icon name="material-symbols:code-rounded" /></a>
+      <a href="#skills"><Icon name="mdi:code-tags" /></a>
     </li>
     <li>
       <a href="#contact"><Icon name="mdi:email-arrow-right-outline" /></a>
