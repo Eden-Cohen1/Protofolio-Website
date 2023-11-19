@@ -14,6 +14,7 @@
 * {
   font-family: "Montserrat", sans-serif;
 }
+
 body,
 html {
   padding: 0rem;
@@ -22,6 +23,7 @@ html {
   background-color: inherit;
   overflow-x: hidden;
   background-color: var(--light-bg-sec);
+  height: 100vh !important;
 }
 html p,
 html h1,
