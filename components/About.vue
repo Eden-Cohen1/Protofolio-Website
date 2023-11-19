@@ -12,7 +12,7 @@
       <button class="primary">Download CV</button>
     </div>
     <div v-show="!isMobile" class="picture">
-      <NuxtImg src="full-stack.png" />
+      <Img src="full-stack.png" />
     </div>
   </main>
 </template>
