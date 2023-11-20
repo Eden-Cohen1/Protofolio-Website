@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="main-container">
     <section id="home" ref="home">
       <Hero />
     </section>

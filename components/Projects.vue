@@ -233,7 +233,7 @@ svg:hover {
 @media screen and (max-width: 860px) {
   .card-desc {
     font-size: 1rem !important;
-    width: 95% !important;
+    width: 96% !important;
   }
   p {
     width: 100%;
@@ -245,7 +245,7 @@ svg:hover {
   }
   .card {
     width: 100%;
-    min-height: 450px;
+    min-height: 455px;
     margin: 2rem auto 4rem;
   }
   .card-left {
@@ -267,7 +267,7 @@ svg:hover {
   }
   img {
     object-fit: cover !important;
-    min-height: 450px;
+    min-height: 455px;
   }
   .card:hover .card-left {
     opacity: 0;
@@ -279,7 +279,7 @@ svg:hover {
   .icons {
     gap: 0.5rem;
     right: -0.4rem;
-    bottom: -4.2rem;
+    bottom: -2.5rem;
   }
 }
 </style>
