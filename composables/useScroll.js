@@ -10,12 +10,12 @@ export function scrolling() {
   }
 
   onMounted(() => {
-    window.addEventListener("scroll", update);
+    document.body.addEventListener("scroll", update);
     update();
     console.log(scroll.value);
   });
   onUnmounted(() => {
-    window.removeEventListener("scroll", update);
+    document.body.removeEventListener("scroll", update);
   });
   return { scroll };
 }

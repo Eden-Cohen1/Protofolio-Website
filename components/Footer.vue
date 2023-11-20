@@ -27,7 +27,7 @@
   flex-direction: column;
   height: 30vh;
   border-top: 1px solid var(--light-bg-sec);
-  position: absolute;
+  /* position: absolute; */
 }
 .dark .footer {
   border-top: 1px solid var(--dark-bg-sec);
