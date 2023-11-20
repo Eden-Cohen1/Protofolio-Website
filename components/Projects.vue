@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="card-left">
-          <img :src="project.img" alt="" />
+          <NuxtImg :src="project.img" alt="" />
         </div>
       </div>
     </div>
