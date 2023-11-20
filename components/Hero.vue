@@ -157,7 +157,7 @@ svg:hover {
     top: 0rem;
     gap: 2rem;
     padding: 0rem;
-    padding-bottom: 9rem !important;
+    padding-bottom: 8rem !important;
   }
   h1 {
     font-size: 3rem !important;

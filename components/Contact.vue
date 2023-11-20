@@ -16,7 +16,6 @@
         placeholder="Email"
         required
       />
-
       <textarea
         v-model="message"
         name="text"

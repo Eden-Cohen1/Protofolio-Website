@@ -177,6 +177,9 @@ p {
     -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 96%, 0% 100%) !important;
     clip-path: polygon(0 0%, 100% 0%, 100% 96%, 0% 100%) !important;
   }
+  .my-hero .social-links {
+    margin-top: 3rem !important;
+  }
 }
 
 /* -------------------------------------------------------- */
