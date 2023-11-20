@@ -25,9 +25,9 @@
 .footer {
   display: flex;
   flex-direction: column;
-  height: fit-content;
-  min-height: 30vh;
+  height: 30vh;
   border-top: 1px solid var(--light-bg-sec);
+  position: absolute;
 }
 .dark .footer {
   border-top: 1px solid var(--dark-bg-sec);
