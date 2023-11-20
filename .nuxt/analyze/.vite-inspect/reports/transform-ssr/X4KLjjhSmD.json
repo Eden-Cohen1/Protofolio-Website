@@ -4,248 +4,248 @@
     {
       "name": "vite:load-fallback",
       "result": "import { defineComponent, computed, openBlock, createElementBlock, normalizeClass, unref, withDirectives, createElementVNode, isRef, withModifiers, vModelRadio, normalizeStyle, renderSlot, createTextVNode, toDisplayString } from 'vue';\nimport '../../../hooks/index.mjs';\nimport { useRadio } from './use-radio.mjs';\nimport { radioButtonProps } from './radio-button.mjs';\nimport _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';\nimport { useNamespace } from '../../../hooks/use-namespace/index.mjs';\n\nconst _hoisted_1 = [\"value\", \"name\", \"disabled\"];\nconst __default__ = defineComponent({\n  name: \"ElRadioButton\"\n});\nconst _sfc_main = /* @__PURE__ */ defineComponent({\n  ...__default__,\n  props: radioButtonProps,\n  setup(__props) {\n    const props = __props;\n    const ns = useNamespace(\"radio\");\n    const { radioRef, focus, size, disabled, modelValue, radioGroup } = useRadio(props);\n    const activeStyle = computed(() => {\n      return {\n        backgroundColor: (radioGroup == null ? void 0 : radioGroup.fill) || \"\",\n        borderColor: (radioGroup == null ? void 0 : radioGroup.fill) || \"\",\n        boxShadow: (radioGroup == null ? void 0 : radioGroup.fill) ? `-1px 0 0 0 ${radioGroup.fill}` : \"\",\n        color: (radioGroup == null ? void 0 : radioGroup.textColor) || \"\"\n      };\n    });\n    return (_ctx, _cache) => {\n      var _a;\n      return openBlock(), createElementBlock(\"label\", {\n        class: normalizeClass([\n          unref(ns).b(\"button\"),\n          unref(ns).is(\"active\", unref(modelValue) === _ctx.label),\n          unref(ns).is(\"disabled\", unref(disabled)),\n          unref(ns).is(\"focus\", unref(focus)),\n          unref(ns).bm(\"button\", unref(size))\n        ])\n      }, [\n        withDirectives(createElementVNode(\"input\", {\n          ref_key: \"radioRef\",\n          ref: radioRef,\n          \"onUpdate:modelValue\": _cache[0] || (_cache[0] = ($event) => isRef(modelValue) ? modelValue.value = $event : null),\n          class: normalizeClass(unref(ns).be(\"button\", \"original-radio\")),\n          value: _ctx.label,\n          type: \"radio\",\n          name: _ctx.name || ((_a = unref(radioGroup)) == null ? void 0 : _a.name),\n          disabled: unref(disabled),\n          onFocus: _cache[1] || (_cache[1] = ($event) => focus.value = true),\n          onBlur: _cache[2] || (_cache[2] = ($event) => focus.value = false),\n          onClick: _cache[3] || (_cache[3] = withModifiers(() => {\n          }, [\"stop\"]))\n        }, null, 42, _hoisted_1), [\n          [vModelRadio, unref(modelValue)]\n        ]),\n        createElementVNode(\"span\", {\n          class: normalizeClass(unref(ns).be(\"button\", \"inner\")),\n          style: normalizeStyle(unref(modelValue) === _ctx.label ? unref(activeStyle) : {}),\n          onKeydown: _cache[4] || (_cache[4] = withModifiers(() => {\n          }, [\"stop\"]))\n        }, [\n          renderSlot(_ctx.$slots, \"default\", {}, () => [\n            createTextVNode(toDisplayString(_ctx.label), 1)\n          ])\n        ], 38)\n      ], 2);\n    };\n  }\n});\nvar RadioButton = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"__file\", \"/home/runner/work/element-plus/element-plus/packages/components/radio/src/radio-button.vue\"]]);\n\nexport { RadioButton as default };\n//# sourceMappingURL=radio-button2.mjs.map\n",
-      "start": 1700439448965,
-      "end": 1700439449070,
+      "start": 1700494474415,
+      "end": 1700494474522,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439449070,
-      "end": 1700439449070,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439449070,
-      "end": 1700439449070,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439449070,
-      "end": 1700439449070,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439449070,
-      "end": 1700439449070,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700439449070,
-      "end": 1700439449070,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1700439449070,
-      "end": 1700439449070,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1700439449070,
-      "end": 1700439449070,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700439449070,
-      "end": 1700439449070,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700439449070,
-      "end": 1700439449070,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1700439449070,
-      "end": 1700439449070,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474522,
+      "end": 1700494474522,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474523,
+      "end": 1700494474523,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700439449071,
-      "end": 1700439449071,
+      "start": 1700494474523,
+      "end": 1700494474523,
       "order": "normal"
     }
   ]

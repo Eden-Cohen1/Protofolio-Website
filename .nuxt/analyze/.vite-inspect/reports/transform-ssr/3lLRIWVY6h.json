@@ -4,111 +4,111 @@
     {
       "name": "vite:load-fallback",
       "result": "import { defineComponent, h, nextTick, onMounted, provide, shallowReactive } from \"vue\";\nimport { PageRouteSymbol } from \"./injections.js\";\nexport const RouteProvider = defineComponent({\n  name: \"RouteProvider\",\n  props: {\n    vnode: {\n      type: Object,\n      required: true\n    },\n    route: {\n      type: Object,\n      required: true\n    },\n    vnodeRef: Object,\n    renderKey: String,\n    trackRootNodes: Boolean\n  },\n  setup(props) {\n    const previousKey = props.renderKey;\n    const previousRoute = props.route;\n    const route = {};\n    for (const key in props.route) {\n      Object.defineProperty(route, key, {\n        get: () => previousKey === props.renderKey ? props.route[key] : previousRoute[key]\n      });\n    }\n    provide(PageRouteSymbol, shallowReactive(route));\n    let vnode;\n    if (import.meta.dev && import.meta.client && props.trackRootNodes) {\n      onMounted(() => {\n        nextTick(() => {\n          if ([\"#comment\", \"#text\"].includes(vnode?.el?.nodeName)) {\n            const filename = (vnode?.type).__file;\n            console.warn(`[nuxt] \\`${filename}\\` does not have a single root node and will cause errors when navigating between routes.`);\n          }\n        });\n      });\n    }\n    return () => {\n      if (import.meta.dev && import.meta.client) {\n        vnode = h(props.vnode, { ref: props.vnodeRef });\n        return vnode;\n      }\n      return h(props.vnode, { ref: props.vnodeRef });\n    };\n  }\n});\n",
-      "start": 1700439449695,
-      "end": 1700439449818,
+      "start": 1700494475238,
+      "end": 1700494475415,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475415,
+      "end": 1700494475415,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475415,
+      "end": 1700494475415,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475415,
+      "end": 1700494475415,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475415,
+      "end": 1700494475416,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "replace",
       "result": "import { defineComponent, h, nextTick, onMounted, provide, shallowReactive } from \"vue\";\nimport { PageRouteSymbol } from \"./injections.js\";\nexport const RouteProvider = defineComponent({\n  name: \"RouteProvider\",\n  props: {\n    vnode: {\n      type: Object,\n      required: true\n    },\n    route: {\n      type: Object,\n      required: true\n    },\n    vnodeRef: Object,\n    renderKey: String,\n    trackRootNodes: Boolean\n  },\n  setup(props) {\n    const previousKey = props.renderKey;\n    const previousRoute = props.route;\n    const route = {};\n    for (const key in props.route) {\n      Object.defineProperty(route, key, {\n        get: () => previousKey === props.renderKey ? props.route[key] : previousRoute[key]\n      });\n    }\n    provide(PageRouteSymbol, shallowReactive(route));\n    let vnode;\n    if (false && false && props.trackRootNodes) {\n      onMounted(() => {\n        nextTick(() => {\n          if ([\"#comment\", \"#text\"].includes(vnode?.el?.nodeName)) {\n            const filename = (vnode?.type).__file;\n            console.warn(`[nuxt] \\`${filename}\\` does not have a single root node and will cause errors when navigating between routes.`);\n          }\n        });\n      });\n    }\n    return () => {\n      if (false && false) {\n        vnode = h(props.vnode, { ref: props.vnodeRef });\n        return vnode;\n      }\n      return h(props.vnode, { ref: props.vnodeRef });\n    };\n  }\n});\n",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -121,129 +121,129 @@
     },
     {
       "name": "ssr-styles",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439449819,
-      "end": 1700439449819,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439449819,
-      "end": 1700439449820,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439449819,
-      "end": 1700439449820,
+      "start": 1700494475416,
+      "end": 1700494475416,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439449820,
-      "end": 1700439449820,
+      "start": 1700494475417,
+      "end": 1700494475417,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439449820,
-      "end": 1700439449820,
+      "start": 1700494475417,
+      "end": 1700494475417,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700439449820,
-      "end": 1700439449820,
+      "start": 1700494475417,
+      "end": 1700494475417,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1700439449820,
-      "end": 1700439449820,
+      "start": 1700494475417,
+      "end": 1700494475417,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1700439449820,
-      "end": 1700439449820,
+      "start": 1700494475417,
+      "end": 1700494475417,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
       "result": "import { defineComponent, h, nextTick, onMounted, provide, shallowReactive } from \"vue\";\nimport { PageRouteSymbol } from \"./injections.js\";\nexport const RouteProvider = defineComponent({\n  name: \"RouteProvider\",\n  props: {\n    vnode: {\n      type: Object,\n      required: true\n    },\n    route: {\n      type: Object,\n      required: true\n    },\n    vnodeRef: Object,\n    renderKey: String,\n    trackRootNodes: Boolean\n  },\n  setup(props) {\n    const previousKey = props.renderKey;\n    const previousRoute = props.route;\n    const route = {};\n    for (const key in props.route) {\n      Object.defineProperty(route, key, {\n        get: () => previousKey === props.renderKey ? props.route[key] : previousRoute[key]\n      });\n    }\n    provide(PageRouteSymbol, shallowReactive(route));\n    let vnode;\n    if (false && false && props.trackRootNodes) {\n       /*#__PURE__*/ false && onMounted(() => {\n        nextTick(() => {\n          if ([\"#comment\", \"#text\"].includes(vnode?.el?.nodeName)) {\n            const filename = (vnode?.type).__file;\n            console.warn(`[nuxt] \\`${filename}\\` does not have a single root node and will cause errors when navigating between routes.`);\n          }\n        });\n      });\n    }\n    return () => {\n      if (false && false) {\n        vnode = h(props.vnode, { ref: props.vnodeRef });\n        return vnode;\n      }\n      return h(props.vnode, { ref: props.vnodeRef });\n    };\n  }\n});\n",
-      "start": 1700439449820,
-      "end": 1700439449820,
+      "start": 1700494475417,
+      "end": 1700494475417,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -256,14 +256,14 @@
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700439449820,
-      "end": 1700439449820,
+      "start": 1700494475417,
+      "end": 1700494475417,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700439449820,
-      "end": 1700439449820,
+      "start": 1700494475417,
+      "end": 1700494475417,
       "order": "normal"
     }
   ]

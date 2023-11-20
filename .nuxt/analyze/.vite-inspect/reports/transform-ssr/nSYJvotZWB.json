@@ -4,237 +4,237 @@
     {
       "name": "vite:load-fallback",
       "result": "import { ref, unref, provide, inject, onMounted, onBeforeUnmount } from 'vue';\nimport Collection from './collection2.mjs';\nimport CollectionItem from './collection-item.mjs';\n\nconst COLLECTION_ITEM_SIGN = `data-el-collection-item`;\nconst createCollectionWithScope = (name) => {\n  const COLLECTION_NAME = `El${name}Collection`;\n  const COLLECTION_ITEM_NAME = `${COLLECTION_NAME}Item`;\n  const COLLECTION_INJECTION_KEY = Symbol(COLLECTION_NAME);\n  const COLLECTION_ITEM_INJECTION_KEY = Symbol(COLLECTION_ITEM_NAME);\n  const ElCollection = {\n    ...Collection,\n    name: COLLECTION_NAME,\n    setup() {\n      const collectionRef = ref(null);\n      const itemMap = /* @__PURE__ */ new Map();\n      const getItems = () => {\n        const collectionEl = unref(collectionRef);\n        if (!collectionEl)\n          return [];\n        const orderedNodes = Array.from(collectionEl.querySelectorAll(`[${COLLECTION_ITEM_SIGN}]`));\n        const items = [...itemMap.values()];\n        return items.sort((a, b) => orderedNodes.indexOf(a.ref) - orderedNodes.indexOf(b.ref));\n      };\n      provide(COLLECTION_INJECTION_KEY, {\n        itemMap,\n        getItems,\n        collectionRef\n      });\n    }\n  };\n  const ElCollectionItem = {\n    ...CollectionItem,\n    name: COLLECTION_ITEM_NAME,\n    setup(_, { attrs }) {\n      const collectionItemRef = ref(null);\n      const collectionInjection = inject(COLLECTION_INJECTION_KEY, void 0);\n      provide(COLLECTION_ITEM_INJECTION_KEY, {\n        collectionItemRef\n      });\n      onMounted(() => {\n        const collectionItemEl = unref(collectionItemRef);\n        if (collectionItemEl) {\n          collectionInjection.itemMap.set(collectionItemEl, {\n            ref: collectionItemEl,\n            ...attrs\n          });\n        }\n      });\n      onBeforeUnmount(() => {\n        const collectionItemEl = unref(collectionItemRef);\n        collectionInjection.itemMap.delete(collectionItemEl);\n      });\n    }\n  };\n  return {\n    COLLECTION_INJECTION_KEY,\n    COLLECTION_ITEM_INJECTION_KEY,\n    ElCollection,\n    ElCollectionItem\n  };\n};\n\nexport { COLLECTION_ITEM_SIGN, createCollectionWithScope };\n//# sourceMappingURL=collection.mjs.map\n",
-      "start": 1700439448668,
-      "end": 1700439448808,
+      "start": 1700494474104,
+      "end": 1700494474213,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439448808,
-      "end": 1700439448808,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439448808,
-      "end": 1700439448808,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439448808,
-      "end": 1700439448808,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439448808,
-      "end": 1700439448808,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700439448808,
-      "end": 1700439448808,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1700439448808,
-      "end": 1700439448808,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1700439448808,
-      "end": 1700439448808,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700439448808,
-      "end": 1700439448808,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700439448808,
-      "end": 1700439448808,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1700439448808,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474213,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474214,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474213,
+      "end": 1700494474214,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474214,
+      "end": 1700494474214,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474214,
+      "end": 1700494474214,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474214,
+      "end": 1700494474214,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474214,
+      "end": 1700494474214,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474214,
+      "end": 1700494474214,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
       "result": "import { ref, unref, provide, inject, onMounted, onBeforeUnmount } from 'vue';\nimport Collection from './collection2.mjs';\nimport CollectionItem from './collection-item.mjs';\n\nconst COLLECTION_ITEM_SIGN = `data-el-collection-item`;\nconst createCollectionWithScope = (name) => {\n  const COLLECTION_NAME = `El${name}Collection`;\n  const COLLECTION_ITEM_NAME = `${COLLECTION_NAME}Item`;\n  const COLLECTION_INJECTION_KEY = Symbol(COLLECTION_NAME);\n  const COLLECTION_ITEM_INJECTION_KEY = Symbol(COLLECTION_ITEM_NAME);\n  const ElCollection = {\n    ...Collection,\n    name: COLLECTION_NAME,\n    setup() {\n      const collectionRef = ref(null);\n      const itemMap = /* @__PURE__ */ new Map();\n      const getItems = () => {\n        const collectionEl = unref(collectionRef);\n        if (!collectionEl)\n          return [];\n        const orderedNodes = Array.from(collectionEl.querySelectorAll(`[${COLLECTION_ITEM_SIGN}]`));\n        const items = [...itemMap.values()];\n        return items.sort((a, b) => orderedNodes.indexOf(a.ref) - orderedNodes.indexOf(b.ref));\n      };\n      provide(COLLECTION_INJECTION_KEY, {\n        itemMap,\n        getItems,\n        collectionRef\n      });\n    }\n  };\n  const ElCollectionItem = {\n    ...CollectionItem,\n    name: COLLECTION_ITEM_NAME,\n    setup(_, { attrs }) {\n      const collectionItemRef = ref(null);\n      const collectionInjection = inject(COLLECTION_INJECTION_KEY, void 0);\n      provide(COLLECTION_ITEM_INJECTION_KEY, {\n        collectionItemRef\n      });\n       /*#__PURE__*/ false && onMounted(() => {\n        const collectionItemEl = unref(collectionItemRef);\n        if (collectionItemEl) {\n          collectionInjection.itemMap.set(collectionItemEl, {\n            ref: collectionItemEl,\n            ...attrs\n          });\n        }\n      });\n       /*#__PURE__*/ false && onBeforeUnmount(() => {\n        const collectionItemEl = unref(collectionItemRef);\n        collectionInjection.itemMap.delete(collectionItemEl);\n      });\n    }\n  };\n  return {\n    COLLECTION_INJECTION_KEY,\n    COLLECTION_ITEM_INJECTION_KEY,\n    ElCollection,\n    ElCollectionItem\n  };\n};\n\nexport { COLLECTION_ITEM_SIGN, createCollectionWithScope };\n//# sourceMappingURL=collection.mjs.map\n",
-      "start": 1700439448809,
-      "end": 1700439448809,
+      "start": 1700494474214,
+      "end": 1700494474214,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -247,14 +247,14 @@
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700439448809,
-      "end": 1700439448810,
+      "start": 1700494474214,
+      "end": 1700494474214,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700439448810,
-      "end": 1700439448810,
+      "start": 1700494474214,
+      "end": 1700494474214,
       "order": "normal"
     }
   ]

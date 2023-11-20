@@ -3,58 +3,58 @@
   "transforms": [
     {
       "name": "vite:load-fallback",
-      "result": "<template>\r\n  <main class=\"secondary-color section footer\">\r\n    <h2>Social Links</h2>\r\n    <ul>\r\n      <li class=\"whatsapp\">\r\n        <a href=\"https://wa.me/+972536241757\" target=\"_blank\"\r\n          ><Icon name=\"formkit:whatsapp\"\r\n        /></a>\r\n      </li>\r\n      <li class=\"github\">\r\n        <a href=\"https://github.com/Eden-Cohen1\" target=\"_blank\"\r\n          ><Icon name=\"uiw:github\"\r\n        /></a>\r\n      </li>\r\n      <li class=\"linkdin\">\r\n        <a href=\"https://www.linkedin.com/in/eden-co/\" target=\"_blank\"\r\n          ><Icon name=\"bi:linkedin\"\r\n        /></a>\r\n      </li>\r\n    </ul>\r\n  </main>\r\n</template>\r\n\r\n<style scoped>\r\n.footer {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: fit-content;\r\n  min-height: 30vh;\r\n  border-top: 1px solid var(--light-bg-sec);\r\n}\r\n.dark .footer {\r\n  border-top: 1px solid var(--dark-bg-sec);\r\n}\r\n\r\nul {\r\n  display: flex;\r\n  gap: 2.5rem;\r\n  min-height: 6rem;\r\n  width: 100%;\r\n  justify-content: center;\r\n  align-items: center;\r\n  border: none;\r\n}\r\nsvg {\r\n  width: 3rem !important;\r\n  height: auto !important;\r\n  color: var(--dark-bg-main);\r\n}\r\n.dark svg {\r\n  color: var(--light-bg-main);\r\n}\r\n.whatsapp svg {\r\n  width: 3.4rem !important;\r\n  height: auto !important;\r\n}\r\n.whatsapp :hover {\r\n  color: #2ec452;\r\n}\r\n.github :hover {\r\n  color: rgb(211, 6, 47);\r\n}\r\n.linkdin :hover {\r\n  color: var(--btn-hover-color);\r\n}\r\na:hover {\r\n  background-color: transparent !important;\r\n}\r\n</style>\r\n",
-      "start": 1700439441562,
-      "end": 1700439441665,
+      "result": "<template>\r\n  <main class=\"secondary-color section footer\">\r\n    <h2>Social Links</h2>\r\n    <ul>\r\n      <li class=\"whatsapp\">\r\n        <a href=\"https://wa.me/+972536241757\" target=\"_blank\"\r\n          ><Icon name=\"formkit:whatsapp\"\r\n        /></a>\r\n      </li>\r\n      <li class=\"github\">\r\n        <a href=\"https://github.com/Eden-Cohen1\" target=\"_blank\"\r\n          ><Icon name=\"uiw:github\"\r\n        /></a>\r\n      </li>\r\n      <li class=\"linkdin\">\r\n        <a href=\"https://www.linkedin.com/in/eden-co/\" target=\"_blank\"\r\n          ><Icon name=\"bi:linkedin\"\r\n        /></a>\r\n      </li>\r\n    </ul>\r\n  </main>\r\n</template>\r\n\r\n<style scoped>\r\n.footer {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: 30vh;\r\n  border-top: 1px solid var(--light-bg-sec);\r\n  /* position: absolute; */\r\n}\r\n.dark .footer {\r\n  border-top: 1px solid var(--dark-bg-sec);\r\n}\r\nul {\r\n  display: flex;\r\n  gap: 2.5rem;\r\n  min-height: 6rem;\r\n  width: 100%;\r\n  justify-content: center;\r\n  align-items: center;\r\n  border: none;\r\n}\r\nsvg {\r\n  width: 3rem !important;\r\n  height: auto !important;\r\n  color: var(--dark-bg-main);\r\n}\r\n.dark svg {\r\n  color: var(--light-bg-main);\r\n}\r\n.whatsapp svg {\r\n  width: 3.4rem !important;\r\n  height: auto !important;\r\n}\r\n.whatsapp :hover {\r\n  color: #2ec452;\r\n}\r\n.github :hover {\r\n  color: rgb(211, 6, 47);\r\n}\r\n.linkdin :hover {\r\n  color: var(--btn-hover-color);\r\n}\r\na:hover {\r\n  background-color: transparent !important;\r\n}\r\n</style>\r\n",
+      "start": 1700494464284,
+      "end": 1700494464597,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439441665,
-      "end": 1700439441665,
+      "start": 1700494464597,
+      "end": 1700494464597,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439441665,
-      "end": 1700439441665,
+      "start": 1700494464597,
+      "end": 1700494464597,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700439441665,
-      "end": 1700439441665,
+      "start": 1700494464597,
+      "end": 1700494464597,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1700439441665,
-      "end": 1700439441665,
+      "start": 1700494464597,
+      "end": 1700494464597,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1700439441665,
-      "end": 1700439441665,
+      "start": 1700494464597,
+      "end": 1700494464597,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700439441665,
-      "end": 1700439441665,
+      "start": 1700494464597,
+      "end": 1700494464597,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700439441665,
-      "end": 1700439441665,
+      "start": 1700494464597,
+      "end": 1700494464597,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "result": "const _sfc_main = {}\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-1fd40ca5\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"secondary-color section footer\" }\nconst _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"h2\", null, \"Social Links\", -1))\nconst _hoisted_3 = { class: \"whatsapp\" }\nconst _hoisted_4 = {\n  href: \"https://wa.me/+972536241757\",\n  target: \"_blank\"\n}\nconst _hoisted_5 = { class: \"github\" }\nconst _hoisted_6 = {\n  href: \"https://github.com/Eden-Cohen1\",\n  target: \"_blank\"\n}\nconst _hoisted_7 = { class: \"linkdin\" }\nconst _hoisted_8 = {\n  href: \"https://www.linkedin.com/in/eden-co/\",\n  target: \"_blank\"\n}\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"main\", _hoisted_1, [\n    _hoisted_2,\n    _createElementVNode(\"ul\", null, [\n      _createElementVNode(\"li\", _hoisted_3, [\n        _createElementVNode(\"a\", _hoisted_4, [\n          _createVNode(_component_Icon, { name: \"formkit:whatsapp\" })\n        ])\n      ]),\n      _createElementVNode(\"li\", _hoisted_5, [\n        _createElementVNode(\"a\", _hoisted_6, [\n          _createVNode(_component_Icon, { name: \"uiw:github\" })\n        ])\n      ]),\n      _createElementVNode(\"li\", _hoisted_7, [\n        _createElementVNode(\"a\", _hoisted_8, [\n          _createVNode(_component_Icon, { name: \"bi:linkedin\" })\n        ])\n      ])\n    ])\n  ]))\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Footer.vue?vue&type=style&index=0&scoped=1fd40ca5&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-1fd40ca5\"]])",
-      "start": 1700439441665,
-      "end": 1700439441666,
+      "result": "const _sfc_main = {}\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-96213e74\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"secondary-color section footer\" }\nconst _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"h2\", null, \"Social Links\", -1))\nconst _hoisted_3 = { class: \"whatsapp\" }\nconst _hoisted_4 = {\n  href: \"https://wa.me/+972536241757\",\n  target: \"_blank\"\n}\nconst _hoisted_5 = { class: \"github\" }\nconst _hoisted_6 = {\n  href: \"https://github.com/Eden-Cohen1\",\n  target: \"_blank\"\n}\nconst _hoisted_7 = { class: \"linkdin\" }\nconst _hoisted_8 = {\n  href: \"https://www.linkedin.com/in/eden-co/\",\n  target: \"_blank\"\n}\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"main\", _hoisted_1, [\n    _hoisted_2,\n    _createElementVNode(\"ul\", null, [\n      _createElementVNode(\"li\", _hoisted_3, [\n        _createElementVNode(\"a\", _hoisted_4, [\n          _createVNode(_component_Icon, { name: \"formkit:whatsapp\" })\n        ])\n      ]),\n      _createElementVNode(\"li\", _hoisted_5, [\n        _createElementVNode(\"a\", _hoisted_6, [\n          _createVNode(_component_Icon, { name: \"uiw:github\" })\n        ])\n      ]),\n      _createElementVNode(\"li\", _hoisted_7, [\n        _createElementVNode(\"a\", _hoisted_8, [\n          _createVNode(_component_Icon, { name: \"bi:linkedin\" })\n        ])\n      ])\n    ])\n  ]))\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Footer.vue?vue&type=style&index=0&scoped=96213e74&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-96213e74\"]])",
+      "start": 1700494464597,
+      "end": 1700494464599,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -62,159 +62,159 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700439441667,
-      "end": 1700439441667,
+      "start": 1700494464599,
+      "end": 1700494464599,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439441667,
-      "end": 1700439441667,
+      "start": 1700494464599,
+      "end": 1700494464599,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439441671,
-      "end": 1700439441671,
+      "start": 1700494464599,
+      "end": 1700494464599,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1700439441673,
-      "end": 1700439441673,
+      "start": 1700494464599,
+      "end": 1700494464599,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700439441674,
-      "end": 1700439441674,
+      "start": 1700494464599,
+      "end": 1700494464599,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439441679,
-      "end": 1700439441679,
+      "start": 1700494464599,
+      "end": 1700494464599,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1700439441679,
-      "end": 1700439441679,
+      "start": 1700494464599,
+      "end": 1700494464599,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700439441679,
-      "end": 1700439441679,
+      "start": 1700494464599,
+      "end": 1700494464599,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1700439441687,
-      "end": 1700439441687,
+      "start": 1700494464599,
+      "end": 1700494464599,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1700439441687,
-      "end": 1700439441687,
+      "start": 1700494464599,
+      "end": 1700494464599,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700439441693,
-      "end": 1700439441693,
+      "start": 1700494464599,
+      "end": 1700494464599,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700439441694,
-      "end": 1700439441694,
+      "start": 1700494464599,
+      "end": 1700494464599,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700439441694,
-      "end": 1700439441694,
+      "start": 1700494464599,
+      "end": 1700494464599,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700439441695,
-      "end": 1700439441695,
+      "start": 1700494464599,
+      "end": 1700494464599,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700439441695,
-      "end": 1700439441699,
+      "start": 1700494464599,
+      "end": 1700494464599,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439441703,
-      "end": 1700439441705,
+      "start": 1700494464599,
+      "end": 1700494464599,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439441708,
-      "end": 1700439441722,
+      "start": 1700494464599,
+      "end": 1700494464600,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439441724,
-      "end": 1700439441724,
+      "start": 1700494464600,
+      "end": 1700494464600,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439441724,
-      "end": 1700439441724,
+      "start": 1700494464600,
+      "end": 1700494464600,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1700439441724,
-      "end": 1700439441724,
+      "start": 1700494464600,
+      "end": 1700494464600,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700439441728,
-      "end": 1700439441728,
+      "start": 1700494464600,
+      "end": 1700494464600,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1700439441732,
-      "end": 1700439441732,
+      "start": 1700494464600,
+      "end": 1700494464600,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "result": "import { default as __nuxt_component_0 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nconst _sfc_main = {}\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-1fd40ca5\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"secondary-color section footer\" }\nconst _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"h2\", null, \"Social Links\", -1))\nconst _hoisted_3 = { class: \"whatsapp\" }\nconst _hoisted_4 = {\n  href: \"https://wa.me/+972536241757\",\n  target: \"_blank\"\n}\nconst _hoisted_5 = { class: \"github\" }\nconst _hoisted_6 = {\n  href: \"https://github.com/Eden-Cohen1\",\n  target: \"_blank\"\n}\nconst _hoisted_7 = { class: \"linkdin\" }\nconst _hoisted_8 = {\n  href: \"https://www.linkedin.com/in/eden-co/\",\n  target: \"_blank\"\n}\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Icon = __nuxt_component_0\n\n  return (_openBlock(), _createElementBlock(\"main\", _hoisted_1, [\n    _hoisted_2,\n    _createElementVNode(\"ul\", null, [\n      _createElementVNode(\"li\", _hoisted_3, [\n        _createElementVNode(\"a\", _hoisted_4, [\n          _createVNode(_component_Icon, { name: \"formkit:whatsapp\" })\n        ])\n      ]),\n      _createElementVNode(\"li\", _hoisted_5, [\n        _createElementVNode(\"a\", _hoisted_6, [\n          _createVNode(_component_Icon, { name: \"uiw:github\" })\n        ])\n      ]),\n      _createElementVNode(\"li\", _hoisted_7, [\n        _createElementVNode(\"a\", _hoisted_8, [\n          _createVNode(_component_Icon, { name: \"bi:linkedin\" })\n        ])\n      ])\n    ])\n  ]))\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Footer.vue?vue&type=style&index=0&scoped=1fd40ca5&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-1fd40ca5\"]])",
-      "start": 1700439441737,
-      "end": 1700439441737,
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nconst _sfc_main = {}\nimport { createElementVNode as _createElementVNode, resolveComponent as _resolveComponent, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-96213e74\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"secondary-color section footer\" }\nconst _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"h2\", null, \"Social Links\", -1))\nconst _hoisted_3 = { class: \"whatsapp\" }\nconst _hoisted_4 = {\n  href: \"https://wa.me/+972536241757\",\n  target: \"_blank\"\n}\nconst _hoisted_5 = { class: \"github\" }\nconst _hoisted_6 = {\n  href: \"https://github.com/Eden-Cohen1\",\n  target: \"_blank\"\n}\nconst _hoisted_7 = { class: \"linkdin\" }\nconst _hoisted_8 = {\n  href: \"https://www.linkedin.com/in/eden-co/\",\n  target: \"_blank\"\n}\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Icon = __nuxt_component_0\n\n  return (_openBlock(), _createElementBlock(\"main\", _hoisted_1, [\n    _hoisted_2,\n    _createElementVNode(\"ul\", null, [\n      _createElementVNode(\"li\", _hoisted_3, [\n        _createElementVNode(\"a\", _hoisted_4, [\n          _createVNode(_component_Icon, { name: \"formkit:whatsapp\" })\n        ])\n      ]),\n      _createElementVNode(\"li\", _hoisted_5, [\n        _createElementVNode(\"a\", _hoisted_6, [\n          _createVNode(_component_Icon, { name: \"uiw:github\" })\n        ])\n      ]),\n      _createElementVNode(\"li\", _hoisted_7, [\n        _createElementVNode(\"a\", _hoisted_8, [\n          _createVNode(_component_Icon, { name: \"bi:linkedin\" })\n        ])\n      ])\n    ])\n  ]))\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Footer.vue?vue&type=style&index=0&scoped=96213e74&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-96213e74\"]])",
+      "start": 1700494464600,
+      "end": 1700494464600,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1700439441742,
-      "end": 1700439441742,
+      "start": 1700494464600,
+      "end": 1700494464600,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700439441742,
-      "end": 1700439441743,
+      "start": 1700494464600,
+      "end": 1700494464600,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700439441743,
-      "end": 1700439441743,
+      "start": 1700494464600,
+      "end": 1700494464600,
       "order": "normal"
     }
   ]

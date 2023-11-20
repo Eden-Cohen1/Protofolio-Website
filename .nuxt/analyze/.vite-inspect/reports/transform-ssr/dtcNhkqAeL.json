@@ -3,143 +3,143 @@
   "transforms": [
     {
       "name": "vite:load-fallback",
-      "result": ":root {\r\n  /* --light-bg-sec: #dbe6e6c7; */\r\n  /* --light-bg-sec: #dcdcf0ec; */\r\n  /* --light-bg-sec: #b0b0c7ec; */\r\n  --dark-bg-main: #1a2222;\r\n  --dark-bg-sec: rgb(44, 50, 54);\r\n  --dark-hover-color: rgba(41, 68, 85, 0.219);\r\n  --light-bg-main: #dcdcf0a6;\r\n  --light-bg-main-solid: #dcdcf0;\r\n  --light-bg-sec: #c3c3e0ec;\r\n  --btn-color: #0098df;\r\n  --btn-hover-color: #0372a5;\r\n}\r\n* {\r\n  font-family: \"Montserrat\", sans-serif;\r\n}\r\n\r\nbody,\r\nhtml {\r\n  padding: 0rem;\r\n  margin: 0;\r\n  scroll-behavior: smooth;\r\n  background-color: inherit;\r\n  overflow-x: hidden;\r\n  background-color: var(--light-bg-sec);\r\n}\r\nhtml {\r\n  height: 100vh !important;\r\n}\r\nhtml p,\r\nhtml h1,\r\nhtml h2,\r\nhtml h3 {\r\n  transition: all 0.4s;\r\n}\r\n.dark body,\r\n.dark html {\r\n  background-color: var(--dark-bg-sec);\r\n}\r\n\r\na {\r\n  text-decoration: none !important;\r\n}\r\n\r\nbutton {\r\n  padding: 0.8rem;\r\n  border-radius: 1rem;\r\n  cursor: pointer;\r\n  font-weight: 570;\r\n  background-color: var(--btn-color);\r\n  border: none;\r\n  color: white;\r\n}\r\n\r\nbutton.primary:hover {\r\n  background-color: var(--btn-hover-color);\r\n}\r\n\r\n.section {\r\n  width: 100%;\r\n  position: relative;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.secondary-color {\r\n  background-color: var(--light-bg-sec) !important;\r\n}\r\n.dark .secondary-color {\r\n  background-color: var(--dark-bg-sec) !important;\r\n}\r\n.main-color {\r\n  background-color: var(--light-bg-main) !important;\r\n}\r\n\r\n.dark .main-color {\r\n  background-color: var(--dark-bg-main) !important;\r\n}\r\n\r\n.dark a {\r\n  color: white !important;\r\n}\r\na,\r\n.projcard-tag {\r\n  animation: hover-shrink 0.2s forwards !important;\r\n}\r\na:hover,\r\n.projcard-tag:hover {\r\n  animation: hover-grow 0.2s forwards !important;\r\n  color: var(--btn-color) !important;\r\n}\r\nsvg:hover {\r\n  animation: hover-grow 0.2s forwards !important;\r\n}\r\nsvg {\r\n  animation: hover-shrink 0.2s forwards !important;\r\n}\r\n\r\n.navigation svg {\r\n  width: 1.3rem !important;\r\n  height: 1.3rem !important;\r\n}\r\n.dark h1,\r\n.dark h2,\r\n.dark h3,\r\n.dark p {\r\n  color: white;\r\n}\r\nh1,\r\nh2,\r\nh3,\r\np {\r\n  color: var(--dark-bg-main);\r\n}\r\n\r\n/* ================= ANIMATIONS ================== */\r\n\r\n@keyframes dropImage {\r\n  0% {\r\n    transform: translateY(-100%);\r\n  }\r\n  100% {\r\n    transform: translateY(0);\r\n  }\r\n}\r\n\r\n@keyframes hover-grow {\r\n  0% {\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n  }\r\n  100% {\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\r\n  }\r\n}\r\n@keyframes hover-shrink {\r\n  0% {\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\r\n  }\r\n  100% {\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n  }\r\n}\r\n/* -------------------------------------------------------- */\r\n\r\n/* ================= MEDIA-QUERIES ================== */\r\n\r\n@media screen and (max-width: 680px) {\r\n  h1,\r\n  h2 {\r\n    font-size: 1.2rem;\r\n    padding: 0rem 2rem;\r\n  }\r\n  .about p {\r\n    padding: 0rem 1rem !important;\r\n    line-height: 2.5rem !important;\r\n    font-size: 1rem !important;\r\n    margin: 2rem 0 3rem 0 !important;\r\n  }\r\n  .about button {\r\n    margin: auto;\r\n  }\r\n  .about h1 {\r\n    margin: auto;\r\n  }\r\n  .about {\r\n    padding: 1rem 0rem !important;\r\n  }\r\n  .my-hero {\r\n    height: 60vh !important;\r\n    padding-bottom: 8rem !important;\r\n    padding-top: 3rem !important;\r\n    -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 96%, 0% 100%) !important;\r\n    clip-path: polygon(0 0%, 100% 0%, 100% 96%, 0% 100%) !important;\r\n  }\r\n}\r\n\r\n/* -------------------------------------------------------- */\r\n",
-      "start": 1700439446076,
-      "end": 1700439446326,
+      "result": ":root {\r\n  /* --light-bg-sec: #dbe6e6c7; */\r\n  /* --light-bg-sec: #dcdcf0ec; */\r\n  /* --light-bg-sec: #b0b0c7ec; */\r\n  --dark-bg-main: #1a2222;\r\n  --dark-bg-sec: rgb(44, 50, 54);\r\n  --dark-hover-color: rgba(41, 68, 85, 0.219);\r\n  --light-bg-main: #dcdcf0a6;\r\n  --light-bg-main-solid: #dcdcf0;\r\n  --light-bg-sec: #c3c3e0ec;\r\n  --btn-color: #0098df;\r\n  --btn-hover-color: #0372a5;\r\n}\r\n* {\r\n  font-family: \"Montserrat\", sans-serif;\r\n}\r\n\r\nbody,\r\nhtml {\r\n  padding: 0rem;\r\n  margin: 0;\r\n  scroll-behavior: smooth;\r\n  background-color: inherit;\r\n  overflow-x: hidden;\r\n  background-color: var(--light-bg-sec);\r\n}\r\nbody {\r\n  height: 100vh;\r\n}\r\nhtml p,\r\nhtml h1,\r\nhtml h2,\r\nhtml h3 {\r\n  transition: all 0.4s;\r\n}\r\n.dark body,\r\n.dark html {\r\n  background-color: var(--dark-bg-sec);\r\n}\r\n\r\na {\r\n  text-decoration: none !important;\r\n}\r\n\r\nbutton {\r\n  padding: 0.8rem;\r\n  border-radius: 1rem;\r\n  cursor: pointer;\r\n  font-weight: 570;\r\n  background-color: var(--btn-color);\r\n  border: none;\r\n  color: white;\r\n}\r\n\r\nbutton.primary:hover {\r\n  background-color: var(--btn-hover-color);\r\n}\r\n\r\n.section {\r\n  width: 100%;\r\n  position: relative;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.secondary-color {\r\n  background-color: var(--light-bg-sec) !important;\r\n}\r\n.dark .secondary-color {\r\n  background-color: var(--dark-bg-sec) !important;\r\n}\r\n.main-color {\r\n  background-color: var(--light-bg-main) !important;\r\n}\r\n\r\n.dark .main-color {\r\n  background-color: var(--dark-bg-main) !important;\r\n}\r\n\r\n.dark a {\r\n  color: white !important;\r\n}\r\na,\r\n.projcard-tag {\r\n  animation: hover-shrink 0.2s forwards !important;\r\n}\r\na:hover,\r\n.projcard-tag:hover {\r\n  animation: hover-grow 0.2s forwards !important;\r\n  color: var(--btn-color) !important;\r\n}\r\nsvg:hover {\r\n  animation: hover-grow 0.2s forwards !important;\r\n}\r\nsvg {\r\n  animation: hover-shrink 0.2s forwards !important;\r\n}\r\n\r\n.navigation svg {\r\n  width: 1.3rem !important;\r\n  height: 1.3rem !important;\r\n}\r\n.dark h1,\r\n.dark h2,\r\n.dark h3,\r\n.dark p {\r\n  color: white;\r\n}\r\nh1,\r\nh2,\r\nh3,\r\np {\r\n  color: var(--dark-bg-main);\r\n}\r\n\r\n/* ================= ANIMATIONS ================== */\r\n\r\n@keyframes dropImage {\r\n  0% {\r\n    transform: translateY(-100%);\r\n  }\r\n  100% {\r\n    transform: translateY(0);\r\n  }\r\n}\r\n\r\n@keyframes hover-grow {\r\n  0% {\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n  }\r\n  100% {\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\r\n  }\r\n}\r\n@keyframes hover-shrink {\r\n  0% {\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\r\n  }\r\n  100% {\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n  }\r\n}\r\n/* -------------------------------------------------------- */\r\n\r\n/* ================= MEDIA-QUERIES ================== */\r\n\r\n@media screen and (max-width: 680px) {\r\n  h1,\r\n  h2 {\r\n    font-size: 1.2rem;\r\n    padding: 0rem 2rem;\r\n  }\r\n  .about p {\r\n    padding: 0rem 1rem !important;\r\n    line-height: 2.5rem !important;\r\n    font-size: 1rem !important;\r\n    margin: 2rem 0 3rem 0 !important;\r\n  }\r\n  .about button {\r\n    margin: auto;\r\n  }\r\n  .about h1 {\r\n    margin: auto;\r\n  }\r\n  .about {\r\n    padding: 1rem 0rem !important;\r\n  }\r\n  .my-hero {\r\n    height: 60vh !important;\r\n    padding-bottom: 8rem !important;\r\n    padding-top: 3rem !important;\r\n    -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 96%, 0% 100%) !important;\r\n    clip-path: polygon(0 0%, 100% 0%, 100% 96%, 0% 100%) !important;\r\n  }\r\n}\r\n\r\n/* -------------------------------------------------------- */\r\n",
+      "start": 1700494471123,
+      "end": 1700494471380,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439446326,
-      "end": 1700439446326,
+      "start": 1700494471380,
+      "end": 1700494471380,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439446326,
-      "end": 1700439446326,
+      "start": 1700494471380,
+      "end": 1700494471380,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439446326,
-      "end": 1700439446326,
+      "start": 1700494471380,
+      "end": 1700494471381,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439446326,
-      "end": 1700439446326,
+      "start": 1700494471380,
+      "end": 1700494471381,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700439446326,
-      "end": 1700439446326,
+      "start": 1700494471381,
+      "end": 1700494471381,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "result": ":root{--dark-bg-main:#1a2222;--dark-bg-sec:#2c3236;--dark-hover-color:rgba(41,68,85,.219);--light-bg-main:#dcdcf0a6;--light-bg-main-solid:#dcdcf0;--light-bg-sec:#c3c3e0ec;--btn-color:#0098df;--btn-hover-color:#0372a5}*{font-family:Montserrat,sans-serif}body,html{background-color:inherit;background-color:var(--light-bg-sec);margin:0;overflow-x:hidden;padding:0;scroll-behavior:smooth}html{height:100vh!important}html h1,html h2,html h3,html p{transition:all .4s}.dark body,.dark html{background-color:var(--dark-bg-sec)}a{text-decoration:none!important}button{background-color:var(--btn-color);border:none;border-radius:1rem;color:#fff;cursor:pointer;font-weight:570;padding:.8rem}button.primary:hover{background-color:var(--btn-hover-color)}.section{align-items:center;display:flex;justify-content:center;position:relative;width:100%}.secondary-color{background-color:var(--light-bg-sec)!important}.dark .secondary-color{background-color:var(--dark-bg-sec)!important}.main-color{background-color:var(--light-bg-main)!important}.dark .main-color{background-color:var(--dark-bg-main)!important}.dark a{color:#fff!important}.projcard-tag,a{animation:hover-shrink .2s forwards!important}.projcard-tag:hover,a:hover{color:var(--btn-color)!important}.projcard-tag:hover,a:hover,svg:hover{animation:hover-grow .2s forwards!important}svg{animation:hover-shrink .2s forwards!important}.navigation svg{height:1.3rem!important;width:1.3rem!important}.dark h1,.dark h2,.dark h3,.dark p{color:#fff}h1,h2,h3,p{color:var(--dark-bg-main)}@keyframes dropImage{0%{transform:translateY(-100%)}to{transform:translateY(0)}}@keyframes hover-grow{0%{transform:scale(1)}to{transform:scale(1.1)}}@keyframes hover-shrink{0%{transform:scale(1.1)}to{transform:scale(1)}}@media screen and (max-width:680px){h1,h2{font-size:1.2rem;padding:0 2rem}.about p{font-size:1rem!important;line-height:2.5rem!important;margin:2rem 0 3rem!important;padding:0 1rem!important}.about button,.about h1{margin:auto}.about{padding:1rem 0!important}.my-hero{-webkit-clip-path:polygon(0 0,100% 0,100% 96%,0 100%)!important;clip-path:polygon(0 0,100% 0,100% 96%,0 100%)!important;height:60vh!important;padding-bottom:8rem!important;padding-top:3rem!important}}",
-      "start": 1700439446326,
-      "end": 1700439446338,
+      "result": ":root{--dark-bg-main:#1a2222;--dark-bg-sec:#2c3236;--dark-hover-color:rgba(41,68,85,.219);--light-bg-main:#dcdcf0a6;--light-bg-main-solid:#dcdcf0;--light-bg-sec:#c3c3e0ec;--btn-color:#0098df;--btn-hover-color:#0372a5}*{font-family:Montserrat,sans-serif}body,html{background-color:inherit;background-color:var(--light-bg-sec);margin:0;overflow-x:hidden;padding:0;scroll-behavior:smooth}body{height:100vh}html h1,html h2,html h3,html p{transition:all .4s}.dark body,.dark html{background-color:var(--dark-bg-sec)}a{text-decoration:none!important}button{background-color:var(--btn-color);border:none;border-radius:1rem;color:#fff;cursor:pointer;font-weight:570;padding:.8rem}button.primary:hover{background-color:var(--btn-hover-color)}.section{align-items:center;display:flex;justify-content:center;position:relative;width:100%}.secondary-color{background-color:var(--light-bg-sec)!important}.dark .secondary-color{background-color:var(--dark-bg-sec)!important}.main-color{background-color:var(--light-bg-main)!important}.dark .main-color{background-color:var(--dark-bg-main)!important}.dark a{color:#fff!important}.projcard-tag,a{animation:hover-shrink .2s forwards!important}.projcard-tag:hover,a:hover{color:var(--btn-color)!important}.projcard-tag:hover,a:hover,svg:hover{animation:hover-grow .2s forwards!important}svg{animation:hover-shrink .2s forwards!important}.navigation svg{height:1.3rem!important;width:1.3rem!important}.dark h1,.dark h2,.dark h3,.dark p{color:#fff}h1,h2,h3,p{color:var(--dark-bg-main)}@keyframes dropImage{0%{transform:translateY(-100%)}to{transform:translateY(0)}}@keyframes hover-grow{0%{transform:scale(1)}to{transform:scale(1.1)}}@keyframes hover-shrink{0%{transform:scale(1.1)}to{transform:scale(1)}}@media screen and (max-width:680px){h1,h2{font-size:1.2rem;padding:0 2rem}.about p{font-size:1rem!important;line-height:2.5rem!important;margin:2rem 0 3rem!important;padding:0 1rem!important}.about button,.about h1{margin:auto}.about{padding:1rem 0!important}.my-hero{-webkit-clip-path:polygon(0 0,100% 0,100% 96%,0 100%)!important;clip-path:polygon(0 0,100% 0,100% 96%,0 100%)!important;height:60vh!important;padding-bottom:8rem!important;padding-top:3rem!important}}",
+      "start": 1700494471381,
+      "end": 1700494471401,
       "order": "normal",
       "sourcemaps": {
         "file": "C:/Users/eden7/Protofolio-Website/Protofolio-Website/assets/main.css",
-        "mappings": "AAAA,MAIE,sBAAuB,CACvB,qBAA8B,CAC9B,sCAA2C,CAC3C,yBAA0B,CAC1B,6BAA8B,CAC9B,wBAAyB,CACzB,mBAAoB,CACpB,yBACF,CACA,EACE,iCACF,CAEA,UAKE,wBAAyB,CAEzB,oCAAqC,CAJrC,QAAS,CAGT,iBAAkB,CAJlB,SAAa,CAEb,sBAIF,CACA,KACE,sBACF,CACA,+BAIE,kBACF,CACA,sBAEE,mCACF,CAEA,EACE,8BACF,CAEA,OAKE,iCAAkC,CAClC,WAAY,CAJZ,kBAAmB,CAKnB,UAAY,CAJZ,cAAe,CACf,eAAgB,CAHhB,aAOF,CAEA,qBACE,uCACF,CAEA,SAKE,kBAAmB,CAFnB,YAAa,CACb,sBAAuB,CAFvB,iBAAkB,CADlB,UAKF,CAEA,iBACE,8CACF,CACA,uBACE,6CACF,CACA,YACE,+CACF,CAEA,kBACE,8CACF,CAEA,QACE,oBACF,CACA,gBAEE,6CACF,CACA,4BAGE,gCACF,CACA,sCAHE,2CAKF,CACA,IACE,6CACF,CAEA,gBAEE,uBAAyB,CADzB,sBAEF,CACA,mCAIE,UACF,CACA,WAIE,yBACF,CAIA,qBACE,GACE,2BACF,CACA,GACE,uBACF,CACF,CAEA,sBACE,GAEE,kBACF,CACA,GAEE,oBACF,CACF,CACA,wBACE,GAEE,oBACF,CACA,GAEE,kBACF,CACF,CAKA,oCACE,MAEE,gBAAiB,CACjB,cACF,CACA,SAGE,wBAA0B,CAD1B,4BAA8B,CAE9B,4BAAgC,CAHhC,wBAIF,CAIA,wBACE,WACF,CACA,OACE,wBACF,CACA,SAIE,+DAAuE,CACvE,uDAA+D,CAJ/D,qBAAuB,CACvB,6BAA+B,CAC/B,0BAGF,CACF",
+        "mappings": "AAAA,MAIE,sBAAuB,CACvB,qBAA8B,CAC9B,sCAA2C,CAC3C,yBAA0B,CAC1B,6BAA8B,CAC9B,wBAAyB,CACzB,mBAAoB,CACpB,yBACF,CACA,EACE,iCACF,CAEA,UAKE,wBAAyB,CAEzB,oCAAqC,CAJrC,QAAS,CAGT,iBAAkB,CAJlB,SAAa,CAEb,sBAIF,CACA,KACE,YACF,CACA,+BAIE,kBACF,CACA,sBAEE,mCACF,CAEA,EACE,8BACF,CAEA,OAKE,iCAAkC,CAClC,WAAY,CAJZ,kBAAmB,CAKnB,UAAY,CAJZ,cAAe,CACf,eAAgB,CAHhB,aAOF,CAEA,qBACE,uCACF,CAEA,SAKE,kBAAmB,CAFnB,YAAa,CACb,sBAAuB,CAFvB,iBAAkB,CADlB,UAKF,CAEA,iBACE,8CACF,CACA,uBACE,6CACF,CACA,YACE,+CACF,CAEA,kBACE,8CACF,CAEA,QACE,oBACF,CACA,gBAEE,6CACF,CACA,4BAGE,gCACF,CACA,sCAHE,2CAKF,CACA,IACE,6CACF,CAEA,gBAEE,uBAAyB,CADzB,sBAEF,CACA,mCAIE,UACF,CACA,WAIE,yBACF,CAIA,qBACE,GACE,2BACF,CACA,GACE,uBACF,CACF,CAEA,sBACE,GAEE,kBACF,CACA,GAEE,oBACF,CACF,CACA,wBACE,GAEE,oBACF,CACA,GAEE,kBACF,CACF,CAKA,oCACE,MAEE,gBAAiB,CACjB,cACF,CACA,SAGE,wBAA0B,CAD1B,4BAA8B,CAE9B,4BAAgC,CAHhC,wBAIF,CAIA,wBACE,WACF,CACA,OACE,wBACF,CACA,SAIE,+DAAuE,CACvE,uDAA+D,CAJ/D,qBAAuB,CACvB,6BAA+B,CAC/B,0BAGF,CACF",
         "names": [],
         "sources": [
           "C:/Users/eden7/Protofolio-Website/Protofolio-Website/assets/main.css"
         ],
         "sourcesContent": [
-          ":root {\r\n  /* --light-bg-sec: #dbe6e6c7; */\r\n  /* --light-bg-sec: #dcdcf0ec; */\r\n  /* --light-bg-sec: #b0b0c7ec; */\r\n  --dark-bg-main: #1a2222;\r\n  --dark-bg-sec: rgb(44, 50, 54);\r\n  --dark-hover-color: rgba(41, 68, 85, 0.219);\r\n  --light-bg-main: #dcdcf0a6;\r\n  --light-bg-main-solid: #dcdcf0;\r\n  --light-bg-sec: #c3c3e0ec;\r\n  --btn-color: #0098df;\r\n  --btn-hover-color: #0372a5;\r\n}\r\n* {\r\n  font-family: \"Montserrat\", sans-serif;\r\n}\r\n\r\nbody,\r\nhtml {\r\n  padding: 0rem;\r\n  margin: 0;\r\n  scroll-behavior: smooth;\r\n  background-color: inherit;\r\n  overflow-x: hidden;\r\n  background-color: var(--light-bg-sec);\r\n}\r\nhtml {\r\n  height: 100vh !important;\r\n}\r\nhtml p,\r\nhtml h1,\r\nhtml h2,\r\nhtml h3 {\r\n  transition: all 0.4s;\r\n}\r\n.dark body,\r\n.dark html {\r\n  background-color: var(--dark-bg-sec);\r\n}\r\n\r\na {\r\n  text-decoration: none !important;\r\n}\r\n\r\nbutton {\r\n  padding: 0.8rem;\r\n  border-radius: 1rem;\r\n  cursor: pointer;\r\n  font-weight: 570;\r\n  background-color: var(--btn-color);\r\n  border: none;\r\n  color: white;\r\n}\r\n\r\nbutton.primary:hover {\r\n  background-color: var(--btn-hover-color);\r\n}\r\n\r\n.section {\r\n  width: 100%;\r\n  position: relative;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.secondary-color {\r\n  background-color: var(--light-bg-sec) !important;\r\n}\r\n.dark .secondary-color {\r\n  background-color: var(--dark-bg-sec) !important;\r\n}\r\n.main-color {\r\n  background-color: var(--light-bg-main) !important;\r\n}\r\n\r\n.dark .main-color {\r\n  background-color: var(--dark-bg-main) !important;\r\n}\r\n\r\n.dark a {\r\n  color: white !important;\r\n}\r\na,\r\n.projcard-tag {\r\n  animation: hover-shrink 0.2s forwards !important;\r\n}\r\na:hover,\r\n.projcard-tag:hover {\r\n  animation: hover-grow 0.2s forwards !important;\r\n  color: var(--btn-color) !important;\r\n}\r\nsvg:hover {\r\n  animation: hover-grow 0.2s forwards !important;\r\n}\r\nsvg {\r\n  animation: hover-shrink 0.2s forwards !important;\r\n}\r\n\r\n.navigation svg {\r\n  width: 1.3rem !important;\r\n  height: 1.3rem !important;\r\n}\r\n.dark h1,\r\n.dark h2,\r\n.dark h3,\r\n.dark p {\r\n  color: white;\r\n}\r\nh1,\r\nh2,\r\nh3,\r\np {\r\n  color: var(--dark-bg-main);\r\n}\r\n\r\n/* ================= ANIMATIONS ================== */\r\n\r\n@keyframes dropImage {\r\n  0% {\r\n    transform: translateY(-100%);\r\n  }\r\n  100% {\r\n    transform: translateY(0);\r\n  }\r\n}\r\n\r\n@keyframes hover-grow {\r\n  0% {\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n  }\r\n  100% {\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\r\n  }\r\n}\r\n@keyframes hover-shrink {\r\n  0% {\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\r\n  }\r\n  100% {\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n  }\r\n}\r\n/* -------------------------------------------------------- */\r\n\r\n/* ================= MEDIA-QUERIES ================== */\r\n\r\n@media screen and (max-width: 680px) {\r\n  h1,\r\n  h2 {\r\n    font-size: 1.2rem;\r\n    padding: 0rem 2rem;\r\n  }\r\n  .about p {\r\n    padding: 0rem 1rem !important;\r\n    line-height: 2.5rem !important;\r\n    font-size: 1rem !important;\r\n    margin: 2rem 0 3rem 0 !important;\r\n  }\r\n  .about button {\r\n    margin: auto;\r\n  }\r\n  .about h1 {\r\n    margin: auto;\r\n  }\r\n  .about {\r\n    padding: 1rem 0rem !important;\r\n  }\r\n  .my-hero {\r\n    height: 60vh !important;\r\n    padding-bottom: 8rem !important;\r\n    padding-top: 3rem !important;\r\n    -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 96%, 0% 100%) !important;\r\n    clip-path: polygon(0 0%, 100% 0%, 100% 96%, 0% 100%) !important;\r\n  }\r\n}\r\n\r\n/* -------------------------------------------------------- */\r\n"
+          ":root {\r\n  /* --light-bg-sec: #dbe6e6c7; */\r\n  /* --light-bg-sec: #dcdcf0ec; */\r\n  /* --light-bg-sec: #b0b0c7ec; */\r\n  --dark-bg-main: #1a2222;\r\n  --dark-bg-sec: rgb(44, 50, 54);\r\n  --dark-hover-color: rgba(41, 68, 85, 0.219);\r\n  --light-bg-main: #dcdcf0a6;\r\n  --light-bg-main-solid: #dcdcf0;\r\n  --light-bg-sec: #c3c3e0ec;\r\n  --btn-color: #0098df;\r\n  --btn-hover-color: #0372a5;\r\n}\r\n* {\r\n  font-family: \"Montserrat\", sans-serif;\r\n}\r\n\r\nbody,\r\nhtml {\r\n  padding: 0rem;\r\n  margin: 0;\r\n  scroll-behavior: smooth;\r\n  background-color: inherit;\r\n  overflow-x: hidden;\r\n  background-color: var(--light-bg-sec);\r\n}\r\nbody {\r\n  height: 100vh;\r\n}\r\nhtml p,\r\nhtml h1,\r\nhtml h2,\r\nhtml h3 {\r\n  transition: all 0.4s;\r\n}\r\n.dark body,\r\n.dark html {\r\n  background-color: var(--dark-bg-sec);\r\n}\r\n\r\na {\r\n  text-decoration: none !important;\r\n}\r\n\r\nbutton {\r\n  padding: 0.8rem;\r\n  border-radius: 1rem;\r\n  cursor: pointer;\r\n  font-weight: 570;\r\n  background-color: var(--btn-color);\r\n  border: none;\r\n  color: white;\r\n}\r\n\r\nbutton.primary:hover {\r\n  background-color: var(--btn-hover-color);\r\n}\r\n\r\n.section {\r\n  width: 100%;\r\n  position: relative;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n.secondary-color {\r\n  background-color: var(--light-bg-sec) !important;\r\n}\r\n.dark .secondary-color {\r\n  background-color: var(--dark-bg-sec) !important;\r\n}\r\n.main-color {\r\n  background-color: var(--light-bg-main) !important;\r\n}\r\n\r\n.dark .main-color {\r\n  background-color: var(--dark-bg-main) !important;\r\n}\r\n\r\n.dark a {\r\n  color: white !important;\r\n}\r\na,\r\n.projcard-tag {\r\n  animation: hover-shrink 0.2s forwards !important;\r\n}\r\na:hover,\r\n.projcard-tag:hover {\r\n  animation: hover-grow 0.2s forwards !important;\r\n  color: var(--btn-color) !important;\r\n}\r\nsvg:hover {\r\n  animation: hover-grow 0.2s forwards !important;\r\n}\r\nsvg {\r\n  animation: hover-shrink 0.2s forwards !important;\r\n}\r\n\r\n.navigation svg {\r\n  width: 1.3rem !important;\r\n  height: 1.3rem !important;\r\n}\r\n.dark h1,\r\n.dark h2,\r\n.dark h3,\r\n.dark p {\r\n  color: white;\r\n}\r\nh1,\r\nh2,\r\nh3,\r\np {\r\n  color: var(--dark-bg-main);\r\n}\r\n\r\n/* ================= ANIMATIONS ================== */\r\n\r\n@keyframes dropImage {\r\n  0% {\r\n    transform: translateY(-100%);\r\n  }\r\n  100% {\r\n    transform: translateY(0);\r\n  }\r\n}\r\n\r\n@keyframes hover-grow {\r\n  0% {\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n  }\r\n  100% {\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\r\n  }\r\n}\r\n@keyframes hover-shrink {\r\n  0% {\r\n    -webkit-transform: scale(1.1);\r\n    transform: scale(1.1);\r\n  }\r\n  100% {\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n  }\r\n}\r\n/* -------------------------------------------------------- */\r\n\r\n/* ================= MEDIA-QUERIES ================== */\r\n\r\n@media screen and (max-width: 680px) {\r\n  h1,\r\n  h2 {\r\n    font-size: 1.2rem;\r\n    padding: 0rem 2rem;\r\n  }\r\n  .about p {\r\n    padding: 0rem 1rem !important;\r\n    line-height: 2.5rem !important;\r\n    font-size: 1rem !important;\r\n    margin: 2rem 0 3rem 0 !important;\r\n  }\r\n  .about button {\r\n    margin: auto;\r\n  }\r\n  .about h1 {\r\n    margin: auto;\r\n  }\r\n  .about {\r\n    padding: 1rem 0rem !important;\r\n  }\r\n  .my-hero {\r\n    height: 60vh !important;\r\n    padding-bottom: 8rem !important;\r\n    padding-top: 3rem !important;\r\n    -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 96%, 0% 100%) !important;\r\n    clip-path: polygon(0 0%, 100% 0%, 100% 96%, 0% 100%) !important;\r\n  }\r\n}\r\n\r\n/* -------------------------------------------------------- */\r\n"
         ],
         "version": 3
       }
     },
     {
       "name": "vite:esbuild",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471401,
+      "end": 1700494471401,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471401,
+      "end": 1700494471401,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471401,
+      "end": 1700494471401,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471401,
+      "end": 1700494471401,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471401,
+      "end": 1700494471401,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471401,
+      "end": 1700494471401,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471401,
+      "end": 1700494471401,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471401,
+      "end": 1700494471401,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471401,
+      "end": 1700494471401,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
       "result": "export default ''",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -147,122 +147,122 @@
     },
     {
       "name": "vite:build-html",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700439446339,
-      "end": 1700439446339,
+      "start": 1700494471402,
+      "end": 1700494471402,
       "order": "normal"
     }
   ]

@@ -4,237 +4,237 @@
     {
       "name": "vite:load-fallback",
       "result": "import { shallowRef, onMounted, onUpdated, watch } from 'vue';\nimport { useEventListener } from '@vueuse/core';\nimport '../../../../constants/index.mjs';\nimport '../../../../hooks/index.mjs';\nimport { useNamespace } from '../../../../hooks/use-namespace/index.mjs';\nimport { EVENT_CODE } from '../../../../constants/aria.mjs';\n\nfunction useKeydown({ el$ }, store) {\n  const ns = useNamespace(\"tree\");\n  const treeItems = shallowRef([]);\n  const checkboxItems = shallowRef([]);\n  onMounted(() => {\n    initTabIndex();\n  });\n  onUpdated(() => {\n    treeItems.value = Array.from(el$.value.querySelectorAll(\"[role=treeitem]\"));\n    checkboxItems.value = Array.from(el$.value.querySelectorAll(\"input[type=checkbox]\"));\n  });\n  watch(checkboxItems, (val) => {\n    val.forEach((checkbox) => {\n      checkbox.setAttribute(\"tabindex\", \"-1\");\n    });\n  });\n  const handleKeydown = (ev) => {\n    const currentItem = ev.target;\n    if (!currentItem.className.includes(ns.b(\"node\")))\n      return;\n    const code = ev.code;\n    treeItems.value = Array.from(el$.value.querySelectorAll(`.${ns.is(\"focusable\")}[role=treeitem]`));\n    const currentIndex = treeItems.value.indexOf(currentItem);\n    let nextIndex;\n    if ([EVENT_CODE.up, EVENT_CODE.down].includes(code)) {\n      ev.preventDefault();\n      if (code === EVENT_CODE.up) {\n        nextIndex = currentIndex === -1 ? 0 : currentIndex !== 0 ? currentIndex - 1 : treeItems.value.length - 1;\n        const startIndex = nextIndex;\n        while (true) {\n          if (store.value.getNode(treeItems.value[nextIndex].dataset.key).canFocus)\n            break;\n          nextIndex--;\n          if (nextIndex === startIndex) {\n            nextIndex = -1;\n            break;\n          }\n          if (nextIndex < 0) {\n            nextIndex = treeItems.value.length - 1;\n          }\n        }\n      } else {\n        nextIndex = currentIndex === -1 ? 0 : currentIndex < treeItems.value.length - 1 ? currentIndex + 1 : 0;\n        const startIndex = nextIndex;\n        while (true) {\n          if (store.value.getNode(treeItems.value[nextIndex].dataset.key).canFocus)\n            break;\n          nextIndex++;\n          if (nextIndex === startIndex) {\n            nextIndex = -1;\n            break;\n          }\n          if (nextIndex >= treeItems.value.length) {\n            nextIndex = 0;\n          }\n        }\n      }\n      nextIndex !== -1 && treeItems.value[nextIndex].focus();\n    }\n    if ([EVENT_CODE.left, EVENT_CODE.right].includes(code)) {\n      ev.preventDefault();\n      currentItem.click();\n    }\n    const hasInput = currentItem.querySelector('[type=\"checkbox\"]');\n    if ([EVENT_CODE.enter, EVENT_CODE.space].includes(code) && hasInput) {\n      ev.preventDefault();\n      hasInput.click();\n    }\n  };\n  useEventListener(el$, \"keydown\", handleKeydown);\n  const initTabIndex = () => {\n    var _a;\n    treeItems.value = Array.from(el$.value.querySelectorAll(`.${ns.is(\"focusable\")}[role=treeitem]`));\n    checkboxItems.value = Array.from(el$.value.querySelectorAll(\"input[type=checkbox]\"));\n    const checkedItem = el$.value.querySelectorAll(`.${ns.is(\"checked\")}[role=treeitem]`);\n    if (checkedItem.length) {\n      checkedItem[0].setAttribute(\"tabindex\", \"0\");\n      return;\n    }\n    (_a = treeItems.value[0]) == null ? void 0 : _a.setAttribute(\"tabindex\", \"0\");\n  };\n}\n\nexport { useKeydown };\n//# sourceMappingURL=useKeydown.mjs.map\n",
-      "start": 1700439450326,
-      "end": 1700439450406,
+      "start": 1700494476055,
+      "end": 1700494476164,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439450406,
-      "end": 1700439450406,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439450406,
-      "end": 1700439450406,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439450406,
-      "end": 1700439450406,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439450406,
-      "end": 1700439450406,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700439450406,
-      "end": 1700439450406,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1700439450406,
-      "end": 1700439450406,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1700439450406,
-      "end": 1700439450406,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700439450406,
-      "end": 1700439450406,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700439450406,
-      "end": 1700439450406,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1700439450406,
-      "end": 1700439450406,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700439450406,
-      "end": 1700439450406,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439450406,
-      "end": 1700439450406,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439450406,
-      "end": 1700439450406,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439450406,
-      "end": 1700439450406,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439450406,
-      "end": 1700439450406,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700439450406,
-      "end": 1700439450407,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476164,
+      "end": 1700494476164,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476165,
+      "end": 1700494476165,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476165,
+      "end": 1700494476165,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476165,
+      "end": 1700494476165,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476165,
+      "end": 1700494476165,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476165,
+      "end": 1700494476165,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476165,
+      "end": 1700494476165,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476165,
+      "end": 1700494476165,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476165,
+      "end": 1700494476165,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476165,
+      "end": 1700494476165,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476165,
+      "end": 1700494476165,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1700439450407,
-      "end": 1700439450407,
+      "start": 1700494476165,
+      "end": 1700494476165,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
       "result": "import { shallowRef, onMounted, onUpdated, watch } from 'vue';\nimport { useEventListener } from '@vueuse/core';\nimport '../../../../constants/index.mjs';\nimport '../../../../hooks/index.mjs';\nimport { useNamespace } from '../../../../hooks/use-namespace/index.mjs';\nimport { EVENT_CODE } from '../../../../constants/aria.mjs';\n\nfunction useKeydown({ el$ }, store) {\n  const ns = useNamespace(\"tree\");\n  const treeItems = shallowRef([]);\n  const checkboxItems = shallowRef([]);\n   /*#__PURE__*/ false && onMounted(() => {\n    initTabIndex();\n  });\n  onUpdated(() => {\n    treeItems.value = Array.from(el$.value.querySelectorAll(\"[role=treeitem]\"));\n    checkboxItems.value = Array.from(el$.value.querySelectorAll(\"input[type=checkbox]\"));\n  });\n  watch(checkboxItems, (val) => {\n    val.forEach((checkbox) => {\n      checkbox.setAttribute(\"tabindex\", \"-1\");\n    });\n  });\n  const handleKeydown = (ev) => {\n    const currentItem = ev.target;\n    if (!currentItem.className.includes(ns.b(\"node\")))\n      return;\n    const code = ev.code;\n    treeItems.value = Array.from(el$.value.querySelectorAll(`.${ns.is(\"focusable\")}[role=treeitem]`));\n    const currentIndex = treeItems.value.indexOf(currentItem);\n    let nextIndex;\n    if ([EVENT_CODE.up, EVENT_CODE.down].includes(code)) {\n      ev.preventDefault();\n      if (code === EVENT_CODE.up) {\n        nextIndex = currentIndex === -1 ? 0 : currentIndex !== 0 ? currentIndex - 1 : treeItems.value.length - 1;\n        const startIndex = nextIndex;\n        while (true) {\n          if (store.value.getNode(treeItems.value[nextIndex].dataset.key).canFocus)\n            break;\n          nextIndex--;\n          if (nextIndex === startIndex) {\n            nextIndex = -1;\n            break;\n          }\n          if (nextIndex < 0) {\n            nextIndex = treeItems.value.length - 1;\n          }\n        }\n      } else {\n        nextIndex = currentIndex === -1 ? 0 : currentIndex < treeItems.value.length - 1 ? currentIndex + 1 : 0;\n        const startIndex = nextIndex;\n        while (true) {\n          if (store.value.getNode(treeItems.value[nextIndex].dataset.key).canFocus)\n            break;\n          nextIndex++;\n          if (nextIndex === startIndex) {\n            nextIndex = -1;\n            break;\n          }\n          if (nextIndex >= treeItems.value.length) {\n            nextIndex = 0;\n          }\n        }\n      }\n      nextIndex !== -1 && treeItems.value[nextIndex].focus();\n    }\n    if ([EVENT_CODE.left, EVENT_CODE.right].includes(code)) {\n      ev.preventDefault();\n      currentItem.click();\n    }\n    const hasInput = currentItem.querySelector('[type=\"checkbox\"]');\n    if ([EVENT_CODE.enter, EVENT_CODE.space].includes(code) && hasInput) {\n      ev.preventDefault();\n      hasInput.click();\n    }\n  };\n  useEventListener(el$, \"keydown\", handleKeydown);\n  const initTabIndex = () => {\n    var _a;\n    treeItems.value = Array.from(el$.value.querySelectorAll(`.${ns.is(\"focusable\")}[role=treeitem]`));\n    checkboxItems.value = Array.from(el$.value.querySelectorAll(\"input[type=checkbox]\"));\n    const checkedItem = el$.value.querySelectorAll(`.${ns.is(\"checked\")}[role=treeitem]`);\n    if (checkedItem.length) {\n      checkedItem[0].setAttribute(\"tabindex\", \"0\");\n      return;\n    }\n    (_a = treeItems.value[0]) == null ? void 0 : _a.setAttribute(\"tabindex\", \"0\");\n  };\n}\n\nexport { useKeydown };\n//# sourceMappingURL=useKeydown.mjs.map\n",
-      "start": 1700439450407,
-      "end": 1700439450408,
+      "start": 1700494476165,
+      "end": 1700494476165,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -247,14 +247,14 @@
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700439450408,
-      "end": 1700439450408,
+      "start": 1700494476165,
+      "end": 1700494476165,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700439450408,
-      "end": 1700439450408,
+      "start": 1700494476165,
+      "end": 1700494476165,
       "order": "normal"
     }
   ]

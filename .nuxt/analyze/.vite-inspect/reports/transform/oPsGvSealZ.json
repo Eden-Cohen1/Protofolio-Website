@@ -3,58 +3,58 @@
   "transforms": [
     {
       "name": "vite:load-fallback",
-      "result": "<template>\r\n  <main class=\"main-color section projects\">\r\n    <h1>PROTOFOLIO</h1>\r\n    <div class=\"cards\">\r\n      <div class=\"card\" v-for=\"project in projects\">\r\n        <div class=\"card-right\">\r\n          <h2 class=\"card-title\">{{ project.headline }}</h2>\r\n          <div class=\"card-desc\">\r\n            <b>{{ project.subHeadline }}</b>\r\n            <p>{{ project.description }}</p>\r\n            <div class=\"projcard-tagbox\">\r\n              <span class=\"projcard-tag\" v-for=\"tech in project.tech\">{{\r\n                tech\r\n              }}</span>\r\n            </div>\r\n          </div>\r\n          <div class=\"icons\">\r\n            <a :href=\"project.links.git\" target=\"_blank\">\r\n              <Icon name=\"mdi:github\" />\r\n            </a>\r\n            <a\r\n              :href=\"project.links.youtube\"\r\n              target=\"_blank\"\r\n              v-show=\"project.links.youtube\"\r\n              ><Icon name=\"teenyicons:youtube-outline\" />\r\n            </a>\r\n            <a\r\n              :href=\"project.links.website\"\r\n              v-show=\"project.links.website\"\r\n              target=\"_blank\"\r\n            >\r\n              <button class=\"primary\">View Website</button>\r\n            </a>\r\n          </div>\r\n        </div>\r\n        <div class=\"card-left\">\r\n          <img :src=\"project.img\" alt=\"\" />\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </main>\r\n</template>\r\n\r\n<script setup>\r\nconst projects = {\r\n  waveCave: {\r\n    headline: \"Wave Cave\",\r\n    subHeadline: \"Social media website for surfers and waves-forecast.\",\r\n    description:\r\n      \"Strengthening my web development foundation, I applied JS, HTML, and CSS to shape the project's frontend. Utilizing Node.js and Express in the backend, i gained practical skills in adapting REST API and digging into the HTTP protocol. Data is stored in MongoDB, using the Mongoose library.\",\r\n    tech: [\"Javascript\", \"HTML\", \"CSS\", \"Express\", \"MongoDB\"],\r\n    img: \"waveCave.png\",\r\n    links: {\r\n      git: \"https://github.com/Eden-Cohen1/Wave-Cave\",\r\n      youtube: false,\r\n      website: \"https://wave-cave.onrender.com/\",\r\n    },\r\n  },\r\n  shapeShift: {\r\n    headline: \"Shape Shift\",\r\n    subHeadline: \"Workout menegment windows application.\",\r\n    description:\r\n      \"As a school project to enhance my understanding of OOP and data management, I developed a .NET Windows Forms app. The UI was constructed using the UserControl Windows Forms logic. Data was stored in a binary file, as objects, incorporating OOP and Polymorphism principles. Serialization occurred on logout, and deserialization on login.\",\r\n    tech: [\"C#\", \".NET Win-Forms\"],\r\n    img: \"shapeShift.jpg\",\r\n    links: {\r\n      git: \"https://github.com/Eden-Cohen1/Workout-Manager\",\r\n      youtube: false,\r\n      website: false,\r\n    },\r\n  },\r\n  protoWebsite: {\r\n    headline: \"Protofolio Website\",\r\n    subHeadline: \"The website you are looking at 😉\",\r\n    description:\r\n      \"As a means of learning and refining my skills, I constructed a portfolio landing page using Vue.js and Nuxt 3. This project served as a valuable opportunity to deepen my understanding and proficiency in front-end web development.\",\r\n    tech: [\"Javascript\", \"Vue.js\", \"Nuxt3\", \"HTML\", \"CSS\"],\r\n    img: \"protofolio.png\",\r\n    links: {\r\n      git: \"https://github.com/Eden-Cohen1/Protofolio-Website\",\r\n      youtube: false,\r\n      website: false,\r\n    },\r\n  },\r\n};\r\n</script>\r\n\r\n<style scoped>\r\n.projects {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  flex-direction: column;\r\n  height: auto;\r\n  padding: 2rem 0rem 5rem;\r\n}\r\n.cards {\r\n  width: 100%;\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n.card {\r\n  display: flex;\r\n  justify-content: space-around;\r\n  margin: 2rem auto 5rem;\r\n  position: relative;\r\n  max-width: 1050px;\r\n  max-height: 390px;\r\n  min-height: 390px;\r\n  box-shadow: 0 20px 60px -20px black;\r\n  overflow: hidden;\r\n  border-radius: 1rem;\r\n  gap: 1.5rem;\r\n}\r\n\r\nh2 {\r\n  color: var(--btn-color);\r\n}\r\n.card-left {\r\n  position: relative;\r\n  order: 1;\r\n  flex-shrink: 0;\r\n  width: 50%;\r\n  -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 93%, 0% 100%);\r\n  clip-path: polygon(0 0%, 100% 0%, 100% 0%, 0% 550%);\r\n}\r\n.card-right {\r\n  position: relative;\r\n  width: 50%;\r\n  min-height: 350px;\r\n  order: 2;\r\n  padding-right: 5rem;\r\n}\r\n.card p {\r\n  word-wrap: break-word;\r\n  line-height: 1.4rem;\r\n}\r\n\r\nimg {\r\n  width: 100%;\r\n  min-height: 415px;\r\n  overflow: hidden;\r\n}\r\n\r\n.projcard-tagbox {\r\n  position: relative;\r\n  bottom: 30%;\r\n  font-size: 0.8rem;\r\n  font-weight: 600;\r\n  cursor: default;\r\n  user-select: none;\r\n}\r\n.projcard-tag {\r\n  display: inline-block;\r\n  background: var(--light-bg-sec);\r\n  color: var(--btn-color);\r\n  border-radius: 3px 0 0 3px;\r\n  line-height: 26px;\r\n  padding: 0 10px 0 23px;\r\n  position: relative;\r\n  margin-right: 1rem;\r\n  margin-bottom: 0.8rem;\r\n  cursor: default;\r\n  user-select: none;\r\n  transition: color 0.2s;\r\n}\r\n.dark .projcard-tag {\r\n  background: var(--dark-bg-sec);\r\n}\r\n.dark .projcard-tag::after {\r\n  border-left-color: var(--dark-bg-sec);\r\n}\r\n.projcard-tag::before {\r\n  content: \"\";\r\n  position: absolute;\r\n  background: var(--btn-color);\r\n  border-radius: 10px;\r\n  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);\r\n  height: 6px;\r\n  left: 10px;\r\n  width: 6px;\r\n  top: 10px;\r\n}\r\n.projcard-tag::after {\r\n  content: \"\";\r\n  position: absolute;\r\n  border-bottom: 13px solid transparent;\r\n  border-left: 10px solid var(--light-bg-sec);\r\n  border-top: 13px solid transparent;\r\n  right: -10px;\r\n  top: 0;\r\n}\r\n\r\n.icons {\r\n  position: absolute;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: right;\r\n  min-width: 10rem;\r\n  gap: 1rem;\r\n  bottom: 0.8rem;\r\n  right: 1rem;\r\n}\r\n.dark svg {\r\n  color: var(--light-bg-main);\r\n}\r\nsvg {\r\n  width: 2rem !important;\r\n  height: auto !important;\r\n  color: var(--dark-bg-main);\r\n}\r\nsvg:hover {\r\n  cursor: pointer;\r\n  color: var(--btn-color);\r\n}\r\n\r\n@media screen and (max-width: 1100px) {\r\n  .card {\r\n    max-width: 90% !important;\r\n    min-height: 400px;\r\n  }\r\n  .card-right {\r\n    padding-right: 1rem;\r\n  }\r\n  .card-desc,\r\n  p {\r\n    font-size: 0.85rem;\r\n    width: 100%;\r\n  }\r\n}\r\n@media screen and (max-width: 860px) {\r\n  .card-desc {\r\n    font-size: 1rem !important;\r\n    width: 95% !important;\r\n  }\r\n  p {\r\n    width: 100%;\r\n    font-size: 1rem !important;\r\n  }\r\n  h2 {\r\n    position: relative;\r\n    padding-left: 0;\r\n  }\r\n  .card {\r\n    width: 100%;\r\n    min-height: 450px;\r\n    margin: 2rem auto 4rem;\r\n  }\r\n  .card-left {\r\n    position: absolute;\r\n    -webkit-clip-path: none;\r\n    clip-path: none;\r\n    width: 100%;\r\n    height: 100%;\r\n    transition: 0.8s ease;\r\n    z-index: 6;\r\n  }\r\n  .card-right {\r\n    position: absolute;\r\n    width: 90%;\r\n    padding: 0;\r\n    opacity: 0;\r\n    transition: 0.6s ease;\r\n    z-index: 6;\r\n  }\r\n  img {\r\n    object-fit: cover !important;\r\n    min-height: 450px;\r\n  }\r\n  .card:hover .card-left {\r\n    opacity: 0;\r\n    z-index: 4 !important;\r\n  }\r\n  .card:hover .card-right {\r\n    opacity: 1;\r\n  }\r\n  .icons {\r\n    gap: 0.5rem;\r\n    right: -0.4rem;\r\n    bottom: -4.2rem;\r\n  }\r\n}\r\n</style>\r\n",
-      "start": 1700439439978,
-      "end": 1700439440265,
+      "result": "<template>\r\n  <main class=\"main-color section projects\">\r\n    <h1>PROTOFOLIO</h1>\r\n    <div class=\"cards\">\r\n      <div class=\"card\" v-for=\"project in projects\">\r\n        <div class=\"card-right\">\r\n          <h2 class=\"card-title\">{{ project.headline }}</h2>\r\n          <div class=\"card-desc\">\r\n            <b>{{ project.subHeadline }}</b>\r\n            <p>{{ project.description }}</p>\r\n            <div class=\"projcard-tagbox\">\r\n              <span class=\"projcard-tag\" v-for=\"tech in project.tech\">{{\r\n                tech\r\n              }}</span>\r\n            </div>\r\n          </div>\r\n          <div class=\"icons\">\r\n            <a :href=\"project.links.git\" target=\"_blank\">\r\n              <Icon name=\"mdi:github\" />\r\n            </a>\r\n            <a\r\n              :href=\"project.links.youtube\"\r\n              target=\"_blank\"\r\n              v-show=\"project.links.youtube\"\r\n              ><Icon name=\"teenyicons:youtube-outline\" />\r\n            </a>\r\n            <a\r\n              :href=\"project.links.website\"\r\n              v-show=\"project.links.website\"\r\n              target=\"_blank\"\r\n            >\r\n              <button class=\"primary\">View Website</button>\r\n            </a>\r\n          </div>\r\n        </div>\r\n        <div class=\"card-left\">\r\n          <NuxtImg :src=\"project.img\" />\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </main>\r\n</template>\r\n\r\n<script setup>\r\nimport projects from \"~/data/projects.json\";\r\n</script>\r\n\r\n<style scoped>\r\n.projects {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  flex-direction: column;\r\n  height: auto;\r\n  padding: 2rem 0rem 5rem;\r\n}\r\n.cards {\r\n  width: 100%;\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n}\r\n.card {\r\n  display: flex;\r\n  justify-content: space-around;\r\n  margin: 2rem auto 5rem;\r\n  position: relative;\r\n  max-width: 1050px;\r\n  max-height: 390px;\r\n  min-height: 390px;\r\n  box-shadow: 0 20px 60px -20px black;\r\n  overflow: hidden;\r\n  border-radius: 1rem;\r\n  gap: 1.5rem;\r\n}\r\n\r\nh2 {\r\n  color: var(--btn-color);\r\n}\r\n.card-left {\r\n  position: relative;\r\n  order: 1;\r\n  flex-shrink: 0;\r\n  width: 50%;\r\n  -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 93%, 0% 100%);\r\n  clip-path: polygon(0 0%, 100% 0%, 100% 0%, 0% 550%);\r\n}\r\n.card-right {\r\n  position: relative;\r\n  width: 50%;\r\n  min-height: 350px;\r\n  order: 2;\r\n  padding-right: 5rem;\r\n}\r\n.card p {\r\n  word-wrap: break-word;\r\n  line-height: 1.4rem;\r\n}\r\n\r\nimg {\r\n  width: 100%;\r\n  min-height: 415px;\r\n  overflow: hidden;\r\n}\r\n\r\n.projcard-tagbox {\r\n  position: relative;\r\n  bottom: 30%;\r\n  font-size: 0.8rem;\r\n  font-weight: 600;\r\n  cursor: default;\r\n  user-select: none;\r\n}\r\n.projcard-tag {\r\n  display: inline-block;\r\n  background: var(--light-bg-sec);\r\n  color: var(--btn-color);\r\n  border-radius: 3px 0 0 3px;\r\n  line-height: 26px;\r\n  padding: 0 10px 0 23px;\r\n  position: relative;\r\n  margin-right: 1rem;\r\n  margin-bottom: 0.8rem;\r\n  cursor: default;\r\n  user-select: none;\r\n  transition: color 0.2s;\r\n}\r\n.dark .projcard-tag {\r\n  background: var(--dark-bg-sec);\r\n}\r\n.dark .projcard-tag::after {\r\n  border-left-color: var(--dark-bg-sec);\r\n}\r\n.projcard-tag::before {\r\n  content: \"\";\r\n  position: absolute;\r\n  background: var(--btn-color);\r\n  border-radius: 10px;\r\n  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);\r\n  height: 6px;\r\n  left: 10px;\r\n  width: 6px;\r\n  top: 10px;\r\n}\r\n.projcard-tag::after {\r\n  content: \"\";\r\n  position: absolute;\r\n  border-bottom: 13px solid transparent;\r\n  border-left: 10px solid var(--light-bg-sec);\r\n  border-top: 13px solid transparent;\r\n  right: -10px;\r\n  top: 0;\r\n}\r\n\r\n.icons {\r\n  position: absolute;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: right;\r\n  min-width: 10rem;\r\n  gap: 1rem;\r\n  bottom: 0.8rem;\r\n  right: 1rem;\r\n}\r\n.dark svg {\r\n  color: var(--light-bg-main);\r\n}\r\nsvg {\r\n  width: 2rem !important;\r\n  height: auto !important;\r\n  color: var(--dark-bg-main);\r\n}\r\nsvg:hover {\r\n  cursor: pointer;\r\n  color: var(--btn-color);\r\n}\r\n\r\n@media screen and (max-width: 1100px) {\r\n  .card {\r\n    max-width: 90% !important;\r\n    min-height: 400px;\r\n  }\r\n  .card-right {\r\n    padding-right: 1rem;\r\n  }\r\n  .card-desc,\r\n  p {\r\n    font-size: 0.85rem;\r\n    width: 100%;\r\n  }\r\n}\r\n@media screen and (max-width: 860px) {\r\n  .card-desc {\r\n    font-size: 1rem !important;\r\n    width: 96% !important;\r\n  }\r\n  p {\r\n    width: 100%;\r\n    font-size: 1rem !important;\r\n  }\r\n  h2 {\r\n    position: relative;\r\n    padding-left: 0;\r\n  }\r\n  .card {\r\n    width: 100%;\r\n    min-height: 455px;\r\n    margin: 2rem auto 4rem;\r\n  }\r\n  .card-left {\r\n    position: absolute;\r\n    -webkit-clip-path: none;\r\n    clip-path: none;\r\n    width: 100%;\r\n    height: 100%;\r\n    transition: 0.8s ease;\r\n    z-index: 6;\r\n  }\r\n  .card-right {\r\n    position: absolute;\r\n    width: 90%;\r\n    padding: 0;\r\n    opacity: 0;\r\n    transition: 0.6s ease;\r\n    z-index: 6;\r\n  }\r\n  img {\r\n    object-fit: cover !important;\r\n    min-height: 455px;\r\n  }\r\n  .card:hover .card-left {\r\n    opacity: 0;\r\n    z-index: 4 !important;\r\n  }\r\n  .card:hover .card-right {\r\n    opacity: 1;\r\n  }\r\n  .icons {\r\n    gap: 0.5rem;\r\n    right: -0.4rem;\r\n    bottom: -2.5rem;\r\n  }\r\n}\r\n</style>\r\n",
+      "start": 1700494464214,
+      "end": 1700494464471,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439440265,
-      "end": 1700439440265,
+      "start": 1700494464471,
+      "end": 1700494464471,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439440265,
-      "end": 1700439440265,
+      "start": 1700494464471,
+      "end": 1700494464471,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700439440265,
-      "end": 1700439440265,
+      "start": 1700494464471,
+      "end": 1700494464471,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1700439440265,
-      "end": 1700439440265,
+      "start": 1700494464471,
+      "end": 1700494464471,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1700439440265,
-      "end": 1700439440265,
+      "start": 1700494464471,
+      "end": 1700494464471,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700439440265,
-      "end": 1700439440265,
+      "start": 1700494464471,
+      "end": 1700494464471,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700439440265,
-      "end": 1700439440265,
+      "start": 1700494464471,
+      "end": 1700494464471,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "result": "import { createElementVNode as _createElementVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, createVNode as _createVNode, vShow as _vShow, withDirectives as _withDirectives, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-efb4c0d8\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"main-color section projects\" }\nconst _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"h1\", null, \"PROTOFOLIO\", -1))\nconst _hoisted_3 = { class: \"cards\" }\nconst _hoisted_4 = { class: \"card\" }\nconst _hoisted_5 = { class: \"card-right\" }\nconst _hoisted_6 = { class: \"card-title\" }\nconst _hoisted_7 = { class: \"card-desc\" }\nconst _hoisted_8 = { class: \"projcard-tagbox\" }\nconst _hoisted_9 = { class: \"projcard-tag\" }\nconst _hoisted_10 = { class: \"icons\" }\nconst _hoisted_11 = [\"href\"]\nconst _hoisted_12 = [\"href\"]\nconst _hoisted_13 = [\"href\"]\nconst _hoisted_14 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"button\", { class: \"primary\" }, \"View Website\", -1))\nconst _hoisted_15 = [\n  _hoisted_14\n]\nconst _hoisted_16 = { class: \"card-left\" }\nconst _hoisted_17 = [\"src\"]\n\n\nconst _sfc_main = {\n  __name: 'Projects',\n  setup(__props) {\n\r\nconst projects = {\r\n  waveCave: {\r\n    headline: \"Wave Cave\",\r\n    subHeadline: \"Social media website for surfers and waves-forecast.\",\r\n    description:\r\n      \"Strengthening my web development foundation, I applied JS, HTML, and CSS to shape the project's frontend. Utilizing Node.js and Express in the backend, i gained practical skills in adapting REST API and digging into the HTTP protocol. Data is stored in MongoDB, using the Mongoose library.\",\r\n    tech: [\"Javascript\", \"HTML\", \"CSS\", \"Express\", \"MongoDB\"],\r\n    img: \"waveCave.png\",\r\n    links: {\r\n      git: \"https://github.com/Eden-Cohen1/Wave-Cave\",\r\n      youtube: false,\r\n      website: \"https://wave-cave.onrender.com/\",\r\n    },\r\n  },\r\n  shapeShift: {\r\n    headline: \"Shape Shift\",\r\n    subHeadline: \"Workout menegment windows application.\",\r\n    description:\r\n      \"As a school project to enhance my understanding of OOP and data management, I developed a .NET Windows Forms app. The UI was constructed using the UserControl Windows Forms logic. Data was stored in a binary file, as objects, incorporating OOP and Polymorphism principles. Serialization occurred on logout, and deserialization on login.\",\r\n    tech: [\"C#\", \".NET Win-Forms\"],\r\n    img: \"shapeShift.jpg\",\r\n    links: {\r\n      git: \"https://github.com/Eden-Cohen1/Workout-Manager\",\r\n      youtube: false,\r\n      website: false,\r\n    },\r\n  },\r\n  protoWebsite: {\r\n    headline: \"Protofolio Website\",\r\n    subHeadline: \"The website you are looking at 😉\",\r\n    description:\r\n      \"As a means of learning and refining my skills, I constructed a portfolio landing page using Vue.js and Nuxt 3. This project served as a valuable opportunity to deepen my understanding and proficiency in front-end web development.\",\r\n    tech: [\"Javascript\", \"Vue.js\", \"Nuxt3\", \"HTML\", \"CSS\"],\r\n    img: \"protofolio.png\",\r\n    links: {\r\n      git: \"https://github.com/Eden-Cohen1/Protofolio-Website\",\r\n      youtube: false,\r\n      website: false,\r\n    },\r\n  },\r\n};\r\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"main\", _hoisted_1, [\n    _hoisted_2,\n    _createElementVNode(\"div\", _hoisted_3, [\n      (_openBlock(), _createElementBlock(_Fragment, null, _renderList(projects, (project) => {\n        return _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"h2\", _hoisted_6, _toDisplayString(project.headline), 1),\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"b\", null, _toDisplayString(project.subHeadline), 1),\n              _createElementVNode(\"p\", null, _toDisplayString(project.description), 1),\n              _createElementVNode(\"div\", _hoisted_8, [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(project.tech, (tech) => {\n                  return (_openBlock(), _createElementBlock(\"span\", _hoisted_9, _toDisplayString(tech), 1))\n                }), 256))\n              ])\n            ]),\n            _createElementVNode(\"div\", _hoisted_10, [\n              _createElementVNode(\"a\", {\n                href: project.links.git,\n                target: \"_blank\"\n              }, [\n                _createVNode(_component_Icon, { name: \"mdi:github\" })\n              ], 8, _hoisted_11),\n              _withDirectives(_createElementVNode(\"a\", {\n                href: project.links.youtube,\n                target: \"_blank\"\n              }, [\n                _createVNode(_component_Icon, { name: \"teenyicons:youtube-outline\" })\n              ], 8, _hoisted_12), [\n                [_vShow, project.links.youtube]\n              ]),\n              _withDirectives(_createElementVNode(\"a\", {\n                href: project.links.website,\n                target: \"_blank\"\n              }, _hoisted_15, 8, _hoisted_13), [\n                [_vShow, project.links.website]\n              ])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_16, [\n            _createElementVNode(\"img\", {\n              src: project.img,\n              alt: \"\"\n            }, null, 8, _hoisted_17)\n          ])\n        ])\n      }), 64))\n    ])\n  ]))\n}\n}\n\n}\n\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Projects.vue?vue&type=style&index=0&scoped=efb4c0d8&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-efb4c0d8\"]])",
-      "start": 1700439440265,
-      "end": 1700439440273,
+      "result": "import { createElementVNode as _createElementVNode, unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, createVNode as _createVNode, vShow as _vShow, withDirectives as _withDirectives, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-a2856c0d\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"main-color section projects\" }\nconst _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"h1\", null, \"PROTOFOLIO\", -1))\nconst _hoisted_3 = { class: \"cards\" }\nconst _hoisted_4 = { class: \"card\" }\nconst _hoisted_5 = { class: \"card-right\" }\nconst _hoisted_6 = { class: \"card-title\" }\nconst _hoisted_7 = { class: \"card-desc\" }\nconst _hoisted_8 = { class: \"projcard-tagbox\" }\nconst _hoisted_9 = { class: \"projcard-tag\" }\nconst _hoisted_10 = { class: \"icons\" }\nconst _hoisted_11 = [\"href\"]\nconst _hoisted_12 = [\"href\"]\nconst _hoisted_13 = [\"href\"]\nconst _hoisted_14 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"button\", { class: \"primary\" }, \"View Website\", -1))\nconst _hoisted_15 = [\n  _hoisted_14\n]\nconst _hoisted_16 = { class: \"card-left\" }\n\nimport projects from \"~/data/projects.json\";\r\n\nconst _sfc_main = {\n  __name: 'Projects',\n  setup(__props) {\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = _resolveComponent(\"Icon\")\n  const _component_NuxtImg = _resolveComponent(\"NuxtImg\")\n\n  return (_openBlock(), _createElementBlock(\"main\", _hoisted_1, [\n    _hoisted_2,\n    _createElementVNode(\"div\", _hoisted_3, [\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(projects), (project) => {\n        return (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"h2\", _hoisted_6, _toDisplayString(project.headline), 1),\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"b\", null, _toDisplayString(project.subHeadline), 1),\n              _createElementVNode(\"p\", null, _toDisplayString(project.description), 1),\n              _createElementVNode(\"div\", _hoisted_8, [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(project.tech, (tech) => {\n                  return (_openBlock(), _createElementBlock(\"span\", _hoisted_9, _toDisplayString(tech), 1))\n                }), 256))\n              ])\n            ]),\n            _createElementVNode(\"div\", _hoisted_10, [\n              _createElementVNode(\"a\", {\n                href: project.links.git,\n                target: \"_blank\"\n              }, [\n                _createVNode(_component_Icon, { name: \"mdi:github\" })\n              ], 8, _hoisted_11),\n              _withDirectives(_createElementVNode(\"a\", {\n                href: project.links.youtube,\n                target: \"_blank\"\n              }, [\n                _createVNode(_component_Icon, { name: \"teenyicons:youtube-outline\" })\n              ], 8, _hoisted_12), [\n                [_vShow, project.links.youtube]\n              ]),\n              _withDirectives(_createElementVNode(\"a\", {\n                href: project.links.website,\n                target: \"_blank\"\n              }, _hoisted_15, 8, _hoisted_13), [\n                [_vShow, project.links.website]\n              ])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_16, [\n            _createVNode(_component_NuxtImg, {\n              src: project.img\n            }, null, 8, [\"src\"])\n          ])\n        ]))\n      }), 256))\n    ])\n  ]))\n}\n}\n\n}\n\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Projects.vue?vue&type=style&index=0&scoped=a2856c0d&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-a2856c0d\"]])",
+      "start": 1700494464471,
+      "end": 1700494464477,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -62,159 +62,159 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700439440273,
-      "end": 1700439440273,
+      "start": 1700494464477,
+      "end": 1700494464477,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439440273,
-      "end": 1700439440273,
+      "start": 1700494464477,
+      "end": 1700494464477,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439440273,
-      "end": 1700439440273,
+      "start": 1700494464477,
+      "end": 1700494464477,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1700439440273,
-      "end": 1700439440273,
+      "start": 1700494464477,
+      "end": 1700494464477,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700439440273,
-      "end": 1700439440273,
+      "start": 1700494464477,
+      "end": 1700494464477,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439440273,
-      "end": 1700439440273,
+      "start": 1700494464477,
+      "end": 1700494464477,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1700439440273,
-      "end": 1700439440273,
+      "start": 1700494464477,
+      "end": 1700494464477,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700439440273,
-      "end": 1700439440273,
+      "start": 1700494464477,
+      "end": 1700494464477,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1700439440273,
-      "end": 1700439440273,
+      "start": 1700494464477,
+      "end": 1700494464477,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1700439440273,
-      "end": 1700439440273,
+      "start": 1700494464477,
+      "end": 1700494464477,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700439440273,
-      "end": 1700439440273,
+      "start": 1700494464477,
+      "end": 1700494464477,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700439440273,
-      "end": 1700439440273,
+      "start": 1700494464477,
+      "end": 1700494464477,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700439440273,
-      "end": 1700439440273,
+      "start": 1700494464477,
+      "end": 1700494464477,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700439440273,
-      "end": 1700439440273,
+      "start": 1700494464477,
+      "end": 1700494464477,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700439440273,
-      "end": 1700439440273,
+      "start": 1700494464477,
+      "end": 1700494464477,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439440273,
-      "end": 1700439440273,
+      "start": 1700494464477,
+      "end": 1700494464477,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439440273,
-      "end": 1700439440275,
+      "start": 1700494464477,
+      "end": 1700494464478,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439440275,
-      "end": 1700439440275,
+      "start": 1700494464478,
+      "end": 1700494464478,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439440275,
-      "end": 1700439440275,
+      "start": 1700494464478,
+      "end": 1700494464478,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1700439440275,
-      "end": 1700439440275,
+      "start": 1700494464478,
+      "end": 1700494464478,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700439440275,
-      "end": 1700439440275,
+      "start": 1700494464478,
+      "end": 1700494464478,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1700439440275,
-      "end": 1700439440275,
+      "start": 1700494464479,
+      "end": 1700494464479,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "result": "import { default as __nuxt_component_0 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { createElementVNode as _createElementVNode, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, createVNode as _createVNode, vShow as _vShow, withDirectives as _withDirectives, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-efb4c0d8\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"main-color section projects\" }\nconst _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"h1\", null, \"PROTOFOLIO\", -1))\nconst _hoisted_3 = { class: \"cards\" }\nconst _hoisted_4 = { class: \"card\" }\nconst _hoisted_5 = { class: \"card-right\" }\nconst _hoisted_6 = { class: \"card-title\" }\nconst _hoisted_7 = { class: \"card-desc\" }\nconst _hoisted_8 = { class: \"projcard-tagbox\" }\nconst _hoisted_9 = { class: \"projcard-tag\" }\nconst _hoisted_10 = { class: \"icons\" }\nconst _hoisted_11 = [\"href\"]\nconst _hoisted_12 = [\"href\"]\nconst _hoisted_13 = [\"href\"]\nconst _hoisted_14 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"button\", { class: \"primary\" }, \"View Website\", -1))\nconst _hoisted_15 = [\n  _hoisted_14\n]\nconst _hoisted_16 = { class: \"card-left\" }\nconst _hoisted_17 = [\"src\"]\n\n\nconst _sfc_main = {\n  __name: 'Projects',\n  setup(__props) {\n\r\nconst projects = {\r\n  waveCave: {\r\n    headline: \"Wave Cave\",\r\n    subHeadline: \"Social media website for surfers and waves-forecast.\",\r\n    description:\r\n      \"Strengthening my web development foundation, I applied JS, HTML, and CSS to shape the project's frontend. Utilizing Node.js and Express in the backend, i gained practical skills in adapting REST API and digging into the HTTP protocol. Data is stored in MongoDB, using the Mongoose library.\",\r\n    tech: [\"Javascript\", \"HTML\", \"CSS\", \"Express\", \"MongoDB\"],\r\n    img: \"waveCave.png\",\r\n    links: {\r\n      git: \"https://github.com/Eden-Cohen1/Wave-Cave\",\r\n      youtube: false,\r\n      website: \"https://wave-cave.onrender.com/\",\r\n    },\r\n  },\r\n  shapeShift: {\r\n    headline: \"Shape Shift\",\r\n    subHeadline: \"Workout menegment windows application.\",\r\n    description:\r\n      \"As a school project to enhance my understanding of OOP and data management, I developed a .NET Windows Forms app. The UI was constructed using the UserControl Windows Forms logic. Data was stored in a binary file, as objects, incorporating OOP and Polymorphism principles. Serialization occurred on logout, and deserialization on login.\",\r\n    tech: [\"C#\", \".NET Win-Forms\"],\r\n    img: \"shapeShift.jpg\",\r\n    links: {\r\n      git: \"https://github.com/Eden-Cohen1/Workout-Manager\",\r\n      youtube: false,\r\n      website: false,\r\n    },\r\n  },\r\n  protoWebsite: {\r\n    headline: \"Protofolio Website\",\r\n    subHeadline: \"The website you are looking at 😉\",\r\n    description:\r\n      \"As a means of learning and refining my skills, I constructed a portfolio landing page using Vue.js and Nuxt 3. This project served as a valuable opportunity to deepen my understanding and proficiency in front-end web development.\",\r\n    tech: [\"Javascript\", \"Vue.js\", \"Nuxt3\", \"HTML\", \"CSS\"],\r\n    img: \"protofolio.png\",\r\n    links: {\r\n      git: \"https://github.com/Eden-Cohen1/Protofolio-Website\",\r\n      youtube: false,\r\n      website: false,\r\n    },\r\n  },\r\n};\r\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = __nuxt_component_0\n\n  return (_openBlock(), _createElementBlock(\"main\", _hoisted_1, [\n    _hoisted_2,\n    _createElementVNode(\"div\", _hoisted_3, [\n      (_openBlock(), _createElementBlock(_Fragment, null, _renderList(projects, (project) => {\n        return _createElementVNode(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"h2\", _hoisted_6, _toDisplayString(project.headline), 1),\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"b\", null, _toDisplayString(project.subHeadline), 1),\n              _createElementVNode(\"p\", null, _toDisplayString(project.description), 1),\n              _createElementVNode(\"div\", _hoisted_8, [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(project.tech, (tech) => {\n                  return (_openBlock(), _createElementBlock(\"span\", _hoisted_9, _toDisplayString(tech), 1))\n                }), 256))\n              ])\n            ]),\n            _createElementVNode(\"div\", _hoisted_10, [\n              _createElementVNode(\"a\", {\n                href: project.links.git,\n                target: \"_blank\"\n              }, [\n                _createVNode(_component_Icon, { name: \"mdi:github\" })\n              ], 8, _hoisted_11),\n              _withDirectives(_createElementVNode(\"a\", {\n                href: project.links.youtube,\n                target: \"_blank\"\n              }, [\n                _createVNode(_component_Icon, { name: \"teenyicons:youtube-outline\" })\n              ], 8, _hoisted_12), [\n                [_vShow, project.links.youtube]\n              ]),\n              _withDirectives(_createElementVNode(\"a\", {\n                href: project.links.website,\n                target: \"_blank\"\n              }, _hoisted_15, 8, _hoisted_13), [\n                [_vShow, project.links.website]\n              ])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_16, [\n            _createElementVNode(\"img\", {\n              src: project.img,\n              alt: \"\"\n            }, null, 8, _hoisted_17)\n          ])\n        ])\n      }), 64))\n    ])\n  ]))\n}\n}\n\n}\n\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Projects.vue?vue&type=style&index=0&scoped=efb4c0d8&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-efb4c0d8\"]])",
-      "start": 1700439440275,
-      "end": 1700439440275,
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/@nuxt/image/dist/runtime/components/nuxt-img\";\nimport { createElementVNode as _createElementVNode, unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, resolveComponent as _resolveComponent, createVNode as _createVNode, vShow as _vShow, withDirectives as _withDirectives, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-a2856c0d\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"main-color section projects\" }\nconst _hoisted_2 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"h1\", null, \"PROTOFOLIO\", -1))\nconst _hoisted_3 = { class: \"cards\" }\nconst _hoisted_4 = { class: \"card\" }\nconst _hoisted_5 = { class: \"card-right\" }\nconst _hoisted_6 = { class: \"card-title\" }\nconst _hoisted_7 = { class: \"card-desc\" }\nconst _hoisted_8 = { class: \"projcard-tagbox\" }\nconst _hoisted_9 = { class: \"projcard-tag\" }\nconst _hoisted_10 = { class: \"icons\" }\nconst _hoisted_11 = [\"href\"]\nconst _hoisted_12 = [\"href\"]\nconst _hoisted_13 = [\"href\"]\nconst _hoisted_14 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode(\"button\", { class: \"primary\" }, \"View Website\", -1))\nconst _hoisted_15 = [\n  _hoisted_14\n]\nconst _hoisted_16 = { class: \"card-left\" }\n\nimport projects from \"~/data/projects.json\";\r\n\nconst _sfc_main = {\n  __name: 'Projects',\n  setup(__props) {\n\r\n\nreturn (_ctx, _cache) => {\n  const _component_Icon = __nuxt_component_0\n  const _component_NuxtImg = __nuxt_component_1\n\n  return (_openBlock(), _createElementBlock(\"main\", _hoisted_1, [\n    _hoisted_2,\n    _createElementVNode(\"div\", _hoisted_3, [\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(projects), (project) => {\n        return (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n          _createElementVNode(\"div\", _hoisted_5, [\n            _createElementVNode(\"h2\", _hoisted_6, _toDisplayString(project.headline), 1),\n            _createElementVNode(\"div\", _hoisted_7, [\n              _createElementVNode(\"b\", null, _toDisplayString(project.subHeadline), 1),\n              _createElementVNode(\"p\", null, _toDisplayString(project.description), 1),\n              _createElementVNode(\"div\", _hoisted_8, [\n                (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(project.tech, (tech) => {\n                  return (_openBlock(), _createElementBlock(\"span\", _hoisted_9, _toDisplayString(tech), 1))\n                }), 256))\n              ])\n            ]),\n            _createElementVNode(\"div\", _hoisted_10, [\n              _createElementVNode(\"a\", {\n                href: project.links.git,\n                target: \"_blank\"\n              }, [\n                _createVNode(_component_Icon, { name: \"mdi:github\" })\n              ], 8, _hoisted_11),\n              _withDirectives(_createElementVNode(\"a\", {\n                href: project.links.youtube,\n                target: \"_blank\"\n              }, [\n                _createVNode(_component_Icon, { name: \"teenyicons:youtube-outline\" })\n              ], 8, _hoisted_12), [\n                [_vShow, project.links.youtube]\n              ]),\n              _withDirectives(_createElementVNode(\"a\", {\n                href: project.links.website,\n                target: \"_blank\"\n              }, _hoisted_15, 8, _hoisted_13), [\n                [_vShow, project.links.website]\n              ])\n            ])\n          ]),\n          _createElementVNode(\"div\", _hoisted_16, [\n            _createVNode(_component_NuxtImg, {\n              src: project.img\n            }, null, 8, [\"src\"])\n          ])\n        ]))\n      }), 256))\n    ])\n  ]))\n}\n}\n\n}\n\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Projects.vue?vue&type=style&index=0&scoped=a2856c0d&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['__scopeId',\"data-v-a2856c0d\"]])",
+      "start": 1700494464479,
+      "end": 1700494464479,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1700439440275,
-      "end": 1700439440275,
+      "start": 1700494464479,
+      "end": 1700494464479,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700439440275,
-      "end": 1700439440275,
+      "start": 1700494464479,
+      "end": 1700494464479,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700439440275,
-      "end": 1700439440275,
+      "start": 1700494464479,
+      "end": 1700494464479,
       "order": "normal"
     }
   ]

@@ -4,212 +4,212 @@
     {
       "name": "vite:load-fallback",
       "result": "import { defineComponent, ref, computed, watch, nextTick, provide, reactive, onMounted, onUpdated, openBlock, createElementBlock, normalizeClass, unref, createElementVNode, normalizeStyle, createBlock, resolveDynamicComponent, withCtx, renderSlot, createCommentVNode } from 'vue';\nimport { useResizeObserver, useEventListener } from '@vueuse/core';\nimport '../../../utils/index.mjs';\nimport '../../../hooks/index.mjs';\nimport { GAP } from './util.mjs';\nimport Bar from './bar2.mjs';\nimport { scrollbarContextKey } from './constants.mjs';\nimport { scrollbarProps, scrollbarEmits } from './scrollbar.mjs';\nimport _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';\nimport { useNamespace } from '../../../hooks/use-namespace/index.mjs';\nimport { addUnit } from '../../../utils/dom/style.mjs';\nimport { isObject } from '@vue/shared';\nimport { isNumber } from '../../../utils/types.mjs';\nimport { debugWarn } from '../../../utils/error.mjs';\n\nconst COMPONENT_NAME = \"ElScrollbar\";\nconst __default__ = defineComponent({\n  name: COMPONENT_NAME\n});\nconst _sfc_main = /* @__PURE__ */ defineComponent({\n  ...__default__,\n  props: scrollbarProps,\n  emits: scrollbarEmits,\n  setup(__props, { expose, emit }) {\n    const props = __props;\n    const ns = useNamespace(\"scrollbar\");\n    let stopResizeObserver = void 0;\n    let stopResizeListener = void 0;\n    const scrollbarRef = ref();\n    const wrapRef = ref();\n    const resizeRef = ref();\n    const sizeWidth = ref(\"0\");\n    const sizeHeight = ref(\"0\");\n    const barRef = ref();\n    const ratioY = ref(1);\n    const ratioX = ref(1);\n    const wrapStyle = computed(() => {\n      const style = {};\n      if (props.height)\n        style.height = addUnit(props.height);\n      if (props.maxHeight)\n        style.maxHeight = addUnit(props.maxHeight);\n      return [props.wrapStyle, style];\n    });\n    const wrapKls = computed(() => {\n      return [\n        props.wrapClass,\n        ns.e(\"wrap\"),\n        { [ns.em(\"wrap\", \"hidden-default\")]: !props.native }\n      ];\n    });\n    const resizeKls = computed(() => {\n      return [ns.e(\"view\"), props.viewClass];\n    });\n    const handleScroll = () => {\n      var _a;\n      if (wrapRef.value) {\n        (_a = barRef.value) == null ? void 0 : _a.handleScroll(wrapRef.value);\n        emit(\"scroll\", {\n          scrollTop: wrapRef.value.scrollTop,\n          scrollLeft: wrapRef.value.scrollLeft\n        });\n      }\n    };\n    function scrollTo(arg1, arg2) {\n      if (isObject(arg1)) {\n        wrapRef.value.scrollTo(arg1);\n      } else if (isNumber(arg1) && isNumber(arg2)) {\n        wrapRef.value.scrollTo(arg1, arg2);\n      }\n    }\n    const setScrollTop = (value) => {\n      if (!isNumber(value)) {\n        debugWarn(COMPONENT_NAME, \"value must be a number\");\n        return;\n      }\n      wrapRef.value.scrollTop = value;\n    };\n    const setScrollLeft = (value) => {\n      if (!isNumber(value)) {\n        debugWarn(COMPONENT_NAME, \"value must be a number\");\n        return;\n      }\n      wrapRef.value.scrollLeft = value;\n    };\n    const update = () => {\n      if (!wrapRef.value)\n        return;\n      const offsetHeight = wrapRef.value.offsetHeight - GAP;\n      const offsetWidth = wrapRef.value.offsetWidth - GAP;\n      const originalHeight = offsetHeight ** 2 / wrapRef.value.scrollHeight;\n      const originalWidth = offsetWidth ** 2 / wrapRef.value.scrollWidth;\n      const height = Math.max(originalHeight, props.minSize);\n      const width = Math.max(originalWidth, props.minSize);\n      ratioY.value = originalHeight / (offsetHeight - originalHeight) / (height / (offsetHeight - height));\n      ratioX.value = originalWidth / (offsetWidth - originalWidth) / (width / (offsetWidth - width));\n      sizeHeight.value = height + GAP < offsetHeight ? `${height}px` : \"\";\n      sizeWidth.value = width + GAP < offsetWidth ? `${width}px` : \"\";\n    };\n    watch(() => props.noresize, (noresize) => {\n      if (noresize) {\n        stopResizeObserver == null ? void 0 : stopResizeObserver();\n        stopResizeListener == null ? void 0 : stopResizeListener();\n      } else {\n        ;\n        ({ stop: stopResizeObserver } = useResizeObserver(resizeRef, update));\n        stopResizeListener = useEventListener(\"resize\", update);\n      }\n    }, { immediate: true });\n    watch(() => [props.maxHeight, props.height], () => {\n      if (!props.native)\n        nextTick(() => {\n          var _a;\n          update();\n          if (wrapRef.value) {\n            (_a = barRef.value) == null ? void 0 : _a.handleScroll(wrapRef.value);\n          }\n        });\n    });\n    provide(scrollbarContextKey, reactive({\n      scrollbarElement: scrollbarRef,\n      wrapElement: wrapRef\n    }));\n    onMounted(() => {\n      if (!props.native)\n        nextTick(() => {\n          update();\n        });\n    });\n    onUpdated(() => update());\n    expose({\n      wrapRef,\n      update,\n      scrollTo,\n      setScrollTop,\n      setScrollLeft,\n      handleScroll\n    });\n    return (_ctx, _cache) => {\n      return openBlock(), createElementBlock(\"div\", {\n        ref_key: \"scrollbarRef\",\n        ref: scrollbarRef,\n        class: normalizeClass(unref(ns).b())\n      }, [\n        createElementVNode(\"div\", {\n          ref_key: \"wrapRef\",\n          ref: wrapRef,\n          class: normalizeClass(unref(wrapKls)),\n          style: normalizeStyle(unref(wrapStyle)),\n          onScroll: handleScroll\n        }, [\n          (openBlock(), createBlock(resolveDynamicComponent(_ctx.tag), {\n            id: _ctx.id,\n            ref_key: \"resizeRef\",\n            ref: resizeRef,\n            class: normalizeClass(unref(resizeKls)),\n            style: normalizeStyle(_ctx.viewStyle),\n            role: _ctx.role,\n            \"aria-label\": _ctx.ariaLabel,\n            \"aria-orientation\": _ctx.ariaOrientation\n          }, {\n            default: withCtx(() => [\n              renderSlot(_ctx.$slots, \"default\")\n            ]),\n            _: 3\n          }, 8, [\"id\", \"class\", \"style\", \"role\", \"aria-label\", \"aria-orientation\"]))\n        ], 38),\n        !_ctx.native ? (openBlock(), createBlock(Bar, {\n          key: 0,\n          ref_key: \"barRef\",\n          ref: barRef,\n          height: sizeHeight.value,\n          width: sizeWidth.value,\n          always: _ctx.always,\n          \"ratio-x\": ratioX.value,\n          \"ratio-y\": ratioY.value\n        }, null, 8, [\"height\", \"width\", \"always\", \"ratio-x\", \"ratio-y\"])) : createCommentVNode(\"v-if\", true)\n      ], 2);\n    };\n  }\n});\nvar Scrollbar = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"__file\", \"/home/runner/work/element-plus/element-plus/packages/components/scrollbar/src/scrollbar.vue\"]]);\n\nexport { Scrollbar as default };\n//# sourceMappingURL=scrollbar2.mjs.map\n",
-      "start": 1700439441116,
-      "end": 1700439441229,
+      "start": 1700494465602,
+      "end": 1700494465745,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439441229,
-      "end": 1700439441229,
+      "start": 1700494465745,
+      "end": 1700494465745,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439441229,
-      "end": 1700439441229,
+      "start": 1700494465745,
+      "end": 1700494465745,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700439441229,
-      "end": 1700439441229,
+      "start": 1700494465745,
+      "end": 1700494465745,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1700439441229,
-      "end": 1700439441229,
+      "start": 1700494465745,
+      "end": 1700494465745,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1700439441229,
-      "end": 1700439441229,
+      "start": 1700494465745,
+      "end": 1700494465745,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700439441229,
-      "end": 1700439441229,
+      "start": 1700494465745,
+      "end": 1700494465745,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700439441229,
-      "end": 1700439441229,
+      "start": 1700494465745,
+      "end": 1700494465745,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1700439441229,
-      "end": 1700439441229,
+      "start": 1700494465745,
+      "end": 1700494465745,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700439441229,
-      "end": 1700439441229,
+      "start": 1700494465745,
+      "end": 1700494465745,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439441229,
-      "end": 1700439441229,
+      "start": 1700494465745,
+      "end": 1700494465745,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439441229,
-      "end": 1700439441229,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1700439441229,
-      "end": 1700439441229,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700439441229,
-      "end": 1700439441229,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439441229,
-      "end": 1700439441229,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1700439441229,
-      "end": 1700439441229,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700439441229,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700439441230,
-      "end": 1700439441230,
+      "start": 1700494465746,
+      "end": 1700494465746,
       "order": "normal"
     }
   ]

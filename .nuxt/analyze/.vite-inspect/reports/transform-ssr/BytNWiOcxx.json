@@ -4,248 +4,248 @@
     {
       "name": "vite:load-fallback",
       "result": "import { defineComponent, inject, ref, computed, watch, toRaw, unref, createVNode, mergeProps } from 'vue';\nimport { get } from 'lodash-unified';\nimport '../../../utils/index.mjs';\nimport '../../virtual-list/index.mjs';\nimport '../../../hooks/index.mjs';\nimport '../../../constants/index.mjs';\nimport GroupItem from './group-item.mjs';\nimport OptionItem from './option-item.mjs';\nimport { useProps } from './useProps.mjs';\nimport { selectV2InjectionKey } from './token.mjs';\nimport { useNamespace } from '../../../hooks/use-namespace/index.mjs';\nimport { isUndefined } from '../../../utils/types.mjs';\nimport { isObject } from '@vue/shared';\nimport { EVENT_CODE } from '../../../constants/aria.mjs';\nimport FixedSizeList from '../../virtual-list/src/components/fixed-size-list.mjs';\nimport DynamicSizeList from '../../virtual-list/src/components/dynamic-size-list.mjs';\n\nvar ElSelectMenu = defineComponent({\n  name: \"ElSelectDropdown\",\n  props: {\n    data: {\n      type: Array,\n      required: true\n    },\n    hoveringIndex: Number,\n    width: Number\n  },\n  setup(props, {\n    slots,\n    expose\n  }) {\n    const select = inject(selectV2InjectionKey);\n    const ns = useNamespace(\"select\");\n    const {\n      getLabel,\n      getValue,\n      getDisabled\n    } = useProps(select.props);\n    const cachedHeights = ref([]);\n    const listRef = ref();\n    const size = computed(() => props.data.length);\n    watch(() => size.value, () => {\n      var _a, _b;\n      (_b = (_a = select.popper.value).updatePopper) == null ? void 0 : _b.call(_a);\n    });\n    const isSized = computed(() => isUndefined(select.props.estimatedOptionHeight));\n    const listProps = computed(() => {\n      if (isSized.value) {\n        return {\n          itemSize: select.props.itemHeight\n        };\n      }\n      return {\n        estimatedSize: select.props.estimatedOptionHeight,\n        itemSize: (idx) => cachedHeights.value[idx]\n      };\n    });\n    const contains = (arr = [], target) => {\n      const {\n        props: {\n          valueKey\n        }\n      } = select;\n      if (!isObject(target)) {\n        return arr.includes(target);\n      }\n      return arr && arr.some((item) => {\n        return toRaw(get(item, valueKey)) === get(target, valueKey);\n      });\n    };\n    const isEqual = (selected, target) => {\n      if (!isObject(target)) {\n        return selected === target;\n      } else {\n        const {\n          valueKey\n        } = select.props;\n        return get(selected, valueKey) === get(target, valueKey);\n      }\n    };\n    const isItemSelected = (modelValue, target) => {\n      if (select.props.multiple) {\n        return contains(modelValue, getValue(target));\n      }\n      return isEqual(modelValue, getValue(target));\n    };\n    const isItemDisabled = (modelValue, selected) => {\n      const {\n        disabled,\n        multiple,\n        multipleLimit\n      } = select.props;\n      return disabled || !selected && (multiple ? multipleLimit > 0 && modelValue.length >= multipleLimit : false);\n    };\n    const isItemHovering = (target) => props.hoveringIndex === target;\n    const scrollToItem = (index) => {\n      const list = listRef.value;\n      if (list) {\n        list.scrollToItem(index);\n      }\n    };\n    const resetScrollTop = () => {\n      const list = listRef.value;\n      if (list) {\n        list.resetScrollTop();\n      }\n    };\n    expose({\n      listRef,\n      isSized,\n      isItemDisabled,\n      isItemHovering,\n      isItemSelected,\n      scrollToItem,\n      resetScrollTop\n    });\n    const Item = (itemProps) => {\n      const {\n        index,\n        data,\n        style\n      } = itemProps;\n      const sized = unref(isSized);\n      const {\n        itemSize,\n        estimatedSize\n      } = unref(listProps);\n      const {\n        modelValue\n      } = select.props;\n      const {\n        onSelect,\n        onHover\n      } = select;\n      const item = data[index];\n      if (item.type === \"Group\") {\n        return createVNode(GroupItem, {\n          \"item\": item,\n          \"style\": style,\n          \"height\": sized ? itemSize : estimatedSize\n        }, null);\n      }\n      const isSelected = isItemSelected(modelValue, item);\n      const isDisabled = isItemDisabled(modelValue, isSelected);\n      const isHovering = isItemHovering(index);\n      return createVNode(OptionItem, mergeProps(itemProps, {\n        \"selected\": isSelected,\n        \"disabled\": getDisabled(item) || isDisabled,\n        \"created\": !!item.created,\n        \"hovering\": isHovering,\n        \"item\": item,\n        \"onSelect\": onSelect,\n        \"onHover\": onHover\n      }), {\n        default: (props2) => {\n          var _a;\n          return ((_a = slots.default) == null ? void 0 : _a.call(slots, props2)) || createVNode(\"span\", null, [getLabel(item)]);\n        }\n      });\n    };\n    const {\n      onKeyboardNavigate,\n      onKeyboardSelect\n    } = select;\n    const onForward = () => {\n      onKeyboardNavigate(\"forward\");\n    };\n    const onBackward = () => {\n      onKeyboardNavigate(\"backward\");\n    };\n    const onEscOrTab = () => {\n      select.expanded = false;\n    };\n    const onKeydown = (e) => {\n      const {\n        code\n      } = e;\n      const {\n        tab,\n        esc,\n        down,\n        up,\n        enter\n      } = EVENT_CODE;\n      if (code !== tab) {\n        e.preventDefault();\n        e.stopPropagation();\n      }\n      switch (code) {\n        case tab:\n        case esc: {\n          onEscOrTab();\n          break;\n        }\n        case down: {\n          onForward();\n          break;\n        }\n        case up: {\n          onBackward();\n          break;\n        }\n        case enter: {\n          onKeyboardSelect();\n          break;\n        }\n      }\n    };\n    return () => {\n      var _a;\n      const {\n        data,\n        width\n      } = props;\n      const {\n        height,\n        multiple,\n        scrollbarAlwaysOn\n      } = select.props;\n      if (data.length === 0) {\n        return createVNode(\"div\", {\n          \"class\": ns.b(\"dropdown\"),\n          \"style\": {\n            width: `${width}px`\n          }\n        }, [(_a = slots.empty) == null ? void 0 : _a.call(slots)]);\n      }\n      const List = unref(isSized) ? FixedSizeList : DynamicSizeList;\n      return createVNode(\"div\", {\n        \"class\": [ns.b(\"dropdown\"), ns.is(\"multiple\", multiple)]\n      }, [createVNode(List, mergeProps({\n        \"ref\": listRef\n      }, unref(listProps), {\n        \"className\": ns.be(\"dropdown\", \"list\"),\n        \"scrollbarAlwaysOn\": scrollbarAlwaysOn,\n        \"data\": data,\n        \"height\": height,\n        \"width\": width,\n        \"total\": data.length,\n        \"onKeydown\": onKeydown\n      }), {\n        default: (props2) => createVNode(Item, props2, null)\n      })]);\n    };\n  }\n});\n\nexport { ElSelectMenu as default };\n//# sourceMappingURL=select-dropdown.mjs.map\n",
-      "start": 1700439450047,
-      "end": 1700439450137,
+      "start": 1700494475695,
+      "end": 1700494475799,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475799,
+      "end": 1700494475799,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475799,
+      "end": 1700494475799,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475799,
+      "end": 1700494475800,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475799,
+      "end": 1700494475800,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700439450137,
-      "end": 1700439450137,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475800,
+      "end": 1700494475800,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700439450138,
-      "end": 1700439450138,
+      "start": 1700494475801,
+      "end": 1700494475801,
       "order": "normal"
     }
   ]

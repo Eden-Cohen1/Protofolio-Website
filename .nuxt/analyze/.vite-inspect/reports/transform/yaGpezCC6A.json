@@ -4,212 +4,212 @@
     {
       "name": "vite:load-fallback",
       "result": "import { defineComponent, openBlock, createElementBlock, normalizeClass, unref, createElementVNode, withKeys, withModifiers, renderSlot, createTextVNode, toDisplayString, createVNode, withCtx, withDirectives, vShow } from 'vue';\nimport _CollapseTransition from '../../collapse-transition/index.mjs';\nimport { ElIcon } from '../../icon/index.mjs';\nimport { ArrowRight } from '@element-plus/icons-vue';\nimport { collapseItemProps } from './collapse-item.mjs';\nimport { useCollapseItem, useCollapseItemDOM } from './use-collapse-item.mjs';\nimport _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';\n\nconst _hoisted_1 = [\"id\", \"aria-expanded\", \"aria-controls\", \"aria-describedby\", \"tabindex\"];\nconst _hoisted_2 = [\"id\", \"aria-hidden\", \"aria-labelledby\"];\nconst __default__ = defineComponent({\n  name: \"ElCollapseItem\"\n});\nconst _sfc_main = /* @__PURE__ */ defineComponent({\n  ...__default__,\n  props: collapseItemProps,\n  setup(__props, { expose }) {\n    const props = __props;\n    const {\n      focusing,\n      id,\n      isActive,\n      handleFocus,\n      handleHeaderClick,\n      handleEnterClick\n    } = useCollapseItem(props);\n    const {\n      arrowKls,\n      headKls,\n      rootKls,\n      itemWrapperKls,\n      itemContentKls,\n      scopedContentId,\n      scopedHeadId\n    } = useCollapseItemDOM(props, { focusing, isActive, id });\n    expose({\n      isActive\n    });\n    return (_ctx, _cache) => {\n      return openBlock(), createElementBlock(\"div\", {\n        class: normalizeClass(unref(rootKls))\n      }, [\n        createElementVNode(\"button\", {\n          id: unref(scopedHeadId),\n          class: normalizeClass(unref(headKls)),\n          \"aria-expanded\": unref(isActive),\n          \"aria-controls\": unref(scopedContentId),\n          \"aria-describedby\": unref(scopedContentId),\n          tabindex: _ctx.disabled ? -1 : 0,\n          type: \"button\",\n          onClick: _cache[0] || (_cache[0] = (...args) => unref(handleHeaderClick) && unref(handleHeaderClick)(...args)),\n          onKeydown: _cache[1] || (_cache[1] = withKeys(withModifiers((...args) => unref(handleEnterClick) && unref(handleEnterClick)(...args), [\"stop\", \"prevent\"]), [\"space\", \"enter\"])),\n          onFocus: _cache[2] || (_cache[2] = (...args) => unref(handleFocus) && unref(handleFocus)(...args)),\n          onBlur: _cache[3] || (_cache[3] = ($event) => focusing.value = false)\n        }, [\n          renderSlot(_ctx.$slots, \"title\", {}, () => [\n            createTextVNode(toDisplayString(_ctx.title), 1)\n          ]),\n          createVNode(unref(ElIcon), {\n            class: normalizeClass(unref(arrowKls))\n          }, {\n            default: withCtx(() => [\n              createVNode(unref(ArrowRight))\n            ]),\n            _: 1\n          }, 8, [\"class\"])\n        ], 42, _hoisted_1),\n        createVNode(unref(_CollapseTransition), null, {\n          default: withCtx(() => [\n            withDirectives(createElementVNode(\"div\", {\n              id: unref(scopedContentId),\n              role: \"region\",\n              class: normalizeClass(unref(itemWrapperKls)),\n              \"aria-hidden\": !unref(isActive),\n              \"aria-labelledby\": unref(scopedHeadId)\n            }, [\n              createElementVNode(\"div\", {\n                class: normalizeClass(unref(itemContentKls))\n              }, [\n                renderSlot(_ctx.$slots, \"default\")\n              ], 2)\n            ], 10, _hoisted_2), [\n              [vShow, unref(isActive)]\n            ])\n          ]),\n          _: 3\n        })\n      ], 2);\n    };\n  }\n});\nvar CollapseItem = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"__file\", \"/home/runner/work/element-plus/element-plus/packages/components/collapse/src/collapse-item.vue\"]]);\n\nexport { CollapseItem as default };\n//# sourceMappingURL=collapse-item2.mjs.map\n",
-      "start": 1700439440430,
-      "end": 1700439440705,
+      "start": 1700494464824,
+      "end": 1700494465145,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439440705,
-      "end": 1700439440705,
+      "start": 1700494465145,
+      "end": 1700494465145,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439440705,
-      "end": 1700439440705,
+      "start": 1700494465145,
+      "end": 1700494465145,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700439440705,
-      "end": 1700439440705,
+      "start": 1700494465145,
+      "end": 1700494465145,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465145,
+      "end": 1700494465145,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465145,
+      "end": 1700494465145,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465145,
+      "end": 1700494465145,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465145,
+      "end": 1700494465145,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465145,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700439440706,
-      "end": 1700439440706,
+      "start": 1700494465146,
+      "end": 1700494465146,
       "order": "normal"
     }
   ]

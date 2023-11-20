@@ -4,212 +4,212 @@
     {
       "name": "vite:load-fallback",
       "result": "import { defineComponent, computed, unref, reactive, toRefs, getCurrentInstance, onBeforeUnmount, nextTick, withDirectives, openBlock, createElementBlock, normalizeClass, withModifiers, renderSlot, createElementVNode, toDisplayString, vShow } from 'vue';\nimport '../../../hooks/index.mjs';\nimport { useOption } from './useOption.mjs';\nimport _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';\nimport { useNamespace } from '../../../hooks/use-namespace/index.mjs';\nimport { useId } from '../../../hooks/use-id/index.mjs';\n\nconst _sfc_main = defineComponent({\n  name: \"ElOption\",\n  componentName: \"ElOption\",\n  props: {\n    value: {\n      required: true,\n      type: [String, Number, Boolean, Object]\n    },\n    label: [String, Number],\n    created: Boolean,\n    disabled: Boolean\n  },\n  setup(props) {\n    const ns = useNamespace(\"select\");\n    const id = useId();\n    const containerKls = computed(() => [\n      ns.be(\"dropdown\", \"item\"),\n      ns.is(\"disabled\", unref(isDisabled)),\n      {\n        selected: unref(itemSelected),\n        hover: unref(hover)\n      }\n    ]);\n    const states = reactive({\n      index: -1,\n      groupDisabled: false,\n      visible: true,\n      hitState: false,\n      hover: false\n    });\n    const { currentLabel, itemSelected, isDisabled, select, hoverItem } = useOption(props, states);\n    const { visible, hover } = toRefs(states);\n    const vm = getCurrentInstance().proxy;\n    select.onOptionCreate(vm);\n    onBeforeUnmount(() => {\n      const key = vm.value;\n      const { selected } = select;\n      const selectedOptions = select.props.multiple ? selected : [selected];\n      const doesSelected = selectedOptions.some((item) => {\n        return item.value === vm.value;\n      });\n      nextTick(() => {\n        if (select.cachedOptions.get(key) === vm && !doesSelected) {\n          select.cachedOptions.delete(key);\n        }\n      });\n      select.onOptionDestroy(key, vm);\n    });\n    function selectOptionClick() {\n      if (props.disabled !== true && states.groupDisabled !== true) {\n        select.handleOptionSelect(vm);\n      }\n    }\n    return {\n      ns,\n      id,\n      containerKls,\n      currentLabel,\n      itemSelected,\n      isDisabled,\n      select,\n      hoverItem,\n      visible,\n      hover,\n      selectOptionClick,\n      states\n    };\n  }\n});\nconst _hoisted_1 = [\"id\", \"aria-disabled\", \"aria-selected\"];\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  return withDirectives((openBlock(), createElementBlock(\"li\", {\n    id: _ctx.id,\n    class: normalizeClass(_ctx.containerKls),\n    role: \"option\",\n    \"aria-disabled\": _ctx.isDisabled || void 0,\n    \"aria-selected\": _ctx.itemSelected,\n    onMouseenter: _cache[0] || (_cache[0] = (...args) => _ctx.hoverItem && _ctx.hoverItem(...args)),\n    onClick: _cache[1] || (_cache[1] = withModifiers((...args) => _ctx.selectOptionClick && _ctx.selectOptionClick(...args), [\"stop\"]))\n  }, [\n    renderSlot(_ctx.$slots, \"default\", {}, () => [\n      createElementVNode(\"span\", null, toDisplayString(_ctx.currentLabel), 1)\n    ])\n  ], 42, _hoisted_1)), [\n    [vShow, _ctx.visible]\n  ]);\n}\nvar Option = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"render\", _sfc_render], [\"__file\", \"/home/runner/work/element-plus/element-plus/packages/components/select/src/option.vue\"]]);\n\nexport { Option as default };\n//# sourceMappingURL=option.mjs.map\n",
-      "start": 1700439441147,
-      "end": 1700439441254,
+      "start": 1700494465611,
+      "end": 1700494465716,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700439441254,
-      "end": 1700439441254,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700439441254,
-      "end": 1700439441254,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700439441254,
-      "end": 1700439441254,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1700439441254,
-      "end": 1700439441254,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1700439441254,
-      "end": 1700439441254,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700439441254,
-      "end": 1700439441254,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700439441254,
-      "end": 1700439441254,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1700439441254,
-      "end": 1700439441254,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700439441254,
-      "end": 1700439441254,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439441254,
-      "end": 1700439441254,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700439441254,
-      "end": 1700439441254,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1700439441254,
-      "end": 1700439441254,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700439441254,
-      "end": 1700439441255,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465716,
+      "end": 1700494465716,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465717,
+      "end": 1700494465717,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465717,
+      "end": 1700494465717,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465717,
+      "end": 1700494465717,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465717,
+      "end": 1700494465717,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465717,
+      "end": 1700494465717,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465717,
+      "end": 1700494465717,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465717,
+      "end": 1700494465717,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465717,
+      "end": 1700494465717,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465717,
+      "end": 1700494465717,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465717,
+      "end": 1700494465717,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465717,
+      "end": 1700494465717,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465717,
+      "end": 1700494465717,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700439441255,
-      "end": 1700439441255,
+      "start": 1700494465717,
+      "end": 1700494465717,
       "order": "normal"
     }
   ]
