@@ -32,7 +32,6 @@
 .dark .footer {
   border-top: 1px solid var(--dark-bg-sec);
 }
-
 ul {
   display: flex;
   gap: 2.5rem;

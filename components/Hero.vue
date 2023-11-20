@@ -1,15 +1,17 @@
 <template>
   <main class="main-color my-hero">
     <div class="avatar">
-      <NuxtImg :src="`me-big.png`" alt="" />
+      <NuxtImg :src="`me-big.png`" alt="Eden's profile image" />
     </div>
     <div class="headline-container">
       <h1 v-if="isMobile">Hi, I'm <span>Eden</span></h1>
       <h1 v-else="">Hello, I'm <span>Eden</span></h1>
-      <h2>{{ heroText.line1 }}</h2>
+      <h2>{{ heroText.line }}</h2>
       <h3>
-        B.S.c Computer Science Student. <br />
-        Currently seeking a dynamic role as a Full-Stack Developer.
+        <pre>
+          B.S.c Computer Science Student.
+          Currently seeking a dynamic role as a Full-Stack Developer.
+        </pre>
       </h3>
       <div class="social-links">
         <a href="https://github.com/Eden-Cohen1" target="_blank"
@@ -26,15 +28,15 @@
 <script setup>
 const isMobile = inject("isMobile");
 const heroText = reactive({
-  headline: "Full-Stack Web Developer. \n",
-  line1: "",
+  headline: "Full-Stack Web Developer.",
+  line: "",
 });
 
 const typeText = () => {
   for (let i = 0; i < heroText.headline.length; i++) {
     setTimeout(
       () => {
-        heroText.line1 += heroText.headline[i];
+        heroText.line += heroText.headline[i];
       },
       65 * i,
       i

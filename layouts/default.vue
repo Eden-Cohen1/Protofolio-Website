@@ -1,39 +1,42 @@
 <template>
-  <main class="navigation" ref="screenSize" v-show="width">
+  <main class="navigation" v-show="width">
     <button class="themeBtn" @click="toggleDarkMode">
       <Icon v-if="darkMode" name="uil:moon" />
-      <Icon v-else="" name="uil:sun" />
+      <Icon v-else name="uil:sun" />
     </button>
     <div v-if="!isMobile" class="navbar">
       <Navbar />
     </div>
-    <div v-else="isMobile" :class="{ sidebar: true, hidden: isScrolling }">
+    <div v-else :class="{ sidebar: true, hidden: isScrolling }">
       <Sidebar />
     </div>
-    <slot :isMobile="isMobile" />
+    <slot />
     <Footer />
   </main>
 </template>
 
 <script setup>
-//sidebar / navbar
+const darkMode = ref(false);
 const { width } = screenWidth();
-const isMobile = computed(() => {
-  return width.value <= 680;
-});
-// hide sidebar
 const { scroll } = scrolling();
+
+// hide sidebar
 const isScrolling = computed(() => {
   return scroll.value;
 });
+//sidebar / navbar
+const isMobile = computed(() => {
+  return width.value <= 680;
+});
+
 provide("isMobile", isMobile);
 
-// dark mode
-const darkMode = ref(false);
 const toggleDarkMode = () => {
   darkMode.value = !darkMode.value;
   document.documentElement.classList.toggle("dark", darkMode.value);
 };
+
+// dark mode
 </script>
 
 <style scoped>

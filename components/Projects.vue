@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="card-left">
-          <NuxtImg :src="project.img" alt="" />
+          <NuxtImg :src="project.img" />
         </div>
       </div>
     </div>
@@ -42,47 +42,7 @@
 </template>
 
 <script setup>
-const projects = {
-  waveCave: {
-    headline: "Wave Cave",
-    subHeadline: "Social media website for surfers and waves-forecast.",
-    description:
-      "Strengthening my web development foundation, I applied JS, HTML, and CSS to shape the project's frontend. Utilizing Node.js and Express in the backend, i gained practical skills in adapting REST API and digging into the HTTP protocol. Data is stored in MongoDB, using the Mongoose library.",
-    tech: ["Javascript", "HTML", "CSS", "Express", "MongoDB"],
-    img: "waveCave.png",
-    links: {
-      git: "https://github.com/Eden-Cohen1/Wave-Cave",
-      youtube: false,
-      website: "https://wave-cave.onrender.com/",
-    },
-  },
-  shapeShift: {
-    headline: "Shape Shift",
-    subHeadline: "Workout menegment windows application.",
-    description:
-      "As a school project to enhance my understanding of OOP and data management, I developed a .NET Windows Forms app. The UI was constructed using the UserControl Windows Forms logic. Data was stored in a binary file, as objects, incorporating OOP and Polymorphism principles. Serialization occurred on logout, and deserialization on login.",
-    tech: ["C#", ".NET Win-Forms"],
-    img: "shapeShift.jpg",
-    links: {
-      git: "https://github.com/Eden-Cohen1/Workout-Manager",
-      youtube: false,
-      website: false,
-    },
-  },
-  protoWebsite: {
-    headline: "Protofolio Website",
-    subHeadline: "The website you are looking at 😉",
-    description:
-      "As a means of learning and refining my skills, I constructed a portfolio landing page using Vue.js and Nuxt 3. This project served as a valuable opportunity to deepen my understanding and proficiency in front-end web development.",
-    tech: ["Javascript", "Vue.js", "Nuxt3", "HTML", "CSS"],
-    img: "protofolio.png",
-    links: {
-      git: "https://github.com/Eden-Cohen1/Protofolio-Website",
-      youtube: false,
-      website: false,
-    },
-  },
-};
+import projects from "~/data/projects.json";
 </script>
 
 <style scoped>

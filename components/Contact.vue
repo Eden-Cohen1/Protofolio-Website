@@ -1,7 +1,7 @@
 <template>
   <main class="main-color section contact">
     <h1>CONTACT ME</h1>
-    <form class="contact-form">
+    <form class="contact-form" netlify>
       <input
         name="name"
         type="text"
@@ -21,10 +21,6 @@
       ></textarea>
       <input type="submit" value="SEND" />
     </form>
-    <!-- <a href="https://wa.me/+972536241757" target="_blank">
-      <Icon name="ic:twotone-whatsapp" />
-      Chat on WhatsApp</a
-    > -->
   </main>
 </template>
 
