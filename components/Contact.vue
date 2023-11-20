@@ -1,7 +1,7 @@
 <template>
   <main class="main-color section contact">
     <h1>CONTACT ME</h1>
-    <form class="contact-form" netlify>
+    <form name="contact" class="contact-form" netlify>
       <input
         name="name"
         type="text"
@@ -10,7 +10,7 @@
       />
       <input
         name="email"
-        type="text"
+        type="email"
         class="feedback-input"
         placeholder="Email"
       />
