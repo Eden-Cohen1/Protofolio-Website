@@ -20,11 +20,11 @@ export default defineNuxtConfig({
       Playpen: true,
       "Playpen+Sans": true,
     },
-    image: {
-      provider: "netlify",
-      netlify: {
-        baseURl: process.env.IMAGES_URL,
-      },
+  },
+  image: {
+    provider: "netlify",
+    netlify: {
+      baseURl: process.env.IMAGES_URL,
     },
   },
 });
