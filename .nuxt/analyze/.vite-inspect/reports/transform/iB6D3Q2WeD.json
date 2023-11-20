@@ -3,58 +3,58 @@
   "transforms": [
     {
       "name": "vite:load-fallback",
-      "result": "<template>\r\n  <main class=\"main-color section contact\">\r\n    <h1>CONTACT ME</h1>\r\n    <form class=\"contact-form\">\r\n      <input\r\n        name=\"name\"\r\n        type=\"text\"\r\n        class=\"feedback-input\"\r\n        placeholder=\"Name\"\r\n      />\r\n      <input\r\n        name=\"email\"\r\n        type=\"text\"\r\n        class=\"feedback-input\"\r\n        placeholder=\"Email\"\r\n      />\r\n      <textarea\r\n        name=\"text\"\r\n        class=\"feedback-input\"\r\n        placeholder=\"Comment\"\r\n      ></textarea>\r\n      <input type=\"submit\" value=\"SEND\" />\r\n    </form>\r\n    <!-- <a href=\"https://wa.me/+972536241757\" target=\"_blank\">\r\n      <Icon name=\"ic:twotone-whatsapp\" />\r\n      Chat on WhatsApp</a\r\n    > -->\r\n  </main>\r\n</template>\r\n\r\n<style scoped>\r\n.contact {\r\n  height: fit-content;\r\n  min-height: 40vh;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-around;\r\n  padding-bottom: 3rem;\r\n  padding: 5rem 2rem 5rem 0rem;\r\n}\r\n.contact-form {\r\n  max-width: 60vw;\r\n}\r\na {\r\n  border: none;\r\n  border-radius: 2rem;\r\n  padding: 1rem;\r\n  text-decoration: none;\r\n  color: white;\r\n  background-color: #2ec452;\r\n}\r\na:hover {\r\n  background-color: #269b41 !important;\r\n  color: white !important;\r\n  font-weight: 500 !important;\r\n}\r\n.feedback-input {\r\n  font-family: Helvetica, Arial, sans-serif;\r\n  font-weight: 500;\r\n  font-size: 18px;\r\n  border-radius: 2rem;\r\n  line-height: 22px;\r\n  background-color: transparent;\r\n  border: 2px solid var(--light-bg-sec);\r\n  transition: all 0.3s;\r\n  padding: 13px;\r\n  margin-bottom: 15px;\r\n  width: 100%;\r\n  box-sizing: border-box;\r\n  outline: 0;\r\n}\r\n.dark .feedback-input {\r\n  border-color: var(--dark-bg-sec);\r\n}\r\n\r\n.feedback-input:focus {\r\n  border: 2px solid var(--btn-color);\r\n}\r\n\r\ntextarea {\r\n  height: 150px;\r\n  line-height: 150%;\r\n  resize: vertical;\r\n}\r\n\r\n[type=\"submit\"] {\r\n  width: 100%;\r\n  border-radius: 2rem;\r\n  border: 0;\r\n  background-color: var(--btn-color);\r\n  color: white;\r\n  cursor: pointer;\r\n  font-size: 1rem;\r\n  padding-top: 10px;\r\n  padding-bottom: 10px;\r\n  transition: all 0.3s;\r\n  margin-top: -4px;\r\n  font-weight: 700;\r\n}\r\n[type=\"submit\"]:hover {\r\n  background: var(--btn-hover-color);\r\n}\r\n</style>\r\n",
-      "start": 1700406270496,
-      "end": 1700406270665,
+      "result": "<template>\r\n  <main class=\"main-color section contact\">\r\n    <h1>CONTACT ME</h1>\r\n    <form class=\"contact-form\">\r\n      <input\r\n        name=\"name\"\r\n        type=\"text\"\r\n        class=\"feedback-input\"\r\n        placeholder=\"Name\"\r\n      />\r\n      <input\r\n        name=\"email\"\r\n        type=\"text\"\r\n        class=\"feedback-input\"\r\n        placeholder=\"Email\"\r\n      />\r\n      <textarea\r\n        name=\"text\"\r\n        class=\"feedback-input\"\r\n        placeholder=\"Comment\"\r\n      ></textarea>\r\n      <input type=\"submit\" value=\"SEND\" />\r\n    </form>\r\n    <!-- <a href=\"https://wa.me/+972536241757\" target=\"_blank\">\r\n      <Icon name=\"ic:twotone-whatsapp\" />\r\n      Chat on WhatsApp</a\r\n    > -->\r\n  </main>\r\n</template>\r\n\r\n<style scoped>\r\n.contact {\r\n  height: fit-content;\r\n  min-height: 40vh;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-around;\r\n  padding-bottom: 3rem;\r\n  padding: 5rem 2rem 5rem 0rem;\r\n}\r\n.contact-form {\r\n  max-width: 70vw;\r\n}\r\na {\r\n  border: none;\r\n  border-radius: 2rem;\r\n  padding: 1rem;\r\n  text-decoration: none;\r\n  color: white;\r\n  background-color: #2ec452;\r\n}\r\na:hover {\r\n  background-color: #269b41 !important;\r\n  color: white !important;\r\n  font-weight: 500 !important;\r\n}\r\n.feedback-input {\r\n  font-family: Helvetica, Arial, sans-serif;\r\n  font-weight: 500;\r\n  font-size: 18px;\r\n  border-radius: 2rem;\r\n  line-height: 22px;\r\n  background-color: transparent;\r\n  border: 2px solid var(--light-bg-sec);\r\n  transition: all 0.3s;\r\n  padding: 13px;\r\n  margin-bottom: 15px;\r\n  width: 100%;\r\n  box-sizing: border-box;\r\n  outline: 0;\r\n}\r\n.dark .feedback-input {\r\n  border-color: var(--dark-bg-sec);\r\n}\r\n\r\n.feedback-input:focus {\r\n  border: 2px solid var(--btn-color);\r\n}\r\n\r\ntextarea {\r\n  height: 150px;\r\n  line-height: 150%;\r\n  resize: vertical;\r\n}\r\n\r\n[type=\"submit\"] {\r\n  width: 100%;\r\n  border-radius: 2rem;\r\n  border: 0;\r\n  background-color: var(--btn-color);\r\n  color: white;\r\n  cursor: pointer;\r\n  font-size: 1rem;\r\n  padding-top: 10px;\r\n  padding-bottom: 10px;\r\n  transition: all 0.3s;\r\n  margin-top: -4px;\r\n  font-weight: 700;\r\n}\r\n[type=\"submit\"]:hover {\r\n  background: var(--btn-hover-color);\r\n}\r\n</style>\r\n",
+      "start": 1700439440010,
+      "end": 1700439440278,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700406270665,
-      "end": 1700406270665,
+      "start": 1700439440278,
+      "end": 1700439440278,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700406270665,
-      "end": 1700406270665,
+      "start": 1700439440278,
+      "end": 1700439440278,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700406270665,
-      "end": 1700406270665,
+      "start": 1700439440278,
+      "end": 1700439440278,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1700406270665,
-      "end": 1700406270665,
+      "start": 1700439440278,
+      "end": 1700439440278,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1700406270665,
-      "end": 1700406270665,
+      "start": 1700439440278,
+      "end": 1700439440278,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700406270665,
-      "end": 1700406270665,
+      "start": 1700439440278,
+      "end": 1700439440278,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700406270665,
-      "end": 1700406270665,
+      "start": 1700439440278,
+      "end": 1700439440278,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "result": "const _sfc_main = {}\nimport { createElementVNode as _createElementVNode, createStaticVNode as _createStaticVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-40d36b2a\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"main-color section contact\" }\nconst _hoisted_2 = /*#__PURE__*/_createStaticVNode(\"<h1 data-v-40d36b2a>CONTACT ME</h1><form class=\\\"contact-form\\\" data-v-40d36b2a><input name=\\\"name\\\" type=\\\"text\\\" class=\\\"feedback-input\\\" placeholder=\\\"Name\\\" data-v-40d36b2a><input name=\\\"email\\\" type=\\\"text\\\" class=\\\"feedback-input\\\" placeholder=\\\"Email\\\" data-v-40d36b2a><textarea name=\\\"text\\\" class=\\\"feedback-input\\\" placeholder=\\\"Comment\\\" data-v-40d36b2a></textarea><input type=\\\"submit\\\" value=\\\"SEND\\\" data-v-40d36b2a></form>\", 2)\nconst _hoisted_4 = [\n  _hoisted_2\n]\n\nfunction _sfc_render(_ctx, _cache) {\n  return (_openBlock(), _createElementBlock(\"main\", _hoisted_1, _hoisted_4))\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Contact.vue?vue&type=style&index=0&scoped=40d36b2a&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-40d36b2a\"]])",
-      "start": 1700406270665,
-      "end": 1700406270667,
+      "result": "const _sfc_main = {}\nimport { createElementVNode as _createElementVNode, createStaticVNode as _createStaticVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-e827791c\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"main-color section contact\" }\nconst _hoisted_2 = /*#__PURE__*/_createStaticVNode(\"<h1 data-v-e827791c>CONTACT ME</h1><form class=\\\"contact-form\\\" data-v-e827791c><input name=\\\"name\\\" type=\\\"text\\\" class=\\\"feedback-input\\\" placeholder=\\\"Name\\\" data-v-e827791c><input name=\\\"email\\\" type=\\\"text\\\" class=\\\"feedback-input\\\" placeholder=\\\"Email\\\" data-v-e827791c><textarea name=\\\"text\\\" class=\\\"feedback-input\\\" placeholder=\\\"Comment\\\" data-v-e827791c></textarea><input type=\\\"submit\\\" value=\\\"SEND\\\" data-v-e827791c></form>\", 2)\nconst _hoisted_4 = [\n  _hoisted_2\n]\n\nfunction _sfc_render(_ctx, _cache) {\n  return (_openBlock(), _createElementBlock(\"main\", _hoisted_1, _hoisted_4))\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Contact.vue?vue&type=style&index=0&scoped=e827791c&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-e827791c\"]])",
+      "start": 1700439440278,
+      "end": 1700439440280,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -62,158 +62,158 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700406270667,
-      "end": 1700406270667,
+      "start": 1700439440280,
+      "end": 1700439440280,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700406270667,
-      "end": 1700406270667,
+      "start": 1700439440280,
+      "end": 1700439440280,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700406270667,
-      "end": 1700406270667,
+      "start": 1700439440280,
+      "end": 1700439440280,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1700406270667,
-      "end": 1700406270667,
+      "start": 1700439440280,
+      "end": 1700439440280,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700406270667,
-      "end": 1700406270667,
+      "start": 1700439440280,
+      "end": 1700439440280,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700406270667,
-      "end": 1700406270667,
+      "start": 1700439440280,
+      "end": 1700439440280,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1700406270667,
-      "end": 1700406270667,
+      "start": 1700439440280,
+      "end": 1700439440280,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700406270667,
-      "end": 1700406270667,
+      "start": 1700439440280,
+      "end": 1700439440280,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1700406270667,
-      "end": 1700406270667,
+      "start": 1700439440280,
+      "end": 1700439440280,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1700406270667,
-      "end": 1700406270667,
+      "start": 1700439440280,
+      "end": 1700439440280,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700406270667,
-      "end": 1700406270667,
+      "start": 1700439440280,
+      "end": 1700439440280,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700406270667,
-      "end": 1700406270667,
+      "start": 1700439440280,
+      "end": 1700439440280,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700406270667,
-      "end": 1700406270667,
+      "start": 1700439440280,
+      "end": 1700439440280,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700406270667,
-      "end": 1700406270667,
+      "start": 1700439440280,
+      "end": 1700439440280,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700406270667,
-      "end": 1700406270667,
+      "start": 1700439440280,
+      "end": 1700439440280,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700406270667,
-      "end": 1700406270667,
+      "start": 1700439440280,
+      "end": 1700439440280,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700406270667,
-      "end": 1700406270668,
+      "start": 1700439440280,
+      "end": 1700439440281,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700406270668,
-      "end": 1700406270668,
+      "start": 1700439440281,
+      "end": 1700439440281,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700406270668,
-      "end": 1700406270668,
+      "start": 1700439440281,
+      "end": 1700439440281,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1700406270668,
-      "end": 1700406270668,
+      "start": 1700439440281,
+      "end": 1700439440281,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700406270668,
-      "end": 1700406270668,
+      "start": 1700439440281,
+      "end": 1700439440281,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1700406270668,
-      "end": 1700406270668,
+      "start": 1700439440281,
+      "end": 1700439440281,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1700406270668,
-      "end": 1700406270668,
+      "start": 1700439440281,
+      "end": 1700439440281,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1700406270668,
-      "end": 1700406270668,
+      "start": 1700439440281,
+      "end": 1700439440281,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700406270668,
-      "end": 1700406270668,
+      "start": 1700439440281,
+      "end": 1700439440281,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700406270668,
-      "end": 1700406270668,
+      "start": 1700439440281,
+      "end": 1700439440281,
       "order": "normal"
     }
   ]

@@ -3,58 +3,58 @@
   "transforms": [
     {
       "name": "vite:load-fallback",
-      "result": "<template>\r\n  <ul class=\"main-color vertical ws-black\">\r\n    <li>\r\n      <a href=\"#home\"><Icon name=\"uil:home-alt\" /></a>\r\n    </li>\r\n    <li>\r\n      <a href=\"#about\"><Icon name=\"uil:map-marker-question\" /></a>\r\n    </li>\r\n    <li>\r\n      <a href=\"#projects\"><Icon name=\"uil:github-alt\" /></a>\r\n    </li>\r\n    <li>\r\n      <a href=\"#skills\"><Icon name=\"uil:java-script\" /></a>\r\n    </li>\r\n    <li>\r\n      <a href=\"#contact\"><Icon name=\"uil:message\" /></a>\r\n    </li>\r\n  </ul>\r\n</template>\r\n\r\n<style scoped>\r\n.vertical {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  border: 1px solid #86885b79;\r\n  border-radius: 1rem;\r\n  top: 150px;\r\n  background-color: #dcdcf0a6;\r\n}\r\n.dark .vertical {\r\n  background-color: rgba(26, 34, 34, 0.699) !important;\r\n}\r\n.vertical li {\r\n  width: 100%;\r\n}\r\nul {\r\n  list-style-type: none;\r\n  margin: 0;\r\n  padding: 0;\r\n  overflow: hidden;\r\n}\r\n\r\nli {\r\n  float: left;\r\n}\r\n\r\nli a {\r\n  display: block;\r\n  text-align: center;\r\n  padding: 14px 16px;\r\n  text-decoration: none;\r\n  color: #111111;\r\n}\r\n\r\nli a:hover {\r\n  background-color: #b0b19c13;\r\n  font-weight: 600;\r\n}\r\n</style>\r\n",
-      "start": 1700406270559,
-      "end": 1700406270907,
+      "result": "<template>\r\n  <ul class=\"main-color vertical ws-black\">\r\n    <li>\r\n      <a href=\"#home\"><Icon name=\"uil:home-alt\" /></a>\r\n    </li>\r\n    <li>\r\n      <a href=\"#about\"><Icon name=\"fluent:person-info-24-filled\" /></a>\r\n    </li>\r\n    <li>\r\n      <a href=\"#projects\"\r\n        ><Icon name=\"material-symbols:lab-profile-outline-sharp\"\r\n      /></a>\r\n    </li>\r\n    <li>\r\n      <a href=\"#skills\"><Icon name=\"mdi:code-tags\" /></a>\r\n    </li>\r\n    <li>\r\n      <a href=\"#contact\"><Icon name=\"mdi:email-arrow-right-outline\" /></a>\r\n    </li>\r\n  </ul>\r\n</template>\r\n\r\n<style scoped>\r\n.vertical {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  border: 1px solid #86885b79;\r\n  border-radius: 1rem;\r\n  top: 150px;\r\n  background-color: #dcdcf0a6;\r\n}\r\n.dark .vertical {\r\n  background-color: rgba(26, 34, 34, 0.699) !important;\r\n}\r\n.vertical li {\r\n  width: 100%;\r\n}\r\nul {\r\n  list-style-type: none;\r\n  margin: 0;\r\n  padding: 0;\r\n  overflow: hidden;\r\n}\r\n\r\nli {\r\n  float: left;\r\n}\r\n\r\nli a {\r\n  display: block;\r\n  text-align: center;\r\n  padding: 14px 16px;\r\n  text-decoration: none;\r\n  color: #111111;\r\n}\r\n\r\nli a:hover {\r\n  background-color: #b0b19c13;\r\n  font-weight: 600;\r\n}\r\n</style>\r\n",
+      "start": 1700439441557,
+      "end": 1700439441660,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700406270907,
-      "end": 1700406270907,
+      "start": 1700439441660,
+      "end": 1700439441660,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700406270907,
-      "end": 1700406270907,
+      "start": 1700439441660,
+      "end": 1700439441660,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700406270907,
-      "end": 1700406270907,
+      "start": 1700439441660,
+      "end": 1700439441660,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1700406270907,
-      "end": 1700406270907,
+      "start": 1700439441660,
+      "end": 1700439441660,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1700406270907,
-      "end": 1700406270907,
+      "start": 1700439441660,
+      "end": 1700439441660,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700406270907,
-      "end": 1700406270907,
+      "start": 1700439441660,
+      "end": 1700439441660,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700406270907,
-      "end": 1700406270907,
+      "start": 1700439441660,
+      "end": 1700439441660,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "result": "const _sfc_main = {}\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-f138d97c\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"main-color vertical ws-black\" }\nconst _hoisted_2 = { href: \"#home\" }\nconst _hoisted_3 = { href: \"#about\" }\nconst _hoisted_4 = { href: \"#projects\" }\nconst _hoisted_5 = { href: \"#skills\" }\nconst _hoisted_6 = { href: \"#contact\" }\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"ul\", _hoisted_1, [\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_2, [\n        _createVNode(_component_Icon, { name: \"uil:home-alt\" })\n      ])\n    ]),\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_3, [\n        _createVNode(_component_Icon, { name: \"uil:map-marker-question\" })\n      ])\n    ]),\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_4, [\n        _createVNode(_component_Icon, { name: \"uil:github-alt\" })\n      ])\n    ]),\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_5, [\n        _createVNode(_component_Icon, { name: \"uil:java-script\" })\n      ])\n    ]),\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_6, [\n        _createVNode(_component_Icon, { name: \"uil:message\" })\n      ])\n    ])\n  ]))\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Sidebar.vue?vue&type=style&index=0&scoped=f138d97c&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-f138d97c\"]])",
-      "start": 1700406270907,
-      "end": 1700406270908,
+      "result": "const _sfc_main = {}\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-4697d818\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"main-color vertical ws-black\" }\nconst _hoisted_2 = { href: \"#home\" }\nconst _hoisted_3 = { href: \"#about\" }\nconst _hoisted_4 = { href: \"#projects\" }\nconst _hoisted_5 = { href: \"#skills\" }\nconst _hoisted_6 = { href: \"#contact\" }\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Icon = _resolveComponent(\"Icon\")\n\n  return (_openBlock(), _createElementBlock(\"ul\", _hoisted_1, [\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_2, [\n        _createVNode(_component_Icon, { name: \"uil:home-alt\" })\n      ])\n    ]),\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_3, [\n        _createVNode(_component_Icon, { name: \"fluent:person-info-24-filled\" })\n      ])\n    ]),\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_4, [\n        _createVNode(_component_Icon, { name: \"material-symbols:lab-profile-outline-sharp\" })\n      ])\n    ]),\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_5, [\n        _createVNode(_component_Icon, { name: \"mdi:code-tags\" })\n      ])\n    ]),\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_6, [\n        _createVNode(_component_Icon, { name: \"mdi:email-arrow-right-outline\" })\n      ])\n    ])\n  ]))\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Sidebar.vue?vue&type=style&index=0&scoped=4697d818&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-4697d818\"]])",
+      "start": 1700439441660,
+      "end": 1700439441661,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -62,159 +62,159 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700406270909,
-      "end": 1700406270909,
+      "start": 1700439441661,
+      "end": 1700439441661,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700406270909,
-      "end": 1700406270909,
+      "start": 1700439441661,
+      "end": 1700439441661,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700406270909,
-      "end": 1700406270909,
+      "start": 1700439441661,
+      "end": 1700439441661,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1700406270909,
-      "end": 1700406270909,
+      "start": 1700439441661,
+      "end": 1700439441661,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700406270909,
-      "end": 1700406270909,
+      "start": 1700439441661,
+      "end": 1700439441661,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700406270909,
-      "end": 1700406270909,
+      "start": 1700439441661,
+      "end": 1700439441662,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1700406270909,
-      "end": 1700406270909,
+      "start": 1700439441662,
+      "end": 1700439441662,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700406270909,
-      "end": 1700406270909,
+      "start": 1700439441662,
+      "end": 1700439441662,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1700406270909,
-      "end": 1700406270909,
+      "start": 1700439441662,
+      "end": 1700439441662,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1700406270909,
-      "end": 1700406270909,
+      "start": 1700439441662,
+      "end": 1700439441662,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700406270909,
-      "end": 1700406270909,
+      "start": 1700439441662,
+      "end": 1700439441662,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700406270909,
-      "end": 1700406270909,
+      "start": 1700439441662,
+      "end": 1700439441662,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700406270909,
-      "end": 1700406270909,
+      "start": 1700439441662,
+      "end": 1700439441662,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700406270909,
-      "end": 1700406270909,
+      "start": 1700439441662,
+      "end": 1700439441662,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700406270909,
-      "end": 1700406270909,
+      "start": 1700439441662,
+      "end": 1700439441662,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700406270909,
-      "end": 1700406270909,
+      "start": 1700439441662,
+      "end": 1700439441662,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700406270909,
-      "end": 1700406270910,
+      "start": 1700439441662,
+      "end": 1700439441662,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700406270910,
-      "end": 1700406270910,
+      "start": 1700439441662,
+      "end": 1700439441662,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700406270910,
-      "end": 1700406270910,
+      "start": 1700439441662,
+      "end": 1700439441662,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1700406270910,
-      "end": 1700406270910,
+      "start": 1700439441662,
+      "end": 1700439441662,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700406270910,
-      "end": 1700406270910,
+      "start": 1700439441662,
+      "end": 1700439441662,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1700406270910,
-      "end": 1700406270910,
+      "start": 1700439441662,
+      "end": 1700439441662,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "result": "import { default as __nuxt_component_0 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nconst _sfc_main = {}\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-f138d97c\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"main-color vertical ws-black\" }\nconst _hoisted_2 = { href: \"#home\" }\nconst _hoisted_3 = { href: \"#about\" }\nconst _hoisted_4 = { href: \"#projects\" }\nconst _hoisted_5 = { href: \"#skills\" }\nconst _hoisted_6 = { href: \"#contact\" }\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Icon = __nuxt_component_0\n\n  return (_openBlock(), _createElementBlock(\"ul\", _hoisted_1, [\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_2, [\n        _createVNode(_component_Icon, { name: \"uil:home-alt\" })\n      ])\n    ]),\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_3, [\n        _createVNode(_component_Icon, { name: \"uil:map-marker-question\" })\n      ])\n    ]),\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_4, [\n        _createVNode(_component_Icon, { name: \"uil:github-alt\" })\n      ])\n    ]),\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_5, [\n        _createVNode(_component_Icon, { name: \"uil:java-script\" })\n      ])\n    ]),\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_6, [\n        _createVNode(_component_Icon, { name: \"uil:message\" })\n      ])\n    ])\n  ]))\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Sidebar.vue?vue&type=style&index=0&scoped=f138d97c&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-f138d97c\"]])",
-      "start": 1700406270910,
-      "end": 1700406270910,
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/node_modules/nuxt-icon/dist/runtime/Icon.vue\";\nconst _sfc_main = {}\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-4697d818\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = { class: \"main-color vertical ws-black\" }\nconst _hoisted_2 = { href: \"#home\" }\nconst _hoisted_3 = { href: \"#about\" }\nconst _hoisted_4 = { href: \"#projects\" }\nconst _hoisted_5 = { href: \"#skills\" }\nconst _hoisted_6 = { href: \"#contact\" }\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Icon = __nuxt_component_0\n\n  return (_openBlock(), _createElementBlock(\"ul\", _hoisted_1, [\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_2, [\n        _createVNode(_component_Icon, { name: \"uil:home-alt\" })\n      ])\n    ]),\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_3, [\n        _createVNode(_component_Icon, { name: \"fluent:person-info-24-filled\" })\n      ])\n    ]),\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_4, [\n        _createVNode(_component_Icon, { name: \"material-symbols:lab-profile-outline-sharp\" })\n      ])\n    ]),\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_5, [\n        _createVNode(_component_Icon, { name: \"mdi:code-tags\" })\n      ])\n    ]),\n    _createElementVNode(\"li\", null, [\n      _createElementVNode(\"a\", _hoisted_6, [\n        _createVNode(_component_Icon, { name: \"mdi:email-arrow-right-outline\" })\n      ])\n    ])\n  ]))\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Sidebar.vue?vue&type=style&index=0&scoped=4697d818&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-4697d818\"]])",
+      "start": 1700439441662,
+      "end": 1700439441663,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1700406270910,
-      "end": 1700406270910,
+      "start": 1700439441663,
+      "end": 1700439441663,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700406270910,
-      "end": 1700406270911,
+      "start": 1700439441663,
+      "end": 1700439441663,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700406270911,
-      "end": 1700406270911,
+      "start": 1700439441663,
+      "end": 1700439441663,
       "order": "normal"
     }
   ]

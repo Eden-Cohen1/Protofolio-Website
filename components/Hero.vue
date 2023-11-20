@@ -1,7 +1,7 @@
 <template>
   <main class="main-color my-hero">
     <div class="avatar">
-      <img src="me-big.png" alt="" />
+      <img :src="`me-big.png`" alt="" />
     </div>
     <div class="headline-container">
       <h1 v-if="isMobile">Hi, I'm <span>Eden</span></h1>

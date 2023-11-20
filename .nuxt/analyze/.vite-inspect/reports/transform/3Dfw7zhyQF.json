@@ -4,212 +4,212 @@
     {
       "name": "vite:load-fallback",
       "result": "import { defineComponent, computed, unref, openBlock, createElementBlock, normalizeClass, withModifiers, createElementVNode, normalizeStyle, createBlock, Transition, withCtx, withDirectives, createVNode, vShow, createCommentVNode, renderSlot, Fragment, renderList, toDisplayString } from 'vue';\nimport { ElIcon } from '../../icon/index.mjs';\nimport { ArrowLeft, ArrowRight } from '@element-plus/icons-vue';\nimport '../../../hooks/index.mjs';\nimport { carouselProps, carouselEmits } from './carousel.mjs';\nimport { useCarousel } from './use-carousel.mjs';\nimport _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';\nimport { useNamespace } from '../../../hooks/use-namespace/index.mjs';\n\nconst _hoisted_1 = [\"onMouseenter\", \"onClick\"];\nconst _hoisted_2 = { key: 0 };\nconst COMPONENT_NAME = \"ElCarousel\";\nconst __default__ = defineComponent({\n  name: COMPONENT_NAME\n});\nconst _sfc_main = /* @__PURE__ */ defineComponent({\n  ...__default__,\n  props: carouselProps,\n  emits: carouselEmits,\n  setup(__props, { expose, emit }) {\n    const props = __props;\n    const {\n      root,\n      activeIndex,\n      arrowDisplay,\n      hasLabel,\n      hover,\n      isCardType,\n      items,\n      isVertical,\n      containerStyle,\n      handleButtonEnter,\n      handleButtonLeave,\n      handleIndicatorClick,\n      handleMouseEnter,\n      handleMouseLeave,\n      setActiveItem,\n      prev,\n      next,\n      PlaceholderItem,\n      isTwoLengthShow,\n      throttledArrowClick,\n      throttledIndicatorHover\n    } = useCarousel(props, emit, COMPONENT_NAME);\n    const ns = useNamespace(\"carousel\");\n    const carouselClasses = computed(() => {\n      const classes = [ns.b(), ns.m(props.direction)];\n      if (unref(isCardType)) {\n        classes.push(ns.m(\"card\"));\n      }\n      return classes;\n    });\n    const indicatorsClasses = computed(() => {\n      const classes = [ns.e(\"indicators\"), ns.em(\"indicators\", props.direction)];\n      if (unref(hasLabel)) {\n        classes.push(ns.em(\"indicators\", \"labels\"));\n      }\n      if (props.indicatorPosition === \"outside\") {\n        classes.push(ns.em(\"indicators\", \"outside\"));\n      }\n      if (unref(isVertical)) {\n        classes.push(ns.em(\"indicators\", \"right\"));\n      }\n      return classes;\n    });\n    expose({\n      setActiveItem,\n      prev,\n      next\n    });\n    return (_ctx, _cache) => {\n      return openBlock(), createElementBlock(\"div\", {\n        ref_key: \"root\",\n        ref: root,\n        class: normalizeClass(unref(carouselClasses)),\n        onMouseenter: _cache[6] || (_cache[6] = withModifiers((...args) => unref(handleMouseEnter) && unref(handleMouseEnter)(...args), [\"stop\"])),\n        onMouseleave: _cache[7] || (_cache[7] = withModifiers((...args) => unref(handleMouseLeave) && unref(handleMouseLeave)(...args), [\"stop\"]))\n      }, [\n        createElementVNode(\"div\", {\n          class: normalizeClass(unref(ns).e(\"container\")),\n          style: normalizeStyle(unref(containerStyle))\n        }, [\n          unref(arrowDisplay) ? (openBlock(), createBlock(Transition, {\n            key: 0,\n            name: \"carousel-arrow-left\",\n            persisted: \"\"\n          }, {\n            default: withCtx(() => [\n              withDirectives(createElementVNode(\"button\", {\n                type: \"button\",\n                class: normalizeClass([unref(ns).e(\"arrow\"), unref(ns).em(\"arrow\", \"left\")]),\n                onMouseenter: _cache[0] || (_cache[0] = ($event) => unref(handleButtonEnter)(\"left\")),\n                onMouseleave: _cache[1] || (_cache[1] = (...args) => unref(handleButtonLeave) && unref(handleButtonLeave)(...args)),\n                onClick: _cache[2] || (_cache[2] = withModifiers(($event) => unref(throttledArrowClick)(unref(activeIndex) - 1), [\"stop\"]))\n              }, [\n                createVNode(unref(ElIcon), null, {\n                  default: withCtx(() => [\n                    createVNode(unref(ArrowLeft))\n                  ]),\n                  _: 1\n                })\n              ], 34), [\n                [\n                  vShow,\n                  (_ctx.arrow === \"always\" || unref(hover)) && (props.loop || unref(activeIndex) > 0)\n                ]\n              ])\n            ]),\n            _: 1\n          })) : createCommentVNode(\"v-if\", true),\n          unref(arrowDisplay) ? (openBlock(), createBlock(Transition, {\n            key: 1,\n            name: \"carousel-arrow-right\",\n            persisted: \"\"\n          }, {\n            default: withCtx(() => [\n              withDirectives(createElementVNode(\"button\", {\n                type: \"button\",\n                class: normalizeClass([unref(ns).e(\"arrow\"), unref(ns).em(\"arrow\", \"right\")]),\n                onMouseenter: _cache[3] || (_cache[3] = ($event) => unref(handleButtonEnter)(\"right\")),\n                onMouseleave: _cache[4] || (_cache[4] = (...args) => unref(handleButtonLeave) && unref(handleButtonLeave)(...args)),\n                onClick: _cache[5] || (_cache[5] = withModifiers(($event) => unref(throttledArrowClick)(unref(activeIndex) + 1), [\"stop\"]))\n              }, [\n                createVNode(unref(ElIcon), null, {\n                  default: withCtx(() => [\n                    createVNode(unref(ArrowRight))\n                  ]),\n                  _: 1\n                })\n              ], 34), [\n                [\n                  vShow,\n                  (_ctx.arrow === \"always\" || unref(hover)) && (props.loop || unref(activeIndex) < unref(items).length - 1)\n                ]\n              ])\n            ]),\n            _: 1\n          })) : createCommentVNode(\"v-if\", true),\n          createVNode(unref(PlaceholderItem)),\n          renderSlot(_ctx.$slots, \"default\")\n        ], 6),\n        _ctx.indicatorPosition !== \"none\" ? (openBlock(), createElementBlock(\"ul\", {\n          key: 0,\n          class: normalizeClass(unref(indicatorsClasses))\n        }, [\n          (openBlock(true), createElementBlock(Fragment, null, renderList(unref(items), (item, index) => {\n            return withDirectives((openBlock(), createElementBlock(\"li\", {\n              key: index,\n              class: normalizeClass([\n                unref(ns).e(\"indicator\"),\n                unref(ns).em(\"indicator\", _ctx.direction),\n                unref(ns).is(\"active\", index === unref(activeIndex))\n              ]),\n              onMouseenter: ($event) => unref(throttledIndicatorHover)(index),\n              onClick: withModifiers(($event) => unref(handleIndicatorClick)(index), [\"stop\"])\n            }, [\n              createElementVNode(\"button\", {\n                class: normalizeClass(unref(ns).e(\"button\"))\n              }, [\n                unref(hasLabel) ? (openBlock(), createElementBlock(\"span\", _hoisted_2, toDisplayString(item.props.label), 1)) : createCommentVNode(\"v-if\", true)\n              ], 2)\n            ], 42, _hoisted_1)), [\n              [vShow, unref(isTwoLengthShow)(index)]\n            ]);\n          }), 128))\n        ], 2)) : createCommentVNode(\"v-if\", true)\n      ], 34);\n    };\n  }\n});\nvar Carousel = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"__file\", \"/home/runner/work/element-plus/element-plus/packages/components/carousel/src/carousel.vue\"]]);\n\nexport { Carousel as default };\n//# sourceMappingURL=carousel2.mjs.map\n",
-      "start": 1700406271144,
-      "end": 1700406271502,
+      "start": 1700439440360,
+      "end": 1700439440448,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700406271502,
-      "end": 1700406271502,
+      "start": 1700439440448,
+      "end": 1700439440448,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700406271502,
-      "end": 1700406271502,
+      "start": 1700439440448,
+      "end": 1700439440448,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700406271502,
-      "end": 1700406271502,
+      "start": 1700439440448,
+      "end": 1700439440448,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1700406271502,
-      "end": 1700406271502,
+      "start": 1700439440448,
+      "end": 1700439440448,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1700406271502,
-      "end": 1700406271502,
+      "start": 1700439440448,
+      "end": 1700439440448,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700406271502,
-      "end": 1700406271502,
+      "start": 1700439440448,
+      "end": 1700439440448,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700406271502,
-      "end": 1700406271502,
+      "start": 1700439440448,
+      "end": 1700439440448,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1700406271502,
-      "end": 1700406271502,
+      "start": 1700439440448,
+      "end": 1700439440448,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700406271502,
-      "end": 1700406271502,
+      "start": 1700439440448,
+      "end": 1700439440448,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700406271502,
-      "end": 1700406271502,
+      "start": 1700439440448,
+      "end": 1700439440448,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700406271502,
-      "end": 1700406271502,
+      "start": 1700439440448,
+      "end": 1700439440448,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1700406271502,
-      "end": 1700406271502,
+      "start": 1700439440448,
+      "end": 1700439440448,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700406271502,
-      "end": 1700406271502,
+      "start": 1700439440448,
+      "end": 1700439440448,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700406271503,
-      "end": 1700406271503,
+      "start": 1700439440449,
+      "end": 1700439440449,
       "order": "normal"
     }
   ]

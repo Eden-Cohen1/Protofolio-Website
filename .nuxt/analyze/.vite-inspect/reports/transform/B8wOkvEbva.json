@@ -3,58 +3,58 @@
   "transforms": [
     {
       "name": "vite:load-fallback",
-      "result": "<template>\r\n  <main>\r\n    <default />\r\n    <section id=\"home\" ref=\"home\">\r\n      <Hero />\r\n    </section>\r\n    <section id=\"about\" ref=\"about\">\r\n      <About />\r\n    </section>\r\n    <section id=\"projects\" ref=\"projects\">\r\n      <Projects />\r\n    </section>\r\n    <section id=\"skills\" ref=\"skills\">\r\n      <Skills />\r\n    </section>\r\n    <section id=\"contact\" ref=\"contact\">\r\n      <Contact />\r\n    </section>\r\n  </main>\r\n</template>\r\n\r\n<script setup></script>\r\n\r\n<style scoped>\r\nmain {\r\n  width: 100%;\r\n}\r\n</style>\r\n",
-      "start": 1700406267257,
-      "end": 1700406268283,
+      "result": "<template>\r\n  <main>\r\n    <section id=\"home\" ref=\"home\">\r\n      <Hero />\r\n    </section>\r\n    <section id=\"about\" ref=\"about\">\r\n      <About />\r\n    </section>\r\n    <section id=\"projects\" ref=\"projects\">\r\n      <Projects />\r\n    </section>\r\n    <section id=\"skills\" ref=\"skills\">\r\n      <Skills />\r\n    </section>\r\n    <section id=\"contact\" ref=\"contact\">\r\n      <Contact />\r\n    </section>\r\n  </main>\r\n</template>\r\n\r\n<script setup></script>\r\n\r\n<style scoped>\r\nmain {\r\n  width: 100%;\r\n}\r\n</style>\r\n",
+      "start": 1700439438028,
+      "end": 1700439438681,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700406268283,
-      "end": 1700406268283,
+      "start": 1700439438681,
+      "end": 1700439438681,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700406268283,
-      "end": 1700406268283,
+      "start": 1700439438681,
+      "end": 1700439438681,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700406268283,
-      "end": 1700406268283,
+      "start": 1700439438682,
+      "end": 1700439438682,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1700406268283,
-      "end": 1700406268283,
+      "start": 1700439438682,
+      "end": 1700439438682,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1700406268283,
-      "end": 1700406268283,
+      "start": 1700439438682,
+      "end": 1700439438682,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700406268283,
-      "end": 1700406268283,
+      "start": 1700439438682,
+      "end": 1700439438682,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700406268283,
-      "end": 1700406268283,
+      "start": 1700439438682,
+      "end": 1700439438682,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "result": "const _sfc_main = {}\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-72039fb7\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = {\n  id: \"home\",\n  ref: \"home\"\n}\nconst _hoisted_2 = {\n  id: \"about\",\n  ref: \"about\"\n}\nconst _hoisted_3 = {\n  id: \"projects\",\n  ref: \"projects\"\n}\nconst _hoisted_4 = {\n  id: \"skills\",\n  ref: \"skills\"\n}\nconst _hoisted_5 = {\n  id: \"contact\",\n  ref: \"contact\"\n}\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_default = _resolveComponent(\"default\")\n  const _component_Hero = _resolveComponent(\"Hero\")\n  const _component_About = _resolveComponent(\"About\")\n  const _component_Projects = _resolveComponent(\"Projects\")\n  const _component_Skills = _resolveComponent(\"Skills\")\n  const _component_Contact = _resolveComponent(\"Contact\")\n\n  return (_openBlock(), _createElementBlock(\"main\", null, [\n    _createVNode(_component_default),\n    _createElementVNode(\"section\", _hoisted_1, [\n      _createVNode(_component_Hero)\n    ], 512),\n    _createElementVNode(\"section\", _hoisted_2, [\n      _createVNode(_component_About)\n    ], 512),\n    _createElementVNode(\"section\", _hoisted_3, [\n      _createVNode(_component_Projects)\n    ], 512),\n    _createElementVNode(\"section\", _hoisted_4, [\n      _createVNode(_component_Skills)\n    ], 512),\n    _createElementVNode(\"section\", _hoisted_5, [\n      _createVNode(_component_Contact)\n    ], 512)\n  ]))\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/pages/index.vue?vue&type=style&index=0&scoped=72039fb7&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-72039fb7\"]])",
-      "start": 1700406268283,
-      "end": 1700406268286,
+      "result": "const _sfc_main = {}\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-44253d98\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = {\n  id: \"home\",\n  ref: \"home\"\n}\nconst _hoisted_2 = {\n  id: \"about\",\n  ref: \"about\"\n}\nconst _hoisted_3 = {\n  id: \"projects\",\n  ref: \"projects\"\n}\nconst _hoisted_4 = {\n  id: \"skills\",\n  ref: \"skills\"\n}\nconst _hoisted_5 = {\n  id: \"contact\",\n  ref: \"contact\"\n}\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Hero = _resolveComponent(\"Hero\")\n  const _component_About = _resolveComponent(\"About\")\n  const _component_Projects = _resolveComponent(\"Projects\")\n  const _component_Skills = _resolveComponent(\"Skills\")\n  const _component_Contact = _resolveComponent(\"Contact\")\n\n  return (_openBlock(), _createElementBlock(\"main\", null, [\n    _createElementVNode(\"section\", _hoisted_1, [\n      _createVNode(_component_Hero)\n    ], 512),\n    _createElementVNode(\"section\", _hoisted_2, [\n      _createVNode(_component_About)\n    ], 512),\n    _createElementVNode(\"section\", _hoisted_3, [\n      _createVNode(_component_Projects)\n    ], 512),\n    _createElementVNode(\"section\", _hoisted_4, [\n      _createVNode(_component_Skills)\n    ], 512),\n    _createElementVNode(\"section\", _hoisted_5, [\n      _createVNode(_component_Contact)\n    ], 512)\n  ]))\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/pages/index.vue?vue&type=style&index=0&scoped=44253d98&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-44253d98\"]])",
+      "start": 1700439438682,
+      "end": 1700439438683,
       "order": "normal",
       "sourcemaps": {
         "mappings": ""
@@ -62,159 +62,159 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700406268286,
-      "end": 1700406268286,
+      "start": 1700439438683,
+      "end": 1700439438683,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700406268286,
-      "end": 1700406268286,
+      "start": 1700439438683,
+      "end": 1700439438683,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700406268286,
-      "end": 1700406268286,
+      "start": 1700439438683,
+      "end": 1700439438683,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1700406268286,
-      "end": 1700406268286,
+      "start": 1700439438683,
+      "end": 1700439438683,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700406268286,
-      "end": 1700406268286,
+      "start": 1700439438683,
+      "end": 1700439438683,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700406268286,
-      "end": 1700406268286,
+      "start": 1700439438683,
+      "end": 1700439438683,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1700406268286,
-      "end": 1700406268286,
+      "start": 1700439438683,
+      "end": 1700439438683,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700406268286,
-      "end": 1700406268286,
+      "start": 1700439438683,
+      "end": 1700439438683,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1700406268286,
-      "end": 1700406268286,
+      "start": 1700439438683,
+      "end": 1700439438683,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1700406268286,
-      "end": 1700406268286,
+      "start": 1700439438683,
+      "end": 1700439438683,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700406268286,
-      "end": 1700406268286,
+      "start": 1700439438683,
+      "end": 1700439438683,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700406268286,
-      "end": 1700406268286,
+      "start": 1700439438683,
+      "end": 1700439438683,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700406268286,
-      "end": 1700406268286,
+      "start": 1700439438683,
+      "end": 1700439438683,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700406268286,
-      "end": 1700406268286,
+      "start": 1700439438683,
+      "end": 1700439438683,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700406268286,
-      "end": 1700406268286,
+      "start": 1700439438683,
+      "end": 1700439438683,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700406268286,
-      "end": 1700406268286,
+      "start": 1700439438683,
+      "end": 1700439438683,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700406268286,
-      "end": 1700406268287,
+      "start": 1700439438683,
+      "end": 1700439438684,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700406268287,
-      "end": 1700406268287,
+      "start": 1700439438684,
+      "end": 1700439438684,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700406268287,
-      "end": 1700406268287,
+      "start": 1700439438684,
+      "end": 1700439438684,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1700406268287,
-      "end": 1700406268287,
+      "start": 1700439438684,
+      "end": 1700439438684,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700406268287,
-      "end": 1700406268289,
+      "start": 1700439438684,
+      "end": 1700439438685,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1700406268289,
-      "end": 1700406268289,
+      "start": 1700439438685,
+      "end": 1700439438685,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "result": "import { default as __nuxt_component_0 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Hero.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/About.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Projects.vue\";\nimport { default as __nuxt_component_3 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Skills.vue\";\nimport { default as __nuxt_component_4 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Contact.vue\";\nconst _sfc_main = {}\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-72039fb7\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = {\n  id: \"home\",\n  ref: \"home\"\n}\nconst _hoisted_2 = {\n  id: \"about\",\n  ref: \"about\"\n}\nconst _hoisted_3 = {\n  id: \"projects\",\n  ref: \"projects\"\n}\nconst _hoisted_4 = {\n  id: \"skills\",\n  ref: \"skills\"\n}\nconst _hoisted_5 = {\n  id: \"contact\",\n  ref: \"contact\"\n}\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_default = _resolveComponent(\"default\")\n  const _component_Hero = __nuxt_component_0\n  const _component_About = __nuxt_component_1\n  const _component_Projects = __nuxt_component_2\n  const _component_Skills = __nuxt_component_3\n  const _component_Contact = __nuxt_component_4\n\n  return (_openBlock(), _createElementBlock(\"main\", null, [\n    _createVNode(_component_default),\n    _createElementVNode(\"section\", _hoisted_1, [\n      _createVNode(_component_Hero)\n    ], 512),\n    _createElementVNode(\"section\", _hoisted_2, [\n      _createVNode(_component_About)\n    ], 512),\n    _createElementVNode(\"section\", _hoisted_3, [\n      _createVNode(_component_Projects)\n    ], 512),\n    _createElementVNode(\"section\", _hoisted_4, [\n      _createVNode(_component_Skills)\n    ], 512),\n    _createElementVNode(\"section\", _hoisted_5, [\n      _createVNode(_component_Contact)\n    ], 512)\n  ]))\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/pages/index.vue?vue&type=style&index=0&scoped=72039fb7&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-72039fb7\"]])",
-      "start": 1700406268289,
-      "end": 1700406268290,
+      "result": "import { default as __nuxt_component_0 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Hero.vue\";\nimport { default as __nuxt_component_1 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/About.vue\";\nimport { default as __nuxt_component_2 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Projects.vue\";\nimport { default as __nuxt_component_3 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Skills.vue\";\nimport { default as __nuxt_component_4 } from \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/components/Contact.vue\";\nconst _sfc_main = {}\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from \"vue\"\n\nconst _withScopeId = n => (_pushScopeId(\"data-v-44253d98\"),n=n(),_popScopeId(),n)\nconst _hoisted_1 = {\n  id: \"home\",\n  ref: \"home\"\n}\nconst _hoisted_2 = {\n  id: \"about\",\n  ref: \"about\"\n}\nconst _hoisted_3 = {\n  id: \"projects\",\n  ref: \"projects\"\n}\nconst _hoisted_4 = {\n  id: \"skills\",\n  ref: \"skills\"\n}\nconst _hoisted_5 = {\n  id: \"contact\",\n  ref: \"contact\"\n}\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_Hero = __nuxt_component_0\n  const _component_About = __nuxt_component_1\n  const _component_Projects = __nuxt_component_2\n  const _component_Skills = __nuxt_component_3\n  const _component_Contact = __nuxt_component_4\n\n  return (_openBlock(), _createElementBlock(\"main\", null, [\n    _createElementVNode(\"section\", _hoisted_1, [\n      _createVNode(_component_Hero)\n    ], 512),\n    _createElementVNode(\"section\", _hoisted_2, [\n      _createVNode(_component_About)\n    ], 512),\n    _createElementVNode(\"section\", _hoisted_3, [\n      _createVNode(_component_Projects)\n    ], 512),\n    _createElementVNode(\"section\", _hoisted_4, [\n      _createVNode(_component_Skills)\n    ], 512),\n    _createElementVNode(\"section\", _hoisted_5, [\n      _createVNode(_component_Contact)\n    ], 512)\n  ]))\n}\n\nimport \"C:/Users/eden7/Protofolio-Website/Protofolio-Website/pages/index.vue?vue&type=style&index=0&scoped=44253d98&lang.css\"\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',\"data-v-44253d98\"]])",
+      "start": 1700439438685,
+      "end": 1700439438686,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1700406268290,
-      "end": 1700406268290,
+      "start": 1700439438686,
+      "end": 1700439438686,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700406268290,
-      "end": 1700406268290,
+      "start": 1700439438686,
+      "end": 1700439438686,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700406268290,
-      "end": 1700406268290,
+      "start": 1700439438686,
+      "end": 1700439438686,
       "order": "normal"
     }
   ]

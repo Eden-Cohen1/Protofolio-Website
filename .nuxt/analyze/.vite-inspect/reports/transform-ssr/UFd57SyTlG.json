@@ -4,237 +4,237 @@
     {
       "name": "vite:load-fallback",
       "result": "import { defineComponent, shallowRef, ref, computed, watch, onMounted, watchEffect, openBlock, createElementBlock, normalizeClass, unref, normalizeStyle, createElementVNode, renderSlot } from 'vue';\nimport { useWindowSize, useElementBounding, useEventListener } from '@vueuse/core';\nimport '../../../utils/index.mjs';\nimport '../../../hooks/index.mjs';\nimport { affixProps, affixEmits } from './affix.mjs';\nimport _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';\nimport { useNamespace } from '../../../hooks/use-namespace/index.mjs';\nimport { addUnit } from '../../../utils/dom/style.mjs';\nimport { throwError } from '../../../utils/error.mjs';\nimport { getScrollContainer } from '../../../utils/dom/scroll.mjs';\n\nconst COMPONENT_NAME = \"ElAffix\";\nconst __default__ = defineComponent({\n  name: COMPONENT_NAME\n});\nconst _sfc_main = /* @__PURE__ */ defineComponent({\n  ...__default__,\n  props: affixProps,\n  emits: affixEmits,\n  setup(__props, { expose, emit }) {\n    const props = __props;\n    const ns = useNamespace(\"affix\");\n    const target = shallowRef();\n    const root = shallowRef();\n    const scrollContainer = shallowRef();\n    const { height: windowHeight } = useWindowSize();\n    const {\n      height: rootHeight,\n      width: rootWidth,\n      top: rootTop,\n      bottom: rootBottom,\n      update: updateRoot\n    } = useElementBounding(root, { windowScroll: false });\n    const targetRect = useElementBounding(target);\n    const fixed = ref(false);\n    const scrollTop = ref(0);\n    const transform = ref(0);\n    const rootStyle = computed(() => {\n      return {\n        height: fixed.value ? `${rootHeight.value}px` : \"\",\n        width: fixed.value ? `${rootWidth.value}px` : \"\"\n      };\n    });\n    const affixStyle = computed(() => {\n      if (!fixed.value)\n        return {};\n      const offset = props.offset ? addUnit(props.offset) : 0;\n      return {\n        height: `${rootHeight.value}px`,\n        width: `${rootWidth.value}px`,\n        top: props.position === \"top\" ? offset : \"\",\n        bottom: props.position === \"bottom\" ? offset : \"\",\n        transform: transform.value ? `translateY(${transform.value}px)` : \"\",\n        zIndex: props.zIndex\n      };\n    });\n    const update = () => {\n      if (!scrollContainer.value)\n        return;\n      scrollTop.value = scrollContainer.value instanceof Window ? document.documentElement.scrollTop : scrollContainer.value.scrollTop || 0;\n      if (props.position === \"top\") {\n        if (props.target) {\n          const difference = targetRect.bottom.value - props.offset - rootHeight.value;\n          fixed.value = props.offset > rootTop.value && targetRect.bottom.value > 0;\n          transform.value = difference < 0 ? difference : 0;\n        } else {\n          fixed.value = props.offset > rootTop.value;\n        }\n      } else if (props.target) {\n        const difference = windowHeight.value - targetRect.top.value - props.offset - rootHeight.value;\n        fixed.value = windowHeight.value - props.offset < rootBottom.value && windowHeight.value > targetRect.top.value;\n        transform.value = difference < 0 ? -difference : 0;\n      } else {\n        fixed.value = windowHeight.value - props.offset < rootBottom.value;\n      }\n    };\n    const handleScroll = () => {\n      updateRoot();\n      emit(\"scroll\", {\n        scrollTop: scrollTop.value,\n        fixed: fixed.value\n      });\n    };\n    watch(fixed, (val) => emit(\"change\", val));\n    onMounted(() => {\n      var _a;\n      if (props.target) {\n        target.value = (_a = document.querySelector(props.target)) != null ? _a : void 0;\n        if (!target.value)\n          throwError(COMPONENT_NAME, `Target is not existed: ${props.target}`);\n      } else {\n        target.value = document.documentElement;\n      }\n      scrollContainer.value = getScrollContainer(root.value, true);\n      updateRoot();\n    });\n    useEventListener(scrollContainer, \"scroll\", handleScroll);\n    watchEffect(update);\n    expose({\n      update,\n      updateRoot\n    });\n    return (_ctx, _cache) => {\n      return openBlock(), createElementBlock(\"div\", {\n        ref_key: \"root\",\n        ref: root,\n        class: normalizeClass(unref(ns).b()),\n        style: normalizeStyle(unref(rootStyle))\n      }, [\n        createElementVNode(\"div\", {\n          class: normalizeClass({ [unref(ns).m(\"fixed\")]: fixed.value }),\n          style: normalizeStyle(unref(affixStyle))\n        }, [\n          renderSlot(_ctx.$slots, \"default\")\n        ], 6)\n      ], 6);\n    };\n  }\n});\nvar Affix = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"__file\", \"/home/runner/work/element-plus/element-plus/packages/components/affix/src/affix.vue\"]]);\n\nexport { Affix as default };\n//# sourceMappingURL=affix2.mjs.map\n",
-      "start": 1700406281306,
-      "end": 1700406281497,
+      "start": 1700439448083,
+      "end": 1700439448247,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448247,
+      "end": 1700439448247,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448248,
+      "end": 1700439448248,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448248,
+      "end": 1700439448248,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1700406281498,
-      "end": 1700406281498,
+      "start": 1700439448248,
+      "end": 1700439448248,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
       "result": "import { defineComponent, shallowRef, ref, computed, watch, onMounted, watchEffect, openBlock, createElementBlock, normalizeClass, unref, normalizeStyle, createElementVNode, renderSlot } from 'vue';\nimport { useWindowSize, useElementBounding, useEventListener } from '@vueuse/core';\nimport '../../../utils/index.mjs';\nimport '../../../hooks/index.mjs';\nimport { affixProps, affixEmits } from './affix.mjs';\nimport _export_sfc from '../../../_virtual/plugin-vue_export-helper.mjs';\nimport { useNamespace } from '../../../hooks/use-namespace/index.mjs';\nimport { addUnit } from '../../../utils/dom/style.mjs';\nimport { throwError } from '../../../utils/error.mjs';\nimport { getScrollContainer } from '../../../utils/dom/scroll.mjs';\n\nconst COMPONENT_NAME = \"ElAffix\";\nconst __default__ = defineComponent({\n  name: COMPONENT_NAME\n});\nconst _sfc_main = /* @__PURE__ */ defineComponent({\n  ...__default__,\n  props: affixProps,\n  emits: affixEmits,\n  setup(__props, { expose, emit }) {\n    const props = __props;\n    const ns = useNamespace(\"affix\");\n    const target = shallowRef();\n    const root = shallowRef();\n    const scrollContainer = shallowRef();\n    const { height: windowHeight } = useWindowSize();\n    const {\n      height: rootHeight,\n      width: rootWidth,\n      top: rootTop,\n      bottom: rootBottom,\n      update: updateRoot\n    } = useElementBounding(root, { windowScroll: false });\n    const targetRect = useElementBounding(target);\n    const fixed = ref(false);\n    const scrollTop = ref(0);\n    const transform = ref(0);\n    const rootStyle = computed(() => {\n      return {\n        height: fixed.value ? `${rootHeight.value}px` : \"\",\n        width: fixed.value ? `${rootWidth.value}px` : \"\"\n      };\n    });\n    const affixStyle = computed(() => {\n      if (!fixed.value)\n        return {};\n      const offset = props.offset ? addUnit(props.offset) : 0;\n      return {\n        height: `${rootHeight.value}px`,\n        width: `${rootWidth.value}px`,\n        top: props.position === \"top\" ? offset : \"\",\n        bottom: props.position === \"bottom\" ? offset : \"\",\n        transform: transform.value ? `translateY(${transform.value}px)` : \"\",\n        zIndex: props.zIndex\n      };\n    });\n    const update = () => {\n      if (!scrollContainer.value)\n        return;\n      scrollTop.value = scrollContainer.value instanceof Window ? document.documentElement.scrollTop : scrollContainer.value.scrollTop || 0;\n      if (props.position === \"top\") {\n        if (props.target) {\n          const difference = targetRect.bottom.value - props.offset - rootHeight.value;\n          fixed.value = props.offset > rootTop.value && targetRect.bottom.value > 0;\n          transform.value = difference < 0 ? difference : 0;\n        } else {\n          fixed.value = props.offset > rootTop.value;\n        }\n      } else if (props.target) {\n        const difference = windowHeight.value - targetRect.top.value - props.offset - rootHeight.value;\n        fixed.value = windowHeight.value - props.offset < rootBottom.value && windowHeight.value > targetRect.top.value;\n        transform.value = difference < 0 ? -difference : 0;\n      } else {\n        fixed.value = windowHeight.value - props.offset < rootBottom.value;\n      }\n    };\n    const handleScroll = () => {\n      updateRoot();\n      emit(\"scroll\", {\n        scrollTop: scrollTop.value,\n        fixed: fixed.value\n      });\n    };\n    watch(fixed, (val) => emit(\"change\", val));\n     /*#__PURE__*/ false && onMounted(() => {\n      var _a;\n      if (props.target) {\n        target.value = (_a = document.querySelector(props.target)) != null ? _a : void 0;\n        if (!target.value)\n          throwError(COMPONENT_NAME, `Target is not existed: ${props.target}`);\n      } else {\n        target.value = document.documentElement;\n      }\n      scrollContainer.value = getScrollContainer(root.value, true);\n      updateRoot();\n    });\n    useEventListener(scrollContainer, \"scroll\", handleScroll);\n    watchEffect(update);\n    expose({\n      update,\n      updateRoot\n    });\n    return (_ctx, _cache) => {\n      return openBlock(), createElementBlock(\"div\", {\n        ref_key: \"root\",\n        ref: root,\n        class: normalizeClass(unref(ns).b()),\n        style: normalizeStyle(unref(rootStyle))\n      }, [\n        createElementVNode(\"div\", {\n          class: normalizeClass({ [unref(ns).m(\"fixed\")]: fixed.value }),\n          style: normalizeStyle(unref(affixStyle))\n        }, [\n          renderSlot(_ctx.$slots, \"default\")\n        ], 6)\n      ], 6);\n    };\n  }\n});\nvar Affix = /* @__PURE__ */ _export_sfc(_sfc_main, [[\"__file\", \"/home/runner/work/element-plus/element-plus/packages/components/affix/src/affix.vue\"]]);\n\nexport { Affix as default };\n//# sourceMappingURL=affix2.mjs.map\n",
-      "start": 1700406281498,
-      "end": 1700406281499,
+      "start": 1700439448248,
+      "end": 1700439448248,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -247,14 +247,14 @@
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700406281499,
-      "end": 1700406281499,
+      "start": 1700439448248,
+      "end": 1700439448248,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700406281499,
-      "end": 1700406281499,
+      "start": 1700439448248,
+      "end": 1700439448248,
       "order": "normal"
     }
   ]

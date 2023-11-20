@@ -4,212 +4,212 @@
     {
       "name": "vite:load-fallback",
       "result": "import { inject, ref, h } from 'vue';\nimport { debounce } from 'lodash-unified';\nimport '../../../../utils/index.mjs';\nimport '../../../../hooks/index.mjs';\nimport { getCell, getColumnByCell, createTablePopper } from '../util.mjs';\nimport { TABLE_INJECTION_KEY } from '../tokens.mjs';\nimport { useZIndex } from '../../../../hooks/use-z-index/index.mjs';\nimport { hasClass } from '../../../../utils/dom/style.mjs';\n\nfunction useEvents(props) {\n  const parent = inject(TABLE_INJECTION_KEY);\n  const tooltipContent = ref(\"\");\n  const tooltipTrigger = ref(h(\"div\"));\n  const { nextZIndex } = useZIndex();\n  const handleEvent = (event, row, name) => {\n    var _a;\n    const table = parent;\n    const cell = getCell(event);\n    let column;\n    const namespace = (_a = table == null ? void 0 : table.vnode.el) == null ? void 0 : _a.dataset.prefix;\n    if (cell) {\n      column = getColumnByCell({\n        columns: props.store.states.columns.value\n      }, cell, namespace);\n      if (column) {\n        table == null ? void 0 : table.emit(`cell-${name}`, row, column, cell, event);\n      }\n    }\n    table == null ? void 0 : table.emit(`row-${name}`, row, column, event);\n  };\n  const handleDoubleClick = (event, row) => {\n    handleEvent(event, row, \"dblclick\");\n  };\n  const handleClick = (event, row) => {\n    props.store.commit(\"setCurrentRow\", row);\n    handleEvent(event, row, \"click\");\n  };\n  const handleContextMenu = (event, row) => {\n    handleEvent(event, row, \"contextmenu\");\n  };\n  const handleMouseEnter = debounce((index) => {\n    props.store.commit(\"setHoverRow\", index);\n  }, 30);\n  const handleMouseLeave = debounce(() => {\n    props.store.commit(\"setHoverRow\", null);\n  }, 30);\n  const getPadding = (el) => {\n    const style = window.getComputedStyle(el, null);\n    const paddingLeft = Number.parseInt(style.paddingLeft, 10) || 0;\n    const paddingRight = Number.parseInt(style.paddingRight, 10) || 0;\n    const paddingTop = Number.parseInt(style.paddingTop, 10) || 0;\n    const paddingBottom = Number.parseInt(style.paddingBottom, 10) || 0;\n    return {\n      left: paddingLeft,\n      right: paddingRight,\n      top: paddingTop,\n      bottom: paddingBottom\n    };\n  };\n  const handleCellMouseEnter = (event, row, tooltipOptions) => {\n    var _a;\n    const table = parent;\n    const cell = getCell(event);\n    const namespace = (_a = table == null ? void 0 : table.vnode.el) == null ? void 0 : _a.dataset.prefix;\n    if (cell) {\n      const column = getColumnByCell({\n        columns: props.store.states.columns.value\n      }, cell, namespace);\n      const hoverState = table.hoverState = { cell, column, row };\n      table == null ? void 0 : table.emit(\"cell-mouse-enter\", hoverState.row, hoverState.column, hoverState.cell, event);\n    }\n    if (!tooltipOptions) {\n      return;\n    }\n    const cellChild = event.target.querySelector(\".cell\");\n    if (!(hasClass(cellChild, `${namespace}-tooltip`) && cellChild.childNodes.length)) {\n      return;\n    }\n    const range = document.createRange();\n    range.setStart(cellChild, 0);\n    range.setEnd(cellChild, cellChild.childNodes.length);\n    let rangeWidth = range.getBoundingClientRect().width;\n    let rangeHeight = range.getBoundingClientRect().height;\n    const offsetWidth = rangeWidth - Math.floor(rangeWidth);\n    if (offsetWidth < 1e-3) {\n      rangeWidth = Math.floor(rangeWidth);\n    }\n    const offsetHeight = rangeHeight - Math.floor(rangeHeight);\n    if (offsetHeight < 1e-3) {\n      rangeHeight = Math.floor(rangeHeight);\n    }\n    const { top, left, right, bottom } = getPadding(cellChild);\n    const horizontalPadding = left + right;\n    const verticalPadding = top + bottom;\n    if (rangeWidth + horizontalPadding > cellChild.offsetWidth || rangeHeight + verticalPadding > cellChild.offsetHeight || cellChild.scrollWidth > cellChild.offsetWidth) {\n      createTablePopper(parent == null ? void 0 : parent.refs.tableWrapper, cell, cell.innerText || cell.textContent, nextZIndex, tooltipOptions);\n    }\n  };\n  const handleCellMouseLeave = (event) => {\n    const cell = getCell(event);\n    if (!cell)\n      return;\n    const oldHoverState = parent == null ? void 0 : parent.hoverState;\n    parent == null ? void 0 : parent.emit(\"cell-mouse-leave\", oldHoverState == null ? void 0 : oldHoverState.row, oldHoverState == null ? void 0 : oldHoverState.column, oldHoverState == null ? void 0 : oldHoverState.cell, event);\n  };\n  return {\n    handleDoubleClick,\n    handleClick,\n    handleContextMenu,\n    handleMouseEnter,\n    handleMouseLeave,\n    handleCellMouseEnter,\n    handleCellMouseLeave,\n    tooltipContent,\n    tooltipTrigger\n  };\n}\n\nexport { useEvents as default };\n//# sourceMappingURL=events-helper.mjs.map\n",
-      "start": 1700406276110,
-      "end": 1700406276232,
+      "start": 1700439444273,
+      "end": 1700439444351,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1700406276233,
-      "end": 1700406276233,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1700406276233,
-      "end": 1700406276234,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1700406276234,
-      "end": 1700406276234,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1700406276234,
-      "end": 1700406276234,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "post"
     },
     {
       "name": "element-plus:transform",
-      "start": 1700406276234,
-      "end": 1700406276234,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1700406276234,
-      "end": 1700406276234,
+      "start": 1700439444351,
+      "end": 1700439444351,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1700406276234,
-      "end": 1700406276234,
+      "start": 1700439444352,
+      "end": 1700439444352,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1700406276234,
-      "end": 1700406276234,
+      "start": 1700439444352,
+      "end": 1700439444352,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1700406276234,
-      "end": 1700406276234,
+      "start": 1700439444352,
+      "end": 1700439444352,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1700406276234,
-      "end": 1700406276234,
+      "start": 1700439444352,
+      "end": 1700439444352,
       "order": "normal"
     }
   ]

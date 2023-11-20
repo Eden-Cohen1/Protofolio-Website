@@ -572,7 +572,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/index-2852b6cf.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-bed39115.mjs').then((m) => m.default || m)
   }
 ];
 const _wrapIf = (component, props, slots) => {
@@ -861,11 +861,11 @@ const revive_payload_server_eJ33V7gbc6 = /* @__PURE__ */ defineNuxtPlugin({
     }
   }
 });
-const LazyIcon = defineAsyncComponent(() => import('./_nuxt/Icon-66bb9a30.mjs').then((r) => r.default));
-const LazyIconCSS = defineAsyncComponent(() => import('./_nuxt/IconCSS-27122331.mjs').then((r) => r.default));
+const LazyIcon = defineAsyncComponent(() => import('./_nuxt/Icon-2a6e66c4.mjs').then((r) => r.default));
+const LazyIconCss = defineAsyncComponent(() => import('./_nuxt/IconCSS-b8cfc2a7.mjs').then((r) => r.default));
 const lazyGlobalComponents = [
   ["Icon", LazyIcon],
-  ["IconCSS", LazyIconCSS]
+  ["IconCss", LazyIconCss]
 ];
 const components_plugin_KR1HBZs4kY = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:global-components",
@@ -906,7 +906,7 @@ const plugins = [
   element_plus_injection_plugin_1RNPi6ogby
 ];
 const layouts = {
-  default: () => import('./_nuxt/default-b34c35bc.mjs').then((m) => m.default || m)
+  default: () => import('./_nuxt/default-78d4c906.mjs').then((m) => m.default || m)
 };
 const LayoutLoader = defineComponent({
   name: "LayoutLoader",
