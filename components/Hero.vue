@@ -8,10 +8,8 @@
       <h1 v-else="">Hello, I'm <span>Eden</span></h1>
       <h2>{{ heroText.line }}</h2>
       <h3>
-        <pre>
-          B.S.c Computer Science Student.
-          Currently seeking a dynamic role as a Full-Stack Developer.
-        </pre>
+        B.S.c Computer Science Student. Currently seeking a dynamic role as a
+        Full-Stack Developer.
       </h3>
       <div class="social-links">
         <a href="https://github.com/Eden-Cohen1" target="_blank"
@@ -79,6 +77,9 @@ onMounted(() => {
   z-index: 10;
 }
 
+pre {
+  white-space: pre-wrap;
+}
 h1,
 h2,
 h3 {

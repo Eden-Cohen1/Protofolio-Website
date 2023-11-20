@@ -7,23 +7,39 @@
         type="text"
         class="feedback-input"
         placeholder="Name"
+        required
       />
       <input
         name="email"
         type="email"
         class="feedback-input"
         placeholder="Email"
+        required
       />
+
       <textarea
+        v-model="message"
         name="text"
         class="feedback-input"
-        placeholder="Comment"
+        placeholder="Message"
       ></textarea>
-      <input type="submit" value="SEND" />
+      <div class="error-msg">
+        <small v-show="!rule"
+          >*must be between <b>10</b> and <b>200</b> characters</small
+        >
+      </div>
+      <input type="submit" value="SEND" :disabled="!rule" />
     </form>
   </main>
 </template>
 
+<script setup>
+const message = ref();
+const rule = computed(() => {
+  const msgLength = message.value?.trim().length;
+  return msgLength >= 10 && msgLength <= 300;
+});
+</script>
 <style scoped>
 .contact {
   height: fit-content;
@@ -36,6 +52,23 @@
 }
 .contact-form {
   max-width: 70vw;
+  min-width: 60vw;
+  display: flex;
+  flex-direction: column;
+}
+small {
+  position: relative;
+  padding-bottom: 1rem;
+  left: 15px !important;
+  top: -10px !important;
+  color: rgb(194, 0, 0);
+}
+.error-msg {
+  min-height: 1.1rem;
+}
+[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
 }
 a {
   border: none;
@@ -95,5 +128,16 @@ textarea {
 }
 [type="submit"]:hover {
   background: var(--btn-hover-color);
+}
+@media screen and (max-width: 950px) {
+  .contact-form {
+    min-width: 90vw !important;
+  }
+  h1 {
+    margin-bottom: 2.5rem !important;
+  }
+  .contact {
+    padding-top: 2.5rem;
+  }
 }
 </style>

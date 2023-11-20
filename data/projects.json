@@ -31,8 +31,8 @@
     "img": "protofolio.png",
     "links": {
       "git": "https://github.com/Eden-Cohen1/Protofolio-Website",
-      "youtube": "false",
-      "website": "false"
+      "youtube": false,
+      "website": false
     }
   }
 }
