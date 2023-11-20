@@ -24,7 +24,9 @@ html {
   overflow-x: hidden;
   background-color: var(--light-bg-sec);
 }
-
+body {
+  height: 100% !important;
+}
 html p,
 html h1,
 html h2,
