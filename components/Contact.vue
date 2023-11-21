@@ -21,9 +21,11 @@
         name="text"
         class="feedback-input"
         placeholder="Message"
+        @focus="isFocused = true"
+        @blur="isFocused = false"
       ></textarea>
       <div class="error-msg">
-        <small v-show="!rule"
+        <small v-show="!rule && isFocused"
           >*must be between <b>10</b> and <b>200</b> characters</small
         >
       </div>
@@ -34,9 +36,10 @@
 
 <script setup>
 const message = ref();
+const isFocused = ref(false);
 const rule = computed(() => {
   const msgLength = message.value?.trim().length;
-  return msgLength >= 10 && msgLength <= 300;
+  return msgLength >= 10 && msgLength <= 200;
 });
 </script>
 <style scoped>
