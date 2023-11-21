@@ -10,7 +10,7 @@
         required
       />
       <input
-        name="email"
+        name="mail"
         type="email"
         class="feedback-input"
         placeholder="Email"
