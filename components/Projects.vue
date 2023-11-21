@@ -67,7 +67,8 @@ import projects from "~/data/projects.json";
   margin: 2rem auto 5rem;
   position: relative;
   max-width: 1050px;
-  max-height: 390px;
+  height: fit-content;
+  max-height: 400px;
   min-height: 390px;
   box-shadow: 0 20px 60px -20px black;
   overflow: hidden;
@@ -89,7 +90,7 @@ h2 {
 .card-right {
   position: relative;
   width: 50%;
-  min-height: 350px;
+  min-height: 385px;
   order: 2;
   padding-right: 5rem;
 }
@@ -205,7 +206,7 @@ svg:hover {
   }
   .card {
     width: 100%;
-    min-height: 455px;
+    min-height: 475px;
     margin: 2rem auto 4rem;
   }
   .card-left {
@@ -223,11 +224,12 @@ svg:hover {
     padding: 0;
     opacity: 0;
     transition: 0.6s ease;
+    min-height: 420px;
     z-index: 6;
   }
   img {
     object-fit: cover !important;
-    min-height: 455px;
+    min-height: 475px;
   }
   .card:hover .card-left {
     opacity: 0;
