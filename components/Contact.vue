@@ -10,14 +10,14 @@
         required
       />
       <input
-        name="name"
+        name="email address"
         type="email"
         class="feedback-input"
         placeholder="Email"
         required
       />
       <input
-        name="name"
+        name="email address"
         type="email"
         class="feedback-input hidden"
         placeholder="Email"
