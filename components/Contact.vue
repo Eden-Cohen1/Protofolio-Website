@@ -11,7 +11,7 @@
       />
       <input
         name="name"
-        type="text"
+        type="email"
         class="feedback-input"
         placeholder="Email"
         required
