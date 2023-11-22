@@ -1,6 +1,6 @@
 <template>
   <main class="main-color section projects">
-    <h1>PROTOFOLIO</h1>
+    <h1>PORTFOLIO</h1>
     <div class="cards">
       <div class="card" v-for="project in projects">
         <div class="card-right">

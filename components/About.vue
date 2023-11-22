@@ -9,7 +9,7 @@
         taking on challenges. Eager to be an integral part of a team, I look
         forward to working on exciting and innovative projects.
       </p>
-      <button class="primary">Download CV</button>
+      <a href="Eden Cohen CV.pdf" target="_blank"> Open CV </a>
     </div>
     <div v-show="!isMobile" class="picture">
       <NuxtImg :src="`full-stack.png`" />
@@ -48,6 +48,20 @@ img {
   width: 100%;
   height: auto;
 }
+a {
+  display: block;
+  text-align: center;
+  color: white;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  font-weight: 570;
+  background-color: var(--btn-color);
+  width: 7rem;
+}
+a:hover {
+  color: white !important;
+  background-color: var(--btn-hover-color);
+}
 @media screen and (max-width: 950px) {
   .text {
     display: flex;
@@ -57,7 +71,8 @@ img {
     justify-content: center !important;
     padding: 2rem;
   }
-  button {
+  a {
+    margin: auto;
     width: 10rem;
   }
 }
