@@ -26,5 +26,7 @@ export { injectHead, useHead, useSeoMeta, useHeadSafe, useServerHead, useServerS
 export { scrolling } from '../composables/useScroll';
 export { screenWidth } from '../composables/useWindow';
 export { useImage } from '../node_modules/@nuxt/image/dist/runtime/composables';
+export { useGtag } from '../node_modules/nuxt-gtag/dist/runtime/composables/useGtag';
+export { useTrackEvent } from '../node_modules/nuxt-gtag/dist/runtime/composables/useTrackEvent';
 export { useNuxtDevTools } from '../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';

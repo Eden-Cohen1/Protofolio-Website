@@ -71,6 +71,7 @@
     "../node_modules/@element-plus/nuxt/runtime/server",
     "../node_modules/@nuxtjs/google-fonts/runtime/server",
     "../node_modules/@nuxt/image/runtime/server",
+    "../node_modules/nuxt-gtag/runtime/server",
     "../node_modules/@nuxt/devtools/runtime/server",
     "../node_modules/@nuxt/telemetry/runtime/server",
     "./types/nitro.d.ts",

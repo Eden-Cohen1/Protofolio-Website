@@ -28,7 +28,7 @@
         name="text"
         class="feedback-input"
         placeholder="Message"
-        @focus="isFocused = true"
+        @input="isFocused = true"
         @blur="isFocused = false"
       ></textarea>
       <div class="error-msg">
@@ -77,7 +77,7 @@ small {
   opacity: 0;
 }
 .error-msg {
-  min-height: 1.1rem;
+  min-height: 1.2rem;
 }
 [type="submit"]:disabled {
   cursor: not-allowed;

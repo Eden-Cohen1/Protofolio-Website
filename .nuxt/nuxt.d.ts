@@ -3,6 +3,7 @@
 /// <reference types="@element-plus/nuxt" />
 /// <reference types="@nuxtjs/google-fonts" />
 /// <reference types="@nuxt/image" />
+/// <reference types="nuxt-gtag" />
 /// <reference types="@nuxt/devtools" />
 /// <reference types="@nuxt/telemetry" />
 /// <reference types="nuxt" />
