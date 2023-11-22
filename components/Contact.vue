@@ -16,6 +16,13 @@
         placeholder="Email"
         required
       />
+      <input
+        name="name"
+        type="email"
+        class="feedback-input"
+        placeholder="Email"
+        required
+      />
       <textarea
         v-model="message"
         name="text"
