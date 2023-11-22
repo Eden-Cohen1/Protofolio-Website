@@ -19,7 +19,7 @@
       <input
         name="name"
         type="email"
-        class="feedback-input"
+        class="feedback-input hidden"
         placeholder="Email"
         required
       />
@@ -71,6 +71,10 @@ small {
   left: 15px !important;
   top: -10px !important;
   color: rgb(194, 0, 0);
+}
+.hidden {
+  display: none;
+  opacity: 0;
 }
 .error-msg {
   min-height: 1.1rem;
