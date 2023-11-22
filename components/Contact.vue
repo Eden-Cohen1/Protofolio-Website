@@ -10,6 +10,13 @@
         required
       />
       <input
+        name="name"
+        type="text"
+        class="feedback-input"
+        placeholder="Name"
+        required
+      />
+      <input
         name="mail"
         type="email"
         class="feedback-input"
