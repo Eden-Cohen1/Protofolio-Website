@@ -10,7 +10,11 @@ export default defineNuxtConfig({
     "@element-plus/nuxt",
     "@nuxtjs/google-fonts",
     "@nuxt/image",
+    "nuxt-gtag",
   ],
+  gtag: {
+    id: "G-FNCL6LY8K7",
+  },
   css: ["~/assets/main.css", "element-plus/theme-chalk/dark/css-vars.css"],
   googleFonts: {
     families: {
