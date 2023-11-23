@@ -35,7 +35,6 @@ const toggleDarkMode = () => {
   darkMode.value = !darkMode.value;
   document.documentElement.classList.toggle("dark", darkMode.value);
 };
-
 // dark mode
 </script>
 

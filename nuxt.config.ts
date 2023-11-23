@@ -16,13 +16,15 @@ export default defineNuxtConfig({
     id: "G-FNCL6LY8K7",
   },
   css: ["~/assets/main.css", "element-plus/theme-chalk/dark/css-vars.css"],
-  head: {
-    script: [
-      {
-        src: "https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js",
-        type: "text/javascript",
-      },
-    ],
+  app: {
+    head: {
+      script: [
+        {
+          src: "https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js",
+          type: "text/javascript",
+        },
+      ],
+    },
   },
   googleFonts: {
     families: {
