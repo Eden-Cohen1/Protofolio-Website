@@ -2,6 +2,7 @@
 declare module 'vue' {
   export interface GlobalComponents {
     'About': typeof import("../components/About.vue")['default']
+    'AccessibilityToolbar': typeof import("../components/AccessibilityToolbar.vue")['default']
     'Contact': typeof import("../components/Contact.vue")['default']
     'Footer': typeof import("../components/Footer.vue")['default']
     'Hero': typeof import("../components/Hero.vue")['default']
@@ -424,6 +425,7 @@ declare module 'vue' {
     'Html': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'LazyAbout': typeof import("../components/About.vue")['default']
+    'LazyAccessibilityToolbar': typeof import("../components/AccessibilityToolbar.vue")['default']
     'LazyContact': typeof import("../components/Contact.vue")['default']
     'LazyFooter': typeof import("../components/Footer.vue")['default']
     'LazyHero': typeof import("../components/Hero.vue")['default']
@@ -849,6 +851,7 @@ declare module 'vue' {
 }
 
 export const About: typeof import("../components/About.vue")['default']
+export const AccessibilityToolbar: typeof import("../components/AccessibilityToolbar.vue")['default']
 export const Contact: typeof import("../components/Contact.vue")['default']
 export const Footer: typeof import("../components/Footer.vue")['default']
 export const Hero: typeof import("../components/Hero.vue")['default']
@@ -1271,6 +1274,7 @@ export const Head: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const LazyAbout: typeof import("../components/About.vue")['default']
+export const LazyAccessibilityToolbar: typeof import("../components/AccessibilityToolbar.vue")['default']
 export const LazyContact: typeof import("../components/Contact.vue")['default']
 export const LazyFooter: typeof import("../components/Footer.vue")['default']
 export const LazyHero: typeof import("../components/Hero.vue")['default']
