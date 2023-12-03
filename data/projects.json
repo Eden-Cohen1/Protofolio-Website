@@ -1,4 +1,16 @@
 {
+  "filmHub": {
+    "headline": "FilmHub",
+    "subHeadline": "A website designed for movies discovery, from overviews to ratings, trailers, reviews and more.",
+    "description": "The frontend was built with Vue, Nuxt3. the backend API was implemented using Nitro, Nuxt's built-in server. For better performance, caching was applied with Nitro's CacheAPI, used Nuxt-Img to minimize image size and lazy-loading to prevent the load of out of sight images. in addition infinity scrolling was implemented for pagination. The data is fetched from a 3rd party API, users can search and sort the movies.",
+    "tech": ["Javascript", "Vue.js", "Nuxt3", "Nitro", "HTML", "CSS"],
+    "img": "filmHub.png",
+    "links": {
+      "git": "https://github.com/Eden-Cohen1/FilmHub",
+      "youtube": false,
+      "website": "https://my-film-hub.netlify.app/"
+    }
+  },
   "waveCave": {
     "headline": "Wave Cave",
     "subHeadline": "Social media website for surfers and waves-forecast.",

@@ -69,7 +69,7 @@ import projects from "~/data/projects.json";
   max-width: 1050px;
   height: fit-content;
   max-height: 400px;
-  min-height: 390px;
+  min-height: 430px;
   box-shadow: 0 20px 60px -20px black;
   overflow: hidden;
   border-radius: 1rem;
@@ -101,7 +101,7 @@ h2 {
 
 img {
   width: 100%;
-  min-height: 415px;
+  min-height: 430px;
   overflow: hidden;
 }
 
@@ -150,7 +150,7 @@ img {
   border-bottom: 13px solid transparent;
   border-left: 10px solid var(--light-bg-sec);
   border-top: 13px solid transparent;
-  right: -10px;
+  right: -9px;
   top: 0;
 }
 
@@ -180,7 +180,7 @@ svg:hover {
 @media screen and (max-width: 1100px) {
   .card {
     max-width: 90% !important;
-    min-height: 400px;
+    min-height: 430px;
   }
   .card-right {
     padding-right: 1rem;
@@ -189,6 +189,9 @@ svg:hover {
   p {
     font-size: 0.85rem;
     width: 100%;
+  }
+  img {
+    min-height: 430px;
   }
 }
 @media screen and (max-width: 860px) {
@@ -206,7 +209,7 @@ svg:hover {
   }
   .card {
     width: 100%;
-    min-height: 475px;
+    min-height: 560px;
     margin: 2rem auto 4rem;
   }
   .card-left {
@@ -224,12 +227,12 @@ svg:hover {
     padding: 0;
     opacity: 0;
     transition: 0.6s ease;
-    min-height: 420px;
+    min-height: 510px;
     z-index: 6;
   }
   img {
     object-fit: cover !important;
-    min-height: 475px;
+    min-height: 560px;
   }
   .card:hover .card-left {
     opacity: 0;
