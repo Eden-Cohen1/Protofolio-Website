@@ -13,8 +13,8 @@
   },
   "waveCave": {
     "headline": "Wave Cave",
-    "subHeadline": "Social media website for surfers and waves-forecast.",
-    "description": "Strengthening my web development foundation, I applied JS, HTML, and CSS to shape the project's frontend. Utilizing Node.js and Express in the backend, i gained practical skills in adapting REST API and digging into the HTTP protocol. Data is stored in MongoDB, using the Mongoose library.",
+    "subHeadline": "A social media platform tailored for surfers to share and interact within the community. Additionally, it offers surfing news and wave forecasts through API integrations.",
+    "description": "Using Javascript, HTML, CSS for the frontend, Node.js, Express for the backend, MongoDB, Mongoose for data-base and Render for deployment.",
     "tech": ["Javascript", "HTML", "CSS", "Express", "MongoDB"],
     "img": "waveCave.png",
     "links": {
@@ -37,8 +37,8 @@
   },
   "protoWebsite": {
     "headline": "Protofolio Website",
-    "subHeadline": "The website you are looking at 😉",
-    "description": "As a means of learning and refining my skills, I constructed a portfolio landing page using Vue.js and Nuxt 3. This project served as a valuable opportunity to deepen my understanding and proficiency in front-end web development.",
+    "subHeadline": "Portfolio landing page, presenting my work.",
+    "description": "I utilized the Nuxt Image module for image optimization, implementing SSR to optimize loading speed and SEO performance. Used Nuxt Gtag for google analytics and Netlify for deployment/receiving emails.",
     "tech": ["Javascript", "Vue.js", "Nuxt3", "HTML", "CSS"],
     "img": "protofolio.png",
     "links": {
