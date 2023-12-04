@@ -247,4 +247,15 @@ svg:hover {
     bottom: -2.5rem;
   }
 }
+@media screen and (max-width: 640px) {
+  .card {
+    min-height: 670px;
+  }
+  img {
+    min-height: 670px;
+  }
+  .card-right {
+    min-height: 620px;
+  }
+}
 </style>
