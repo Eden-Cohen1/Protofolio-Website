@@ -7,7 +7,7 @@
     "img": "filmHub.png",
     "links": {
       "git": "https://github.com/Eden-Cohen1/FilmHub",
-      "youtube": false,
+      "youtube": "https://www.loom.com/share/4573dc9316ad4390aa179157aee9d625",
       "website": "https://my-film-hub.netlify.app/"
     }
   },
