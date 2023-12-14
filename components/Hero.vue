@@ -94,6 +94,7 @@ h1 {
   font-weight: bold;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.616);
   margin-bottom: 0.5rem;
+  letter-spacing: -0.15rem;
 }
 h1 span {
   color: var(--btn-color);

@@ -1,4 +1,23 @@
 {
+  "academicPulse": {
+    "headline": "Academic-Pulse",
+    "subHeadline": "A web application created to help students to create and track their academic plan.",
+    "description": "I developed the application using Nuxt 3 for the frontend, employed Tailwind for design, utilized Vest for form validation, and added drag-and-drop functionality to enhance user experience. For the server-side, I leveraged Supabase serverless to construct the PostgreSQL database, fetch data for the app, and implemented regular login/registration/password recovery and Google OAuth integration.",
+    "tech": [
+      "Javascript",
+      "Vue.js",
+      "Nuxt3",
+      "Tailwind",
+      "Supabase",
+      "PostgreSQL"
+    ],
+    "img": "academicPulse.png",
+    "links": {
+      "git": "https://github.com/Eden-Cohen1/Academic-Pulse",
+      "youtube": false,
+      "website": "https://www.academic-pulse.com/"
+    }
+  },
   "filmHub": {
     "headline": "FilmHub",
     "subHeadline": "A website designed for movies discovery, from overviews to ratings, trailers, reviews and more.",
@@ -9,6 +28,18 @@
       "git": "https://github.com/Eden-Cohen1/FilmHub",
       "youtube": "https://www.loom.com/share/4573dc9316ad4390aa179157aee9d625",
       "website": "https://my-film-hub.netlify.app/"
+    }
+  },
+  "protoWebsite": {
+    "headline": "Protofolio Website",
+    "subHeadline": "Portfolio landing page, presenting my work.",
+    "description": "I utilized the Nuxt Image module for image optimization, implementing SSR to optimize loading speed and SEO performance. Used Nuxt Gtag for google analytics and Netlify for deployment/receiving emails.",
+    "tech": ["Javascript", "Vue.js", "Nuxt3", "HTML", "CSS"],
+    "img": "protofolio.png",
+    "links": {
+      "git": "https://github.com/Eden-Cohen1/Protofolio-Website",
+      "youtube": false,
+      "website": false
     }
   },
   "waveCave": {
@@ -31,18 +62,6 @@
     "img": "shapeShift.jpg",
     "links": {
       "git": "https://github.com/Eden-Cohen1/Workout-Manager",
-      "youtube": false,
-      "website": false
-    }
-  },
-  "protoWebsite": {
-    "headline": "Protofolio Website",
-    "subHeadline": "Portfolio landing page, presenting my work.",
-    "description": "I utilized the Nuxt Image module for image optimization, implementing SSR to optimize loading speed and SEO performance. Used Nuxt Gtag for google analytics and Netlify for deployment/receiving emails.",
-    "tech": ["Javascript", "Vue.js", "Nuxt3", "HTML", "CSS"],
-    "img": "protofolio.png",
-    "links": {
-      "git": "https://github.com/Eden-Cohen1/Protofolio-Website",
       "youtube": false,
       "website": false
     }
